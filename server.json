@@ -1,0 +1,16 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-10-17/server.schema.json",
+  "name": "io.github.t3ratech/wavepay",
+  "description": "WavePay — the payments MCP. Agents self-register a merchant key, then price, sell and track payments: PayNow (EcoCash, InnBucks, bank, cards) plus PayPal, all Zimbabwe rails covered, works worldwide. Tiers by payments processed: free 25/mo, basic 250, pro 2500.",
+  "version": "1.0.0",
+  "title": "WavePay Payments",
+  "websiteUrl": "https://wavepay.t3ratech.co.zw",
+  "icons": [{"src": "https://wavepay.t3ratech.co.zw/assets/favicon.svg", "mimeType": "image/svg+xml"}],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp",
+      "headers": [{"name": "x-wavepay-service-key", "description": "Merchant key from wavepay_register (mk_live_…) — registration works unsigned", "isSecret": true}]
+    }
+  ]
+}

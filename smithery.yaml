@@ -1,0 +1,11 @@
+startCommand:
+  type: http
+  url: https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp
+  configSchema:
+    type: object
+    properties:
+      serviceKey:
+        type: string
+        description: Merchant key returned by wavepay_register (mk_live_…)
+  exampleConfig:
+    serviceKey: mk_live_xxxxxxxxxxxxxxxx
