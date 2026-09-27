@@ -18,14 +18,14 @@ const I18N = {
   "nav.pricing":  { en: "Pricing", sn: "Mitengo", nd: "Intengo" },
   "nav.docs":     { en: "Docs", sn: "Zvinyorwa", nd: "Amabhuku" },
   "nav.status":   { en: "Status", sn: "Mamiriro", nd: "Isimo" },
-  "hero.eyebrow": { en: "Payments for Zimbabwe developers", sn: "Mari kuvagadziri veZimbabwe", nd: "Inkokhelo kubasondeli beZimbabwe" },
-  "hero.title":   { en: "Charge for your apps, extensions and games — on rails Zimbabweans actually use.", sn: "Bhadharisa vanoshandisa mapurogiramu ako — neEcoCash, ZimSwitch uye PayPal.", nd: "Biza abasebenzisi bohlelo lwakho — ngeEcoCash, ZimSwitch lePayPal." },
-  "hero.lede":    { en: "WavePay is the checkout, licensing and settlement rail built by T3raTech for Zimbabwean software. One API, every local wallet plus international cards — and a licence key your customer gets by email the moment the payment clears.", sn: "WavePay ndiyo nzira yekubhadhara uye licences yeZimbabwe. API imwe chete — wallet dzose dzemuno uye makadhi epasi rose.", nd: "I-WavePay yisiqephu senkokhelo lelicence eyakhwa nguT3raTech. API eyodwa — zonke i-wallet zalapha lamakhadi aphandle." },
+  "hero.eyebrow": { en: "Payments for software, anywhere", sn: "Mari yezvirongwa — pasi rose", nd: "Inkokhelo yezinhlelo — kuyo yonke indawo" },
+  "hero.title":   { en: "One POST registers you. The next POST is a checkout.", sn: "POST imwe kukunyoresa. Iyotevera inobhadhara.", nd: "I-POST eyodwa iyakubhalisa. Elandelayo iyabhiza." },
+  "hero.lede":    { en: "WavePay is the checkout, licensing and settlement rail for software — apps, browser extensions, games, APIs and bots. Buyers pay with what they have: EcoCash, OneMoney, InnBucks, Telecash, O'mari, ZimSwitch, Visa, Mastercard or PayPal.", sn: "WavePay ndiyo nzira yekubhadhara uye licences yezvirongwa. Vanobhadhara nevanacho: EcoCash, OneMoney, InnBucks, ZimSwitch, Visa, Mastercard kana PayPal.", nd: "I-WavePay yisiqephu senkokhelo lelicence yezinhlelo. Abathengi bakhokha ngalokhu abanalo: EcoCash, OneMoney, InnBucks, ZimSwitch, Visa, Mastercard kumbe PayPal." },
   "cta.start":    { en: "Get merchant access", sn: "Tora merchant key", nd: "Thola i-merchant key" },
   "cta.docs":     { en: "Read the docs", sn: "Verenga zvinyorwa", nd: "Funda amabhuku" },
   "price.title":  { en: "Merchant pricing", sn: "Mitengo ye-merchant", nd: "Intengo ye-merchant" },
   "status.title": { en: "Live status", sn: "Mamiriro azvino", nd: "Isimo samanje" },
-  "foot.line":    { en: "Built by T3raTech in Zimbabwe.", sn: "Yakagadzirwa naT3raTech muZimbabwe.", nd: "Yenziwe yiT3raTech eZimbabwe." },
+  "foot.line":    { en: "Built by T3raTech. Ships worldwide; every Zimbabwean rail covered.", sn: "Yakagadzirwa naT3raTech. Inoshanda pasi rose — nzira dzese dzeZimbabwe dzinemo.", nd: "Yenziwe yiT3raTech. Isebenza kuyo yonke indawo — zonke izindlela zeZimbabwe zifakwe." },
 };
 
 function cookie(name) {
