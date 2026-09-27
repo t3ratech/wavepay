@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /status.html
+Disallow: /thanks.html
+
+Sitemap: https://wavepay.t3ratech.co.zw/sitemap.xml

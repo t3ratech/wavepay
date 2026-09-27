@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Status — WavePay</title>
+<meta name="description" content="Live WavePay status — payment API health, provider rail availability and site uptime, probed in real time.">
+<link rel="canonical" href="https://wavepay.t3ratech.co.zw/status.html">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+try {
+  const t = (document.cookie.match(/(?:^|; )wp_theme=([^;]*)/) || [])[1];
+  if (t === "light" || t === "dark") document.documentElement.dataset.theme = decodeURIComponent(t);
+} catch (e) {}
+</script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M2 12c2.5-4 5-6 7.5-6S14 8.5 16.5 12s5 6 7.5 6"/></svg></span>
+      <span>WavePay<small>by T3raTech</small></span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html" data-i18n="nav.home">Overview</a>
+      <a href="pricing.html" data-i18n="nav.pricing">Pricing</a>
+      <a href="docs.html" data-i18n="nav.docs">Docs</a>
+      <a href="status.html" data-i18n="nav.status" aria-current="page">Status</a>
+    </nav>
+    <div class="prefs">
+      <button type="button" data-theme-choice="system" onclick="__wpTheme('system')">Auto</button>
+      <button type="button" data-theme-choice="light" onclick="__wpTheme('light')">Light</button>
+      <button type="button" data-theme-choice="dark" onclick="__wpTheme('dark')">Dark</button>
+      <select aria-label="Language" onchange="__wpLang(this.value)">
+        <option value="en">English</option>
+        <option value="sn">chiShona</option>
+        <option value="nd">isiNdebele</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="block wrap" style="max-width:760px">
+    <p class="kicker" data-i18n="status.title">Live status</p>
+    <h1>Probed right now, in your browser</h1>
+    <p class="lede muted">Every row below is a real HTTP request to the named endpoint — nothing cached, nothing asserted. Refresh to re-run.</p>
+
+    <div class="grid" style="margin-top:24px;gap:10px">
+      <div class="probe" data-probe="https://wavepay.t3ratech.co.zw/index.html">
+        <div><div class="name">This site</div><div class="hint" data-probe-detail>wavepay.t3ratech.co.zw</div></div>
+        <span class="pill wait">probing…</span>
+      </div>
+      <div class="probe" data-probe="https://t3rnel-wavepay-production.t3ratech.workers.dev/health">
+        <div><div class="name">Payment API</div><div class="hint" data-probe-detail>/health — worker liveness</div></div>
+        <span class="pill wait">probing…</span>
+      </div>
+      <div class="probe" data-probe="https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/providers">
+        <div><div class="name">Payment rails</div><div class="hint" data-probe-detail>/v2/providers — PayNow + PayPal catalogue</div></div>
+        <span class="pill wait">probing…</span>
+      </div>
+      <div class="probe" data-probe="https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/pricing?productId=wavepay">
+        <div><div class="name">Merchant pricing</div><div class="hint" data-probe-detail>/v2/pricing — wavepay plans live</div></div>
+        <span class="pill wait">probing…</span>
+      </div>
+      <div class="probe" data-probe="https://t3rnel-wavepay-production.t3ratech.workers.dev/v1/public-key">
+        <div><div class="name">Licence signing</div><div class="hint" data-probe-detail>/v1/public-key — v1 compat surface</div></div>
+        <span class="pill wait">probing…</span>
+      </div>
+      <div class="probe" data-probe="https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/licensing/public-key">
+        <div><div class="name">Entitlement signing</div><div class="hint" data-probe-detail>/v2/licensing/public-key — Ed25519 trust root</div></div>
+        <span class="pill wait">probing…</span>
+      </div>
+    </div>
+
+    <p class="muted" style="margin-top:20px;font-size:.85rem">Operator-side monitoring runs the same checks on a timer from the workstation — see the site README (<code>monitoring</code> section). If a probe is red, mail <a href="mailto:t3ratech.dev@gmail.com">t3ratech.dev@gmail.com</a>.</p>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span class="fine" data-i18n="foot.line">Built by T3raTech in Zimbabwe.</span>
+    <nav aria-label="Elsewhere">
+      <a href="https://t3ratech.co.zw" rel="noopener">T3raTech</a>
+      <a href="https://github.com/t3ratech" rel="noopener">GitHub</a>
+      <a href="docs.html">API</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pricing — WavePay</title>
+<meta name="description" content="WavePay pricing by payments processed — Free $0 for 25 payments/30 days, Basic $9 for 250, Pro $29 for 2,500. Every rail included; no percentage rake. Register in one POST.">
+<link rel="canonical" href="https://wavepay.t3ratech.co.zw/pricing.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="WavePay">
+<meta property="og:title" content="WavePay Pricing — free, basic, pro">
+<meta property="og:description" content="Flat tiers metered by payments processed. Start free, upgrade with a checkout.">
+<meta property="og:url" content="https://wavepay.t3ratech.co.zw/pricing.html">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+try {
+  const t = (document.cookie.match(/(?:^|; )wp_theme=([^;]*)/) || [])[1];
+  if (t === "light" || t === "dark") document.documentElement.dataset.theme = decodeURIComponent(t);
+} catch (e) {}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Product","name":"WavePay Merchant","offers":[
+ {"@type":"Offer","name":"Free","price":"0","priceCurrency":"USD"},
+ {"@type":"Offer","name":"Basic","price":"9.00","priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","billingDuration":"P1M"}},
+ {"@type":"Offer","name":"Pro","price":"29.00","priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","billingDuration":"P1M"}}]}
+</script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M2 12c2.5-4 5-6 7.5-6S14 8.5 16.5 12s5 6 7.5 6"/></svg></span>
+      <span>WavePay<small>by T3raTech</small></span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html" data-i18n="nav.home">Overview</a>
+      <a href="pricing.html" data-i18n="nav.pricing" aria-current="page">Pricing</a>
+      <a href="docs.html" data-i18n="nav.docs">Docs</a>
+      <a href="status.html" data-i18n="nav.status">Status</a>
+      <a href="skill.md">skill.md</a>
+    </nav>
+    <div class="prefs">
+      <button type="button" data-theme-choice="system" onclick="__wpTheme('system')">Auto</button>
+      <button type="button" data-theme-choice="light" onclick="__wpTheme('light')">Light</button>
+      <button type="button" data-theme-choice="dark" onclick="__wpTheme('dark')">Dark</button>
+      <select aria-label="Language" onchange="__wpLang(this.value)">
+        <option value="en">English</option>
+        <option value="sn">chiShona</option>
+        <option value="nd">isiNdebele</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="block wrap">
+    <p class="kicker" data-i18n="price.title">Merchant pricing</p>
+    <h1>Priced by payments processed, not by rake</h1>
+    <p class="lede muted">Flat tiers. The ladder below the page's fold: the category norm (Lemon Squeezy ~5%+50¢, Paddle ~5%+50¢, Gumroad 10%, Keygen ~$100/mo) takes a slice of every sale — WavePay sells headroom instead. Start free; a payment count that outgrows the tier is refused by name, never silently charged.</p>
+
+    <div class="grid grid-3" style="margin-top:28px">
+      <div class="card plan">
+        <h3>Free</h3>
+        <div class="price">$0<small> forever</small></div>
+        <ul>
+          <li>25 payments / 30 days</li>
+          <li>1 site (product)</li>
+          <li>Every live rail</li>
+          <li>Signed settlement webhooks</li>
+          <li>Payments ledger</li>
+        </ul>
+        <a class="btn btn-primary" href="#get-started">Register free — one POST</a>
+      </div>
+      <div class="card plan">
+        <h3>Basic</h3>
+        <div class="price">$9<small> USD / month</small></div>
+        <ul>
+          <li>250 payments / 30 days</li>
+          <li>3 sites</li>
+          <li>Coupons &amp; promotions</li>
+          <li>Webhooks + ledger</li>
+        </ul>
+        <a class="btn btn-primary" href="#get-started">Get Basic — $9/mo</a>
+      </div>
+      <div class="card plan featured">
+        <span class="tag">Scale</span>
+        <h3>Pro</h3>
+        <div class="price">$29<small> USD / month</small></div>
+        <ul>
+          <li>2,500 payments / 30 days</li>
+          <li>10 sites</li>
+          <li>Coupons, webhooks, ledger</li>
+          <li>Priority support queue</li>
+        </ul>
+        <a class="btn btn-primary" href="#get-started">Get Pro — $29/mo</a>
+      </div>
+    </div>
+
+    <div class="card" id="get-started" style="margin-top:28px;max-width:780px">
+      <h3>Start in one POST — no form, no call</h3>
+      <pre><code># Register — returns your live merchant key once. Free tier, working now:
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/register \
+  -H 'Content-Type: application/json' \
+  -d '{"name":"My Product","ownerEmail":"you@example.com"}'
+# → 201 { "merchantId": "mer_…", "key": "mk_live_…", "planId": "free", "paymentsPerMonth": 25 }
+
+# Upgrade — a normal checkout on the wavepay product, your own rails:
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/checkouts \
+  -H 'Content-Type: application/json' -H 'Idempotency-Key: upgrade-<something-stable>' \
+  -d '{"productId":"wavepay","planId":"pro","provider":"paynow","email":"you@example.com"}'
+# → 201 { "checkoutUrl": "https://www.paynow.co.zw/…", … } — settle it and
+#   your merchant's plan_id moves to pro. provider "paypal" works too.</code></pre>
+      <p class="muted">Agents: <a href="skill.md">skill.md</a> is the same story in one markdown file, and <code>POST /mcp</code> exposes it all as tools. Test mode lives on the key (<code>mk_test_…</code>) — same routes, fake money, never counts against the cap. Questions: <a href="mailto:t3ratech.dev@gmail.com">t3ratech.dev@gmail.com</a>.</p>
+    </div>
+
+    <div class="card" style="margin-top:16px;max-width:780px">
+      <h3>Fair fine print</h3>
+      <p class="muted">The tier caps payments <em>created</em> in the rolling 30-day window — a hit cap refuses new checkouts with <code>MERCHANT_LIMIT_REACHED</code>, it never blocks or double-charges a buyer mid-payment. Provider fees are the providers' own (PayNow and PayPal take theirs; WavePay's price is the plan). Every plan can take every rail the deployment enables — check <a href="status.html">status</a> for the live list.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span class="fine" data-i18n="foot.line">Built by T3raTech. Ships worldwide; every Zimbabwean rail covered.</span>
+    <nav aria-label="Elsewhere">
+      <a href="https://t3ratech.co.zw" rel="noopener">T3raTech</a>
+      <a href="https://github.com/t3ratech" rel="noopener">GitHub</a>
+      <a href="skill.md">skill.md</a>
+      <a href="docs.html">API</a>
+      <a href="status.html">Status</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/app.js" defer></script>
+</body>
+</html>

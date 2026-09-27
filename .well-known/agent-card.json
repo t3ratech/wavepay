@@ -1,0 +1,15 @@
+{
+  "name": "WavePay",
+  "description": "Checkout, licensing and settlement API for Zimbabwean software — EcoCash, OneMoney, InnBucks, Telecash, ZimSwitch, Visa, Mastercard and PayPal through one integration.",
+  "url": "https://wavepay.t3ratech.co.zw/",
+  "provider": { "organization": "T3raTech", "url": "https://t3ratech.co.zw" },
+  "version": "2.0",
+  "capabilities": {
+    "checkout": "https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/checkouts",
+    "pricing": "https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/pricing",
+    "providers": "https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/providers",
+    "licensing": "https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/licensing/checkout",
+    "status": "https://wavepay.t3ratech.co.zw/status.html"
+  },
+  "documentation": "https://wavepay.t3ratech.co.zw/docs.html"
+}

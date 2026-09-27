@@ -1,0 +1,38 @@
+# WavePay
+
+> WavePay is the checkout, licensing and settlement API for software — apps,
+> browser extensions, games, APIs and bots. One integration reaches local
+> wallet rails (EcoCash, OneMoney, InnBucks, Telecash, O'mari, ZimSwitch) and
+> international rails (Visa, Mastercard, PayPal). Agents onboard in one POST:
+> /v2/register mints a live merchant key on the free tier, no browser and no
+> email round-trip required. MCP tools are at POST /mcp (JSON-RPC 2.0).
+
+## Agent onboarding
+
+- [skill.md](https://wavepay.t3ratech.co.zw/skill.md): the whole agent onboarding — register, key, catalog, checkout, MCP tools, tiers
+- [agent-card.json](https://wavepay.t3ratech.co.zw/.well-known/agent-card.json): A2A agent card with live capability URLs
+- [status](https://wavepay.t3ratech.co.zw/status.html): live HTTP probes of every production endpoint
+
+## Product
+
+- [overview](https://wavepay.t3ratech.co.zw/): what WavePay is and who it's for
+- [pricing](https://wavepay.t3ratech.co.zw/pricing.html): free / basic / pro tiers metered by payments processed per 30 days
+- [docs](https://wavepay.t3ratech.co.zw/docs.html): one-page API reference — checkouts, licensing, webhooks, ledger
+
+## API
+
+- Base: https://t3rnel-wavepay-production.t3ratech.workers.dev
+- Register: `POST /v2/register` `{name, ownerEmail}` → `mk_live_…` key (shown once)
+- Checkout: `POST /v2/checkouts` `{productId, planId, provider, email}` → `checkoutUrl`
+- Status: `GET /v2/checkouts/<reference>/status`
+- Pricing: `GET /v2/pricing?productId=…`
+- Providers: `GET /v2/providers`
+- Licensing: `POST /v2/licensing/checkout`, `/v2/licensing/activate`, `GET /v2/licensing/public-key`
+- MCP: `POST /mcp` JSON-RPC — wavepay_register / wavepay_providers / wavepay_pricing / wavepay_checkout / wavepay_checkout_status / wavepay_catalog
+- Merchant auth: `x-wavepay-service-key: mk_live_…`
+
+## Rules
+
+- Idempotency-Key header on checkouts — retries return the same payment
+- Free tier: 25 payments/30 days; Basic $9/mo: 250; Pro $29/mo: 2,500
+- Test keys `mk_test_…` exercise every route without real money
