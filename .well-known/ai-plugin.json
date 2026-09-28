@@ -1,0 +1,12 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "WavePay",
+  "name_for_model": "wavepay",
+  "description_for_human": "Checkout, licensing and settlement API for software — local wallets, cards and PayPal through one integration.",
+  "description_for_model": "Create hosted checkouts, poll settlement status, manage merchant catalog and licensing. Register a merchant with wavepay_register or POST /v2/register — no key needed to register.",
+  "auth": { "type": "none", "instructions": "Registration is unsigned. Merchant calls carry x-wavepay-service-key: mk_live_… — minted by POST /v2/register." },
+  "api": { "type": "openapi", "url": "https://wavepay.t3ratech.co.zw/openapi.json", "is_user_authenticated": false },
+  "logo_url": "https://wavepay.t3ratech.co.zw/assets/favicon.svg",
+  "contact_email": "t3ratech.dev@gmail.com",
+  "legal_info_url": "https://wavepay.t3ratech.co.zw/docs.html"
+}

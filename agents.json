@@ -1,0 +1,28 @@
+{
+  "$schema": "https://agentsfirst.dev/.well-known/mcp-server-card.schema.json",
+  "name": "T3rnel WavePay",
+  "description": "Checkout, licensing and settlement API for software — one integration reaches Zimbabwean wallets (EcoCash, OneMoney, InnBucks, Telecash, O'mari, ZimSwitch) and international rails (Visa, Mastercard, PayPal). Merchants self-register with one POST.",
+  "version": "2.1.0",
+  "homepage": "https://wavepay.t3ratech.co.zw/",
+  "documentation": "https://wavepay.t3ratech.co.zw/skill.md",
+  "mcp": {
+    "endpoint": "https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp",
+    "transport": "streamable-http",
+    "protocolVersion": "2025-03-26",
+    "authentication": "none for wavepay_register; x-wavepay-service-key: mk_live_… for merchant tools — mint via POST /v2/register or the register tool",
+    "stdioShim": "mcp-server.mjs in the repo forwards stdio MCP clients (Claude Desktop, Cursor, Devin) to the HTTP endpoint"
+  },
+  "tools": [
+    { "name": "wavepay_register", "description": "Register a merchant account — returns merchantId and a live mk_live_… key on the free tier. Works unsigned." },
+    { "name": "wavepay_providers", "description": "List the payment rails this deployment has enabled right now." },
+    { "name": "wavepay_pricing", "description": "Plans, prices and promotions for a product id." },
+    { "name": "wavepay_catalog", "description": "Everything the caller's merchant key can sell — sites, plans, live prices." },
+    { "name": "wavepay_checkout", "description": "Create a hosted checkout and get the buyer URL." },
+    { "name": "wavepay_checkout_status", "description": "Poll a checkout's settlement status by reference." }
+  ],
+  "verification": {
+    "openapi": "https://wavepay.t3ratech.co.zw/openapi.json",
+    "agentsJson": "https://wavepay.t3ratech.co.zw/agents.json",
+    "status": "https://wavepay.t3ratech.co.zw/status.html"
+  }
+}

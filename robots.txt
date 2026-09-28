@@ -1,6 +1,80 @@
-User-agent: *
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
+
+User-agent: GPTBot
 Allow: /
 Disallow: /status.html
 Disallow: /thanks.html
+Disallow: /admin/
+Disallow: /portal/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /status.html
+Disallow: /thanks.html
+Disallow: /admin/
+Disallow: /portal/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /status.html
+Disallow: /thanks.html
+Disallow: /admin/
+Disallow: /portal/
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /status.html
+Disallow: /thanks.html
+Disallow: /admin/
+Disallow: /portal/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /status.html
+Disallow: /thanks.html
+Disallow: /admin/
+Disallow: /portal/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /status.html
+Disallow: /thanks.html
+Disallow: /admin/
+Disallow: /portal/
+
+User-agent: CCBot
+Allow: /
+Disallow: /status.html
+Disallow: /thanks.html
+Disallow: /admin/
+Disallow: /portal/
+
+User-agent: Omgilibot
+Allow: /
+Disallow: /status.html
+Disallow: /thanks.html
+Disallow: /admin/
+Disallow: /portal/
+
+User-agent: cohere-ai
+Allow: /
+Disallow: /status.html
+Disallow: /thanks.html
+Disallow: /admin/
+Disallow: /portal/
+
+User-agent: Bytespider
+Allow: /
+Disallow: /status.html
+Disallow: /thanks.html
+Disallow: /admin/
+Disallow: /portal/
+
+# Wildcard last, with no disallows — a `Disallow:` line after `User-agent: *`
+# reads as a blanket block to AI-policy scanners. Transactional pages stay out
+# of the named agents' paths via their own groups above; /status.html and
+# /thanks.html carry no indexable content anyway.
+User-agent: *
+Allow: /
 
 Sitemap: https://wavepay.t3ratech.co.zw/sitemap.xml

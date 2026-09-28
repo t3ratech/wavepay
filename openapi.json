@@ -1,0 +1,110 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "WavePay Public API",
+    "version": "2.1.0",
+    "description": "Checkout, licensing and settlement API for software. One POST registers a merchant; one POST starts a checkout. Local wallets (EcoCash, OneMoney, InnBucks, ZimSwitch) and international rails (cards, PayPal) through one integration. Agents: skill.md is the canonical onboarding; POST /mcp speaks JSON-RPC tools.",
+    "contact": { "email": "t3ratech.dev@gmail.com", "url": "https://wavepay.t3ratech.co.zw/docs.html" },
+    "license": { "name": "Proprietary" }
+  },
+  "servers": [{ "url": "https://t3rnel-wavepay-production.t3ratech.workers.dev" }],
+  "security": [{ "merchantKey": [] }],
+  "paths": {
+    "/v2/register": {
+      "post": {
+        "summary": "Register a merchant account — no key required",
+        "security": [],
+        "operationId": "registerMerchant",
+        "requestBody": {
+          "required": true,
+          "content": { "application/json": { "schema": { "type": "object", "required": ["name", "ownerEmail"], "properties": { "name": { "type": "string" }, "ownerEmail": { "type": "string", "format": "email" } } } } }
+        },
+        "responses": {
+          "200": { "description": "{ merchantId, key: mk_live_… shown once, planId, paymentsPerMonth }" },
+          "409": { "description": "MERCHANT_ALREADY_REGISTERED" }
+        }
+      }
+    },
+    "/v2/providers": {
+      "get": {
+        "summary": "Enabled payment rails on this deployment",
+        "security": [],
+        "operationId": "listProviders",
+        "responses": { "200": { "description": "{ providers: [{ id, label, methods }] }" } }
+      }
+    },
+    "/v2/pricing": {
+      "get": {
+        "summary": "Plans, prices and promotions for a product",
+        "security": [],
+        "operationId": "getPricing",
+        "parameters": [{ "name": "productId", "in": "query", "required": true, "schema": { "type": "string" } }],
+        "responses": { "200": { "description": "{ plans: [{ planId, priceMinor, currency, promotion }] }" } }
+      }
+    },
+    "/v2/checkouts": {
+      "post": {
+        "summary": "Create a buyer-facing hosted checkout",
+        "security": [],
+        "operationId": "createCheckout",
+        "requestBody": { "required": true, "content": { "application/json": { "schema": { "type": "object", "required": ["productId", "planId"], "properties": { "productId": { "type": "string" }, "planId": { "type": "string" }, "provider": { "type": "string" }, "email": { "type": "string" }, "amountMinor": { "type": "integer" }, "currency": { "type": "string" } } } } },
+        "responses": { "201": { "description": "{ reference: pay_…, checkoutUrl, provider, amountMinor, currency, test }" } }
+      }
+    },
+    "/v2/checkouts/{reference}/status": {
+      "get": {
+        "summary": "Poll a checkout's settlement status",
+        "security": [],
+        "operationId": "checkoutStatus",
+        "parameters": [{ "name": "reference", "in": "path", "required": true, "schema": { "type": "string" } }],
+        "responses": { "200": { "description": "{ reference, state, amountMinor, currency }" } }
+      }
+    },
+    "/v2/licensing/checkout": {
+      "post": { "summary": "Sell and email a licence key", "operationId": "licensingCheckout", "security": [], "responses": { "201": { "description": "Checkout created; key emailed on settle" } } }
+    },
+    "/v2/licensing/activate": {
+      "post": { "summary": "Activate a licence key on a device", "operationId": "licensingActivate", "security": [], "responses": { "200": { "description": "{ entitlement } — signed, verifiable offline" } } }
+    },
+    "/v2/licensing/recover": {
+      "post": { "summary": "Mail the buyer a fresh licence key", "operationId": "licensingRecover", "security": [], "responses": { "200": { "description": "Recovery email sent" } } }
+    },
+    "/v2/internal/checkouts": {
+      "post": {
+        "summary": "Create a server-side checkout (merchant-scoped)",
+        "operationId": "internalCheckout",
+        "parameters": [{ "name": "idempotency-key", "in": "header", "required": true, "schema": { "type": "string" } }],
+        "requestBody": { "required": true, "content": { "application/json": { "schema": { "type": "object", "required": ["productId", "planId", "provider"], "properties": { "productId": { "type": "string" }, "planId": { "type": "string" }, "provider": { "type": "string" }, "email": { "type": "string" }, "externalSubject": { "type": "string" }, "amountMinor": { "type": "integer" }, "currency": { "type": "string" } } } } },
+        "responses": { "201": { "description": "{ reference, checkoutUrl, provider, amountMinor, currency, test }" }, "403": { "description": "MERCHANT_SCOPE — product not bound to this merchant" } }
+      }
+    },
+    "/v2/internal/checkouts/status": {
+      "post": { "summary": "Poll a checkout's status (merchant)", "operationId": "internalCheckoutStatus", "responses": { "200": { "description": "{ reference, state }" } } }
+    },
+    "/v2/internal/payments": {
+      "post": { "summary": "Reconciliation ledger — idempotent drain with since/limit cursors", "operationId": "internalPayments", "responses": { "200": { "description": "{ payments: [{ reference, amountMinor, currency, settledAt }], cursor }" } } }
+    },
+    "/v2/internal/merchant/catalog": {
+      "get": { "summary": "Everything this key can sell — sites, plans, live prices. The sign-in check.", "operationId": "merchantCatalog", "responses": { "200": { "description": "{ merchantId, sites: [{ siteId, products, plans }], key: { mode, planId } }" }, "401": { "description": "key missing, wrong, or revoked — refused loudly" } } }
+    },
+    "/v2/internal/sites/webhook": {
+      "post": { "summary": "Set or rotate a site's settlement webhook URL+secret (secret shown once)", "operationId": "setWebhook", "responses": { "200": { "description": "{ webhookUrl, secret }" } } }
+    },
+    "/v2/test/settle": {
+      "post": { "summary": "Settle a test checkout end-to-end — exercises the webhook without touching a provider (mk_test_* keys only)", "operationId": "testSettle", "responses": { "200": { "description": "Settled in test mode" } } }
+    },
+    "/mcp": {
+      "post": {
+        "summary": "MCP endpoint — JSON-RPC 2.0 over HTTP. Tools: wavepay_register (unsigned), wavepay_providers, wavepay_pricing, wavepay_catalog, wavepay_checkout, wavepay_checkout_status",
+        "operationId": "mcp",
+        "security": [],
+        "responses": { "200": { "description": "JSON-RPC response" } }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "merchantKey": { "type": "apiKey", "in": "header", "name": "x-wavepay-service-key", "description": "mk_live_… / mk_test_… — minted by POST /v2/register, SHA-256 stored, shown once" }
+    }
+  }
+}
