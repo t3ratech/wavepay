@@ -5,7 +5,7 @@ const WAVEPAY_API = "https://t3rnel-wavepay-production.t3ratech.workers.dev";
 
 /* GA4 — set to the property measurement id once created (README: analytics).
    A falsey value makes the loader a no-op, so local previews stay clean. */
-const GA4_MEASUREMENT_ID = "G-XXXXXXXXXX";
+const GA4_MEASUREMENT_ID = "G-NBFP6LVCZT";
 
 const LOCALES = {
   en: "English",
