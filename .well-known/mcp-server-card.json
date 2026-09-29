@@ -1,5 +1,4 @@
 {
-  "$schema": "https://agentsfirst.dev/.well-known/mcp-server-card.schema.json",
   "name": "T3rnel WavePay",
   "description": "Checkout, licensing and settlement API for software — one integration reaches Zimbabwean wallets (EcoCash, OneMoney, InnBucks, Telecash, O'mari, ZimSwitch) and international rails (Visa, Mastercard, PayPal). Merchants self-register with one POST.",
   "version": "2.1.0",
