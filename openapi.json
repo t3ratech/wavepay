@@ -47,7 +47,7 @@
         "summary": "Create a buyer-facing hosted checkout",
         "security": [],
         "operationId": "createCheckout",
-        "requestBody": { "required": true, "content": { "application/json": { "schema": { "type": "object", "required": ["productId", "planId"], "properties": { "productId": { "type": "string" }, "planId": { "type": "string" }, "provider": { "type": "string" }, "email": { "type": "string" }, "amountMinor": { "type": "integer" }, "currency": { "type": "string" } } } } },
+        "requestBody": { "required": true, "content": { "application/json": { "schema": { "type": "object", "required": ["productId", "planId"], "properties": { "productId": { "type": "string" }, "planId": { "type": "string" }, "provider": { "type": "string" }, "email": { "type": "string" }, "amountMinor": { "type": "integer" }, "currency": { "type": "string" } } } } } },
         "responses": { "201": { "description": "{ reference: pay_…, checkoutUrl, provider, amountMinor, currency, test }" } }
       }
     },
@@ -74,7 +74,7 @@
         "summary": "Create a server-side checkout (merchant-scoped)",
         "operationId": "internalCheckout",
         "parameters": [{ "name": "idempotency-key", "in": "header", "required": true, "schema": { "type": "string" } }],
-        "requestBody": { "required": true, "content": { "application/json": { "schema": { "type": "object", "required": ["productId", "planId", "provider"], "properties": { "productId": { "type": "string" }, "planId": { "type": "string" }, "provider": { "type": "string" }, "email": { "type": "string" }, "externalSubject": { "type": "string" }, "amountMinor": { "type": "integer" }, "currency": { "type": "string" } } } } },
+        "requestBody": { "required": true, "content": { "application/json": { "schema": { "type": "object", "required": ["productId", "planId", "provider"], "properties": { "productId": { "type": "string" }, "planId": { "type": "string" }, "provider": { "type": "string" }, "email": { "type": "string" }, "externalSubject": { "type": "string" }, "amountMinor": { "type": "integer" }, "currency": { "type": "string" } } } } } },
         "responses": { "201": { "description": "{ reference, checkoutUrl, provider, amountMinor, currency, test }" }, "403": { "description": "MERCHANT_SCOPE — product not bound to this merchant" } }
       }
     },
