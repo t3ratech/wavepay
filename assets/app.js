@@ -25,6 +25,7 @@ const I18N = {
   "cta.docs":     { en: "Read the docs", sn: "Verenga zvinyorwa", nd: "Funda amabhuku" },
   "price.title":  { en: "Merchant pricing", sn: "Mitengo ye-merchant", nd: "Intengo ye-merchant" },
   "status.title": { en: "Live status", sn: "Mamiriro azvino", nd: "Isimo samanje" },
+  "skip":         { en: "Skip to content", sn: "Enda kune zviri mukati", nd: "Iya kokuqukethwe" },
   "foot.line":    { en: "Built by T3raTech. Ships worldwide; every Zimbabwean rail covered.", sn: "Yakagadzirwa naT3raTech. Inoshanda pasi rose — nzira dzese dzeZimbabwe dzinemo.", nd: "Yenziwe yiT3raTech. Isebenza kuyo yonke indawo — zonke izindlela zeZimbabwe zifakwe." },
 };
 

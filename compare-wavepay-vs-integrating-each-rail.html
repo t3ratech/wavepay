@@ -18,6 +18,8 @@
 <meta name="twitter:site" content="@t3ratech">
 <link rel="alternate" type="text/markdown" href="https://wavepay.t3ratech.co.zw/skill.md" title="Instructions for agents">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<meta name="theme-color" content="#fbfdfc" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c1110" media="(prefers-color-scheme: dark)">
 <link rel="stylesheet" href="assets/style.css">
 <script>
 try {
@@ -41,6 +43,7 @@ try {
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-NBFP6LVCZT",{anonymize_ip:true});</script>
 </head>
 <body>
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
 
 <header class="site-head">
   <div class="wrap">
@@ -70,7 +73,7 @@ try {
   </div>
 </header>
 
-<main>
+<main id="main">
 <section class="hero wrap"><span class="eyebrow">COMPARE</span><h1>WavePay vs integrating each payment rail yourself</h1><p class="lede" data-answer>Integrating each rail yourself means one integration, one reconciliation feed and one failure mode per wallet and card scheme; WavePay replaces them with one checkout call and one ledger, at the cost of depending on WavePay for the rails it enables.</p></section>
 <section class="block wrap prose"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> › <a href="learn.html">Guides</a> › <span aria-current="page">WavePay vs integrating each payment rail yourself</span></nav><p class="muted">Updated <time datetime="2026-10-09">2026-10-09</time> · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month</p>
 <table class="table"><thead><tr><th scope="col"></th><th scope="col">Each rail yourself</th><th scope="col">WavePay</th></tr></thead><tbody><tr><th scope="row">Integrations to build</th><td>One per wallet, card scheme and PayPal</td><td>One: POST /v2/checkouts</td></tr><tr><th scope="row">Reconciliation</th><td>One report per rail</td><td>One payments ledger with since/limit cursors</td></tr><tr><th scope="row">Retries</th><td>Each integration's own idempotency rules</td><td>Idempotency-Key on every checkout</td></tr><tr><th scope="row">Licence keys</th><td>Build and run key issuing yourself</td><td>Built in: Ed25519 entitlements, offline verification</td></tr><tr><th scope="row">Agent onboarding</th><td>Per-provider portals and forms</td><td>POST /v2/register or skill.md — no browser</td></tr><tr><th scope="row">Control</th><td>Direct relationship with every provider</td><td>WavePay sits between you and the provider</td></tr></tbody></table>
