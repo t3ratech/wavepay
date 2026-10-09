@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://wavepay.t3ratech.co.zw/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://wavepay.t3ratech.co.zw/pricing.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://wavepay.t3ratech.co.zw/docs.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://wavepay.t3ratech.co.zw/</loc><lastmod>2026-10-09</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://wavepay.t3ratech.co.zw/pricing.html</loc><lastmod>2026-10-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://wavepay.t3ratech.co.zw/docs.html</loc><lastmod>2026-10-09</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wavepay.t3ratech.co.zw/accept-zimbabwe-wallet-payments.html</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wavepay.t3ratech.co.zw/accept-card-and-paypal-payments.html</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wavepay.t3ratech.co.zw/payments-for-games.html</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wavepay.t3ratech.co.zw/payments-for-apps.html</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wavepay.t3ratech.co.zw/payments-for-apis.html</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wavepay.t3ratech.co.zw/payments-for-bots.html</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wavepay.t3ratech.co.zw/compare-wavepay-vs-integrating-each-rail.html</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wavepay.t3ratech.co.zw/compare-wavepay-vs-card-only-processor.html</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wavepay.t3ratech.co.zw/guide-offline-licence-verification.html</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wavepay.t3ratech.co.zw/guide-idempotent-checkouts.html</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wavepay.t3ratech.co.zw/faq.html</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wavepay.t3ratech.co.zw/learn.html</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>

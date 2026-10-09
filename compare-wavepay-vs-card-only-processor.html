@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WavePay vs a card-only payment processor · WavePay</title>
+<meta name="description" content="A card-only processor cannot take a mobile-wallet payment, so buyers who hold EcoCash or OneMoney but not a card cannot pay; WavePay adds those local rails to Visa, Mastercard and PayPal behind the same checkout call.">
+<link rel="canonical" href="https://wavepay.t3ratech.co.zw/compare-wavepay-vs-card-only-processor.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="WavePay">
+<meta property="og:title" content="WavePay vs a card-only payment processor">
+<meta property="og:description" content="A card-only processor cannot take a mobile-wallet payment, so buyers who hold EcoCash or OneMoney but not a card cannot pay; WavePay adds those local rails to Visa, Mastercard and PayPal behind the same checkout call.">
+<meta property="og:url" content="https://wavepay.t3ratech.co.zw/compare-wavepay-vs-card-only-processor.html">
+<meta property="og:image" content="https://wavepay.t3ratech.co.zw/assets/social-card.png">
+<meta property="article:modified_time" content="2026-10-09">
+<meta property="og:updated_time" content="2026-10-09">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@t3ratech">
+<link rel="alternate" type="text/markdown" href="https://wavepay.t3ratech.co.zw/skill.md" title="Instructions for agents">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+try {
+  const t = (document.cookie.match(/(?:^|; )wp_theme=([^;]*)/) || [])[1];
+  if (t === "light" || t === "dark") document.documentElement.dataset.theme = decodeURIComponent(t);
+} catch (e) {}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why add wallets if cards already work?","acceptedAnswer":{"@type":"Answer","text":"Because a buyer without a card cannot pay at all; each extra rail is a set of customers who could not otherwise complete the purchase."}},{"@type":"Question","name":"Is a card-only processor ever the better choice?","acceptedAnswer":{"@type":"Answer","text":"Yes, when every buyer you serve holds a card and you need nothing else."}}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://wavepay.t3ratech.co.zw/index.html"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://wavepay.t3ratech.co.zw/learn.html"},{"@type":"ListItem","position":3,"name":"WavePay vs a card-only payment processor","item":"https://wavepay.t3ratech.co.zw/compare-wavepay-vs-card-only-processor.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"WavePay vs a card-only payment processor","description":"A card-only processor cannot take a mobile-wallet payment, so buyers who hold EcoCash or OneMoney but not a card cannot pay; WavePay adds those local rails to Visa, Mastercard and PayPal behind the same checkout call.","datePublished":"2026-10-09","dateModified":"2026-10-09","author":{"@type":"Organization","name":"TeraTech Solutions (Private) Limited","url":"https://t3ratech.co.zw"},"publisher":{"@id":"https://wavepay.t3ratech.co.zw/#organization"},"mainEntityOfPage":"https://wavepay.t3ratech.co.zw/compare-wavepay-vs-card-only-processor.html"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","@id":"https://wavepay.t3ratech.co.zw/#organization","name":"TeraTech Solutions (Private) Limited","alternateName":"T3raTech","url":"https://t3ratech.co.zw","logo":"https://wavepay.t3ratech.co.zw/assets/favicon.svg","sameAs":["https://github.com/t3ratech","https://www.npmjs.com/org/t3ratech","https://x.com/t3ratech"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"t3ratech.dev@gmail.com","availableLanguage":["en"]}]}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NBFP6LVCZT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-NBFP6LVCZT",{anonymize_ip:true});</script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M2 12c2.5-4 5-6 7.5-6S14 8.5 16.5 12s5 6 7.5 6"/></svg></span>
+      <span>WavePay<small>by T3raTech</small></span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html" data-i18n="nav.home">Overview</a>
+      <a href="pricing.html" data-i18n="nav.pricing">Pricing</a>
+      <a href="docs.html" data-i18n="nav.docs">Docs</a>
+      <a href="faq.html">FAQ</a>
+      <a href="status.html" data-i18n="nav.status">Status</a>
+      <a href="https://t3rnel-wavepay-production.t3ratech.workers.dev/portal/login" data-i18n="nav.signin">Sign in</a>
+      <a href="skill.md" title="Instructions for agents">skill.md</a>
+    </nav>
+    <div class="prefs">
+      <button type="button" data-theme-choice="system" title="System theme" onclick="__wpTheme('system')">Auto</button>
+      <button type="button" data-theme-choice="light" title="Light theme" onclick="__wpTheme('light')">Light</button>
+      <button type="button" data-theme-choice="dark" title="Dark theme" onclick="__wpTheme('dark')">Dark</button>
+      <select aria-label="Language" onchange="__wpLang(this.value)">
+        <option value="en">English</option>
+        <option value="sn">chiShona</option>
+        <option value="nd">isiNdebele</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero wrap"><span class="eyebrow">COMPARE</span><h1>WavePay vs a card-only payment processor</h1><p class="lede" data-answer>A card-only processor cannot take a mobile-wallet payment, so buyers who hold EcoCash or OneMoney but not a card cannot pay; WavePay adds those local rails to Visa, Mastercard and PayPal behind the same checkout call.</p></section>
+<section class="block wrap prose"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> › <a href="learn.html">Guides</a> › <span aria-current="page">WavePay vs a card-only payment processor</span></nav><p class="muted">Updated <time datetime="2026-10-09">2026-10-09</time> · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month</p>
+<table class="table"><thead><tr><th scope="col"></th><th scope="col">Card-only processor</th><th scope="col">WavePay</th></tr></thead><tbody><tr><th scope="row">Mobile wallets (EcoCash, OneMoney, InnBucks, Telecash, O'mari)</th><td>Not offered</td><td>Offered; wallet push for EcoCash, OneMoney and InnBucks</td></tr><tr><th scope="row">ZimSwitch</th><td>Not offered</td><td>Offered</td></tr><tr><th scope="row">Visa / Mastercard / PayPal</th><td>Offered</td><td>Offered</td></tr><tr><th scope="row">Pricing basis</th><td>Typically a percentage of sales</td><td>Payments processed: Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month</td></tr><tr><th scope="row">Self-serve for agents</th><td>Varies</td><td>POST /v2/register, skill.md, MCP tools</td></tr></tbody></table>
+<h2>Questions</h2>
+<h3>Why add wallets if cards already work?</h3>
+<p>Because a buyer without a card cannot pay at all; each extra rail is a set of customers who could not otherwise complete the purchase.</p>
+<h3>Is a card-only processor ever the better choice?</h3>
+<p>Yes, when every buyer you serve holds a card and you need nothing else.</p>
+</section>
+<section class="block wrap"><h2>Keep going</h2><ul class="plain"><li><a href="learn.html">All guides and comparisons</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="faq.html">FAQ</a></li></ul></section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span class="fine" data-i18n="foot.line">Built by T3raTech. Ships worldwide; every Zimbabwean rail covered.</span>
+    <nav aria-label="Elsewhere">
+      <a href="https://t3ratech.co.zw" rel="noopener">T3raTech</a>
+      <a href="https://t3ratech.github.io/t3rnel-browser-plugin/" rel="noopener">T3rnel Browser</a>
+      <a href="https://github.com/t3ratech" rel="noopener">GitHub</a>
+      <a href="skill.md">skill.md</a>
+      <a href="llms.txt">llms.txt</a>
+      <a href="docs.html">API</a>
+      <a href="status.html">Status</a>
+      <a href="faq.html">FAQ</a>
+      <a href="learn.html">Guides</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/app.js" defer></script>
+<script src="assets/share.js" defer></script>
+</body>
+</html>

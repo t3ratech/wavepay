@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How offline licence verification works with Ed25519 entitlements · WavePay</title>
+<meta name="description" content="WavePay signs each licence entitlement with an Ed25519 private key it never shares, so your app verifies the signature offline against the public key at GET /v2/licensing/public-key and never needs to call a server to know a licence is genuine.">
+<link rel="canonical" href="https://wavepay.t3ratech.co.zw/guide-offline-licence-verification.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="WavePay">
+<meta property="og:title" content="How offline licence verification works with Ed25519 entitlements">
+<meta property="og:description" content="WavePay signs each licence entitlement with an Ed25519 private key it never shares, so your app verifies the signature offline against the public key at GET /v2/licensing/public-key and never needs to call a server to know a licence is genuine.">
+<meta property="og:url" content="https://wavepay.t3ratech.co.zw/guide-offline-licence-verification.html">
+<meta property="og:image" content="https://wavepay.t3ratech.co.zw/assets/social-card.png">
+<meta property="article:modified_time" content="2026-10-09">
+<meta property="og:updated_time" content="2026-10-09">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@t3ratech">
+<link rel="alternate" type="text/markdown" href="https://wavepay.t3ratech.co.zw/skill.md" title="Instructions for agents">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+try {
+  const t = (document.cookie.match(/(?:^|; )wp_theme=([^;]*)/) || [])[1];
+  if (t === "light" || t === "dark") document.documentElement.dataset.theme = decodeURIComponent(t);
+} catch (e) {}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://wavepay.t3ratech.co.zw/index.html"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://wavepay.t3ratech.co.zw/learn.html"},{"@type":"ListItem","position":3,"name":"How offline licence verification works with Ed25519 entitlements","item":"https://wavepay.t3ratech.co.zw/guide-offline-licence-verification.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"How offline licence verification works with Ed25519 entitlements","description":"WavePay signs each licence entitlement with an Ed25519 private key it never shares, so your app verifies the signature offline against the public key at GET /v2/licensing/public-key and never needs to call a server to know a licence is genuine.","datePublished":"2026-10-09","dateModified":"2026-10-09","author":{"@type":"Organization","name":"TeraTech Solutions (Private) Limited","url":"https://t3ratech.co.zw"},"publisher":{"@id":"https://wavepay.t3ratech.co.zw/#organization"},"mainEntityOfPage":"https://wavepay.t3ratech.co.zw/guide-offline-licence-verification.html"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","@id":"https://wavepay.t3ratech.co.zw/#organization","name":"TeraTech Solutions (Private) Limited","alternateName":"T3raTech","url":"https://t3ratech.co.zw","logo":"https://wavepay.t3ratech.co.zw/assets/favicon.svg","sameAs":["https://github.com/t3ratech","https://www.npmjs.com/org/t3ratech","https://x.com/t3ratech"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"t3ratech.dev@gmail.com","availableLanguage":["en"]}]}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NBFP6LVCZT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-NBFP6LVCZT",{anonymize_ip:true});</script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M2 12c2.5-4 5-6 7.5-6S14 8.5 16.5 12s5 6 7.5 6"/></svg></span>
+      <span>WavePay<small>by T3raTech</small></span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html" data-i18n="nav.home">Overview</a>
+      <a href="pricing.html" data-i18n="nav.pricing">Pricing</a>
+      <a href="docs.html" data-i18n="nav.docs">Docs</a>
+      <a href="faq.html">FAQ</a>
+      <a href="status.html" data-i18n="nav.status">Status</a>
+      <a href="https://t3rnel-wavepay-production.t3ratech.workers.dev/portal/login" data-i18n="nav.signin">Sign in</a>
+      <a href="skill.md" title="Instructions for agents">skill.md</a>
+    </nav>
+    <div class="prefs">
+      <button type="button" data-theme-choice="system" title="System theme" onclick="__wpTheme('system')">Auto</button>
+      <button type="button" data-theme-choice="light" title="Light theme" onclick="__wpTheme('light')">Light</button>
+      <button type="button" data-theme-choice="dark" title="Dark theme" onclick="__wpTheme('dark')">Dark</button>
+      <select aria-label="Language" onchange="__wpLang(this.value)">
+        <option value="en">English</option>
+        <option value="sn">chiShona</option>
+        <option value="nd">isiNdebele</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero wrap"><span class="eyebrow">HOW IT WORKS</span><h1>How offline licence verification works with Ed25519 entitlements</h1><p class="lede" data-answer>WavePay signs each licence entitlement with an Ed25519 private key it never shares, so your app verifies the signature offline against the public key at GET /v2/licensing/public-key and never needs to call a server to know a licence is genuine.</p></section>
+<section class="block wrap prose"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> › <a href="learn.html">Guides</a> › <span aria-current="page">How offline licence verification works with Ed25519 entitlements</span></nav><p class="muted">Updated <time datetime="2026-10-09">2026-10-09</time> · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month</p>
+<h2>The flow</h2>
+<p>A paid checkout emails a licence key. The device calls POST /v2/licensing/activate with the key and a deviceId and receives a signed entitlement. The app stores it and checks the signature locally.</p>
+<h2>Why Ed25519</h2>
+<p>Verification needs only the public key, which is safe to embed in the app. Forging an entitlement requires the private key, which stays with the issuer.</p>
+<h2>What this buys you</h2>
+<p>An app that works offline, no per-launch licence call to fail, and a trust root you can pin. When a customer loses a key, POST /v2/licensing/recover mails a fresh one.</p>
+<h2>What it does not do</h2>
+<p>An offline check cannot know a licence was revoked after the entitlement was issued; design entitlement lifetimes to match how quickly you need revocation to bite.</p>
+</section>
+<section class="block wrap"><h2>Keep going</h2><ul class="plain"><li><a href="guide-idempotent-checkouts.html">Idempotent checkouts: why a retry should never charge twice</a></li><li><a href="docs.html">API reference</a></li><li><a href="faq.html">FAQ</a></li></ul></section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span class="fine" data-i18n="foot.line">Built by T3raTech. Ships worldwide; every Zimbabwean rail covered.</span>
+    <nav aria-label="Elsewhere">
+      <a href="https://t3ratech.co.zw" rel="noopener">T3raTech</a>
+      <a href="https://t3ratech.github.io/t3rnel-browser-plugin/" rel="noopener">T3rnel Browser</a>
+      <a href="https://github.com/t3ratech" rel="noopener">GitHub</a>
+      <a href="skill.md">skill.md</a>
+      <a href="llms.txt">llms.txt</a>
+      <a href="docs.html">API</a>
+      <a href="status.html">Status</a>
+      <a href="faq.html">FAQ</a>
+      <a href="learn.html">Guides</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/app.js" defer></script>
+<script src="assets/share.js" defer></script>
+</body>
+</html>

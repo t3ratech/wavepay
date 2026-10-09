@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WavePay FAQ · WavePay</title>
+<meta name="description" content="WavePay is the checkout, licensing and settlement API for software — apps, browser extensions, games, APIs and bots. One integration reaches Zimbabwean wallets (EcoCash, OneMoney, InnBucks, Telecash, O'mari, ZimSwitch) and international rails (Visa, Mastercard, PayPal).">
+<link rel="canonical" href="https://wavepay.t3ratech.co.zw/faq.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="WavePay">
+<meta property="og:title" content="WavePay FAQ">
+<meta property="og:description" content="WavePay is the checkout, licensing and settlement API for software — apps, browser extensions, games, APIs and bots. One integration reaches Zimbabwean wallets (EcoCash, OneMoney, InnBucks, Telecash, O'mari, ZimSwitch) and international rails (Visa, Mastercard, PayPal).">
+<meta property="og:url" content="https://wavepay.t3ratech.co.zw/faq.html">
+<meta property="og:image" content="https://wavepay.t3ratech.co.zw/assets/social-card.png">
+<meta property="article:modified_time" content="2026-10-09">
+<meta property="og:updated_time" content="2026-10-09">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@t3ratech">
+<link rel="alternate" type="text/markdown" href="https://wavepay.t3ratech.co.zw/skill.md" title="Instructions for agents">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+try {
+  const t = (document.cookie.match(/(?:^|; )wp_theme=([^;]*)/) || [])[1];
+  if (t === "light" || t === "dark") document.documentElement.dataset.theme = decodeURIComponent(t);
+} catch (e) {}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is WavePay?","acceptedAnswer":{"@type":"Answer","text":"WavePay is the checkout, licensing and settlement API for software — apps, browser extensions, games, APIs and bots. One integration reaches Zimbabwean wallets (EcoCash, OneMoney, InnBucks, Telecash, O'mari, ZimSwitch) and international rails (Visa, Mastercard, PayPal)."}},{"@type":"Question","name":"How do I start accepting payments?","acceptedAnswer":{"@type":"Answer","text":"Two calls. POST /v2/register with a name and an email returns a live merchant key (mk_live_…) once; POST /v2/checkouts with that product and plan returns a hosted checkout URL. The free tier works immediately — 25 payments per 30 days."}},{"@type":"Question","name":"Does WavePay take a percentage of my sales?","acceptedAnswer":{"@type":"Answer","text":"No. WavePay is priced by payments processed, not by revenue: Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month. Rail providers charge their own fees on top."}},{"@type":"Question","name":"Which payment methods can my customers use?","acceptedAnswer":{"@type":"Answer","text":"EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch for Zimbabwean buyers; Visa, Mastercard and PayPal for international buyers. Which are enabled on a deployment is reported live by GET /v2/providers."}},{"@type":"Question","name":"Can an AI agent set up and run payments by itself?","acceptedAnswer":{"@type":"Answer","text":"Yes. skill.md is the whole onboarding in one markdown file, and POST /mcp exposes JSON-RPC tools (wavepay_register, wavepay_providers, wavepay_pricing, wavepay_checkout, wavepay_checkout_status, wavepay_catalog). No browser, OAuth or email round-trip is needed."}},{"@type":"Question","name":"How do I know a payment landed?","acceptedAnswer":{"@type":"Answer","text":"Poll GET /v2/checkouts/<reference>/status (pending, collected or expired) or register a signed webhook. Every settlement is also in the payments ledger, which you can drain idempotently with since/limit cursors."}},{"@type":"Question","name":"Can a retry charge a customer twice?","acceptedAnswer":{"@type":"Answer","text":"No. POST /v2/checkouts takes an Idempotency-Key; repeating a request with the same key returns the same checkout instead of creating a second one."}},{"@type":"Question","name":"Does WavePay issue licence keys?","acceptedAnswer":{"@type":"Answer","text":"Yes. Licensing is built in: a paid checkout emails a licence key, devices activate it for an Ed25519-signed entitlement, and your app verifies that entitlement offline against the public key at GET /v2/licensing/public-key."}},{"@type":"Question","name":"Can I charge someone without a browser?","acceptedAnswer":{"@type":"Answer","text":"Yes, for EcoCash, OneMoney and InnBucks: use provider paynow-mobile with the buyer's phone number and the wallet prompt is pushed straight to the handset to approve with a PIN. The wallet a deployment pushes to is part of its configuration — GET /v2/providers shows it. Games and bots, where a hosted page cannot open, use this."}},{"@type":"Question","name":"Can I test without moving money?","acceptedAnswer":{"@type":"Answer","text":"Yes. A test key (mk_test_…) uses the same routes with fake money and never counts against your payment cap, and POST /v2/test/settle exercises your webhook end to end."}},{"@type":"Question","name":"What happens when I hit my plan's payment cap?","acceptedAnswer":{"@type":"Answer","text":"New checkouts are refused with MERCHANT_LIMIT_REACHED. A buyer who is already mid-payment is never blocked or double-charged."}},{"@type":"Question","name":"Who runs WavePay?","acceptedAnswer":{"@type":"Answer","text":"WavePay is built by T3raTech (TeraTech Solutions (Private) Limited). T3rnel Browser sells its Pro tier on this rail in production."}}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://wavepay.t3ratech.co.zw/index.html"},{"@type":"ListItem","position":2,"name":"FAQ","item":"https://wavepay.t3ratech.co.zw/faq.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","@id":"https://wavepay.t3ratech.co.zw/#organization","name":"TeraTech Solutions (Private) Limited","alternateName":"T3raTech","url":"https://t3ratech.co.zw","logo":"https://wavepay.t3ratech.co.zw/assets/favicon.svg","sameAs":["https://github.com/t3ratech","https://www.npmjs.com/org/t3ratech","https://x.com/t3ratech"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"t3ratech.dev@gmail.com","availableLanguage":["en"]}]}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NBFP6LVCZT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-NBFP6LVCZT",{anonymize_ip:true});</script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M2 12c2.5-4 5-6 7.5-6S14 8.5 16.5 12s5 6 7.5 6"/></svg></span>
+      <span>WavePay<small>by T3raTech</small></span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html" data-i18n="nav.home">Overview</a>
+      <a href="pricing.html" data-i18n="nav.pricing">Pricing</a>
+      <a href="docs.html" data-i18n="nav.docs">Docs</a>
+      <a href="faq.html" aria-current="page">FAQ</a>
+      <a href="status.html" data-i18n="nav.status">Status</a>
+      <a href="https://t3rnel-wavepay-production.t3ratech.workers.dev/portal/login" data-i18n="nav.signin">Sign in</a>
+      <a href="skill.md" title="Instructions for agents">skill.md</a>
+    </nav>
+    <div class="prefs">
+      <button type="button" data-theme-choice="system" title="System theme" onclick="__wpTheme('system')">Auto</button>
+      <button type="button" data-theme-choice="light" title="Light theme" onclick="__wpTheme('light')">Light</button>
+      <button type="button" data-theme-choice="dark" title="Dark theme" onclick="__wpTheme('dark')">Dark</button>
+      <select aria-label="Language" onchange="__wpLang(this.value)">
+        <option value="en">English</option>
+        <option value="sn">chiShona</option>
+        <option value="nd">isiNdebele</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero wrap"><span class="eyebrow">QUESTIONS</span><h1>Frequently asked questions</h1><p class="lede" data-answer>WavePay is the checkout, licensing and settlement API for software — apps, browser extensions, games, APIs and bots. One integration reaches Zimbabwean wallets (EcoCash, OneMoney, InnBucks, Telecash, O'mari, ZimSwitch) and international rails (Visa, Mastercard, PayPal).</p></section>
+<section class="block wrap prose"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> › <span aria-current="page">FAQ</span></nav><p class="muted">Updated <time datetime="2026-10-09">2026-10-09</time> · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month</p>
+<h3 id="what-is-wavepay">What is WavePay?</h3>
+<p>WavePay is the checkout, licensing and settlement API for software — apps, browser extensions, games, APIs and bots. One integration reaches Zimbabwean wallets (EcoCash, OneMoney, InnBucks, Telecash, O'mari, ZimSwitch) and international rails (Visa, Mastercard, PayPal).</p>
+<h3 id="how-do-i-start">How do I start accepting payments?</h3>
+<p>Two calls. POST /v2/register with a name and an email returns a live merchant key (mk_live_…) once; POST /v2/checkouts with that product and plan returns a hosted checkout URL. The free tier works immediately — 25 payments per 30 days.</p>
+<h3 id="does-it-cost-a-percentage">Does WavePay take a percentage of my sales?</h3>
+<p>No. WavePay is priced by payments processed, not by revenue: Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month. Rail providers charge their own fees on top.</p>
+<h3 id="which-rails">Which payment methods can my customers use?</h3>
+<p>EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch for Zimbabwean buyers; Visa, Mastercard and PayPal for international buyers. Which are enabled on a deployment is reported live by GET /v2/providers.</p>
+<h3 id="can-an-agent-use-it">Can an AI agent set up and run payments by itself?</h3>
+<p>Yes. skill.md is the whole onboarding in one markdown file, and POST /mcp exposes JSON-RPC tools (wavepay_register, wavepay_providers, wavepay_pricing, wavepay_checkout, wavepay_checkout_status, wavepay_catalog). No browser, OAuth or email round-trip is needed.</p>
+<h3 id="how-do-i-know-i-was-paid">How do I know a payment landed?</h3>
+<p>Poll GET /v2/checkouts/&lt;reference&gt;/status (pending, collected or expired) or register a signed webhook. Every settlement is also in the payments ledger, which you can drain idempotently with since/limit cursors.</p>
+<h3 id="double-charges">Can a retry charge a customer twice?</h3>
+<p>No. POST /v2/checkouts takes an Idempotency-Key; repeating a request with the same key returns the same checkout instead of creating a second one.</p>
+<h3 id="licence-keys">Does WavePay issue licence keys?</h3>
+<p>Yes. Licensing is built in: a paid checkout emails a licence key, devices activate it for an Ed25519-signed entitlement, and your app verifies that entitlement offline against the public key at GET /v2/licensing/public-key.</p>
+<h3 id="express-push">Can I charge someone without a browser?</h3>
+<p>Yes, for EcoCash, OneMoney and InnBucks: use provider paynow-mobile with the buyer's phone number and the wallet prompt is pushed straight to the handset to approve with a PIN. The wallet a deployment pushes to is part of its configuration — GET /v2/providers shows it. Games and bots, where a hosted page cannot open, use this.</p>
+<h3 id="testing">Can I test without moving money?</h3>
+<p>Yes. A test key (mk_test_…) uses the same routes with fake money and never counts against your payment cap, and POST /v2/test/settle exercises your webhook end to end.</p>
+<h3 id="what-if-cap-reached">What happens when I hit my plan's payment cap?</h3>
+<p>New checkouts are refused with MERCHANT_LIMIT_REACHED. A buyer who is already mid-payment is never blocked or double-charged.</p>
+<h3 id="who-is-behind-it">Who runs WavePay?</h3>
+<p>WavePay is built by T3raTech (TeraTech Solutions (Private) Limited). T3rnel Browser sells its Pro tier on this rail in production.</p>
+</section>
+<section class="block wrap"><h2>Keep going</h2><ul class="plain"><li><a href="learn.html">Guides, rails and comparisons</a></li><li><a href="docs.html">The whole API in one page</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="skill.md">skill.md — for agents</a></li></ul></section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span class="fine" data-i18n="foot.line">Built by T3raTech. Ships worldwide; every Zimbabwean rail covered.</span>
+    <nav aria-label="Elsewhere">
+      <a href="https://t3ratech.co.zw" rel="noopener">T3raTech</a>
+      <a href="https://t3ratech.github.io/t3rnel-browser-plugin/" rel="noopener">T3rnel Browser</a>
+      <a href="https://github.com/t3ratech" rel="noopener">GitHub</a>
+      <a href="skill.md">skill.md</a>
+      <a href="llms.txt">llms.txt</a>
+      <a href="docs.html">API</a>
+      <a href="status.html">Status</a>
+      <a href="faq.html">FAQ</a>
+      <a href="learn.html">Guides</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/app.js" defer></script>
+<script src="assets/share.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accept OneMoney, InnBucks, Telecash, O'mari and ZimSwitch payments · WavePay</title>
+<meta name="description" content="WavePay reaches OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through the same checkout call as EcoCash — one integration, with GET /v2/providers reporting which are live on your deployment. OneMoney and InnBucks also support wallet push.">
+<link rel="canonical" href="https://wavepay.t3ratech.co.zw/accept-zimbabwe-wallet-payments.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="WavePay">
+<meta property="og:title" content="Accept OneMoney, InnBucks, Telecash, O'mari and ZimSwitch payments">
+<meta property="og:description" content="WavePay reaches OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through the same checkout call as EcoCash — one integration, with GET /v2/providers reporting which are live on your deployment. OneMoney and InnBucks also support wallet push.">
+<meta property="og:url" content="https://wavepay.t3ratech.co.zw/accept-zimbabwe-wallet-payments.html">
+<meta property="og:image" content="https://wavepay.t3ratech.co.zw/assets/social-card.png">
+<meta property="article:modified_time" content="2026-10-09">
+<meta property="og:updated_time" content="2026-10-09">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@t3ratech">
+<link rel="alternate" type="text/markdown" href="https://wavepay.t3ratech.co.zw/skill.md" title="Instructions for agents">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+try {
+  const t = (document.cookie.match(/(?:^|; )wp_theme=([^;]*)/) || [])[1];
+  if (t === "light" || t === "dark") document.documentElement.dataset.theme = decodeURIComponent(t);
+} catch (e) {}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which Zimbabwean payment methods does WavePay support?","acceptedAnswer":{"@type":"Answer","text":"EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch."}},{"@type":"Question","name":"How do I know which ones are enabled for me?","acceptedAnswer":{"@type":"Answer","text":"GET /v2/providers lists the live rails for the deployment you are calling."}}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://wavepay.t3ratech.co.zw/index.html"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://wavepay.t3ratech.co.zw/learn.html"},{"@type":"ListItem","position":3,"name":"Accept OneMoney, InnBucks, Telecash, O'mari and ZimSwitch payments","item":"https://wavepay.t3ratech.co.zw/accept-zimbabwe-wallet-payments.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Accept OneMoney, InnBucks, Telecash, O'mari and ZimSwitch payments","description":"WavePay reaches OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through the same checkout call as EcoCash — one integration, with GET /v2/providers reporting which are live on your deployment. OneMoney and InnBucks also support wallet push.","datePublished":"2026-10-09","dateModified":"2026-10-09","author":{"@type":"Organization","name":"TeraTech Solutions (Private) Limited","url":"https://t3ratech.co.zw"},"publisher":{"@id":"https://wavepay.t3ratech.co.zw/#organization"},"mainEntityOfPage":"https://wavepay.t3ratech.co.zw/accept-zimbabwe-wallet-payments.html"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","@id":"https://wavepay.t3ratech.co.zw/#organization","name":"TeraTech Solutions (Private) Limited","alternateName":"T3raTech","url":"https://t3ratech.co.zw","logo":"https://wavepay.t3ratech.co.zw/assets/favicon.svg","sameAs":["https://github.com/t3ratech","https://www.npmjs.com/org/t3ratech","https://x.com/t3ratech"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"t3ratech.dev@gmail.com","availableLanguage":["en"]}]}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NBFP6LVCZT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-NBFP6LVCZT",{anonymize_ip:true});</script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M2 12c2.5-4 5-6 7.5-6S14 8.5 16.5 12s5 6 7.5 6"/></svg></span>
+      <span>WavePay<small>by T3raTech</small></span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html" data-i18n="nav.home">Overview</a>
+      <a href="pricing.html" data-i18n="nav.pricing">Pricing</a>
+      <a href="docs.html" data-i18n="nav.docs">Docs</a>
+      <a href="faq.html">FAQ</a>
+      <a href="status.html" data-i18n="nav.status">Status</a>
+      <a href="https://t3rnel-wavepay-production.t3ratech.workers.dev/portal/login" data-i18n="nav.signin">Sign in</a>
+      <a href="skill.md" title="Instructions for agents">skill.md</a>
+    </nav>
+    <div class="prefs">
+      <button type="button" data-theme-choice="system" title="System theme" onclick="__wpTheme('system')">Auto</button>
+      <button type="button" data-theme-choice="light" title="Light theme" onclick="__wpTheme('light')">Light</button>
+      <button type="button" data-theme-choice="dark" title="Dark theme" onclick="__wpTheme('dark')">Dark</button>
+      <select aria-label="Language" onchange="__wpLang(this.value)">
+        <option value="en">English</option>
+        <option value="sn">chiShona</option>
+        <option value="nd">isiNdebele</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero wrap"><span class="eyebrow">PAYMENT RAIL</span><h1>Accept OneMoney, InnBucks, Telecash, O'mari and ZimSwitch payments</h1><p class="lede" data-answer>WavePay reaches OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through the same checkout call as EcoCash — one integration, with GET /v2/providers reporting which are live on your deployment. OneMoney and InnBucks also support wallet push.</p></section>
+<section class="block wrap prose"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> › <a href="learn.html">Guides</a> › <span aria-current="page">Accept OneMoney, InnBucks, Telecash, O'mari and ZimSwitch payments</span></nav><p class="muted">Updated <time datetime="2026-10-09">2026-10-09</time> · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month</p>
+<h2>How it works</h2>
+<ol><li><b>Ask what is live.</b> GET /v2/providers returns the rails the deployment has enabled — build your payment picker from it, not from a hard-coded list.</li><li><b>Create the checkout.</b> POST /v2/checkouts with provider paynow (hosted, all rails) or paynow-mobile (wallet push, EcoCash/OneMoney/InnBucks only).</li><li><b>Reconcile.</b> Every settlement lands in the payments ledger; drain it with POST /v2/internal/payments using since/limit cursors.</li></ol>
+<pre><code>curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/checkouts \
+  -H 'Content-Type: application/json' -H 'Idempotency-Key: order-1001' \
+  -d '{&quot;productId&quot;:&quot;your-product&quot;,&quot;planId&quot;:&quot;pro&quot;,&quot;provider&quot;:&quot;paynow&quot;,&quot;email&quot;:&quot;buyer@example.com&quot;}'</code></pre>
+<table class="table"><thead><tr><th scope="col">Rail</th><th scope="col">Type</th><th scope="col">How a buyer pays</th></tr></thead><tbody><tr><th scope="row">EcoCash</th><td>Mobile wallet</td><td>Hosted checkout, or wallet push with paynow-mobile</td></tr><tr><th scope="row">OneMoney</th><td>Mobile wallet</td><td>Hosted checkout, or wallet push with paynow-mobile</td></tr><tr><th scope="row">InnBucks</th><td>Mobile wallet</td><td>Hosted checkout, or wallet push with paynow-mobile</td></tr><tr><th scope="row">Telecash</th><td>Mobile wallet</td><td>Hosted checkout</td></tr><tr><th scope="row">O'mari</th><td>Mobile wallet</td><td>Hosted checkout</td></tr><tr><th scope="row">ZimSwitch</th><td>Local debit-card network</td><td>Hosted checkout</td></tr></tbody></table>
+<h2>Good to know</h2>
+<ul><li>One integration covers every rail a deployment enables.</li><li>Idempotency-Key makes a retried request return the same checkout instead of a second one.</li></ul>
+<h2>Questions</h2>
+<h3>Which Zimbabwean payment methods does WavePay support?</h3>
+<p>EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch.</p>
+<h3>How do I know which ones are enabled for me?</h3>
+<p>GET /v2/providers lists the live rails for the deployment you are calling.</p>
+</section>
+<section class="block wrap"><h2>Keep going</h2><ul class="plain"><li><a href="accept-ecocash-payments.html">Accept EcoCash payments in your software</a></li><li><a href="accept-card-and-paypal-payments.html">Accept Visa, Mastercard and PayPal payments from international buyers</a></li><li><a href="faq.html">FAQ</a></li><li><a href="docs.html">API reference</a></li></ul></section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span class="fine" data-i18n="foot.line">Built by T3raTech. Ships worldwide; every Zimbabwean rail covered.</span>
+    <nav aria-label="Elsewhere">
+      <a href="https://t3ratech.co.zw" rel="noopener">T3raTech</a>
+      <a href="https://t3ratech.github.io/t3rnel-browser-plugin/" rel="noopener">T3rnel Browser</a>
+      <a href="https://github.com/t3ratech" rel="noopener">GitHub</a>
+      <a href="skill.md">skill.md</a>
+      <a href="llms.txt">llms.txt</a>
+      <a href="docs.html">API</a>
+      <a href="status.html">Status</a>
+      <a href="faq.html">FAQ</a>
+      <a href="learn.html">Guides</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/app.js" defer></script>
+<script src="assets/share.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accept EcoCash payments in your software · WavePay</title>
+<meta name="description" content="To accept EcoCash, register a WavePay merchant, then create a checkout with provider paynow for a hosted page or paynow-mobile with the buyer's phone number to push the EcoCash prompt straight to their handset.">
+<link rel="canonical" href="https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="WavePay">
+<meta property="og:title" content="Accept EcoCash payments in your software">
+<meta property="og:description" content="To accept EcoCash, register a WavePay merchant, then create a checkout with provider paynow for a hosted page or paynow-mobile with the buyer's phone number to push the EcoCash prompt straight to their handset.">
+<meta property="og:url" content="https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html">
+<meta property="og:image" content="https://wavepay.t3ratech.co.zw/assets/social-card.png">
+<meta property="article:modified_time" content="2026-10-09">
+<meta property="og:updated_time" content="2026-10-09">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@t3ratech">
+<link rel="alternate" type="text/markdown" href="https://wavepay.t3ratech.co.zw/skill.md" title="Instructions for agents">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+try {
+  const t = (document.cookie.match(/(?:^|; )wp_theme=([^;]*)/) || [])[1];
+  if (t === "light" || t === "dark") document.documentElement.dataset.theme = decodeURIComponent(t);
+} catch (e) {}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need a separate EcoCash merchant integration?","acceptedAnswer":{"@type":"Answer","text":"No. WavePay's checkout reaches EcoCash through the same POST /v2/checkouts call you use for every other rail."}},{"@type":"Question","name":"Can I charge an EcoCash user without sending them to a web page?","acceptedAnswer":{"@type":"Answer","text":"Yes. Provider paynow-mobile with the buyer's phone number pushes the wallet prompt to the handset."}},{"@type":"Question","name":"Can an agent set EcoCash payments up?","acceptedAnswer":{"@type":"Answer","text":"Yes. skill.md and the MCP tool wavepay_checkout cover the full flow with no browser."}}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://wavepay.t3ratech.co.zw/index.html"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://wavepay.t3ratech.co.zw/learn.html"},{"@type":"ListItem","position":3,"name":"Accept EcoCash payments in your software","item":"https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Accept EcoCash payments in your software","description":"To accept EcoCash, register a WavePay merchant, then create a checkout with provider paynow for a hosted page or paynow-mobile with the buyer's phone number to push the EcoCash prompt straight to their handset.","datePublished":"2026-10-09","dateModified":"2026-10-09","author":{"@type":"Organization","name":"TeraTech Solutions (Private) Limited","url":"https://t3ratech.co.zw"},"publisher":{"@id":"https://wavepay.t3ratech.co.zw/#organization"},"mainEntityOfPage":"https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","@id":"https://wavepay.t3ratech.co.zw/#organization","name":"TeraTech Solutions (Private) Limited","alternateName":"T3raTech","url":"https://t3ratech.co.zw","logo":"https://wavepay.t3ratech.co.zw/assets/favicon.svg","sameAs":["https://github.com/t3ratech","https://www.npmjs.com/org/t3ratech","https://x.com/t3ratech"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"t3ratech.dev@gmail.com","availableLanguage":["en"]}]}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NBFP6LVCZT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-NBFP6LVCZT",{anonymize_ip:true});</script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M2 12c2.5-4 5-6 7.5-6S14 8.5 16.5 12s5 6 7.5 6"/></svg></span>
+      <span>WavePay<small>by T3raTech</small></span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html" data-i18n="nav.home">Overview</a>
+      <a href="pricing.html" data-i18n="nav.pricing">Pricing</a>
+      <a href="docs.html" data-i18n="nav.docs">Docs</a>
+      <a href="faq.html">FAQ</a>
+      <a href="status.html" data-i18n="nav.status">Status</a>
+      <a href="https://t3rnel-wavepay-production.t3ratech.workers.dev/portal/login" data-i18n="nav.signin">Sign in</a>
+      <a href="skill.md" title="Instructions for agents">skill.md</a>
+    </nav>
+    <div class="prefs">
+      <button type="button" data-theme-choice="system" title="System theme" onclick="__wpTheme('system')">Auto</button>
+      <button type="button" data-theme-choice="light" title="Light theme" onclick="__wpTheme('light')">Light</button>
+      <button type="button" data-theme-choice="dark" title="Dark theme" onclick="__wpTheme('dark')">Dark</button>
+      <select aria-label="Language" onchange="__wpLang(this.value)">
+        <option value="en">English</option>
+        <option value="sn">chiShona</option>
+        <option value="nd">isiNdebele</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero wrap"><span class="eyebrow">PAYMENT RAIL</span><h1>Accept EcoCash payments in your software</h1><p class="lede" data-answer>To accept EcoCash, register a WavePay merchant, then create a checkout with provider paynow for a hosted page or paynow-mobile with the buyer's phone number to push the EcoCash prompt straight to their handset.</p></section>
+<section class="block wrap prose"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> › <a href="learn.html">Guides</a> › <span aria-current="page">Accept EcoCash payments in your software</span></nav><p class="muted">Updated <time datetime="2026-10-09">2026-10-09</time> · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month</p>
+<h2>How it works</h2>
+<ol><li><b>Register once.</b> POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/register with a name and ownerEmail. The live key is shown once.</li><li><b>Create the checkout.</b> Use provider paynow for a hosted checkout URL, or paynow-mobile plus phone for an express wallet push.</li><li><b>Confirm settlement.</b> Poll GET /v2/checkouts/&lt;reference&gt;/status or receive a signed webhook; a licence key is emailed automatically if licensing is on.</li></ol>
+<pre><code>curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/checkouts \
+  -H 'Content-Type: application/json' -H 'Idempotency-Key: order-1001' \
+  -d '{&quot;productId&quot;:&quot;your-product&quot;,&quot;planId&quot;:&quot;pro&quot;,&quot;provider&quot;:&quot;paynow-mobile&quot;,&quot;email&quot;:&quot;buyer@example.com&quot;,&quot;phone&quot;:&quot;+2637XXXXXXXX&quot;}'</code></pre>
+
+<h2>Good to know</h2>
+<ul><li>Express push (paynow-mobile) covers EcoCash, OneMoney and InnBucks; the buyer approves on their handset with their PIN, and the wallet a deployment pushes to is part of its configuration.</li><li>Which rails a deployment enables is reported by GET /v2/providers — check it before showing EcoCash in your UI.</li><li>Provider fees are the provider's own; WavePay takes no percentage of your sales.</li></ul>
+<h2>Questions</h2>
+<h3>Do I need a separate EcoCash merchant integration?</h3>
+<p>No. WavePay's checkout reaches EcoCash through the same POST /v2/checkouts call you use for every other rail.</p>
+<h3>Can I charge an EcoCash user without sending them to a web page?</h3>
+<p>Yes. Provider paynow-mobile with the buyer's phone number pushes the wallet prompt to the handset.</p>
+<h3>Can an agent set EcoCash payments up?</h3>
+<p>Yes. skill.md and the MCP tool wavepay_checkout cover the full flow with no browser.</p>
+</section>
+<section class="block wrap"><h2>Keep going</h2><ul class="plain"><li><a href="accept-zimbabwe-wallet-payments.html">Accept OneMoney, InnBucks, Telecash, O'mari and ZimSwitch payments</a></li><li><a href="accept-card-and-paypal-payments.html">Accept Visa, Mastercard and PayPal payments from international buyers</a></li><li><a href="faq.html">FAQ</a></li><li><a href="docs.html">API reference</a></li></ul></section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span class="fine" data-i18n="foot.line">Built by T3raTech. Ships worldwide; every Zimbabwean rail covered.</span>
+    <nav aria-label="Elsewhere">
+      <a href="https://t3ratech.co.zw" rel="noopener">T3raTech</a>
+      <a href="https://t3ratech.github.io/t3rnel-browser-plugin/" rel="noopener">T3rnel Browser</a>
+      <a href="https://github.com/t3ratech" rel="noopener">GitHub</a>
+      <a href="skill.md">skill.md</a>
+      <a href="llms.txt">llms.txt</a>
+      <a href="docs.html">API</a>
+      <a href="status.html">Status</a>
+      <a href="faq.html">FAQ</a>
+      <a href="learn.html">Guides</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/app.js" defer></script>
+<script src="assets/share.js" defer></script>
+</body>
+</html>

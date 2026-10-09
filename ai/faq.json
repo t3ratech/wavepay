@@ -1,0 +1,67 @@
+{
+  "name": "WavePay FAQ",
+  "url": "https://wavepay.t3ratech.co.zw/faq.html",
+  "dateModified": "2026-10-09",
+  "questions": [
+    {
+      "question": "What is WavePay?",
+      "answer": "WavePay is the checkout, licensing and settlement API for software — apps, browser extensions, games, APIs and bots. One integration reaches Zimbabwean wallets (EcoCash, OneMoney, InnBucks, Telecash, O'mari, ZimSwitch) and international rails (Visa, Mastercard, PayPal).",
+      "url": "https://wavepay.t3ratech.co.zw/faq.html#what-is-wavepay"
+    },
+    {
+      "question": "How do I start accepting payments?",
+      "answer": "Two calls. POST /v2/register with a name and an email returns a live merchant key (mk_live_…) once; POST /v2/checkouts with that product and plan returns a hosted checkout URL. The free tier works immediately — 25 payments per 30 days.",
+      "url": "https://wavepay.t3ratech.co.zw/faq.html#how-do-i-start"
+    },
+    {
+      "question": "Does WavePay take a percentage of my sales?",
+      "answer": "No. WavePay is priced by payments processed, not by revenue: Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month. Rail providers charge their own fees on top.",
+      "url": "https://wavepay.t3ratech.co.zw/faq.html#does-it-cost-a-percentage"
+    },
+    {
+      "question": "Which payment methods can my customers use?",
+      "answer": "EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch for Zimbabwean buyers; Visa, Mastercard and PayPal for international buyers. Which are enabled on a deployment is reported live by GET /v2/providers.",
+      "url": "https://wavepay.t3ratech.co.zw/faq.html#which-rails"
+    },
+    {
+      "question": "Can an AI agent set up and run payments by itself?",
+      "answer": "Yes. skill.md is the whole onboarding in one markdown file, and POST /mcp exposes JSON-RPC tools (wavepay_register, wavepay_providers, wavepay_pricing, wavepay_checkout, wavepay_checkout_status, wavepay_catalog). No browser, OAuth or email round-trip is needed.",
+      "url": "https://wavepay.t3ratech.co.zw/faq.html#can-an-agent-use-it"
+    },
+    {
+      "question": "How do I know a payment landed?",
+      "answer": "Poll GET /v2/checkouts/<reference>/status (pending, collected or expired) or register a signed webhook. Every settlement is also in the payments ledger, which you can drain idempotently with since/limit cursors.",
+      "url": "https://wavepay.t3ratech.co.zw/faq.html#how-do-i-know-i-was-paid"
+    },
+    {
+      "question": "Can a retry charge a customer twice?",
+      "answer": "No. POST /v2/checkouts takes an Idempotency-Key; repeating a request with the same key returns the same checkout instead of creating a second one.",
+      "url": "https://wavepay.t3ratech.co.zw/faq.html#double-charges"
+    },
+    {
+      "question": "Does WavePay issue licence keys?",
+      "answer": "Yes. Licensing is built in: a paid checkout emails a licence key, devices activate it for an Ed25519-signed entitlement, and your app verifies that entitlement offline against the public key at GET /v2/licensing/public-key.",
+      "url": "https://wavepay.t3ratech.co.zw/faq.html#licence-keys"
+    },
+    {
+      "question": "Can I charge someone without a browser?",
+      "answer": "Yes, for EcoCash, OneMoney and InnBucks: use provider paynow-mobile with the buyer's phone number and the wallet prompt is pushed straight to the handset to approve with a PIN. The wallet a deployment pushes to is part of its configuration — GET /v2/providers shows it. Games and bots, where a hosted page cannot open, use this.",
+      "url": "https://wavepay.t3ratech.co.zw/faq.html#express-push"
+    },
+    {
+      "question": "Can I test without moving money?",
+      "answer": "Yes. A test key (mk_test_…) uses the same routes with fake money and never counts against your payment cap, and POST /v2/test/settle exercises your webhook end to end.",
+      "url": "https://wavepay.t3ratech.co.zw/faq.html#testing"
+    },
+    {
+      "question": "What happens when I hit my plan's payment cap?",
+      "answer": "New checkouts are refused with MERCHANT_LIMIT_REACHED. A buyer who is already mid-payment is never blocked or double-charged.",
+      "url": "https://wavepay.t3ratech.co.zw/faq.html#what-if-cap-reached"
+    },
+    {
+      "question": "Who runs WavePay?",
+      "answer": "WavePay is built by T3raTech (TeraTech Solutions (Private) Limited). T3rnel Browser sells its Pro tier on this rail in production.",
+      "url": "https://wavepay.t3ratech.co.zw/faq.html#who-is-behind-it"
+    }
+  ]
+}

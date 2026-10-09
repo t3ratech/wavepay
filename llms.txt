@@ -36,3 +36,36 @@
 - Idempotency-Key header on checkouts — retries return the same payment
 - Free tier: 25 payments/30 days; Basic $9/mo: 250; Pro $29/mo: 2,500
 - Test keys `mk_test_…` exercise every route without real money
+
+## Answers and guides
+
+### Payment rails
+
+- [Accept EcoCash payments in your software](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html)
+- [Accept OneMoney, InnBucks, Telecash, O'mari and ZimSwitch payments](https://wavepay.t3ratech.co.zw/accept-zimbabwe-wallet-payments.html)
+- [Accept Visa, Mastercard and PayPal payments from international buyers](https://wavepay.t3ratech.co.zw/accept-card-and-paypal-payments.html)
+
+### By kind of software
+
+- [How to charge for a browser extension](https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html)
+- [How to take payments in a game](https://wavepay.t3ratech.co.zw/payments-for-games.html)
+- [How to charge for an app or SaaS](https://wavepay.t3ratech.co.zw/payments-for-apps.html)
+- [How to charge for API access](https://wavepay.t3ratech.co.zw/payments-for-apis.html)
+- [How to charge for a bot](https://wavepay.t3ratech.co.zw/payments-for-bots.html)
+
+### Comparisons
+
+- [WavePay vs integrating each payment rail yourself](https://wavepay.t3ratech.co.zw/compare-wavepay-vs-integrating-each-rail.html)
+- [WavePay vs a card-only payment processor](https://wavepay.t3ratech.co.zw/compare-wavepay-vs-card-only-processor.html)
+
+### How it works
+
+- [How offline licence verification works with Ed25519 entitlements](https://wavepay.t3ratech.co.zw/guide-offline-licence-verification.html)
+- [Idempotent checkouts: why a retry should never charge twice](https://wavepay.t3ratech.co.zw/guide-idempotent-checkouts.html)
+
+### Questions
+
+- [Frequently asked questions](https://wavepay.t3ratech.co.zw/faq.html)
+
+- [Guides index](https://wavepay.t3ratech.co.zw/learn.html): every page above in one list
+- [AI summary](https://wavepay.t3ratech.co.zw/ai/summary.json), [AI FAQ](https://wavepay.t3ratech.co.zw/ai/faq.json), [AI service description](https://wavepay.t3ratech.co.zw/ai/service.json)

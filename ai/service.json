@@ -1,0 +1,57 @@
+{
+  "name": "WavePay",
+  "type": "checkout, licensing and settlement API for software",
+  "interfaces": [
+    {
+      "kind": "rest",
+      "base": "https://t3rnel-wavepay-production.t3ratech.workers.dev",
+      "contract": "https://wavepay.t3ratech.co.zw/openapi.json"
+    },
+    {
+      "kind": "mcp",
+      "url": "https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp",
+      "transport": "json-rpc-2.0"
+    },
+    {
+      "kind": "markdown",
+      "url": "https://wavepay.t3ratech.co.zw/skill.md"
+    }
+  ],
+  "registration": {
+    "method": "POST",
+    "url": "https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/register",
+    "body": {
+      "name": "<product>",
+      "ownerEmail": "<operator inbox>"
+    }
+  },
+  "checkout": {
+    "method": "POST",
+    "url": "https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/checkouts",
+    "headers": [
+      "Idempotency-Key"
+    ],
+    "providers": [
+      "paynow",
+      "paynow-mobile",
+      "paypal"
+    ]
+  },
+  "plans": [
+    {
+      "name": "Free",
+      "price": 0,
+      "perMonth": 25
+    },
+    {
+      "name": "Basic",
+      "price": 9,
+      "perMonth": 250
+    },
+    {
+      "name": "Pro",
+      "price": 29,
+      "perMonth": 2500
+    }
+  ]
+}

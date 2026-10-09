@@ -1,0 +1,55 @@
+{
+  "name": "WavePay",
+  "url": "https://wavepay.t3ratech.co.zw",
+  "description": "WavePay is the checkout, licensing and settlement API for software — apps, browser extensions, games, APIs and bots. One integration reaches Zimbabwean wallets (EcoCash, OneMoney, InnBucks, Telecash, O'mari, ZimSwitch) and international rails (Visa, Mastercard, PayPal).",
+  "publisher": {
+    "name": "TeraTech Solutions (Private) Limited",
+    "url": "https://t3ratech.co.zw",
+    "sameAs": [
+      "https://github.com/t3ratech",
+      "https://www.npmjs.com/org/t3ratech",
+      "https://x.com/t3ratech"
+    ]
+  },
+  "plans": [
+    {
+      "name": "Free",
+      "price": 0,
+      "perMonth": 25
+    },
+    {
+      "name": "Basic",
+      "price": 9,
+      "perMonth": 250
+    },
+    {
+      "name": "Pro",
+      "price": 29,
+      "perMonth": 2500
+    }
+  ],
+  "rails": {
+    "wallets": [
+      "EcoCash",
+      "OneMoney",
+      "InnBucks",
+      "Telecash",
+      "O'mari",
+      "ZimSwitch"
+    ],
+    "international": [
+      "Visa",
+      "Mastercard",
+      "PayPal"
+    ],
+    "liveCatalog": "https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/providers"
+  },
+  "dateModified": "2026-10-09",
+  "links": {
+    "faq": "https://wavepay.t3ratech.co.zw/faq.html",
+    "guides": "https://wavepay.t3ratech.co.zw/learn.html",
+    "skill": "https://wavepay.t3ratech.co.zw/skill.md",
+    "llms": "https://wavepay.t3ratech.co.zw/llms.txt",
+    "openapi": "https://wavepay.t3ratech.co.zw/openapi.json"
+  }
+}
