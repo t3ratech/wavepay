@@ -3,25 +3,61 @@
   "info": {
     "title": "WavePay Public API",
     "version": "2.1.0",
-    "description": "Checkout, licensing and settlement API for software. One POST registers a merchant; one POST starts a checkout. Local wallets (EcoCash, OneMoney, InnBucks, ZimSwitch) and international rails (cards, PayPal) through one integration. Agents: skill.md is the canonical onboarding; POST /mcp speaks JSON-RPC tools.",
-    "contact": { "email": "t3ratech.dev@gmail.com", "url": "https://wavepay.t3ratech.co.zw/docs.html" },
-    "license": { "name": "Proprietary" }
+    "description": "Checkout, licensing and settlement API for software. One POST registers a merchant and returns a live key and a test key; one POST starts a checkout. Local wallets (EcoCash, OneMoney, InnBucks, O'mari, ZimSwitch) and international rails (cards, PayPal) through one integration; subscriptions, buy-now-pay-later and refunds behind feature flags (GET /v2/features), all usable in test mode. Agents: skill.md is the canonical onboarding; POST /mcp speaks JSON-RPC tools.",
+    "contact": {
+      "email": "t3ratech.dev@gmail.com",
+      "url": "https://wavepay.t3ratech.co.zw/docs.html"
+    },
+    "license": {
+      "name": "Proprietary"
+    }
   },
-  "servers": [{ "url": "https://t3rnel-wavepay-production.t3ratech.workers.dev" }],
-  "security": [{ "merchantKey": [] }],
+  "servers": [
+    {
+      "url": "https://t3rnel-wavepay-production.t3ratech.workers.dev"
+    }
+  ],
+  "security": [
+    {
+      "merchantKey": []
+    }
+  ],
   "paths": {
     "/v2/register": {
       "post": {
-        "summary": "Register a merchant account — no key required",
+        "summary": "Register a merchant account — no key required — returns a live key and a test key",
         "security": [],
         "operationId": "registerMerchant",
         "requestBody": {
           "required": true,
-          "content": { "application/json": { "schema": { "type": "object", "required": ["name", "ownerEmail"], "properties": { "name": { "type": "string" }, "ownerEmail": { "type": "string", "format": "email" } } } } }
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "name",
+                  "ownerEmail"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "ownerEmail": {
+                    "type": "string",
+                    "format": "email"
+                  }
+                }
+              }
+            }
+          }
         },
         "responses": {
-          "200": { "description": "{ merchantId, key: mk_live_… shown once, planId, paymentsPerMonth }" },
-          "409": { "description": "MERCHANT_ALREADY_REGISTERED" }
+          "200": {
+            "description": "{ merchantId, key: mk_live_… shown once, planId, paymentsPerMonth }"
+          },
+          "409": {
+            "description": "MERCHANT_ALREADY_REGISTERED"
+          }
         }
       }
     },
@@ -30,7 +66,11 @@
         "summary": "Enabled payment rails on this deployment",
         "security": [],
         "operationId": "listProviders",
-        "responses": { "200": { "description": "{ providers: [{ id, label, methods }] }" } }
+        "responses": {
+          "200": {
+            "description": "{ providers: [{ id, label, methods }] }"
+          }
+        }
       }
     },
     "/v2/pricing": {
@@ -38,8 +78,21 @@
         "summary": "Plans, prices and promotions for a product",
         "security": [],
         "operationId": "getPricing",
-        "parameters": [{ "name": "productId", "in": "query", "required": true, "schema": { "type": "string" } }],
-        "responses": { "200": { "description": "{ plans: [{ planId, priceMinor, currency, promotion }] }" } }
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "{ plans: [{ planId, priceMinor, currency, promotion }] }"
+          }
+        }
       }
     },
     "/v2/checkouts": {
@@ -47,8 +100,45 @@
         "summary": "Create a buyer-facing hosted checkout",
         "security": [],
         "operationId": "createCheckout",
-        "requestBody": { "required": true, "content": { "application/json": { "schema": { "type": "object", "required": ["productId", "planId"], "properties": { "productId": { "type": "string" }, "planId": { "type": "string" }, "provider": { "type": "string" }, "email": { "type": "string" }, "amountMinor": { "type": "integer" }, "currency": { "type": "string" } } } } } },
-        "responses": { "201": { "description": "{ reference: pay_…, checkoutUrl, provider, amountMinor, currency, test }" } }
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "productId",
+                  "planId"
+                ],
+                "properties": {
+                  "productId": {
+                    "type": "string"
+                  },
+                  "planId": {
+                    "type": "string"
+                  },
+                  "provider": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "amountMinor": {
+                    "type": "integer"
+                  },
+                  "currency": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "{ reference: pay_…, checkoutUrl, provider, amountMinor, currency, test }"
+          }
+        }
       }
     },
     "/v2/checkouts/{reference}/status": {
@@ -56,55 +146,692 @@
         "summary": "Poll a checkout's settlement status",
         "security": [],
         "operationId": "checkoutStatus",
-        "parameters": [{ "name": "reference", "in": "path", "required": true, "schema": { "type": "string" } }],
-        "responses": { "200": { "description": "{ reference, state, amountMinor, currency }" } }
+        "parameters": [
+          {
+            "name": "reference",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "{ reference, state, amountMinor, currency }"
+          }
+        }
       }
     },
     "/v2/licensing/checkout": {
-      "post": { "summary": "Sell and email a licence key", "operationId": "licensingCheckout", "security": [], "responses": { "201": { "description": "Checkout created; key emailed on settle" } } }
+      "post": {
+        "summary": "Sell and email a licence key",
+        "operationId": "licensingCheckout",
+        "security": [],
+        "responses": {
+          "201": {
+            "description": "Checkout created; key emailed on settle"
+          }
+        }
+      }
     },
     "/v2/licensing/activate": {
-      "post": { "summary": "Activate a licence key on a device", "operationId": "licensingActivate", "security": [], "responses": { "200": { "description": "{ entitlement } — signed, verifiable offline" } } }
+      "post": {
+        "summary": "Activate a licence key on a device",
+        "operationId": "licensingActivate",
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "{ entitlement } — signed, verifiable offline"
+          }
+        }
+      }
     },
     "/v2/licensing/recover": {
-      "post": { "summary": "Mail the buyer a fresh licence key", "operationId": "licensingRecover", "security": [], "responses": { "200": { "description": "Recovery email sent" } } }
+      "post": {
+        "summary": "Mail the buyer a fresh licence key",
+        "operationId": "licensingRecover",
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Recovery email sent"
+          }
+        }
+      }
     },
     "/v2/internal/checkouts": {
       "post": {
         "summary": "Create a server-side checkout (merchant-scoped)",
         "operationId": "internalCheckout",
-        "parameters": [{ "name": "idempotency-key", "in": "header", "required": true, "schema": { "type": "string" } }],
-        "requestBody": { "required": true, "content": { "application/json": { "schema": { "type": "object", "required": ["productId", "planId", "provider"], "properties": { "productId": { "type": "string" }, "planId": { "type": "string" }, "provider": { "type": "string" }, "email": { "type": "string" }, "externalSubject": { "type": "string" }, "amountMinor": { "type": "integer" }, "currency": { "type": "string" } } } } } },
-        "responses": { "201": { "description": "{ reference, checkoutUrl, provider, amountMinor, currency, test }" }, "403": { "description": "MERCHANT_SCOPE — product not bound to this merchant" } }
+        "parameters": [
+          {
+            "name": "idempotency-key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "productId",
+                  "planId",
+                  "provider"
+                ],
+                "properties": {
+                  "productId": {
+                    "type": "string"
+                  },
+                  "planId": {
+                    "type": "string"
+                  },
+                  "provider": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "externalSubject": {
+                    "type": "string"
+                  },
+                  "amountMinor": {
+                    "type": "integer"
+                  },
+                  "currency": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "{ reference, checkoutUrl, provider, amountMinor, currency, test }"
+          },
+          "403": {
+            "description": "MERCHANT_SCOPE — product not bound to this merchant"
+          }
+        }
       }
     },
     "/v2/internal/checkouts/status": {
-      "post": { "summary": "Poll a checkout's status (merchant)", "operationId": "internalCheckoutStatus", "responses": { "200": { "description": "{ reference, state }" } } }
+      "post": {
+        "summary": "Poll a checkout's status (merchant)",
+        "operationId": "internalCheckoutStatus",
+        "responses": {
+          "200": {
+            "description": "{ reference, state }"
+          }
+        }
+      }
     },
     "/v2/internal/payments": {
-      "post": { "summary": "Reconciliation ledger — idempotent drain with since/limit cursors", "operationId": "internalPayments", "responses": { "200": { "description": "{ payments: [{ reference, amountMinor, currency, settledAt }], cursor }" } } }
+      "post": {
+        "summary": "Reconciliation ledger — idempotent drain with since/limit cursors",
+        "operationId": "internalPayments",
+        "responses": {
+          "200": {
+            "description": "{ payments: [{ reference, amountMinor, currency, settledAt }], cursor }"
+          }
+        }
+      }
     },
     "/v2/internal/merchant/catalog": {
-      "get": { "summary": "Everything this key can sell — sites, plans, live prices. The sign-in check.", "operationId": "merchantCatalog", "responses": { "200": { "description": "{ merchantId, sites: [{ siteId, products, plans }], key: { mode, planId } }" }, "401": { "description": "key missing, wrong, or revoked — refused loudly" } } }
+      "get": {
+        "summary": "Everything this key can sell — sites, plans, live prices. The sign-in check.",
+        "operationId": "merchantCatalog",
+        "responses": {
+          "200": {
+            "description": "{ merchantId, sites: [{ siteId, products, plans }], key: { mode, planId } }"
+          },
+          "401": {
+            "description": "key missing, wrong, or revoked — refused loudly"
+          }
+        }
+      }
     },
     "/v2/internal/sites/webhook": {
-      "post": { "summary": "Set or rotate a site's settlement webhook URL+secret (secret shown once)", "operationId": "setWebhook", "responses": { "200": { "description": "{ webhookUrl, secret }" } } }
+      "post": {
+        "summary": "Set or rotate a site's settlement webhook URL+secret (secret shown once)",
+        "operationId": "setWebhook",
+        "responses": {
+          "200": {
+            "description": "{ webhookUrl, secret }"
+          }
+        }
+      }
     },
     "/v2/test/settle": {
-      "post": { "summary": "Settle a test checkout end-to-end — exercises the webhook without touching a provider (mk_test_* keys only)", "operationId": "testSettle", "responses": { "200": { "description": "Settled in test mode" } } }
+      "post": {
+        "summary": "Settle a test checkout end-to-end — exercises the webhook without touching a provider (mk_test_* keys only)",
+        "operationId": "testSettle",
+        "responses": {
+          "200": {
+            "description": "Settled in test mode"
+          }
+        }
+      }
     },
     "/mcp": {
       "post": {
-        "summary": "MCP endpoint — JSON-RPC 2.0 over HTTP. Tools: wavepay_register (unsigned), wavepay_providers, wavepay_pricing, wavepay_catalog, wavepay_checkout, wavepay_checkout_status",
+        "summary": "MCP endpoint — JSON-RPC 2.0 over HTTP. Tools: wavepay_register, wavepay_providers, wavepay_pricing, wavepay_checkout, wavepay_checkout_status, wavepay_features, wavepay_subscribe, wavepay_bnpl, wavepay_refund, wavepay_test_billing_run, wavepay_catalog",
         "operationId": "mcp",
         "security": [],
-        "responses": { "200": { "description": "JSON-RPC response" } }
+        "responses": {
+          "200": {
+            "description": "JSON-RPC response"
+          }
+        }
+      }
+    },
+    "/v2/features": {
+      "get": {
+        "summary": "Which flagged capabilities are on for live money (test keys can use all)",
+        "operationId": "features",
+        "responses": {
+          "200": {
+            "description": "{ features: [{flag, live, test}] }"
+          }
+        }
+      }
+    },
+    "/v2/internal/subscriptions": {
+      "post": {
+        "summary": "Open a subscription (flag: recurring; test keys always)",
+        "operationId": "createSubscription",
+        "description": "automatic charges a saved Paynow card token or a PayPal subscription; invoice_and_remind raises a payment request each period and is the only mode for mobile wallets (they cannot be debited unattended).",
+        "security": [
+          {
+            "merchantKey": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "maxLength": 128
+            },
+            "description": "Stable per operation; a retry with the same key returns the same result, never a second one."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "productId": {
+                    "type": "string"
+                  },
+                  "planId": {
+                    "type": "string",
+                    "description": "a time-limited plan with a price"
+                  },
+                  "provider": {
+                    "type": "string",
+                    "enum": [
+                      "paynow",
+                      "paynow-mobile",
+                      "paypal"
+                    ]
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "phone": {
+                    "type": "string"
+                  },
+                  "externalSubject": {
+                    "type": "string",
+                    "description": "your own customer id; owns the entitlement"
+                  },
+                  "collection": {
+                    "type": "string",
+                    "enum": [
+                      "automatic",
+                      "invoice_and_remind"
+                    ],
+                    "default": "invoice_and_remind"
+                  },
+                  "method": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "productId",
+                  "planId",
+                  "provider",
+                  "email",
+                  "externalSubject"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "403": {
+            "description": "FEATURE_DISABLED (flag off for live money) or MERCHANT_SCOPE"
+          }
+        }
+      },
+      "get": {
+        "summary": "List this merchant's subscriptions",
+        "operationId": "listSubscriptions",
+        "security": [
+          {
+            "merchantKey": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "403": {
+            "description": "FEATURE_DISABLED (flag off for live money) or MERCHANT_SCOPE"
+          }
+        }
+      }
+    },
+    "/v2/internal/subscriptions/cancel": {
+      "post": {
+        "summary": "Cancel a subscription now or at period end",
+        "operationId": "cancelSubscription",
+        "security": [
+          {
+            "merchantKey": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "atPeriodEnd": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "id"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "403": {
+            "description": "FEATURE_DISABLED (flag off for live money) or MERCHANT_SCOPE"
+          }
+        }
+      }
+    },
+    "/v2/internal/bnpl": {
+      "post": {
+        "summary": "Start buy-now-pay-later (flag: bnpl; test keys always)",
+        "operationId": "createBnpl",
+        "description": "Deposit now, the balance collected from the card until the total is paid (1, 2, then 3-day back-off, no attempt limit). Cards only; prepaid and virtual cards are refused. WavePay collects; it does not lend.",
+        "security": [
+          {
+            "merchantKey": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "maxLength": 128
+            },
+            "description": "Stable per operation; a retry with the same key returns the same result, never a second one."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "productId": {
+                    "type": "string"
+                  },
+                  "planId": {
+                    "type": "string"
+                  },
+                  "provider": {
+                    "type": "string",
+                    "enum": [
+                      "paynow",
+                      "paypal"
+                    ]
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "externalSubject": {
+                    "type": "string"
+                  },
+                  "instalments": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 24
+                  },
+                  "depositMinor": {
+                    "type": "integer"
+                  },
+                  "intervalDays": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 365
+                  }
+                },
+                "required": [
+                  "productId",
+                  "planId",
+                  "provider",
+                  "email",
+                  "externalSubject",
+                  "instalments"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "403": {
+            "description": "FEATURE_DISABLED (flag off for live money) or MERCHANT_SCOPE"
+          }
+        }
+      },
+      "get": {
+        "summary": "List this merchant's BNPL plans",
+        "operationId": "listBnpl",
+        "security": [
+          {
+            "merchantKey": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "403": {
+            "description": "FEATURE_DISABLED (flag off for live money) or MERCHANT_SCOPE"
+          }
+        }
+      }
+    },
+    "/v2/internal/bnpl/cancel": {
+      "post": {
+        "summary": "Cancel a BNPL plan",
+        "operationId": "cancelBnpl",
+        "security": [
+          {
+            "merchantKey": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "403": {
+            "description": "FEATURE_DISABLED (flag off for live money) or MERCHANT_SCOPE"
+          }
+        }
+      }
+    },
+    "/v2/internal/payment-methods": {
+      "get": {
+        "summary": "Saved payment methods (never the token)",
+        "operationId": "listPaymentMethods",
+        "security": [
+          {
+            "merchantKey": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "403": {
+            "description": "FEATURE_DISABLED (flag off for live money) or MERCHANT_SCOPE"
+          }
+        }
+      }
+    },
+    "/v2/internal/refunds": {
+      "post": {
+        "summary": "Refund a settled payment (flag: refunds; test keys always)",
+        "operationId": "createRefund",
+        "description": "PayPal and test payments. PayNow documents no refund API: REFUND_UNSUPPORTED. Never more than was paid in total.",
+        "security": [
+          {
+            "merchantKey": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "maxLength": 128
+            },
+            "description": "Stable per operation; a retry with the same key returns the same result, never a second one."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "reference": {
+                    "type": "string"
+                  },
+                  "amountMinor": {
+                    "type": "integer"
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "revokeAccess": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "reference"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "403": {
+            "description": "FEATURE_DISABLED (flag off for live money) or MERCHANT_SCOPE"
+          }
+        }
+      }
+    },
+    "/v2/internal/checkouts/otp": {
+      "post": {
+        "summary": "Complete an O'mari payment with the buyer's one-time PIN",
+        "operationId": "submitOtp",
+        "security": [
+          {
+            "merchantKey": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "reference": {
+                    "type": "string"
+                  },
+                  "otp": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "reference",
+                  "otp"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "403": {
+            "description": "FEATURE_DISABLED (flag off for live money) or MERCHANT_SCOPE"
+          }
+        }
+      }
+    },
+    "/v2/internal/paypal/disputes": {
+      "get": {
+        "summary": "PayPal disputes (operator key, flag: disputes)",
+        "operationId": "paypalDisputes",
+        "security": [
+          {
+            "merchantKey": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "403": {
+            "description": "FEATURE_DISABLED (flag off for live money) or MERCHANT_SCOPE"
+          }
+        }
+      }
+    },
+    "/v2/test/billing/run": {
+      "post": {
+        "summary": "Run the billing engine as if advanceDays had passed (mk_test_ keys only)",
+        "operationId": "testBillingRun",
+        "security": [
+          {
+            "merchantKey": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "advanceDays": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 3650
+                  }
+                },
+                "required": []
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "403": {
+            "description": "FEATURE_DISABLED (flag off for live money) or MERCHANT_SCOPE"
+          }
+        }
+      }
+    },
+    "/v2/test/pay/{reference}": {
+      "get": {
+        "summary": "Hosted page for a test checkout: Approve or Decline (test payments only)",
+        "operationId": "testPayPage",
+        "parameters": [
+          {
+            "name": "reference",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "HTML"
+          },
+          "409": {
+            "description": "NOT_A_TEST_PAYMENT"
+          }
+        }
       }
     }
   },
   "components": {
     "securitySchemes": {
-      "merchantKey": { "type": "apiKey", "in": "header", "name": "x-wavepay-service-key", "description": "mk_live_… / mk_test_… — minted by POST /v2/register, SHA-256 stored, shown once" }
+      "merchantKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-wavepay-service-key",
+        "description": "mk_live_… / mk_test_… — minted by POST /v2/register, SHA-256 stored, shown once"
+      }
     }
   }
 }

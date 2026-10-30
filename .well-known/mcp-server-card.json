@@ -8,16 +8,54 @@
     "endpoint": "https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp",
     "transport": "streamable-http",
     "protocolVersion": "2025-03-26",
-    "authentication": "none for wavepay_register; x-wavepay-service-key: mk_live_… for merchant tools — mint via POST /v2/register or the register tool",
+    "authentication": "none for wavepay_register; x-wavepay-service-key: mk_live_… (or mk_test_… for the sandbox) for merchant tools — mint both via POST /v2/register or the register tool",
     "stdioShim": "mcp-server.mjs in the repo forwards stdio MCP clients (Claude Desktop, Cursor, Devin) to the HTTP endpoint"
   },
   "tools": [
-    { "name": "wavepay_register", "description": "Register a merchant account — returns merchantId and a live mk_live_… key on the free tier. Works unsigned." },
-    { "name": "wavepay_providers", "description": "List the payment rails this deployment has enabled right now." },
-    { "name": "wavepay_pricing", "description": "Plans, prices and promotions for a product id." },
-    { "name": "wavepay_catalog", "description": "Everything the caller's merchant key can sell — sites, plans, live prices." },
-    { "name": "wavepay_checkout", "description": "Create a hosted checkout and get the buyer URL." },
-    { "name": "wavepay_checkout_status", "description": "Poll a checkout's settlement status by reference." }
+    {
+      "name": "wavepay_register",
+      "description": "Register a merchant account — returns merchantId, a live mk_live_… key and a mk_test_… test key on the free tier. Works unsigned."
+    },
+    {
+      "name": "wavepay_providers",
+      "description": "List the payment rails this deployment has enabled right now."
+    },
+    {
+      "name": "wavepay_pricing",
+      "description": "Plans, prices and promotions for a product id."
+    },
+    {
+      "name": "wavepay_checkout",
+      "description": "Create a hosted checkout (or a wallet push with a phone and method) and get the buyer URL or next step."
+    },
+    {
+      "name": "wavepay_checkout_status",
+      "description": "Poll a checkout's settlement status by reference."
+    },
+    {
+      "name": "wavepay_features",
+      "description": "Which flagged capabilities (refunds, recurring, bnpl, card_tokens, paypal_billing, disputes) are on for live money; test keys can use all."
+    },
+    {
+      "name": "wavepay_subscribe",
+      "description": "Open a subscription: automatic (saved card, PayPal) or invoice_and_remind (every wallet). Needs a merchant key."
+    },
+    {
+      "name": "wavepay_bnpl",
+      "description": "Buy now, pay later on a card: deposit now, instalments until the total is paid; prepaid and virtual cards refused."
+    },
+    {
+      "name": "wavepay_refund",
+      "description": "Refund a settled PayPal or test payment; Paynow payments are refused with REFUND_UNSUPPORTED."
+    },
+    {
+      "name": "wavepay_test_billing_run",
+      "description": "Test key only: run the billing engine as if advanceDays had passed."
+    },
+    {
+      "name": "wavepay_catalog",
+      "description": "Everything the caller's merchant key can sell — sites, plans, live prices."
+    }
   ],
   "verification": {
     "openapi": "https://wavepay.t3ratech.co.zw/openapi.json",

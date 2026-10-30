@@ -1,7 +1,7 @@
 {
   "name": "WavePay FAQ",
   "url": "https://wavepay.t3ratech.co.zw/faq.html",
-  "dateModified": "2026-10-09",
+  "dateModified": "2026-10-30",
   "questions": [
     {
       "question": "What is WavePay?",
@@ -45,13 +45,28 @@
     },
     {
       "question": "Can I charge someone without a browser?",
-      "answer": "Yes, for EcoCash, OneMoney and InnBucks: use provider paynow-mobile with the buyer's phone number and the wallet prompt is pushed straight to the handset to approve with a PIN. The wallet a deployment pushes to is part of its configuration — GET /v2/providers shows it. Games and bots, where a hosted page cannot open, use this.",
+      "answer": "Yes, for EcoCash, OneMoney, InnBucks and O'mari: use provider paynow-mobile with the buyer's phone number and the wallet prompt is pushed straight to the handset to approve with a PIN. The wallet a deployment pushes to is part of its configuration — GET /v2/providers shows it. Games and bots, where a hosted page cannot open, use this.",
       "url": "https://wavepay.t3ratech.co.zw/faq.html#express-push"
     },
     {
       "question": "Can I test without moving money?",
-      "answer": "Yes. A test key (mk_test_…) uses the same routes with fake money and never counts against your payment cap, and POST /v2/test/settle exercises your webhook end to end.",
+      "answer": "Yes. POST /v2/register returns a test key (mk_test_…) beside your live one. A test key uses the same routes, settles through a simulator that never contacts a provider, and never counts against your payment cap. Paynow's own test phone numbers choose the outcome: 0771111111 pays, 0772222222 pays after ten seconds, 0773333333 cancels, 0774444444 fails. POST /v2/test/billing/run advances time so renewals and instalments can be tested without waiting, and POST /v2/test/settle exercises your webhook end to end.",
       "url": "https://wavepay.t3ratech.co.zw/faq.html#testing"
+    },
+    {
+      "question": "Can I charge customers every month?",
+      "answer": "Yes, as subscriptions. A saved card (where Paynow has approved card tokens for the deployment) or a PayPal subscription is charged automatically. EcoCash, OneMoney, InnBucks and O'mari cannot be debited without the customer, so each period the customer is sent a fresh payment prompt and their access follows what they actually pay. GET /v2/features reports which of these a deployment has switched on for live money; a test key can use all of them today.",
+      "url": "https://wavepay.t3ratech.co.zw/faq.html#recurring"
+    },
+    {
+      "question": "Can customers buy now and pay later?",
+      "answer": "Yes, on cards. The customer pays a deposit, the rest is collected from that card on a schedule, and collection continues until the total is paid. Prepaid cards and virtual cards are refused because they can be emptied or closed after delivery. WavePay collects; it does not lend, so the merchant carries the risk that a card stops working, which is why access is suspended after a grace period of missed payments and restored when payment resumes. Mobile wallets are not offered BNPL because they cannot be debited unattended.",
+      "url": "https://wavepay.t3ratech.co.zw/faq.html#bnpl"
+    },
+    {
+      "question": "Can I refund a payment?",
+      "answer": "Yes for PayPal payments and for test payments: POST /v2/internal/refunds with an Idempotency-Key refunds all or part of a settled payment, never more than was paid. Paynow documents no refund API, so a Paynow payment is refused with REFUND_UNSUPPORTED rather than recorded as refunded; refund those from the Paynow dashboard.",
+      "url": "https://wavepay.t3ratech.co.zw/faq.html#refunds"
     },
     {
       "question": "What happens when I hit my plan's payment cap?",

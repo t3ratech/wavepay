@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How to take payments in a game · WavePay</title>
-<meta name="description" content="In a game, charge a player without leaving the session by using provider paynow-mobile with their phone number — the EcoCash, OneMoney or InnBucks prompt is pushed to their handset and your game polls checkout status until it reads collected.">
+<meta name="description" content="In a game, charge a player without leaving the session by using provider paynow-mobile with their phone number — the EcoCash, OneMoney, InnBucks or O'mari prompt is pushed to their handset and your game polls checkout status until it reads collected.">
 <link rel="canonical" href="https://wavepay.t3ratech.co.zw/payments-for-games.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="WavePay">
 <meta property="og:title" content="How to take payments in a game">
-<meta property="og:description" content="In a game, charge a player without leaving the session by using provider paynow-mobile with their phone number — the EcoCash, OneMoney or InnBucks prompt is pushed to their handset and your game polls checkout status until it reads collected.">
+<meta property="og:description" content="In a game, charge a player without leaving the session by using provider paynow-mobile with their phone number — the EcoCash, OneMoney, InnBucks or O'mari prompt is pushed to their handset and your game polls checkout status until it reads collected.">
 <meta property="og:url" content="https://wavepay.t3ratech.co.zw/payments-for-games.html">
 <meta property="og:image" content="https://wavepay.t3ratech.co.zw/assets/social-card.png">
-<meta property="article:modified_time" content="2026-10-09">
-<meta property="og:updated_time" content="2026-10-09">
+<meta property="article:modified_time" content="2026-10-30">
+<meta property="og:updated_time" content="2026-10-30">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@t3ratech">
 <link rel="alternate" type="text/markdown" href="https://wavepay.t3ratech.co.zw/skill.md" title="Instructions for agents">
@@ -28,13 +28,13 @@ try {
 } catch (e) {}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does the player need to open a web page?","acceptedAnswer":{"@type":"Answer","text":"No. With paynow-mobile the prompt arrives on their handset, for EcoCash, OneMoney and InnBucks wallets."}},{"@type":"Question","name":"How do I avoid double-charging on a retry?","acceptedAnswer":{"@type":"Answer","text":"Send the same Idempotency-Key; the same checkout is returned."}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does the player need to open a web page?","acceptedAnswer":{"@type":"Answer","text":"No. With paynow-mobile the prompt arrives on their handset, for EcoCash, OneMoney, InnBucks and O'mari wallets."}},{"@type":"Question","name":"How do I avoid double-charging on a retry?","acceptedAnswer":{"@type":"Answer","text":"Send the same Idempotency-Key; the same checkout is returned."}}]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://wavepay.t3ratech.co.zw/index.html"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://wavepay.t3ratech.co.zw/learn.html"},{"@type":"ListItem","position":3,"name":"How to take payments in a game","item":"https://wavepay.t3ratech.co.zw/payments-for-games.html"}]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"How to take payments in a game","description":"In a game, charge a player without leaving the session by using provider paynow-mobile with their phone number — the EcoCash, OneMoney or InnBucks prompt is pushed to their handset and your game polls checkout status until it reads collected.","datePublished":"2026-10-09","dateModified":"2026-10-09","author":{"@type":"Organization","name":"TeraTech Solutions (Private) Limited","url":"https://t3ratech.co.zw"},"publisher":{"@id":"https://wavepay.t3ratech.co.zw/#organization"},"mainEntityOfPage":"https://wavepay.t3ratech.co.zw/payments-for-games.html"}
+{"@context":"https://schema.org","@type":"Article","headline":"How to take payments in a game","description":"In a game, charge a player without leaving the session by using provider paynow-mobile with their phone number — the EcoCash, OneMoney, InnBucks or O'mari prompt is pushed to their handset and your game polls checkout status until it reads collected.","datePublished":"2026-10-30","dateModified":"2026-10-30","author":{"@type":"Organization","name":"TeraTech Solutions (Private) Limited","url":"https://t3ratech.co.zw"},"publisher":{"@id":"https://wavepay.t3ratech.co.zw/#organization"},"mainEntityOfPage":"https://wavepay.t3ratech.co.zw/payments-for-games.html"}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","@id":"https://wavepay.t3ratech.co.zw/#organization","name":"TeraTech Solutions (Private) Limited","alternateName":"T3raTech","url":"https://t3ratech.co.zw","logo":"https://wavepay.t3ratech.co.zw/assets/favicon.svg","sameAs":["https://github.com/t3ratech","https://www.npmjs.com/org/t3ratech","https://x.com/t3ratech"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"t3ratech.dev@gmail.com","availableLanguage":["en"]}]}
@@ -74,13 +74,13 @@ try {
 </header>
 
 <main id="main">
-<section class="hero wrap"><span class="eyebrow">USE CASE</span><h1>How to take payments in a game</h1><p class="lede" data-answer>In a game, charge a player without leaving the session by using provider paynow-mobile with their phone number — the EcoCash, OneMoney or InnBucks prompt is pushed to their handset and your game polls checkout status until it reads collected.</p></section>
-<section class="block wrap prose"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> › <a href="learn.html">Guides</a> › <span aria-current="page">How to take payments in a game</span></nav><p class="muted">Updated <time datetime="2026-10-09">2026-10-09</time> · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month</p>
+<section class="hero wrap"><span class="eyebrow">USE CASE</span><h1>How to take payments in a game</h1><p class="lede" data-answer>In a game, charge a player without leaving the session by using provider paynow-mobile with their phone number — the EcoCash, OneMoney, InnBucks or O'mari prompt is pushed to their handset and your game polls checkout status until it reads collected.</p></section>
+<section class="block wrap prose"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> › <a href="learn.html">Guides</a> › <span aria-current="page">How to take payments in a game</span></nav><p class="muted">Updated <time datetime="2026-10-30">2026-10-30</time> · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month</p>
 <h2>The flow</h2>
 <ol><li>Create: POST /v2/checkouts with provider paynow-mobile and the player's phone (EcoCash, OneMoney or InnBucks).</li><li>Wait: poll GET /v2/checkouts/&lt;reference&gt;/status — pending, collected or expired.</li><li>Grant: unlock the item when the status reads collected, or on your signed webhook.</li><li>Retry safely: reuse the same Idempotency-Key so a network retry cannot charge twice.</li></ol>
 <h2>Questions</h2>
 <h3>Does the player need to open a web page?</h3>
-<p>No. With paynow-mobile the prompt arrives on their handset, for EcoCash, OneMoney and InnBucks wallets.</p>
+<p>No. With paynow-mobile the prompt arrives on their handset, for EcoCash, OneMoney, InnBucks and O'mari wallets.</p>
 <h3>How do I avoid double-charging on a retry?</h3>
 <p>Send the same Idempotency-Key; the same checkout is returned.</p>
 </section>

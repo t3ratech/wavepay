@@ -133,7 +133,7 @@ curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/checkout
   -d '{"productId":"wavepay","planId":"pro","provider":"paynow","email":"you@example.com"}'
 # → 201 { "checkoutUrl": "https://www.paynow.co.zw/…", … } — settle it and
 #   your merchant's plan_id moves to pro. provider "paypal" works too.</code></pre>
-      <p class="muted">Agents: <a href="skill.md">skill.md</a> is the same story in one markdown file, and <code>POST /mcp</code> exposes it all as tools. Test mode lives on the key (<code>mk_test_…</code>) — same routes, fake money, never counts against the cap. Questions: <a href="mailto:t3ratech.dev@gmail.com">t3ratech.dev@gmail.com</a>.</p>
+      <p class="muted">Agents: <a href="skill.md">skill.md</a> is the same story in one markdown file, and <code>POST /mcp</code> exposes it all as tools. Registration returns a live key and a test key (<code>mk_test_…</code>) — the test key uses the same routes with fake money, never reaches a provider and never counts against the cap. Subscriptions, buy now pay later and refunds are usable in test mode today and switched on for live money per deployment (<code>GET /v2/features</code>). Questions: <a href="mailto:t3ratech.dev@gmail.com">t3ratech.dev@gmail.com</a>.</p>
     </div>
 
     <div class="card" style="margin-top:16px;max-width:780px">

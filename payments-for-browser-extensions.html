@@ -12,8 +12,8 @@
 <meta property="og:description" content="Sell a browser extension with WavePay by creating a checkout for your Pro plan, emailing a licence key on payment, and letting the extension verify an Ed25519-signed entitlement offline — T3rnel Browser sells Pro this way in production.">
 <meta property="og:url" content="https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html">
 <meta property="og:image" content="https://wavepay.t3ratech.co.zw/assets/social-card.png">
-<meta property="article:modified_time" content="2026-10-09">
-<meta property="og:updated_time" content="2026-10-09">
+<meta property="article:modified_time" content="2026-10-30">
+<meta property="og:updated_time" content="2026-10-30">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@t3ratech">
 <link rel="alternate" type="text/markdown" href="https://wavepay.t3ratech.co.zw/skill.md" title="Instructions for agents">
@@ -34,7 +34,7 @@ try {
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://wavepay.t3ratech.co.zw/index.html"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://wavepay.t3ratech.co.zw/learn.html"},{"@type":"ListItem","position":3,"name":"How to charge for a browser extension","item":"https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html"}]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"How to charge for a browser extension","description":"Sell a browser extension with WavePay by creating a checkout for your Pro plan, emailing a licence key on payment, and letting the extension verify an Ed25519-signed entitlement offline — T3rnel Browser sells Pro this way in production.","datePublished":"2026-10-09","dateModified":"2026-10-09","author":{"@type":"Organization","name":"TeraTech Solutions (Private) Limited","url":"https://t3ratech.co.zw"},"publisher":{"@id":"https://wavepay.t3ratech.co.zw/#organization"},"mainEntityOfPage":"https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html"}
+{"@context":"https://schema.org","@type":"Article","headline":"How to charge for a browser extension","description":"Sell a browser extension with WavePay by creating a checkout for your Pro plan, emailing a licence key on payment, and letting the extension verify an Ed25519-signed entitlement offline — T3rnel Browser sells Pro this way in production.","datePublished":"2026-10-30","dateModified":"2026-10-30","author":{"@type":"Organization","name":"TeraTech Solutions (Private) Limited","url":"https://t3ratech.co.zw"},"publisher":{"@id":"https://wavepay.t3ratech.co.zw/#organization"},"mainEntityOfPage":"https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html"}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","@id":"https://wavepay.t3ratech.co.zw/#organization","name":"TeraTech Solutions (Private) Limited","alternateName":"T3raTech","url":"https://t3ratech.co.zw","logo":"https://wavepay.t3ratech.co.zw/assets/favicon.svg","sameAs":["https://github.com/t3ratech","https://www.npmjs.com/org/t3ratech","https://x.com/t3ratech"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"t3ratech.dev@gmail.com","availableLanguage":["en"]}]}
@@ -75,7 +75,7 @@ try {
 
 <main id="main">
 <section class="hero wrap"><span class="eyebrow">USE CASE</span><h1>How to charge for a browser extension</h1><p class="lede" data-answer>Sell a browser extension with WavePay by creating a checkout for your Pro plan, emailing a licence key on payment, and letting the extension verify an Ed25519-signed entitlement offline — T3rnel Browser sells Pro this way in production.</p></section>
-<section class="block wrap prose"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> › <a href="learn.html">Guides</a> › <span aria-current="page">How to charge for a browser extension</span></nav><p class="muted">Updated <time datetime="2026-10-09">2026-10-09</time> · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month</p>
+<section class="block wrap prose"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> › <a href="learn.html">Guides</a> › <span aria-current="page">How to charge for a browser extension</span></nav><p class="muted">Updated <time datetime="2026-10-30">2026-10-30</time> · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month</p>
 <h2>The flow</h2>
 <ol><li>Checkout: POST /v2/checkouts for the plan; the buyer pays with the rail they hold.</li><li>Licence: a paid checkout emails a licence key automatically.</li><li>Activation: POST /v2/licensing/activate with the key and a deviceId returns a signed entitlement.</li><li>Verification: the extension checks the entitlement offline against GET /v2/licensing/public-key — no call home on every launch.</li><li>Recovery: POST /v2/licensing/recover mails a lost key again.</li></ol>
 <h2>Questions</h2>

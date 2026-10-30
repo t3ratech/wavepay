@@ -27,7 +27,7 @@ Register a merchant without human help:
 
 ```
 POST /v2/register { "name": "<your product>", "ownerEmail": "<operator inbox>" }
-→ { "merchantId": "mer_…", "key": "mk_live_…", "planId": "free" }
+→ { "merchantId": "mer_…", "key": "mk_live_…", "testKey": "mk_test_…", "planId": "free" }
 ```
 
 ## Permissions
@@ -47,8 +47,14 @@ POST /v2/register { "name": "<your product>", "ownerEmail": "<operator inbox>" }
 - Webhooks: verify `x-wavepay-signature` as `hex_hmac_sha256(secret,
   t.raw_body)` and enforce the 300s replay window — the spec is in
   `docs.html` and `openapi.json`.
-- `mk_test_*` keys settle through `POST /v2/test/settle` without touching a
-  provider — use them for every integration test, never live keys.
+- `mk_test_*` keys settle through a simulator and never touch a provider — use
+  them for every integration test, never live keys. Pick the outcome with
+  Paynow's test phones (`0771111111` paid, `0772222222` delayed, `0773333333`
+  cancelled, `0774444444` failed); `POST /v2/test/billing/run` advances time for
+  subscriptions and instalments.
+- Subscriptions, BNPL and refunds are feature-flagged: read `GET /v2/features`
+  before relying on one for live money. EcoCash, OneMoney, InnBucks and O'mari
+  cannot be debited unattended — never promise auto-renewal on a wallet.
 
 ## Identity and errors
 

@@ -12,8 +12,8 @@
 <meta property="og:description" content="Send a stable Idempotency-Key with every POST /v2/checkouts — derived from your order id, not generated per attempt — and a retry after a timeout returns the original checkout instead of creating a second charge.">
 <meta property="og:url" content="https://wavepay.t3ratech.co.zw/guide-idempotent-checkouts.html">
 <meta property="og:image" content="https://wavepay.t3ratech.co.zw/assets/social-card.png">
-<meta property="article:modified_time" content="2026-10-09">
-<meta property="og:updated_time" content="2026-10-09">
+<meta property="article:modified_time" content="2026-10-30">
+<meta property="og:updated_time" content="2026-10-30">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@t3ratech">
 <link rel="alternate" type="text/markdown" href="https://wavepay.t3ratech.co.zw/skill.md" title="Instructions for agents">
@@ -31,7 +31,7 @@ try {
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://wavepay.t3ratech.co.zw/index.html"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://wavepay.t3ratech.co.zw/learn.html"},{"@type":"ListItem","position":3,"name":"Idempotent checkouts: why a retry should never charge twice","item":"https://wavepay.t3ratech.co.zw/guide-idempotent-checkouts.html"}]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"Idempotent checkouts: why a retry should never charge twice","description":"Send a stable Idempotency-Key with every POST /v2/checkouts — derived from your order id, not generated per attempt — and a retry after a timeout returns the original checkout instead of creating a second charge.","datePublished":"2026-10-09","dateModified":"2026-10-09","author":{"@type":"Organization","name":"TeraTech Solutions (Private) Limited","url":"https://t3ratech.co.zw"},"publisher":{"@id":"https://wavepay.t3ratech.co.zw/#organization"},"mainEntityOfPage":"https://wavepay.t3ratech.co.zw/guide-idempotent-checkouts.html"}
+{"@context":"https://schema.org","@type":"Article","headline":"Idempotent checkouts: why a retry should never charge twice","description":"Send a stable Idempotency-Key with every POST /v2/checkouts — derived from your order id, not generated per attempt — and a retry after a timeout returns the original checkout instead of creating a second charge.","datePublished":"2026-10-30","dateModified":"2026-10-30","author":{"@type":"Organization","name":"TeraTech Solutions (Private) Limited","url":"https://t3ratech.co.zw"},"publisher":{"@id":"https://wavepay.t3ratech.co.zw/#organization"},"mainEntityOfPage":"https://wavepay.t3ratech.co.zw/guide-idempotent-checkouts.html"}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","@id":"https://wavepay.t3ratech.co.zw/#organization","name":"TeraTech Solutions (Private) Limited","alternateName":"T3raTech","url":"https://t3ratech.co.zw","logo":"https://wavepay.t3ratech.co.zw/assets/favicon.svg","sameAs":["https://github.com/t3ratech","https://www.npmjs.com/org/t3ratech","https://x.com/t3ratech"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"t3ratech.dev@gmail.com","availableLanguage":["en"]}]}
@@ -72,7 +72,7 @@ try {
 
 <main id="main">
 <section class="hero wrap"><span class="eyebrow">HOW IT WORKS</span><h1>Idempotent checkouts: why a retry should never charge twice</h1><p class="lede" data-answer>Send a stable Idempotency-Key with every POST /v2/checkouts — derived from your order id, not generated per attempt — and a retry after a timeout returns the original checkout instead of creating a second charge.</p></section>
-<section class="block wrap prose"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> › <a href="learn.html">Guides</a> › <span aria-current="page">Idempotent checkouts: why a retry should never charge twice</span></nav><p class="muted">Updated <time datetime="2026-10-09">2026-10-09</time> · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month</p>
+<section class="block wrap prose"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> › <a href="learn.html">Guides</a> › <span aria-current="page">Idempotent checkouts: why a retry should never charge twice</span></nav><p class="muted">Updated <time datetime="2026-10-30">2026-10-30</time> · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month</p>
 <h2>The failure it prevents</h2>
 <p>A request times out and the client cannot tell whether the checkout was created. Without a key the safe-looking retry creates a second checkout and can charge the buyer twice.</p>
 <h2>Choosing the key</h2>
@@ -82,7 +82,7 @@ try {
 <h2>Reconciling</h2>
 <p>Match on the checkout reference (pay_…) that comes back; the ledger holds one row per settlement.</p>
 </section>
-<section class="block wrap"><h2>Keep going</h2><ul class="plain"><li><a href="guide-offline-licence-verification.html">How offline licence verification works with Ed25519 entitlements</a></li><li><a href="docs.html">API reference</a></li><li><a href="faq.html">FAQ</a></li></ul></section>
+<section class="block wrap"><h2>Keep going</h2><ul class="plain"><li><a href="guide-test-mode.html">Testing WavePay with fake money: test keys, simulated outcomes and time travel</a></li><li><a href="docs.html">API reference</a></li><li><a href="faq.html">FAQ</a></li></ul></section>
 </main>
 
 <footer class="site-foot">

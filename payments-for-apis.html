@@ -12,8 +12,8 @@
 <meta property="og:description" content="Charge for an API with WavePay by selling plans through checkout, issuing a licence key on payment, and gating requests on the key — settlement arrives by signed webhook so access can be granted automatically.">
 <meta property="og:url" content="https://wavepay.t3ratech.co.zw/payments-for-apis.html">
 <meta property="og:image" content="https://wavepay.t3ratech.co.zw/assets/social-card.png">
-<meta property="article:modified_time" content="2026-10-09">
-<meta property="og:updated_time" content="2026-10-09">
+<meta property="article:modified_time" content="2026-10-30">
+<meta property="og:updated_time" content="2026-10-30">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@t3ratech">
 <link rel="alternate" type="text/markdown" href="https://wavepay.t3ratech.co.zw/skill.md" title="Instructions for agents">
@@ -34,7 +34,7 @@ try {
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://wavepay.t3ratech.co.zw/index.html"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://wavepay.t3ratech.co.zw/learn.html"},{"@type":"ListItem","position":3,"name":"How to charge for API access","item":"https://wavepay.t3ratech.co.zw/payments-for-apis.html"}]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"How to charge for API access","description":"Charge for an API with WavePay by selling plans through checkout, issuing a licence key on payment, and gating requests on the key — settlement arrives by signed webhook so access can be granted automatically.","datePublished":"2026-10-09","dateModified":"2026-10-09","author":{"@type":"Organization","name":"TeraTech Solutions (Private) Limited","url":"https://t3ratech.co.zw"},"publisher":{"@id":"https://wavepay.t3ratech.co.zw/#organization"},"mainEntityOfPage":"https://wavepay.t3ratech.co.zw/payments-for-apis.html"}
+{"@context":"https://schema.org","@type":"Article","headline":"How to charge for API access","description":"Charge for an API with WavePay by selling plans through checkout, issuing a licence key on payment, and gating requests on the key — settlement arrives by signed webhook so access can be granted automatically.","datePublished":"2026-10-30","dateModified":"2026-10-30","author":{"@type":"Organization","name":"TeraTech Solutions (Private) Limited","url":"https://t3ratech.co.zw"},"publisher":{"@id":"https://wavepay.t3ratech.co.zw/#organization"},"mainEntityOfPage":"https://wavepay.t3ratech.co.zw/payments-for-apis.html"}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","@id":"https://wavepay.t3ratech.co.zw/#organization","name":"TeraTech Solutions (Private) Limited","alternateName":"T3raTech","url":"https://t3ratech.co.zw","logo":"https://wavepay.t3ratech.co.zw/assets/favicon.svg","sameAs":["https://github.com/t3ratech","https://www.npmjs.com/org/t3ratech","https://x.com/t3ratech"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"t3ratech.dev@gmail.com","availableLanguage":["en"]}]}
@@ -75,7 +75,7 @@ try {
 
 <main id="main">
 <section class="hero wrap"><span class="eyebrow">USE CASE</span><h1>How to charge for API access</h1><p class="lede" data-answer>Charge for an API with WavePay by selling plans through checkout, issuing a licence key on payment, and gating requests on the key — settlement arrives by signed webhook so access can be granted automatically.</p></section>
-<section class="block wrap prose"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> › <a href="learn.html">Guides</a> › <span aria-current="page">How to charge for API access</span></nav><p class="muted">Updated <time datetime="2026-10-09">2026-10-09</time> · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month</p>
+<section class="block wrap prose"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> › <a href="learn.html">Guides</a> › <span aria-current="page">How to charge for API access</span></nav><p class="muted">Updated <time datetime="2026-10-30">2026-10-30</time> · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month</p>
 <h2>The flow</h2>
 <ol><li>Sell: a checkout per plan with POST /v2/checkouts.</li><li>Issue: the paid checkout emails the licence key; activation returns a signed entitlement.</li><li>Gate: your API checks the entitlement or key before serving a request.</li><li>Automate: register a webhook with POST /v2/internal/sites/webhook; the HMAC secret is returned once.</li></ol>
 <h2>Questions</h2>

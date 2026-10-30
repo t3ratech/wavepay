@@ -22,20 +22,26 @@
 ## API
 
 - Base: https://t3rnel-wavepay-production.t3ratech.workers.dev
-- Register: `POST /v2/register` `{name, ownerEmail}` → `mk_live_…` key (shown once)
+- Register: `POST /v2/register` `{name, ownerEmail}` → `mk_live_…` key and `mk_test_…` key (both shown once)
 - Checkout: `POST /v2/checkouts` `{productId, planId, provider, email}` → `checkoutUrl`
 - Status: `GET /v2/checkouts/<reference>/status`
 - Pricing: `GET /v2/pricing?productId=…`
 - Providers: `GET /v2/providers`
 - Licensing: `POST /v2/licensing/checkout`, `/v2/licensing/activate`, `GET /v2/licensing/public-key`
-- MCP: `POST /mcp` JSON-RPC — wavepay_register / wavepay_providers / wavepay_pricing / wavepay_checkout / wavepay_checkout_status / wavepay_catalog
+- Features: `GET /v2/features` — which of refunds / recurring / bnpl / card_tokens / paypal_billing / disputes are on for live money (test keys can use all)
+- Subscriptions: `POST /v2/internal/subscriptions` (Idempotency-Key required), `GET` to list, `POST /v2/internal/subscriptions/cancel`
+- Buy now, pay later: `POST /v2/internal/bnpl` — deposit now, instalments on a card until the total is paid; prepaid and virtual cards refused
+- Refunds: `POST /v2/internal/refunds` — PayPal and test payments; Paynow has no refund API
+- Test mode: `POST /v2/test/billing/run {advanceDays}`, hosted `/v2/test/pay/<reference>`, `POST /v2/test/settle`
+- MCP: `POST /mcp` JSON-RPC — wavepay_register / wavepay_providers / wavepay_pricing / wavepay_checkout / wavepay_checkout_status / wavepay_features / wavepay_subscribe / wavepay_bnpl / wavepay_refund / wavepay_test_billing_run / wavepay_catalog
 - Merchant auth: `x-wavepay-service-key: mk_live_…`
 
 ## Rules
 
 - Idempotency-Key header on checkouts — retries return the same payment
 - Free tier: 25 payments/30 days; Basic $9/mo: 250; Pro $29/mo: 2,500
-- Test keys `mk_test_…` exercise every route without real money
+- Test keys `mk_test_…` exercise every route with fake money and never reach a provider; Paynow's test phones 0771111111 / 0772222222 / 0773333333 / 0774444444 choose paid / delayed / cancelled / failed
+- EcoCash, OneMoney, InnBucks and O'mari cannot be debited unattended: subscriptions on wallets send a payment request each period; only cards and PayPal charge automatically
 
 ## Answers and guides
 
@@ -60,6 +66,9 @@
 
 ### How it works
 
+- [Testing WavePay with fake money: test keys, simulated outcomes and time travel](https://wavepay.t3ratech.co.zw/guide-test-mode.html)
+- [Recurring payments in Zimbabwe: what charges automatically and what cannot](https://wavepay.t3ratech.co.zw/guide-recurring-payments.html)
+- [Buy now, pay later for software: deposits and instalments on cards](https://wavepay.t3ratech.co.zw/guide-buy-now-pay-later.html)
 - [How offline licence verification works with Ed25519 entitlements](https://wavepay.t3ratech.co.zw/guide-offline-licence-verification.html)
 - [Idempotent checkouts: why a retry should never charge twice](https://wavepay.t3ratech.co.zw/guide-idempotent-checkouts.html)
 

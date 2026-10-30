@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Testing WavePay with fake money: test keys, simulated outcomes and time travel · WavePay</title>
+<meta name="description" content="POST /v2/register returns a live key and a test key (mk_test_…); the test key calls the same routes but settles through a simulator that never contacts a payment provider, so you can drive every outcome of your integration, including renewals and instalments, without moving money.">
+<link rel="canonical" href="https://wavepay.t3ratech.co.zw/guide-test-mode.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="WavePay">
+<meta property="og:title" content="Testing WavePay with fake money: test keys, simulated outcomes and time travel">
+<meta property="og:description" content="POST /v2/register returns a live key and a test key (mk_test_…); the test key calls the same routes but settles through a simulator that never contacts a payment provider, so you can drive every outcome of your integration, including renewals and instalments, without moving money.">
+<meta property="og:url" content="https://wavepay.t3ratech.co.zw/guide-test-mode.html">
+<meta property="og:image" content="https://wavepay.t3ratech.co.zw/assets/social-card.png">
+<meta property="article:modified_time" content="2026-10-30">
+<meta property="og:updated_time" content="2026-10-30">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@t3ratech">
+<link rel="alternate" type="text/markdown" href="https://wavepay.t3ratech.co.zw/skill.md" title="Instructions for agents">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<meta name="theme-color" content="#fbfdfc" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c1110" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+try {
+  const t = (document.cookie.match(/(?:^|; )wp_theme=([^;]*)/) || [])[1];
+  if (t === "light" || t === "dark") document.documentElement.dataset.theme = decodeURIComponent(t);
+} catch (e) {}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://wavepay.t3ratech.co.zw/index.html"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://wavepay.t3ratech.co.zw/learn.html"},{"@type":"ListItem","position":3,"name":"Testing WavePay with fake money: test keys, simulated outcomes and time travel","item":"https://wavepay.t3ratech.co.zw/guide-test-mode.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Testing WavePay with fake money: test keys, simulated outcomes and time travel","description":"POST /v2/register returns a live key and a test key (mk_test_…); the test key calls the same routes but settles through a simulator that never contacts a payment provider, so you can drive every outcome of your integration, including renewals and instalments, without moving money.","datePublished":"2026-10-30","dateModified":"2026-10-30","author":{"@type":"Organization","name":"TeraTech Solutions (Private) Limited","url":"https://t3ratech.co.zw"},"publisher":{"@id":"https://wavepay.t3ratech.co.zw/#organization"},"mainEntityOfPage":"https://wavepay.t3ratech.co.zw/guide-test-mode.html"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","@id":"https://wavepay.t3ratech.co.zw/#organization","name":"TeraTech Solutions (Private) Limited","alternateName":"T3raTech","url":"https://t3ratech.co.zw","logo":"https://wavepay.t3ratech.co.zw/assets/favicon.svg","sameAs":["https://github.com/t3ratech","https://www.npmjs.com/org/t3ratech","https://x.com/t3ratech"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"t3ratech.dev@gmail.com","availableLanguage":["en"]}]}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NBFP6LVCZT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-NBFP6LVCZT",{anonymize_ip:true});</script>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M2 12c2.5-4 5-6 7.5-6S14 8.5 16.5 12s5 6 7.5 6"/></svg></span>
+      <span>WavePay<small>by T3raTech</small></span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html" data-i18n="nav.home">Overview</a>
+      <a href="pricing.html" data-i18n="nav.pricing">Pricing</a>
+      <a href="docs.html" data-i18n="nav.docs">Docs</a>
+      <a href="faq.html">FAQ</a>
+      <a href="status.html" data-i18n="nav.status">Status</a>
+      <a href="https://t3rnel-wavepay-production.t3ratech.workers.dev/portal/login" data-i18n="nav.signin">Sign in</a>
+      <a href="skill.md" title="Instructions for agents">skill.md</a>
+    </nav>
+    <div class="prefs">
+      <button type="button" data-theme-choice="system" title="System theme" onclick="__wpTheme('system')">Auto</button>
+      <button type="button" data-theme-choice="light" title="Light theme" onclick="__wpTheme('light')">Light</button>
+      <button type="button" data-theme-choice="dark" title="Dark theme" onclick="__wpTheme('dark')">Dark</button>
+      <select aria-label="Language" onchange="__wpLang(this.value)">
+        <option value="en">English</option>
+        <option value="sn">chiShona</option>
+        <option value="nd">isiNdebele</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero wrap"><span class="eyebrow">HOW IT WORKS</span><h1>Testing WavePay with fake money: test keys, simulated outcomes and time travel</h1><p class="lede" data-answer>POST /v2/register returns a live key and a test key (mk_test_…); the test key calls the same routes but settles through a simulator that never contacts a payment provider, so you can drive every outcome of your integration, including renewals and instalments, without moving money.</p></section>
+<section class="block wrap prose"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> › <a href="learn.html">Guides</a> › <span aria-current="page">Testing WavePay with fake money: test keys, simulated outcomes and time travel</span></nav><p class="muted">Updated <time datetime="2026-10-30">2026-10-30</time> · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month</p>
+<h2>Getting a test key</h2>
+<p>Registration returns key (mk_live_…) and testKey (mk_test_…) together, both shown once. Send either in the x-wavepay-service-key header. A test key never counts against your plan's payment cap.</p>
+<h2>Choosing the outcome</h2>
+<p>Use Paynow's own test phone numbers: 0771111111 pays, 0772222222 pays after ten seconds, 0773333333 is cancelled by the customer, 0774444444 fails for insufficient balance. Without a phone, tag the email: buyer+decline@example.com fails, +cancel cancels, +delay pays after ten seconds. For card tokens, +prepaid returns a prepaid card (BNPL refuses it) and +tokdecline returns a token whose later charges are declined.</p>
+<h2>Hosted pages</h2>
+<p>A test checkout's checkoutUrl is a WavePay page with Approve and Decline buttons, so the redirect-and-return leg of your integration can be walked end to end. It only ever acts on test payments.</p>
+<h2>Time travel</h2>
+<p>POST /v2/test/billing/run with {&quot;advanceDays&quot;: 31} runs the billing engine as if 31 days had passed, once for your test subscriptions and instalment plans only. Run it again to reconcile the charges it raised.</p>
+<h2>Features that are not yet live</h2>
+<p>Subscriptions, BNPL, refunds and card tokens are switched on per deployment. A test key can use every one of them regardless, which is how you build against them before they are enabled for live money. GET /v2/features reports the live state.</p>
+<h2>What a test key does not prove</h2>
+<p>A simulator proves your integration handles every outcome; it does not prove a provider's behaviour. Run one live payment of the smallest amount before launch.</p>
+</section>
+<section class="block wrap"><h2>Keep going</h2><ul class="plain"><li><a href="guide-recurring-payments.html">Recurring payments in Zimbabwe: what charges automatically and what cannot</a></li><li><a href="docs.html">API reference</a></li><li><a href="faq.html">FAQ</a></li></ul></section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span class="fine" data-i18n="foot.line">Built by T3raTech. Ships worldwide; every Zimbabwean rail covered.</span>
+    <nav aria-label="Elsewhere">
+      <a href="https://t3ratech.co.zw" rel="noopener">T3raTech</a>
+      <a href="https://t3ratech.github.io/t3rnel-browser-plugin/" rel="noopener">T3rnel Browser</a>
+      <a href="https://github.com/t3ratech" rel="noopener">GitHub</a>
+      <a href="skill.md">skill.md</a>
+      <a href="llms.txt">llms.txt</a>
+      <a href="docs.html">API</a>
+      <a href="status.html">Status</a>
+      <a href="faq.html">FAQ</a>
+      <a href="learn.html">Guides</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/app.js" defer></script>
+<script src="assets/share.js" defer></script>
+</body>
+</html>
