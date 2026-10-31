@@ -1192,6 +1192,59 @@
           }
         }
       }
+    },
+    "/v2/crypto/rails": {
+      "get": {
+        "summary": "The crypto rails WavePay takes (Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT, USDC) and which can be quoted right now",
+        "operationId": "cryptoRails",
+        "responses": {
+          "200": {
+            "description": "{ rails: [{ id, symbol, network, address, confirmations, quotable }] }"
+          }
+        }
+      }
+    },
+    "/v2/internal/crypto/rates": {
+      "post": {
+        "summary": "Global key: store coin prices in US dollars (a checkout refuses a rate older than ten minutes)",
+        "operationId": "cryptoRates",
+        "responses": {
+          "200": {
+            "description": "{ ok, coins }"
+          },
+          "400": {
+            "description": "unknown coin or a price that is not positive"
+          }
+        }
+      }
+    },
+    "/v2/internal/crypto/pending": {
+      "post": {
+        "summary": "Global key: open crypto payments with rail, exact base-unit amount and address — what the watcher looks for",
+        "operationId": "cryptoPending",
+        "responses": {
+          "200": {
+            "description": "{ payments: [{ reference, rail, baseUnits, address, createdAt }] }"
+          }
+        }
+      }
+    },
+    "/v2/internal/crypto/settle": {
+      "post": {
+        "summary": "Global key: settle a payment from a deposit the exchange credited. Re-verified: rail, address, exact amount, and the transaction never settled a payment before",
+        "operationId": "cryptoSettle",
+        "responses": {
+          "200": {
+            "description": "the payment's status"
+          },
+          "422": {
+            "description": "PAYMENT_MISMATCH — not the deposit that was asked for"
+          },
+          "409": {
+            "description": "TRANSFER_ALREADY_USED"
+          }
+        }
+      }
     }
   },
   "components": {

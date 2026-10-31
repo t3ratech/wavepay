@@ -170,6 +170,47 @@ GET /v2/providers lists the live rails for the deployment you are calling.
 
 ---
 
+Source: https://wavepay.t3ratech.co.zw/ai-agent-payment-infrastructure.html
+
+# Payment infrastructure for AI agents: MCP payment tools and a…
+
+> WavePay is payment infrastructure for AI agents: skill.md is the whole onboarding, POST /mcp exposes registration, providers, pricing, checkout and status as MCP…
+
+USE CASE
+
+# Payment infrastructure for AI agents: MCP payment tools and a one-file onboarding
+
+WavePay is payment infrastructure for AI agents: skill.md is the whole onboarding, POST /mcp exposes registration, providers, pricing, checkout and status as MCP tools, and an agent can register, check out and reconcile with no browser, OAuth flow or email round-trip.
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+
+## The flow
+
+1. MCP payment tools: wavepay_register, wavepay_providers, wavepay_pricing, wavepay_checkout, wavepay_checkout_status, wavepay_catalog at POST /mcp.
+2. Machine-readable: /llms.txt, /llms-full.txt, /skill.md, /openapi.json, /pricing.json and /.well-known/ai-catalog.json.
+3. No humans in the loop: registration returns a live key and a test key in one call; the test key runs the whole flow with fake money.
+4. Agents can pay too: crypto rails (GET /v2/crypto/rails) need no account, only a wallet.
+
+## Questions
+
+## Can an agent register by itself?
+
+Yes. POST /v2/register with a name and an email returns the keys in one response.
+
+## Where is the machine-readable price list?
+
+/pricing.json, also served live at GET /v2/price-list.
+
+## Keep going
+
+- [How to charge for a browser extension](https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html)
+- [How to take payments in a game](https://wavepay.t3ratech.co.zw/payments-for-games.html)
+- [Accept EcoCash payments in your software](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html)
+- [FAQ](https://wavepay.t3ratech.co.zw/faq.html)
+
+
+---
+
 Source: https://wavepay.t3ratech.co.zw/ar/
 
 # WavePay — مدفوعات وتراخيص للبرمجيات
@@ -476,6 +517,86 @@ When your buyers hold different rails, or when an agent has to set payments up w
 
 ---
 
+Source: https://wavepay.t3ratech.co.zw/compare-wavepay-vs-paypal-direct.html
+
+> Integrating PayPal directly gives you one rail and its own reconciliation; WavePay puts PayPal, Zimbabwean wallets, cards and crypto behind one checkout and one…
+
+COMPARE
+
+# WavePay vs integrating PayPal directly
+
+Integrating PayPal directly gives you one rail and its own reconciliation; WavePay puts PayPal, Zimbabwean wallets, cards and crypto behind one checkout and one ledger, and lets a merchant connect their own PayPal account so PayPal still pays them directly.
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+
+|  | PayPal directly | WavePay |
+| --- | --- | --- |
+| Rails | PayPal (cards and PayPal balance) | PayPal, Paynow wallets and cards, crypto, and 2Checkout where enabled |
+| Who is paid | You, if PayPal supports a merchant account in your country | You, through your own PayPal account (own keys), or T3raTech for T3raTech's own sales |
+| Reconciliation | PayPal's reports | One payments ledger across every rail |
+| Licence keys | Build your own | Built in: Ed25519 entitlements, offline verification |
+| Agent onboarding | Developer portal and app review | POST /v2/register or skill.md |
+
+## Questions
+
+## Do I still need a PayPal account?
+
+To receive PayPal payments yourself, yes: with own keys you connect your own PayPal account and PayPal pays you directly.
+
+## Why use WavePay if PayPal pays me directly anyway?
+
+For the rails PayPal does not cover for your buyers, the single ledger and webhook format, the licensing, and the agent-ready onboarding.
+
+## Keep going
+
+- [All guides and comparisons](https://wavepay.t3ratech.co.zw/learn.html)
+- [Pricing](https://wavepay.t3ratech.co.zw/pricing.html)
+- [FAQ](https://wavepay.t3ratech.co.zw/faq.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/crypto-payment-api.html
+
+# Crypto payment API: Bitcoin, Ethereum, Solana, BNB, Litecoin…
+
+> WavePay takes crypto on eleven rails — Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT on three networks and USDC — by quoting the US-dollar price at a…
+
+USE CASE
+
+# Crypto payment API: Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT and USDC
+
+WavePay takes crypto on eleven rails — Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT on three networks and USDC — by quoting the US-dollar price at a fresh rate, showing the exact amount and address, and settling the payment when the exchange credits the deposit.
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+
+## The flow
+
+1. Pay: POST /v2/checkouts with provider crypto and method set to a rail id from GET /v2/crypto/rails.
+2. The exact amount, down to the last digit, is how a deposit is matched to one payment, so no memo or tag is needed.
+3. The rate is at most ten minutes old when quoted; a quote stays payable for six hours.
+4. Today these are T3raTech's own addresses for T3raTech's own sales; merchant-owned wallets are a separate, later settlement type.
+
+## Questions
+
+## Why is XRP not offered?
+
+XRP needs a destination tag, and a transfer without one can be lost, so it is left out until it can be handled safely.
+
+## Who holds the crypto?
+
+For T3raTech's own sales, T3raTech's exchange account. WavePay does not hold crypto for other merchants.
+
+## Keep going
+
+- [How to charge for a browser extension](https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html)
+- [How to take payments in a game](https://wavepay.t3ratech.co.zw/payments-for-games.html)
+- [Accept EcoCash payments in your software](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html)
+- [FAQ](https://wavepay.t3ratech.co.zw/faq.html)
+
+
+---
+
 Source: https://wavepay.t3ratech.co.zw/de/
 
 # WavePay — Zahlungen und Lizenzen für Software
@@ -703,6 +824,47 @@ In einer Anfrage registrieren. Keine Karte, kein Anruf.
 
 ---
 
+Source: https://wavepay.t3ratech.co.zw/developer-payment-api.html
+
+# Developer-first payment API: idempotent checkouts, signed…
+
+> WavePay is a developer-first payment API: register with one POST, get a live key and a test key, create idempotent checkouts, receive HMAC-signed settlement webhooks…
+
+USE CASE
+
+# Developer-first payment API: idempotent checkouts, signed webhooks, a test mode with fake money
+
+WavePay is a developer-first payment API: register with one POST, get a live key and a test key, create idempotent checkouts, receive HMAC-signed settlement webhooks, and read every payment from a cursor-paged ledger — all described in a public OpenAPI file.
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+
+## The flow
+
+1. Start: POST /v2/register returns a live key and a test key (mk_test_…) that settles through a simulator, with fake money.
+2. Safe retries: every checkout takes an Idempotency-Key, so a retried request returns the same checkout.
+3. Settle: signed webhooks (X-WavePay-Signature) or the payments ledger with since/limit cursors.
+4. Reference: /openapi.json, /docs.html, /skill.md and /llms.txt describe every route.
+
+## Questions
+
+## Is there a sandbox?
+
+Yes. The test key uses the same routes with fake money and never reaches a provider or counts against your plan.
+
+## Where is the API reference?
+
+openapi.json, docs.html and skill.md, all generated from the same source as the Worker.
+
+## Keep going
+
+- [How to charge for a browser extension](https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html)
+- [How to take payments in a game](https://wavepay.t3ratech.co.zw/payments-for-games.html)
+- [Accept EcoCash payments in your software](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html)
+- [FAQ](https://wavepay.t3ratech.co.zw/faq.html)
+
+
+---
+
 Source: https://wavepay.t3ratech.co.zw/docs.html
 
 # Docs — WavePay
@@ -798,6 +960,7 @@ T3rnel Browser sells Pro on this exact flow in production.
 | `GET /v2/internal/merchant/catalog` | Everything your key can sell: sites, plans, live prices |
 | `GET/PUT/DELETE /v2/internal/merchant/settlement[/{provider}]` | Connect your own PayPal account so payments land with you; credentials are checked, sealed and never returned |
 | `GET /v2/price-list` | WavePay's own price list: plans, usage schedule, modes (also [/pricing.json](https://wavepay.t3ratech.co.zw/pricing.json)) |
+| `GET /v2/crypto/rails` | The crypto rails and which can be quoted right now; pay with `provider: "crypto"` and `method` set to a rail id |
 | `GET /v2/internal/merchant/usage` | Your usage meter for the month and the total due |
 | `POST /v2/internal/sites/webhook` | Set the settlement webhook for a site (secret returned once) |
 | `POST /v2/test/settle` | Test-mode settlement — exercise the webhook end-to-end, no money moves |
@@ -2314,6 +2477,47 @@ Register in one request. No card, no call.
 
 ---
 
+Source: https://wavepay.t3ratech.co.zw/integrations-claude-code-openclaw-openfang.html
+
+# Integrate WavePay from Claude Code, OpenClaw, OpenFang or a…
+
+> Any MCP client can use WavePay by adding the endpoint https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp; Claude Code adds it with one command, and a plain API…
+
+USE CASE
+
+# Integrate WavePay from Claude Code, OpenClaw, OpenFang or a plain API client
+
+Any MCP client can use WavePay by adding the endpoint https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp; Claude Code adds it with one command, and a plain API client needs only POST /v2/register and POST /v2/checkouts.
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+
+## The flow
+
+1. Claude Code: claude mcp add --transport http wavepay https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp
+2. OpenClaw, OpenFang and other MCP clients: register the same streamable-HTTP endpoint, https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp, in the client's MCP server settings.
+3. Plain HTTP: curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/register -H 'content-type: application/json' -d '{"name":"My app","ownerEmail":"you@example.com"}'
+4. Then test: use the mk_test_ key from the response to create a checkout with fake money, and read the result from GET /v2/checkouts/<reference>/status.
+
+## Questions
+
+## Do I need an account first?
+
+No. POST /v2/register creates the merchant and returns both keys.
+
+## Is there a test mode?
+
+Yes: the mk_test_ key uses the same routes and settles through a simulator.
+
+## Keep going
+
+- [How to charge for a browser extension](https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html)
+- [How to take payments in a game](https://wavepay.t3ratech.co.zw/payments-for-games.html)
+- [Accept EcoCash payments in your software](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html)
+- [FAQ](https://wavepay.t3ratech.co.zw/faq.html)
+
+
+---
+
 Source: https://wavepay.t3ratech.co.zw/it/
 
 # WavePay — pagamenti e licenze per il software
@@ -2791,11 +2995,19 @@ Everything WavePay does, by the question you are trying to answer: which rails i
 - [How to charge for an app or SaaS](https://wavepay.t3ratech.co.zw/payments-for-apps.html)
 - [How to charge for API access](https://wavepay.t3ratech.co.zw/payments-for-apis.html)
 - [How to charge for a bot](https://wavepay.t3ratech.co.zw/payments-for-bots.html)
+- [Zimbabwe payment gateway API: EcoCash, OneMoney, Visa and Mastercard in one integration](https://wavepay.t3ratech.co.zw/zimbabwe-payment-gateway-api.html)
+- [Multi-currency payment gateway: cards, PayPal and crypto behind one API](https://wavepay.t3ratech.co.zw/multi-currency-payment-gateway.html)
+- [Developer-first payment API: idempotent checkouts, signed webhooks, a test mode with fake money](https://wavepay.t3ratech.co.zw/developer-payment-api.html)
+- [Subscription payment API for SaaS: renewals, instalments, refunds and licences](https://wavepay.t3ratech.co.zw/saas-subscription-payment-api.html)
+- [Payment infrastructure for AI agents: MCP payment tools and a one-file onboarding](https://wavepay.t3ratech.co.zw/ai-agent-payment-infrastructure.html)
+- [Crypto payment API: Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT and USDC](https://wavepay.t3ratech.co.zw/crypto-payment-api.html)
+- [Integrate WavePay from Claude Code, OpenClaw, OpenFang or a plain API client](https://wavepay.t3ratech.co.zw/integrations-claude-code-openclaw-openfang.html)
 
 ## Comparisons
 
 - [WavePay vs integrating each payment rail yourself](https://wavepay.t3ratech.co.zw/compare-wavepay-vs-integrating-each-rail.html)
 - [WavePay vs a card-only payment processor](https://wavepay.t3ratech.co.zw/compare-wavepay-vs-card-only-processor.html)
+- [WavePay vs integrating PayPal directly](https://wavepay.t3ratech.co.zw/compare-wavepay-vs-paypal-direct.html)
 
 ## How it works
 
@@ -2809,6 +3021,47 @@ Everything WavePay does, by the question you are trying to answer: which rails i
 ## Questions
 
 - [Frequently asked questions](https://wavepay.t3ratech.co.zw/faq.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/multi-currency-payment-gateway.html
+
+# Multi-currency payment gateway: cards, PayPal and crypto behind…
+
+> WavePay is a multi-currency payment gateway API: Visa and Mastercard and PayPal for international buyers, Paynow for Zimbabwean wallets in US dollars, and eleven…
+
+USE CASE
+
+# Multi-currency payment gateway: cards, PayPal and crypto behind one API
+
+WavePay is a multi-currency payment gateway API: Visa and Mastercard and PayPal for international buyers, Paynow for Zimbabwean wallets in US dollars, and eleven crypto rails quoted in US dollars, all through one checkout call and one ledger.
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+
+## The flow
+
+1. Visa and Mastercard payment integration: the hosted checkout takes cards through PayPal and Paynow without your servers touching a card number.
+2. PayPal integration API: PayPal orders are created and captured for you; a merchant can connect their own PayPal account so the money lands with them.
+3. Crypto: Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT and USDC, quoted in US dollars at a rate at most ten minutes old.
+4. One ledger and one webhook format whichever rail the buyer chose.
+
+## Questions
+
+## Does the money go to me or to WavePay?
+
+With own keys you connect your own PayPal account and PayPal pays you directly; WavePay never holds it. A mode where WavePay collects and pays out needs a payment service provider licence and is not offered yet.
+
+## Which currencies are supported?
+
+PayPal takes the currencies your PayPal account supports; Paynow and crypto are quoted in US dollars. GET /v2/providers lists what is live.
+
+## Keep going
+
+- [How to charge for a browser extension](https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html)
+- [How to take payments in a game](https://wavepay.t3ratech.co.zw/payments-for-games.html)
+- [Accept EcoCash payments in your software](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html)
+- [FAQ](https://wavepay.t3ratech.co.zw/faq.html)
 
 
 ---
@@ -3814,6 +4067,47 @@ EcoCash, OneMoney, InnBucks, Telecash, O'mari и ZimSwitch через Paynow; Vi
 
 ---
 
+Source: https://wavepay.t3ratech.co.zw/saas-subscription-payment-api.html
+
+# Subscription payment API for SaaS: renewals, instalments…
+
+> WavePay is a subscription payment API for SaaS: recurring billing on PayPal and stored instruments where the provider allows it, buy-now-pay-later instalments…
+
+USE CASE
+
+# Subscription payment API for SaaS: renewals, instalments, refunds and licences
+
+WavePay is a subscription payment API for SaaS: recurring billing on PayPal and stored instruments where the provider allows it, buy-now-pay-later instalments, refunds, and signed licence keys that verify offline, behind the same checkout call.
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+
+## The flow
+
+1. Recurring: subscriptions run on PayPal billing and on stored payment instruments; Paynow card tokenisation is pending Paynow's approval and is not offered yet.
+2. Instalments: split a price into scheduled payments with the buy-now-pay-later flow.
+3. Refunds: POST a refund; the provider's own refund is made and the ledger updated.
+4. Licences: a paid checkout emails an Ed25519-signed licence your app verifies offline.
+
+## Questions
+
+## Can I run subscriptions in Zimbabwe?
+
+Subscriptions run on the rails that support recurring charges. Paynow tokenisation, which would extend this to local cards, is requested from Paynow and not yet available.
+
+## Do paid plans refuse buyers at a cap?
+
+No. Paid WavePay plans never refuse a buyer: payments beyond the plan's allowance are charged by the usage schedule.
+
+## Keep going
+
+- [How to charge for a browser extension](https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html)
+- [How to take payments in a game](https://wavepay.t3ratech.co.zw/payments-for-games.html)
+- [Accept EcoCash payments in your software](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html)
+- [FAQ](https://wavepay.t3ratech.co.zw/faq.html)
+
+
+---
+
 Source: https://wavepay.t3ratech.co.zw/sn/
 
 # WavePay — mari nemalayisensi ezvirongwa
@@ -4491,6 +4785,47 @@ AI 智能体可以使用 WavePay 吗？
 一次请求注册。无需银行卡，无需通话。
 
 [免费开始](https://wavepay.t3ratech.co.zw/pricing.html#register)[阅读文档](https://wavepay.t3ratech.co.zw/docs.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/zimbabwe-payment-gateway-api.html
+
+# Zimbabwe payment gateway API: EcoCash, OneMoney, Visa and…
+
+> WavePay is a Zimbabwe payment gateway API: one POST /v2/checkouts reaches EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow, plus Visa…
+
+USE CASE
+
+# Zimbabwe payment gateway API: EcoCash, OneMoney, Visa and Mastercard in one integration
+
+WavePay is a Zimbabwe payment gateway API: one POST /v2/checkouts reaches EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow, plus Visa, Mastercard and PayPal for international buyers, with signed settlement webhooks and one payments ledger.
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+
+## The flow
+
+1. EcoCash payment API: provider paynow-mobile with the buyer's phone number pushes the EcoCash prompt to their handset; OneMoney, InnBucks and O'mari work the same way.
+2. Cards and ZimSwitch: the hosted Paynow page takes Visa, Mastercard and ZimSwitch; international buyers can pay with PayPal.
+3. Settle: a signed webhook, or poll GET /v2/checkouts/<reference>/status until collected.
+4. Costs: a WavePay plan plus a small percentage that falls with volume (see /pricing.html); provider fees are paid to the provider at cost with no WavePay markup.
+
+## Questions
+
+## Is there an EcoCash payment API?
+
+Yes. Through Paynow, provider paynow-mobile sends the EcoCash prompt to the buyer's phone; the same call covers OneMoney, InnBucks and O'mari.
+
+## Which currency does it settle in?
+
+Paynow checkouts are priced in US dollars. Which rails a deployment offers is reported live by GET /v2/providers.
+
+## Keep going
+
+- [How to charge for a browser extension](https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html)
+- [How to take payments in a game](https://wavepay.t3ratech.co.zw/payments-for-games.html)
+- [Accept EcoCash payments in your software](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html)
+- [FAQ](https://wavepay.t3ratech.co.zw/faq.html)
 
 
 ---

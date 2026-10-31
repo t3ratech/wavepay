@@ -19,11 +19,19 @@ Everything WavePay does, by the question you are trying to answer: which rails i
 - [How to charge for an app or SaaS](https://wavepay.t3ratech.co.zw/payments-for-apps.html)
 - [How to charge for API access](https://wavepay.t3ratech.co.zw/payments-for-apis.html)
 - [How to charge for a bot](https://wavepay.t3ratech.co.zw/payments-for-bots.html)
+- [Zimbabwe payment gateway API: EcoCash, OneMoney, Visa and Mastercard in one integration](https://wavepay.t3ratech.co.zw/zimbabwe-payment-gateway-api.html)
+- [Multi-currency payment gateway: cards, PayPal and crypto behind one API](https://wavepay.t3ratech.co.zw/multi-currency-payment-gateway.html)
+- [Developer-first payment API: idempotent checkouts, signed webhooks, a test mode with fake money](https://wavepay.t3ratech.co.zw/developer-payment-api.html)
+- [Subscription payment API for SaaS: renewals, instalments, refunds and licences](https://wavepay.t3ratech.co.zw/saas-subscription-payment-api.html)
+- [Payment infrastructure for AI agents: MCP payment tools and a one-file onboarding](https://wavepay.t3ratech.co.zw/ai-agent-payment-infrastructure.html)
+- [Crypto payment API: Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT and USDC](https://wavepay.t3ratech.co.zw/crypto-payment-api.html)
+- [Integrate WavePay from Claude Code, OpenClaw, OpenFang or a plain API client](https://wavepay.t3ratech.co.zw/integrations-claude-code-openclaw-openfang.html)
 
 ## Comparisons
 
 - [WavePay vs integrating each payment rail yourself](https://wavepay.t3ratech.co.zw/compare-wavepay-vs-integrating-each-rail.html)
 - [WavePay vs a card-only payment processor](https://wavepay.t3ratech.co.zw/compare-wavepay-vs-card-only-processor.html)
+- [WavePay vs integrating PayPal directly](https://wavepay.t3ratech.co.zw/compare-wavepay-vs-paypal-direct.html)
 
 ## How it works
 
