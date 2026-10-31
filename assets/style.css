@@ -24,7 +24,7 @@
   --wp-zw-yellow-ink: #3a2a00;
   --wp-band-green: #0b5d2f;
   --wp-band-black: #101a17;
-  --wp-band-cream: #fdf3d4;
+  --wp-band-cream: #f3f6f5;
   --wp-band-on: #ffffff;
   --wp-band-muted: #cfe6d6;
   --wp-radius: 14px;
@@ -62,7 +62,7 @@
   --wp-zw-yellow-ink: #2b2000;
   --wp-band-green: #0c3b21;
   --wp-band-black: #070c0b;
-  --wp-band-cream: #1b2118;
+  --wp-band-cream: #121a18;
   --wp-band-on: #f1f7f4;
   --wp-band-muted: #a9c7b5;
   --wp-shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px rgba(0, 0, 0, .3);
@@ -95,7 +95,7 @@
     --wp-zw-yellow-ink: #2b2000;
     --wp-band-green: #0c3b21;
     --wp-band-black: #070c0b;
-    --wp-band-cream: #1b2118;
+    --wp-band-cream: #121a18;
     --wp-band-on: #f1f7f4;
     --wp-band-muted: #a9c7b5;
     --wp-shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px rgba(0, 0, 0, .3);
@@ -684,26 +684,26 @@ blockquote.answer, [data-answer] { padding-inline-start: 18px; }
   --wp-foot-on: #f1f7f4;
   --wp-foot-muted: #c3d9cc;
   --wp-c-gr: #dc2626; --wp-c-ls: #ca8a04; --wp-c-pd: #ea580c; --wp-c-fw: #9333ea; --wp-c-pp: #2563eb; --wp-c-tc: #475569; --wp-c-st: #7c3aed; --wp-c-sq: #0891b2; --wp-c-bt: #db2777;
-  --wp-hero-bg: linear-gradient(180deg, #eef7f1 0%, #f8f5e6 100%);
+  --wp-hero-bg: linear-gradient(180deg, #f2f6f5 0%, #ffffff 100%);
   --wp-hero-on: #13201d;
   --wp-hero-muted: #3f574c;
-  --wp-hero-accent: #0a7d3c;
-  --wp-hero-glow: color-mix(in srgb, #f2b705 26%, transparent);
+  --wp-hero-accent: var(--wp-accent-strong);
+  --wp-hero-glow: color-mix(in srgb, var(--wp-accent) 16%, transparent);
 }
 :root[data-theme="dark"] {
-  --wp-hero-bg: linear-gradient(180deg, #0c3b21 0%, #0a2c19 100%);
+  --wp-hero-bg: linear-gradient(180deg, #101a18 0%, #0b1210 100%);
   --wp-hero-on: #f1f7f4;
-  --wp-hero-muted: #a9c7b5;
-  --wp-hero-accent: #ffd23f;
-  --wp-hero-glow: color-mix(in srgb, #ffd23f 16%, transparent);
+  --wp-hero-muted: #a9bdb6;
+  --wp-hero-accent: var(--wp-accent);
+  --wp-hero-glow: color-mix(in srgb, var(--wp-accent) 14%, transparent);
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
-    --wp-hero-bg: linear-gradient(180deg, #0c3b21 0%, #0a2c19 100%);
+    --wp-hero-bg: linear-gradient(180deg, #101a18 0%, #0b1210 100%);
     --wp-hero-on: #f1f7f4;
-    --wp-hero-muted: #a9c7b5;
-    --wp-hero-accent: #ffd23f;
-    --wp-hero-glow: color-mix(in srgb, #ffd23f 16%, transparent);
+    --wp-hero-muted: #a9bdb6;
+    --wp-hero-accent: var(--wp-accent);
+    --wp-hero-glow: color-mix(in srgb, var(--wp-accent) 14%, transparent);
   }
 }
 /* Inside a hero or green band the "on-band" colours follow the hero tokens (dark ink on the light band, white on the dark one) */
@@ -763,3 +763,21 @@ blockquote.answer, [data-answer] { padding-inline-start: 18px; }
 .legend .sw.c-wp { background: var(--wp-zw-green); }
 .site-foot .fine, .site-foot .fine a, .site-foot .legal-links a { color: var(--wp-foot-muted); }
 .site-foot .legal-links a:hover, .site-foot .fine a:hover { color: var(--wp-foot-on); }
+
+/* =====================================================================================================
+   Design layer 4: neutral heroes (no green, no yellow fills). Yellow survives only as flag accents:
+   the stripe under each hero, heading ticks and illustrations.
+   ===================================================================================================== */
+.page-hero, .home-hero { border-block-end: 0; }
+.page-hero::after, .home-hero::after { content: ""; position: absolute; inset-inline: 0; inset-block-end: 0; block-size: 5px; background: linear-gradient(90deg, var(--wp-zw-green) 0 28.5%, var(--wp-zw-yellow) 28.5% 43%, var(--wp-zw-red) 43% 57%, var(--wp-zw-black) 57% 71.5%, var(--wp-zw-red) 71.5% 86%, var(--wp-zw-yellow) 86% 100%); pointer-events: none; }
+.tag.zw, .plan .tag { background: var(--wp-accent); color: var(--wp-on-accent); }
+.plan.featured { border-color: var(--wp-accent); box-shadow: 0 0 0 2px var(--wp-accent), var(--wp-shadow-lg); }
+blockquote.answer, [data-answer] { border-inline-start-color: var(--wp-accent); }
+.side-rail .cta-card { background: var(--wp-surface); color: var(--wp-ink); border: 1px solid var(--wp-line); border-block-start: 4px solid var(--wp-accent); }
+.maybe { background: var(--wp-muted); color: var(--wp-surface); }
+.badge.guide { background: var(--wp-soft); border-color: var(--wp-line); color: var(--wp-ink); }
+.op .verb.put { background: var(--wp-c-pp); color: var(--wp-surface); }
+.page-hero .eyebrow::before, .home-hero .eyebrow::before { background: var(--wp-accent); }
+.billing-switch button[aria-pressed="true"] { background: var(--wp-accent); color: var(--wp-on-accent); }
+.billing-switch button .save, .billing-switch button[aria-pressed="false"] .save { color: var(--wp-accent-strong); }
+.billing-switch button[aria-pressed="true"] .save { color: inherit; }
