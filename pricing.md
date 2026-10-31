@@ -4,45 +4,95 @@
 
 Merchant pricing
 
-# Priced by payments processed, not by rake
+# A plan for the software, a small percentage for the volume
 
-Flat tiers. The ladder below the page's fold: the category norm (Lemon Squeezy ~5%+50¢, Paddle ~5%+50¢, Gumroad 10%, Keygen ~$100/mo) takes a slice of every sale — WavePay sells headroom instead. Start free; a payment count that outgrows the tier is refused by name, never silently charged.
+WavePay is the checkout, licensing and billing layer. You pay a plan for the software, and a percentage that **falls as your volume grows** once you pass your plan's included payments. Provider fees, bank charges and the transfer tax are paid to the provider at cost: WavePay adds no markup to them.
 
 ### Free
 
 $0 forever
 
-- 25 payments / 30 days
-- 1 site (product)
-- Every live rail
-- Signed settlement webhooks
-- Payments ledger
+25 payments a month, test mode, one site. Stops at the cap; never charges.
+
+- 25 payments / month included
+- 1 sites
+- Signed webhooks + payments ledger
 
 Register free — one POST
 
-### Basic
+### Starter
 
-$9 USD / month
+$15 USD / month
 
-- 250 payments / 30 days
+100 payments included, three sites, coupons, webhooks.
+
+- 100 payments / month included
 - 3 sites
 - Coupons & promotions
-- Webhooks + ledger
+- Signed webhooks + payments ledger
 
-Get Basic — $9/mo
+Get Starter — $15/mo
 
-Scale
+Popular
 
-### Pro
+### Growth
 
-$29 USD / month
+$49 USD / month
 
-- 2,500 payments / 30 days
+500 payments included, ten sites, subscriptions and instalments.
+
+- 500 payments / month included
 - 10 sites
-- Coupons, webhooks, ledger
-- Priority support queue
+- Coupons & promotions
+- Signed webhooks + payments ledger
 
-Get Pro — $29/mo
+Get Growth — $49/mo
+
+### Scale
+
+$149 USD / month
+
+2,500 payments included, thirty sites, priority support.
+
+- 2,500 payments / month included
+- 30 sites
+- Coupons & promotions
+- Signed webhooks + payments ledger
+- Priority support
+
+Get Scale — $149/mo
+
+### Enterprise
+
+From $499 USD / month
+
+From $499 a month: custom volume, SLA, onboarding. By quote.
+
+- Custom volume
+- Unlimited sites
+- Coupons & promotions
+- Signed webhooks + payments ledger
+- Priority support and an SLA
+
+[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
+
+### After your included payments
+
+Each extra payment pays a percentage of its value, by its number in the month, with a minimum per payment. The rate only ever falls.
+
+| Payment number in the month | Rate | Minimum per payment |
+| --- | --- | --- |
+| 1–1,000 | 2% | $0.10 |
+| 1,001–2,500 | 1.5% | $0.08 |
+| 2,501–10,000 | 1% | $0.06 |
+| 10,001–50,000 | 0.6% | $0.05 |
+| 50,001+ | 0.4% | $0.04 |
+
+Example: Growth, 1,000 payments of $10 in a month = $49 plan + $100 usage = $149 ($0.149 per payment, 1.49% of sales). Billed monthly in arrears as one invoice; annual prepay is ten months for twelve. Prices exclude VAT where it applies. The same numbers, machine-readable: [pricing.json](https://wavepay.t3ratech.co.zw/pricing.json).
+
+### Your money goes to you
+
+With **own keys** (the default) you connect your own PayPal account and the provider pays you directly: WavePay never holds your money. Zimbabwean merchants use Paynow, EcoCash and crypto. A mode where WavePay collects and pays out needs a Reserve Bank payment-service-provider licence and is not offered yet.
 
 ### Start in one POST — no form, no call
 
@@ -56,13 +106,13 @@ curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/register
 # Upgrade — a normal checkout on the wavepay product, your own rails:
 curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/checkouts \
   -H 'Content-Type: application/json' -H 'Idempotency-Key: upgrade-' \
-  -d '{"productId":"wavepay","planId":"pro","provider":"paynow","email":"you@example.com"}'
+  -d '{"productId":"wavepay","planId":"growth","provider":"paynow","email":"you@example.com"}'
 # → 201 { "checkoutUrl": "https://www.paynow.co.zw/…", … } — settle it and
-#   your merchant's plan_id moves to pro. provider "paypal" works too.
+#   your merchant's plan_id moves to growth. provider "paypal" works too.
 ```
 
 Agents: [skill.md](https://wavepay.t3ratech.co.zw/skill.md) is the same story in one markdown file, and `POST /mcp` exposes it all as tools. Registration returns a live key and a test key (`mk_test_…`) — the test key uses the same routes with fake money, never reaches a provider and never counts against the cap. Subscriptions, buy now pay later and refunds are usable in test mode today and switched on for live money per deployment (`GET /v2/features`). Questions: [support@t3ratech.co.zw](mailto:support@t3ratech.co.zw).
 
 ### Fair fine print
 
-The tier caps payments *created* in the rolling 30-day window — a hit cap refuses new checkouts with `MERCHANT_LIMIT_REACHED`, it never blocks or double-charges a buyer mid-payment. Provider fees are the providers' own (PayNow and PayPal take theirs; WavePay's price is the plan). Every plan can take every rail the deployment enables — check [status](https://wavepay.t3ratech.co.zw/status.html) for the live list.
+Free stops at its 25 payments and never charges. Paid plans never refuse a buyer at the allowance: later payments are charged by the schedule above. A cap or a charge never blocks or double-charges a buyer mid-payment. Check [status](https://wavepay.t3ratech.co.zw/status.html) for the live rails.

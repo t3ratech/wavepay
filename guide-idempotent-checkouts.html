@@ -68,7 +68,7 @@ try {
 
 <main id="main">
 <section class="hero wrap"><span class="eyebrow">HOW IT WORKS</span><h1>Idempotent checkouts: why a retry should never charge twice</h1><p class="lede" data-answer>Send a stable Idempotency-Key with every POST /v2/checkouts — derived from your order id, not generated per attempt — and a retry after a timeout returns the original checkout instead of creating a second charge.</p></section>
-<section class="block wrap prose"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> › <a href="learn.html">Guides</a> › <span aria-current="page">Idempotent checkouts: why a retry should never charge twice</span></nav><p class="muted">Updated <time datetime="2026-10-30">2026-10-30</time> · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month</p>
+<section class="block wrap prose"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> › <a href="learn.html">Guides</a> › <span aria-current="page">Idempotent checkouts: why a retry should never charge twice</span></nav><p class="muted">Updated <time datetime="2026-10-30">2026-10-30</time> · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month</p>
 <h2>The failure it prevents</h2>
 <p>A request times out and the client cannot tell whether the checkout was created. Without a key the safe-looking retry creates a second checkout and can charge the buyer twice.</p>
 <h2>Choosing the key</h2>

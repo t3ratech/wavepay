@@ -89,6 +89,9 @@ T3rnel Browser sells Pro on this exact flow in production.
 | `POST /v2/internal/payments` | Your settlement ledger — idempotent drain with `since`/`limit` cursors |
 | `POST /v2/internal/coupons/mint` | Mint discount codes on your products (Basic+) |
 | `GET /v2/internal/merchant/catalog` | Everything your key can sell: sites, plans, live prices |
+| `GET/PUT/DELETE /v2/internal/merchant/settlement[/{provider}]` | Connect your own PayPal account so payments land with you; credentials are checked, sealed and never returned |
+| `GET /v2/price-list` | WavePay's own price list: plans, usage schedule, modes (also [/pricing.json](https://wavepay.t3ratech.co.zw/pricing.json)) |
+| `GET /v2/internal/merchant/usage` | Your usage meter for the month and the total due |
 | `POST /v2/internal/sites/webhook` | Set the settlement webhook for a site (secret returned once) |
 | `POST /v2/test/settle` | Test-mode settlement — exercise the webhook end-to-end, no money moves |
 | `POST /v2/test/billing/run` | Test key only — run the billing engine as if `advanceDays` had passed, to exercise renewals, instalments and dunning |

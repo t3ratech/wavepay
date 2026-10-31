@@ -150,29 +150,29 @@ $0 per sempre
 
 Il più scelto
 
-### Basic
+### Starter
 
-$9 al mese
+$15 al mese
 
-250 pagamenti ogni 30 giorni
+100 pagamenti ogni 30 giorni
 
 - 3 siti
 - Coupon e promozioni
 - Webhook e registro
 
-[Scegli Basic](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[Scegli Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Pro
+### Growth
 
-$29 al mese
+$49 al mese
 
-2.500 pagamenti ogni 30 giorni
+500 pagamenti ogni 30 giorni
 
 - 10 siti
-- Tutto ciò che c'è in Basic
+- Tutto ciò che c'è in Starter
 - Coda di supporto prioritaria
 
-[Scegli Pro](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[Scegli Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
 Domande
 

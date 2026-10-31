@@ -150,29 +150,29 @@ Malipo 25 kwa siku 30
 
 Maarufu zaidi
 
-### Basic
+### Starter
 
-$9 kwa mwezi
+$15 kwa mwezi
 
-Malipo 250 kwa siku 30
+Malipo 100 kwa siku 30
 
 - Tovuti 3
 - Kuponi na ofa
 - Webhooks na daftari
 
-[Chagua Basic](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[Chagua Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Pro
+### Growth
 
-$29 kwa mwezi
+$49 kwa mwezi
 
-Malipo 2,500 kwa siku 30
+Malipo 500 kwa siku 30
 
 - Tovuti 10
-- Kila kitu cha Basic
+- Kila kitu cha Starter
 - Foleni ya msaada wa kipaumbele
 
-[Chagua Pro](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[Chagua Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
 Maswali
 

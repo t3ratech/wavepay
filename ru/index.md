@@ -150,29 +150,29 @@ $0 навсегда
 
 Самый популярный
 
-### Basic
+### Starter
 
-$9 в месяц
+$15 в месяц
 
-250 платежей за 30 дней
+100 платежей за 30 дней
 
 - 3 сайта
 - Купоны и акции
 - Вебхуки и журнал
 
-[Выбрать Basic](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[Выбрать Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Pro
+### Growth
 
-$29 в месяц
+$49 в месяц
 
-2 500 платежей за 30 дней
+500 платежей за 30 дней
 
 - 10 сайтов
-- Всё из Basic
+- Всё из Starter
 - Приоритетная очередь поддержки
 
-[Выбрать Pro](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[Выбрать Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
 Вопросы
 

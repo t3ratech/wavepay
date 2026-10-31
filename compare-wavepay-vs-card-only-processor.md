@@ -6,14 +6,14 @@ COMPARE
 
 A card-only processor cannot take a mobile-wallet payment, so buyers who hold EcoCash or OneMoney but not a card cannot pay; WavePay adds those local rails to Visa, Mastercard and PayPal behind the same checkout call.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
 
 |  | Card-only processor | WavePay |
 | --- | --- | --- |
 | Mobile wallets (EcoCash, OneMoney, InnBucks, Telecash, O'mari) | Not offered | Offered; wallet push for EcoCash, OneMoney, InnBucks and O'mari |
 | ZimSwitch | Not offered | Offered |
 | Visa / Mastercard / PayPal | Offered | Offered |
-| Pricing basis | Typically a percentage of sales | Payments processed: Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month |
+| Pricing basis | Typically a percentage of sales | Payments processed: Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month |
 | Self-serve for agents | Varies | POST /v2/register, skill.md, MCP tools |
 
 ## Questions

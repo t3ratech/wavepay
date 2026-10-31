@@ -150,29 +150,29 @@ $0 selamanya
 
 Paling populer
 
-### Basic
+### Starter
 
-$9 per bulan
+$15 per bulan
 
-250 pembayaran per 30 hari
+100 pembayaran per 30 hari
 
 - 3 situs
 - Kupon dan promosi
 - Webhook dan buku pembayaran
 
-[Pilih Basic](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[Pilih Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Pro
+### Growth
 
-$29 per bulan
+$49 per bulan
 
-2.500 pembayaran per 30 hari
+500 pembayaran per 30 hari
 
 - 10 situs
-- Semua yang ada di Basic
+- Semua yang ada di Starter
 - Antrean dukungan prioritas
 
-[Pilih Pro](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[Pilih Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
 Pertanyaan
 

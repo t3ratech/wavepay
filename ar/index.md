@@ -150,29 +150,29 @@ $0 للأبد
 
 الأكثر طلبًا
 
-### Basic
+### Starter
 
-$9 شهريًا
+$15 شهريًا
 
-250 دفعة كل 30 يومًا
+100 دفعة كل 30 يومًا
 
 - 3 مواقع
 - قسائم وعروض
 - Webhooks وسجل
 
-[اختر Basic](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[اختر Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Pro
+### Growth
 
-$29 شهريًا
+$49 شهريًا
 
-2500 دفعة كل 30 يومًا
+500 دفعة كل 30 يومًا
 
 - 10 مواقع
-- كل ما في Basic
+- كل ما في Starter
 - طابور دعم ذو أولوية
 
-[اختر Pro](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[اختر Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
 أسئلة
 

@@ -71,7 +71,7 @@ try {
 
 <main id="main">
 <section class="hero wrap"><span class="eyebrow">USE CASE</span><h1>How to take payments in a game</h1><p class="lede" data-answer>In a game, charge a player without leaving the session by using provider paynow-mobile with their phone number — the EcoCash, OneMoney, InnBucks or O'mari prompt is pushed to their handset and your game polls checkout status until it reads collected.</p></section>
-<section class="block wrap prose"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> › <a href="learn.html">Guides</a> › <span aria-current="page">How to take payments in a game</span></nav><p class="muted">Updated <time datetime="2026-10-30">2026-10-30</time> · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month</p>
+<section class="block wrap prose"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> › <a href="learn.html">Guides</a> › <span aria-current="page">How to take payments in a game</span></nav><p class="muted">Updated <time datetime="2026-10-30">2026-10-30</time> · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month</p>
 <h2>The flow</h2>
 <ol><li>Create: POST /v2/checkouts with provider paynow-mobile and the player's phone (EcoCash, OneMoney or InnBucks).</li><li>Wait: poll GET /v2/checkouts/&lt;reference&gt;/status — pending, collected or expired.</li><li>Grant: unlock the item when the status reads collected, or on your signed webhook.</li><li>Retry safely: reuse the same Idempotency-Key so a network retry cannot charge twice.</li></ol>
 <h2>Questions</h2>

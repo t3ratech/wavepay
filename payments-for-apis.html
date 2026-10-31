@@ -71,7 +71,7 @@ try {
 
 <main id="main">
 <section class="hero wrap"><span class="eyebrow">USE CASE</span><h1>How to charge for API access</h1><p class="lede" data-answer>Charge for an API with WavePay by selling plans through checkout, issuing a licence key on payment, and gating requests on the key — settlement arrives by signed webhook so access can be granted automatically.</p></section>
-<section class="block wrap prose"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> › <a href="learn.html">Guides</a> › <span aria-current="page">How to charge for API access</span></nav><p class="muted">Updated <time datetime="2026-10-30">2026-10-30</time> · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month</p>
+<section class="block wrap prose"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> › <a href="learn.html">Guides</a> › <span aria-current="page">How to charge for API access</span></nav><p class="muted">Updated <time datetime="2026-10-30">2026-10-30</time> · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month</p>
 <h2>The flow</h2>
 <ol><li>Sell: a checkout per plan with POST /v2/checkouts.</li><li>Issue: the paid checkout emails the licence key; activation returns a signed entitlement.</li><li>Gate: your API checks the entitlement or key before serving a request.</li><li>Automate: register a webhook with POST /v2/internal/sites/webhook; the HMAC secret is returned once.</li></ol>
 <h2>Questions</h2>

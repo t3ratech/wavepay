@@ -150,29 +150,29 @@ Zvibhadharo 25 mumazuva 30
 
 Hwunonyanyosarudzwa
 
-### Basic
+### Starter
 
-$9 pamwedzi
+$15 pamwedzi
 
-Zvibhadharo 250 mumazuva 30
+Zvibhadharo 100 mumazuva 30
 
 - Saiti 3
 - Makuponi nemipiro
 - Webhooks nebhuku
 
-[Tora Basic](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[Tora Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Pro
+### Growth
 
-$29 pamwedzi
+$49 pamwedzi
 
-Zvibhadharo 2,500 mumazuva 30
+Zvibhadharo 500 mumazuva 30
 
 - Saiti 10
-- Zvese zviri muBasic
+- Zvese zviri muStarter
 - Mutsetse werutsigiro rwekutanga
 
-[Tora Pro](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[Tora Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
 Mibvunzo
 

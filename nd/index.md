@@ -150,29 +150,29 @@ Izinkokhelo ezingu-25 ezinsukwini ezingu-30
 
 Okukhethwa kakhulu
 
-### Basic
+### Starter
 
-$9 ngenyanga
+$15 ngenyanga
 
-Izinkokhelo ezingu-250 ezinsukwini ezingu-30
+Izinkokhelo ezingu-100 ezinsukwini ezingu-30
 
 - Amasayithi angu-3
 - Amakhuphoni lezethulo
 - Ama-webhook lebhuku
 
-[Thatha i-Basic](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[Thatha i-Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Pro
+### Growth
 
-$29 ngenyanga
+$49 ngenyanga
 
-Izinkokhelo ezingu-2,500 ezinsukwini ezingu-30
+Izinkokhelo ezingu-500 ezinsukwini ezingu-30
 
 - Amasayithi ali-10
-- Konke okukuBasic
+- Konke okukuStarter
 - Ulayini wosekelo olubalulekileyo
 
-[Thatha i-Pro](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[Thatha i-Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
 Imibuzo
 

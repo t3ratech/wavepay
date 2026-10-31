@@ -15,7 +15,7 @@
     },
     {
       "question": "Does WavePay take a percentage of my sales?",
-      "answer": "No. WavePay is priced by payments processed, not by revenue: Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month. Rail providers charge their own fees on top.",
+      "answer": "Only after your plan's included payments, and the percentage falls as your volume grows (2% down to 0.4%, with a small minimum per payment). The plan fee covers the software: Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month. Provider fees are paid to the provider at cost with no WavePay markup. Full schedule: /pricing.html and /pricing.json.",
       "url": "https://wavepay.t3ratech.co.zw/faq.html#does-it-cost-a-percentage"
     },
     {

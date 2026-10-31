@@ -1058,6 +1058,140 @@
           }
         }
       }
+    },
+    "/v2/internal/merchant/settlement": {
+      "get": {
+        "summary": "The provider accounts your key has connected (masked); the secret is never returned",
+        "operationId": "listSettlementAccounts",
+        "responses": {
+          "200": {
+            "description": "{ accounts: [{ provider, mode: 'own-keys', environment, account, status, connectedAt, verifiedAt }] }"
+          },
+          "403": {
+            "description": "a global key, which has no merchant"
+          }
+        }
+      }
+    },
+    "/v2/internal/merchant/settlement/{provider}": {
+      "put": {
+        "summary": "Connect your own provider account so the money lands with you (own keys). Credentials are checked with the provider, sealed, and never returned",
+        "operationId": "connectSettlementAccount",
+        "parameters": [
+          {
+            "name": "provider",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "paypal"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "clientId",
+                  "clientSecret"
+                ],
+                "properties": {
+                  "clientId": {
+                    "type": "string"
+                  },
+                  "clientSecret": {
+                    "type": "string"
+                  },
+                  "environment": {
+                    "type": "string",
+                    "enum": [
+                      "sandbox",
+                      "production"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "{ account: { provider, mode, environment, account, status, connectedAt, verifiedAt } }"
+          },
+          "400": {
+            "description": "SETTLEMENT_PROVIDER_UNSUPPORTED or INVALID_REQUEST"
+          },
+          "403": {
+            "description": "LIVE_KEY_REQUIRED (a test key cannot hold an account) or a global key"
+          },
+          "422": {
+            "description": "CREDENTIALS_REJECTED (the provider refused them) or ENVIRONMENT_MISMATCH (sandbox keys on a production Worker, or the reverse)"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Disconnect the account; later payments settle through the deployment's account again",
+        "operationId": "disconnectSettlementAccount",
+        "parameters": [
+          {
+            "name": "provider",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "paypal"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "{ disconnected: boolean }"
+          }
+        }
+      }
+    },
+    "/v2/price-list": {
+      "get": {
+        "summary": "WavePay's own price list: plans, the usage schedule and the modes (same data as /pricing.json)",
+        "operationId": "priceList",
+        "responses": {
+          "200": {
+            "description": "{ currency, plans: [{ id, name, monthlyMinor, annualMinor, includedPayments, sites }], usage: { tiers }, providerFees, modes }"
+          }
+        }
+      }
+    },
+    "/v2/internal/merchant/usage": {
+      "get": {
+        "summary": "This month's usage meter for your key: payments, included allowance, usage fee by tier, total due",
+        "operationId": "merchantUsage",
+        "parameters": [
+          {
+            "name": "month",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "2026-10"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "{ month, plan, payments, includedPayments, nonUsdPayments, usage: { feeMinor, chargedPayments, byTier }, totalDueMinor }"
+          },
+          "403": {
+            "description": "a global key, which has no merchant"
+          }
+        }
+      }
     }
   },
   "components": {

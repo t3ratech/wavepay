@@ -150,29 +150,29 @@ $0 ずっと
 
 一番人気
 
-### Basic
+### Starter
 
-$9 月額
+$15 月額
 
-30日あたり250件の決済
+30日あたり100件の決済
 
 - 3サイト
 - クーポンとプロモーション
 - Webhookと台帳
 
-[Basicを選ぶ](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[Starterを選ぶ](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Pro
+### Growth
 
-$29 月額
+$49 月額
 
-30日あたり2,500件の決済
+30日あたり500件の決済
 
 - 10サイト
-- Basicのすべて
+- Starterのすべて
 - 優先サポート窓口
 
-[Proを選ぶ](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[Growthを選ぶ](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
 よくある質問
 

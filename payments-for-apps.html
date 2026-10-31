@@ -71,7 +71,7 @@ try {
 
 <main id="main">
 <section class="hero wrap"><span class="eyebrow">USE CASE</span><h1>How to charge for an app or SaaS</h1><p class="lede" data-answer>Charge for an app or SaaS with WavePay by pricing plans as data, sending buyers to a hosted checkout, and unlocking seats from licence activations or your signed settlement webhook.</p></section>
-<section class="block wrap prose"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> › <a href="learn.html">Guides</a> › <span aria-current="page">How to charge for an app or SaaS</span></nav><p class="muted">Updated <time datetime="2026-10-30">2026-10-30</time> · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month</p>
+<section class="block wrap prose"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> › <a href="learn.html">Guides</a> › <span aria-current="page">How to charge for an app or SaaS</span></nav><p class="muted">Updated <time datetime="2026-10-30">2026-10-30</time> · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month</p>
 <h2>The flow</h2>
 <ol><li>Plans are data: GET /v2/pricing?productId=… returns plans, prices and promotions.</li><li>Promotions without a release: mint coupons with POST /v2/internal/coupons/mint (Basic and above).</li><li>Settle: signed webhooks, or drain the ledger with POST /v2/internal/payments.</li><li>Seats: activation codes and device quotas come from the licensing endpoints.</li></ol>
 <h2>Questions</h2>

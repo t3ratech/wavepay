@@ -142,6 +142,9 @@ GET  /v2/licensing/public-key  // Ed25519 trust root — verify entitlements off
           <tr><td><code>POST /v2/internal/payments</code></td><td>Your settlement ledger — idempotent drain with <code>since</code>/<code>limit</code> cursors</td></tr>
           <tr><td><code>POST /v2/internal/coupons/mint</code></td><td>Mint discount codes on your products (Basic+)</td></tr>
           <tr><td><code>GET /v2/internal/merchant/catalog</code></td><td>Everything your key can sell: sites, plans, live prices</td></tr>
+          <tr><td><code>GET/PUT/DELETE /v2/internal/merchant/settlement[/{provider}]</code></td><td>Connect your own PayPal account so payments land with you; credentials are checked, sealed and never returned</td></tr>
+          <tr><td><code>GET /v2/price-list</code></td><td>WavePay's own price list: plans, usage schedule, modes (also <a href="/pricing.json">/pricing.json</a>)</td></tr>
+          <tr><td><code>GET /v2/internal/merchant/usage</code></td><td>Your usage meter for the month and the total due</td></tr>
           <tr><td><code>POST /v2/internal/sites/webhook</code></td><td>Set the settlement webhook for a site (secret returned once)</td></tr>
           <tr><td><code>POST /v2/test/settle</code></td><td>Test-mode settlement — exercise the webhook end-to-end, no money moves</td></tr>
           <tr><td><code>POST /v2/test/billing/run</code></td><td>Test key only — run the billing engine as if <code>advanceDays</code> had passed, to exercise renewals, instalments and dunning</td></tr>

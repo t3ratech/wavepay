@@ -71,7 +71,7 @@ try {
 
 <main id="main">
 <section class="hero wrap"><span class="eyebrow">USE CASE</span><h1>How to charge for a bot</h1><p class="lede" data-answer>Charge for a bot with WavePay by pushing a wallet prompt to the user's phone with paynow-mobile, so the payment happens inside the chat flow without a browser, then unlock features when status reads collected.</p></section>
-<section class="block wrap prose"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> › <a href="learn.html">Guides</a> › <span aria-current="page">How to charge for a bot</span></nav><p class="muted">Updated <time datetime="2026-10-30">2026-10-30</time> · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month</p>
+<section class="block wrap prose"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> › <a href="learn.html">Guides</a> › <span aria-current="page">How to charge for a bot</span></nav><p class="muted">Updated <time datetime="2026-10-30">2026-10-30</time> · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month</p>
 <h2>The flow</h2>
 <ol><li>Collect the phone number in chat, then POST /v2/checkouts with paynow-mobile.</li><li>Poll GET /v2/checkouts/&lt;reference&gt;/status until collected, or use a webhook.</li><li>Unlock the user's features and store the reference for support.</li><li>Agents can do all of it through POST /mcp — wavepay_checkout and wavepay_checkout_status.</li></ol>
 <h2>Questions</h2>

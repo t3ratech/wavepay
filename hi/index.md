@@ -150,29 +150,29 @@ $0 हमेशा
 
 सबसे लोकप्रिय
 
-### Basic
+### Starter
 
-$9 प्रति माह
+$15 प्रति माह
 
-30 दिनों में 250 भुगतान
+30 दिनों में 100 भुगतान
 
 - 3 साइट
 - कूपन और प्रमोशन
 - वेबहुक और बही
 
-[Basic लें](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[Starter लें](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Pro
+### Growth
 
-$29 प्रति माह
+$49 प्रति माह
 
-30 दिनों में 2,500 भुगतान
+30 दिनों में 500 भुगतान
 
 - 10 साइट
-- Basic की हर सुविधा
+- Starter की हर सुविधा
 - प्राथमिकता सहायता कतार
 
-[Pro लें](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[Growth लें](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
 प्रश्न
 

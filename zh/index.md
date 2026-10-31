@@ -150,29 +150,29 @@ $0 永久
 
 最受欢迎
 
-### Basic
+### Starter
 
-$9 每月
+$15 每月
 
-每 30 天 250 笔付款
+每 30 天 100 笔付款
 
 - 3 个站点
 - 优惠券与促销
 - Webhook 与账本
 
-[选择 Basic](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[选择 Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Pro
+### Growth
 
-$29 每月
+$49 每月
 
-每 30 天 2,500 笔付款
+每 30 天 500 笔付款
 
 - 10 个站点
-- 包含 Basic 的全部功能
+- 包含 Starter 的全部功能
 - 优先支持队列
 
-[选择 Pro](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[选择 Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
 问答
 

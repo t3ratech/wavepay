@@ -1,0 +1,118 @@
+{
+  "currency": "USD",
+  "updated": "2026-10-31",
+  "vat": "Prices exclude VAT where VAT applies.",
+  "billing": "Monthly, in arrears, as one invoice. Annual prepay is 10 months for 12.",
+  "plans": [
+    {
+      "id": "free",
+      "name": "Free",
+      "monthlyMinor": 0,
+      "annualMinor": 0,
+      "includedPayments": 25,
+      "sites": 1,
+      "coupons": false,
+      "prioritySupport": false,
+      "overage": false,
+      "summary": "25 payments a month, test mode, one site. Stops at the cap; never charges."
+    },
+    {
+      "id": "starter",
+      "name": "Starter",
+      "monthlyMinor": 1500,
+      "annualMinor": 15000,
+      "includedPayments": 100,
+      "sites": 3,
+      "coupons": true,
+      "prioritySupport": false,
+      "overage": true,
+      "summary": "100 payments included, three sites, coupons, webhooks."
+    },
+    {
+      "id": "growth",
+      "name": "Growth",
+      "monthlyMinor": 4900,
+      "annualMinor": 49000,
+      "includedPayments": 500,
+      "sites": 10,
+      "coupons": true,
+      "prioritySupport": false,
+      "overage": true,
+      "summary": "500 payments included, ten sites, subscriptions and instalments."
+    },
+    {
+      "id": "scale",
+      "name": "Scale",
+      "monthlyMinor": 14900,
+      "annualMinor": 149000,
+      "includedPayments": 2500,
+      "sites": 30,
+      "coupons": true,
+      "prioritySupport": true,
+      "overage": true,
+      "summary": "2,500 payments included, thirty sites, priority support."
+    },
+    {
+      "id": "enterprise",
+      "name": "Enterprise",
+      "monthlyMinor": null,
+      "annualMinor": null,
+      "fromMonthlyMinor": 49900,
+      "includedPayments": null,
+      "sites": null,
+      "coupons": true,
+      "prioritySupport": true,
+      "overage": true,
+      "summary": "From $499 a month: custom volume, SLA, onboarding. By quote."
+    }
+  ],
+  "usage": {
+    "rule": "Payments beyond the plan's included allowance pay a percentage of their value, at a rate that falls with the payment's number in the month, with a minimum per payment.",
+    "tiers": [
+      {
+        "fromPayment": 1,
+        "toPayment": 1000,
+        "rateBps": 200,
+        "minimumMinor": 10
+      },
+      {
+        "fromPayment": 1001,
+        "toPayment": 2500,
+        "rateBps": 150,
+        "minimumMinor": 8
+      },
+      {
+        "fromPayment": 2501,
+        "toPayment": 10000,
+        "rateBps": 100,
+        "minimumMinor": 6
+      },
+      {
+        "fromPayment": 10001,
+        "toPayment": 50000,
+        "rateBps": 60,
+        "minimumMinor": 5
+      },
+      {
+        "fromPayment": 50001,
+        "toPayment": null,
+        "rateBps": 40,
+        "minimumMinor": 4
+      }
+    ]
+  },
+  "providerFees": "Provider fees, bank charges and the transfer tax are paid by the merchant to the provider at cost. WavePay adds no markup to them.",
+  "modes": {
+    "ownKeys": {
+      "enabled": true,
+      "summary": "Pass-through: you connect your own provider account; the provider pays you directly and WavePay never holds your money. Only the plan and usage fees above apply."
+    },
+    "collection": {
+      "enabled": false,
+      "summary": "WavePay collects and pays out. Requires a Reserve Bank payment service provider licence; not offered yet.",
+      "extraFeeBps": 150,
+      "payoutFeeMinor": 100,
+      "minimumPayoutMinor": 2000
+    }
+  }
+}

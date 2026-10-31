@@ -68,7 +68,7 @@ try {
 
 <main id="main">
 <section class="hero wrap"><span class="eyebrow">HOW IT WORKS</span><h1>How offline licence verification works with Ed25519 entitlements</h1><p class="lede" data-answer>WavePay signs each licence entitlement with an Ed25519 private key it never shares, so your app verifies the signature offline against the public key at GET /v2/licensing/public-key and never needs to call a server to know a licence is genuine.</p></section>
-<section class="block wrap prose"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> › <a href="learn.html">Guides</a> › <span aria-current="page">How offline licence verification works with Ed25519 entitlements</span></nav><p class="muted">Updated <time datetime="2026-10-30">2026-10-30</time> · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month</p>
+<section class="block wrap prose"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> › <a href="learn.html">Guides</a> › <span aria-current="page">How offline licence verification works with Ed25519 entitlements</span></nav><p class="muted">Updated <time datetime="2026-10-30">2026-10-30</time> · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month</p>
 <h2>The flow</h2>
 <p>A paid checkout emails a licence key. The device calls POST /v2/licensing/activate with the key and a deviceId and receives a signed entitlement. The app stores it and checks the signature locally.</p>
 <h2>Why Ed25519</h2>

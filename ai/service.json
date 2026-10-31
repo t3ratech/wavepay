@@ -44,14 +44,14 @@
       "perMonth": 25
     },
     {
-      "name": "Basic",
-      "price": 9,
-      "perMonth": 250
+      "name": "Starter",
+      "price": 15,
+      "perMonth": 100
     },
     {
-      "name": "Pro",
-      "price": 29,
-      "perMonth": 2500
+      "name": "Growth",
+      "price": 49,
+      "perMonth": 500
     }
   ]
 }
