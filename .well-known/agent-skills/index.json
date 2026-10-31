@@ -6,7 +6,7 @@
       "type": "skill-md",
       "description": "Register a merchant, price a product, create hosted or wallet checkouts, poll settlement, run subscriptions, instalments and refunds, and verify licences on T3rnel WavePay.",
       "url": "https://wavepay.t3ratech.co.zw/skill.md",
-      "digest": "sha256:3050b96ef003f5a990418746ce7925ad0b1552ab14f2a44a273763e4d4df86ed"
+      "digest": "sha256:828af148478afc227b3449cfd016be370b55c3ddf9c264685c7d7b12b345ab67"
     }
   ]
 }

@@ -1,10 +1,10 @@
-# Buy now, pay later for software: deposits and instalments on…
+# Buy now, pay later (BNPL) for software: deposits and…
 
 > WavePay BNPL takes a deposit at checkout and collects the rest from the customer's card on a schedule, retrying with a back-off until the full price is paid; it is…
 
 HOW IT WORKS
 
-# Buy now, pay later for software: deposits and instalments on cards
+# Buy now, pay later (BNPL) for software: deposits and instalments on cards
 
 WavePay BNPL takes a deposit at checkout and collects the rest from the customer's card on a schedule, retrying with a back-off until the full price is paid; it is limited to non-prepaid cards, and WavePay collects but does not lend.
 

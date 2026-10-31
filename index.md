@@ -214,7 +214,7 @@ Guides
 
 ### Questions and guides
 
-[FAQ](https://wavepay.t3ratech.co.zw/faq.html), [Subscriptions](https://wavepay.t3ratech.co.zw/guide-recurring-payments.html), [Buy now, pay later](https://wavepay.t3ratech.co.zw/guide-buy-now-pay-later.html), [Test mode](https://wavepay.t3ratech.co.zw/guide-test-mode.html), [Guides](https://wavepay.t3ratech.co.zw/learn.html)
+[FAQ](https://wavepay.t3ratech.co.zw/faq.html), [Subscriptions](https://wavepay.t3ratech.co.zw/guide-recurring-payments.html), [Buy now, pay later (BNPL)](https://wavepay.t3ratech.co.zw/guide-buy-now-pay-later.html), [Test mode](https://wavepay.t3ratech.co.zw/guide-test-mode.html), [Guides](https://wavepay.t3ratech.co.zw/learn.html)
 
 ## Ready to take your first payment?
 

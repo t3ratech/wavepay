@@ -27,7 +27,7 @@ POST /v2/checkouts
 Idempotency-Key: <stable per order>
 {
   "productId": "your-product",
-  "planId": "pro",
+  "planId": "growth",
   "provider": "paynow",        // "paynow-mobile" | "paypal"
   "email": "buyer@x.com",
   "phone": "+2637…"            // express wallet push only

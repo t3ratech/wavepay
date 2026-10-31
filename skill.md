@@ -256,7 +256,7 @@ refunded when it was not.
 Test-mode keys (`mk_test_…`) never count against the cap. Hitting the cap
 refuses new checkouts with `MERCHANT_LIMIT_REACHED` (429) — never a silent
 charge. Upgrading is a normal checkout on `productId: "wavepay"`,
-`planId: "basic" | "pro"` — the settlement moves your merchant's `plan_id`.
+`planId: "growth" | "scale"` — the settlement moves your merchant's `plan_id`.
 
 ## Rules that protect you
 

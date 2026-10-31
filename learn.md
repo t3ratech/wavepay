@@ -42,7 +42,7 @@ Everything WavePay does, by the question you are trying to answer: which rails i
 - [2Checkout (Verifone) with WavePay: checkout, subscriptions, refunds and notifications](https://wavepay.t3ratech.co.zw/guide-2checkout.html)
 - [Testing WavePay with fake money: test keys, simulated outcomes and time travel](https://wavepay.t3ratech.co.zw/guide-test-mode.html)
 - [Recurring payments in Zimbabwe: what charges automatically and what cannot](https://wavepay.t3ratech.co.zw/guide-recurring-payments.html)
-- [Buy now, pay later for software: deposits and instalments on cards](https://wavepay.t3ratech.co.zw/guide-buy-now-pay-later.html)
+- [Buy now, pay later (BNPL) for software: deposits and instalments on cards](https://wavepay.t3ratech.co.zw/guide-buy-now-pay-later.html)
 - [How offline licence verification works with Ed25519 entitlements](https://wavepay.t3ratech.co.zw/guide-offline-licence-verification.html)
 - [Idempotent checkouts: why a retry should never charge twice](https://wavepay.t3ratech.co.zw/guide-idempotent-checkouts.html)
 

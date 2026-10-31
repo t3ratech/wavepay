@@ -1618,7 +1618,7 @@ POST /v2/checkouts
 Idempotency-Key: <stable per order>
 {
   "productId": "your-product",
-  "planId": "pro",
+  "planId": "growth",
   "provider": "paynow",        // "paynow-mobile" | "paypal"
   "email": "buyer@x.com",
   "phone": "+2637…"            // express wallet push only
@@ -3718,13 +3718,13 @@ Register, get a live key and a test key, and take a test payment in minutes.
 
 Source: https://wavepay.t3ratech.co.zw/guide-buy-now-pay-later.html
 
-# Buy now, pay later for software: deposits and instalments on…
+# Buy now, pay later (BNPL) for software: deposits and…
 
 > WavePay BNPL takes a deposit at checkout and collects the rest from the customer's card on a schedule, retrying with a back-off until the full price is paid; it is…
 
 HOW IT WORKS
 
-# Buy now, pay later for software: deposits and instalments on cards
+# Buy now, pay later (BNPL) for software: deposits and instalments on cards
 
 WavePay BNPL takes a deposit at checkout and collects the rest from the customer's card on a schedule, retrying with a back-off until the full price is paid; it is limited to non-prepaid cards, and WavePay collects but does not lend.
 
@@ -4702,7 +4702,7 @@ Guides
 
 ### Questions and guides
 
-[FAQ](https://wavepay.t3ratech.co.zw/faq.html), [Subscriptions](https://wavepay.t3ratech.co.zw/guide-recurring-payments.html), [Buy now, pay later](https://wavepay.t3ratech.co.zw/guide-buy-now-pay-later.html), [Test mode](https://wavepay.t3ratech.co.zw/guide-test-mode.html), [Guides](https://wavepay.t3ratech.co.zw/learn.html)
+[FAQ](https://wavepay.t3ratech.co.zw/faq.html), [Subscriptions](https://wavepay.t3ratech.co.zw/guide-recurring-payments.html), [Buy now, pay later (BNPL)](https://wavepay.t3ratech.co.zw/guide-buy-now-pay-later.html), [Test mode](https://wavepay.t3ratech.co.zw/guide-test-mode.html), [Guides](https://wavepay.t3ratech.co.zw/learn.html)
 
 ## Ready to take your first payment?
 
@@ -5560,7 +5560,7 @@ Everything WavePay does, by the question you are trying to answer: which rails i
 - [2Checkout (Verifone) with WavePay: checkout, subscriptions, refunds and notifications](https://wavepay.t3ratech.co.zw/guide-2checkout.html)
 - [Testing WavePay with fake money: test keys, simulated outcomes and time travel](https://wavepay.t3ratech.co.zw/guide-test-mode.html)
 - [Recurring payments in Zimbabwe: what charges automatically and what cannot](https://wavepay.t3ratech.co.zw/guide-recurring-payments.html)
-- [Buy now, pay later for software: deposits and instalments on cards](https://wavepay.t3ratech.co.zw/guide-buy-now-pay-later.html)
+- [Buy now, pay later (BNPL) for software: deposits and instalments on cards](https://wavepay.t3ratech.co.zw/guide-buy-now-pay-later.html)
 - [How offline licence verification works with Ed25519 entitlements](https://wavepay.t3ratech.co.zw/guide-offline-licence-verification.html)
 - [Idempotent checkouts: why a retry should never charge twice](https://wavepay.t3ratech.co.zw/guide-idempotent-checkouts.html)
 
@@ -8051,7 +8051,7 @@ refunded when it was not.
 Test-mode keys (`mk_test_…`) never count against the cap. Hitting the cap
 refuses new checkouts with `MERCHANT_LIMIT_REACHED` (429) — never a silent
 charge. Upgrading is a normal checkout on `productId: "wavepay"`,
-`planId: "basic" | "pro"` — the settlement moves your merchant's `plan_id`.
+`planId: "growth" | "scale"` — the settlement moves your merchant's `plan_id`.
 
 ## Rules that protect you
 

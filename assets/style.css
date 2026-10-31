@@ -651,3 +651,13 @@ blockquote.answer, [data-answer] { padding-inline-start: 18px; }
 .chart .l-2c { stroke-width: 3; }
 
 .search-btn svg { inline-size: 18px; block-size: 18px; flex: none; }
+
+/* Specific enough to beat the older `.hero p.lede` colour: text on the green hero stays readable */
+.home-hero .hero p.lede, .home-hero p.lede, .home-hero .hero-copy p { color: var(--wp-band-muted); }
+.home-hero .trust li, .home-hero .trust span { color: var(--wp-band-on); }
+.home-hero .trust svg { color: var(--wp-zw-yellow); }
+.plans-3 .plan ul, .plans-5 .plan ul { align-content: start; }
+
+.status-grid { grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); }
+.block.wrap > h1 { font-size: clamp(1.9rem, 3.6vw, 3rem); line-height: 1.12; }
+.block.wrap > .lede { max-inline-size: 72ch; }
