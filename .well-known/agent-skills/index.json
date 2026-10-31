@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "wavepay",
+      "type": "skill-md",
+      "description": "Register a merchant, price a product, create hosted or wallet checkouts, poll settlement, run subscriptions, instalments and refunds, and verify licences on T3rnel WavePay.",
+      "url": "https://wavepay.t3ratech.co.zw/skill.md",
+      "digest": "sha256:3050b96ef003f5a990418746ce7925ad0b1552ab14f2a44a273763e4d4df86ed"
+    }
+  ]
+}

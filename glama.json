@@ -3,6 +3,6 @@
   "name": "wavepay",
   "description": "Payments for agents — register a merchant key, take PayNow + PayPal payments, track checkout status. Free 25 payments/mo.",
   "repository": {"type": "git", "url": "https://github.com/t3ratech/wavepay"},
-  "maintainers": [{"name": "t3ratech", "email": "t3ratech.dev@gmail.com", "url": "https://wavepay.t3ratech.co.zw"}],
+  "maintainers": [{"name": "t3ratech", "email": "support@t3ratech.co.zw", "url": "https://wavepay.t3ratech.co.zw"}],
   "homepage": "https://wavepay.t3ratech.co.zw"
 }

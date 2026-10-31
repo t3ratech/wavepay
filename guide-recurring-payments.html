@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Recurring payments in Zimbabwe: what charges automatically and what cannot · WavePay</title>
-<meta name="description" content="A card token or a PayPal subscription can be charged every period with nobody present, but mobile wallets such as EcoCash, OneMoney, InnBucks and O'mari cannot be debited unattended, so a WavePay subscription on a wallet sends the customer a fresh payment prompt each period and access follows what they pay.">
+<title>Recurring payments in Zimbabwe: what charges automatically and…</title>
+<meta name="description" content="A card token or a PayPal subscription can be charged every period with nobody present, but mobile wallets such as EcoCash, OneMoney, InnBucks and O'mari cannot be…">
 <link rel="canonical" href="https://wavepay.t3ratech.co.zw/guide-recurring-payments.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="WavePay">
-<meta property="og:title" content="Recurring payments in Zimbabwe: what charges automatically and what cannot">
-<meta property="og:description" content="A card token or a PayPal subscription can be charged every period with nobody present, but mobile wallets such as EcoCash, OneMoney, InnBucks and O'mari cannot be debited unattended, so a WavePay subscription on a wallet sends the customer a fresh payment prompt each period and access follows what they pay.">
+<meta property="og:title" content="Recurring payments in Zimbabwe: what charges automatically and…">
+<meta property="og:description" content="A card token or a PayPal subscription can be charged every period with nobody present, but mobile wallets such as EcoCash, OneMoney, InnBucks and O'mari cannot be…">
 <meta property="og:url" content="https://wavepay.t3ratech.co.zw/guide-recurring-payments.html">
 <meta property="og:image" content="https://wavepay.t3ratech.co.zw/assets/social-card.png">
 <meta property="article:modified_time" content="2026-10-30">
@@ -17,12 +17,13 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@t3ratech">
 <link rel="alternate" type="text/markdown" href="https://wavepay.t3ratech.co.zw/skill.md" title="Instructions for agents">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <meta name="theme-color" content="#fbfdfc" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0c1110" media="(prefers-color-scheme: dark)">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="/assets/style.css">
 <script>
 try {
+  document.documentElement.classList.add("js");
   const t = (document.cookie.match(/(?:^|; )wp_theme=([^;]*)/) || [])[1];
   if (t === "light" || t === "dark") document.documentElement.dataset.theme = decodeURIComponent(t);
 } catch (e) {}
@@ -34,7 +35,7 @@ try {
 {"@context":"https://schema.org","@type":"Article","headline":"Recurring payments in Zimbabwe: what charges automatically and what cannot","description":"A card token or a PayPal subscription can be charged every period with nobody present, but mobile wallets such as EcoCash, OneMoney, InnBucks and O'mari cannot be debited unattended, so a WavePay subscription on a wallet sends the customer a fresh payment prompt each period and access follows what they pay.","datePublished":"2026-10-30","dateModified":"2026-10-30","author":{"@type":"Organization","name":"TeraTech Solutions (Private) Limited","url":"https://t3ratech.co.zw"},"publisher":{"@id":"https://wavepay.t3ratech.co.zw/#organization"},"mainEntityOfPage":"https://wavepay.t3ratech.co.zw/guide-recurring-payments.html"}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","@id":"https://wavepay.t3ratech.co.zw/#organization","name":"TeraTech Solutions (Private) Limited","alternateName":"T3raTech","url":"https://t3ratech.co.zw","logo":"https://wavepay.t3ratech.co.zw/assets/favicon.svg","sameAs":["https://github.com/t3ratech","https://www.npmjs.com/org/t3ratech","https://x.com/t3ratech"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"t3ratech.dev@gmail.com","availableLanguage":["en"]}]}
+{"@context":"https://schema.org","@type":"Organization","@id":"https://wavepay.t3ratech.co.zw/#organization","name":"TeraTech Solutions (Private) Limited","alternateName":"T3raTech","url":"https://t3ratech.co.zw","logo":"https://wavepay.t3ratech.co.zw/assets/favicon.svg","sameAs":["https://github.com/t3ratech","https://www.npmjs.com/org/t3ratech","https://x.com/t3ratech"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"support@t3ratech.co.zw","availableLanguage":["en"]}]}
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NBFP6LVCZT"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-NBFP6LVCZT",{anonymize_ip:true});</script>
@@ -44,28 +45,23 @@ try {
 
 <header class="site-head">
   <div class="wrap">
-    <a class="brand" href="index.html">
-      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M2 12c2.5-4 5-6 7.5-6S14 8.5 16.5 12s5 6 7.5 6"/></svg></span>
+    <a class="brand" href="/">
+      <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M2 12c2.5-4 5-6 7.5-6S14 8.5 16.5 12s5 6 7.5 6"/></svg></span>
       <span>WavePay<small>by T3raTech</small></span>
     </a>
     <nav class="site-nav" aria-label="Primary">
-      <a href="index.html" data-i18n="nav.home">Overview</a>
-      <a href="pricing.html" data-i18n="nav.pricing">Pricing</a>
-      <a href="docs.html" data-i18n="nav.docs">Docs</a>
-      <a href="faq.html">FAQ</a>
-      <a href="status.html" data-i18n="nav.status">Status</a>
-      <a href="https://t3rnel-wavepay-production.t3ratech.workers.dev/portal/login" data-i18n="nav.signin">Sign in</a>
-      <a href="skill.md" title="Instructions for agents">skill.md</a>
+      <details class="menu"><summary>Product</summary><div class="menu-panel"><a href="/accept-card-and-paypal-payments.html">Payment rails</a><a href="/guide-recurring-payments.html" aria-current="page">Subscriptions</a><a href="/guide-buy-now-pay-later.html">Buy now, pay later</a><a href="/guide-offline-licence-verification.html">Licensing</a><a href="/guide-test-mode.html">Test mode</a></div></details><details class="menu"><summary>Developers</summary><div class="menu-panel"><a href="/docs.html">Documentation</a><a href="/openapi.json">API reference</a><a href="/skill.md">MCP and agents</a><a href="/status.html">Status</a></div></details><details class="menu"><summary>Solutions</summary><div class="menu-panel"><a href="/payments-for-browser-extensions.html">Browser extensions</a><a href="/payments-for-games.html">Games</a><a href="/payments-for-apps.html">Apps</a><a href="/payments-for-apis.html">APIs</a><a href="/payments-for-bots.html">Bots</a></div></details>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/docs.html">Docs</a>
     </nav>
-    <div class="prefs">
-      <button type="button" data-theme-choice="system" title="System theme" onclick="__wpTheme('system')">Auto</button>
-      <button type="button" data-theme-choice="light" title="Light theme" onclick="__wpTheme('light')">Light</button>
-      <button type="button" data-theme-choice="dark" title="Dark theme" onclick="__wpTheme('dark')">Dark</button>
-      <select aria-label="Language" onchange="__wpLang(this.value)">
-        <option value="en">English</option>
-        <option value="sn">chiShona</option>
-        <option value="nd">isiNdebele</option>
-      </select>
+    <div class="head-actions">
+      <div class="prefs">
+        <select aria-label="Language" data-lang-nav><option value="/" data-code="en" selected>English</option><option value="/sn/" data-code="sn">chiShona</option><option value="/nd/" data-code="nd">isiNdebele</option><option value="/sw/" data-code="sw">Kiswahili</option><option value="/fr/" data-code="fr">Français</option><option value="/pt/" data-code="pt">Português</option><option value="/es/" data-code="es">Español</option><option value="/de/" data-code="de">Deutsch</option><option value="/it/" data-code="it">Italiano</option><option value="/ar/" data-code="ar">العربية</option><option value="/hi/" data-code="hi">हिन्दी</option><option value="/zh/" data-code="zh">中文</option><option value="/ja/" data-code="ja">日本語</option><option value="/ru/" data-code="ru">Русский</option><option value="/id/" data-code="id">Bahasa Indonesia</option></select>
+        <div class="theme-switch" role="group" aria-label="Theme"><button type="button" data-theme-choice="system" aria-pressed="false" aria-label="System theme" title="System theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></button><button type="button" data-theme-choice="light" aria-pressed="false" aria-label="Light theme" title="Light theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button><button type="button" data-theme-choice="dark" aria-pressed="false" aria-label="Dark theme" title="Dark theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button></div>
+      </div>
+      <a class="btn btn-ghost btn-sm" href="/portal/login">Sign in</a>
+      <a class="btn btn-primary btn-sm" href="/pricing.html">Start free</a>
+      <details class="burger"><summary aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary><nav class="mobile-nav" aria-label="Mobile"><h2>Product</h2><a href="/accept-card-and-paypal-payments.html">Payment rails</a><a href="/guide-recurring-payments.html" aria-current="page">Subscriptions</a><a href="/guide-buy-now-pay-later.html">Buy now, pay later</a><a href="/guide-offline-licence-verification.html">Licensing</a><a href="/guide-test-mode.html">Test mode</a><h2>Developers</h2><a href="/docs.html">Documentation</a><a href="/openapi.json">API reference</a><a href="/skill.md">MCP and agents</a><a href="/status.html">Status</a><h2>Solutions</h2><a href="/payments-for-browser-extensions.html">Browser extensions</a><a href="/payments-for-games.html">Games</a><a href="/payments-for-apps.html">Apps</a><a href="/payments-for-apis.html">APIs</a><a href="/payments-for-bots.html">Bots</a><a href="/pricing.html">Pricing</a><a href="/docs.html">Docs</a><a href="/portal/login">Sign in</a></nav></details>
     </div>
   </div>
 </header>
@@ -86,27 +82,27 @@ try {
 <h2>Idempotent</h2>
 <p>Creating a subscription needs an Idempotency-Key, and every renewal is keyed by its period and attempt, so a repeated billing run can never charge a period twice.</p>
 </section>
-<section class="block wrap"><h2>Keep going</h2><ul class="plain"><li><a href="guide-test-mode.html">Testing WavePay with fake money: test keys, simulated outcomes and time travel</a></li><li><a href="docs.html">API reference</a></li><li><a href="faq.html">FAQ</a></li></ul></section>
+<section class="block wrap"><h2>Keep going</h2><ul class="plain"><li><a href="guide-2checkout.html">2Checkout (Verifone) with WavePay: checkout, subscriptions, refunds and notifications</a></li><li><a href="docs.html">API reference</a></li><li><a href="faq.html">FAQ</a></li></ul></section>
 </main>
 
 <footer class="site-foot">
   <div class="wrap">
-    <span class="fine" data-i18n="foot.line">Built by T3raTech. Ships worldwide; every Zimbabwean rail covered.</span>
-    <nav aria-label="Elsewhere">
-      <a href="https://t3ratech.co.zw" rel="noopener">T3raTech</a>
-      <a href="https://t3ratech.github.io/t3rnel-browser-plugin/" rel="noopener">T3rnel Browser</a>
-      <a href="https://github.com/t3ratech" rel="noopener">GitHub</a>
-      <a href="skill.md">skill.md</a>
-      <a href="llms.txt">llms.txt</a>
-      <a href="docs.html">API</a>
-      <a href="status.html">Status</a>
-      <a href="faq.html">FAQ</a>
-      <a href="learn.html">Guides</a>
-    </nav>
+    <div class="foot-grid">
+      <div class="foot-about">
+        <a class="brand" href="/"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M2 12c2.5-4 5-6 7.5-6S14 8.5 16.5 12s5 6 7.5 6"/></svg></span><span>WavePay</span></a>
+        <p>Checkout, licensing and settlement for software. Built in Zimbabwe by T3raTech, available worldwide.</p>
+      </div>
+      <div><h2>Product</h2><ul><li><a href="/accept-card-and-paypal-payments.html">Payment rails</a></li><li><a href="/guide-recurring-payments.html">Subscriptions</a></li><li><a href="/guide-buy-now-pay-later.html">Buy now, pay later</a></li><li><a href="/guide-offline-licence-verification.html">Licensing</a></li><li><a href="/pricing.html">Pricing</a></li></ul></div><div><h2>Developers</h2><ul><li><a href="/docs.html">Documentation</a></li><li><a href="/openapi.json">API reference</a></li><li><a href="/skill.md">MCP and agents</a></li><li><a href="/guide-test-mode.html">Test mode</a></li><li><a href="/status.html">Status</a></li></ul></div><div><h2>Solutions</h2><ul><li><a href="/payments-for-browser-extensions.html">Browser extensions</a></li><li><a href="/payments-for-games.html">Games</a></li><li><a href="/payments-for-apps.html">Apps</a></li><li><a href="/payments-for-apis.html">APIs</a></li><li><a href="/payments-for-bots.html">Bots</a></li></ul></div><div><h2>Company</h2><ul><li><a href="/faq.html">FAQ</a></li><li><a href="/learn.html">Guides</a></li><li><a href="mailto:support@t3ratech.co.zw">Contact support</a></li><li><a href="/.well-known/security.txt">Security</a></li></ul></div>
+    </div>
+    <nav class="foot-langs" aria-label="Language"><a href="/" hreflang="en" lang="en">English</a><a href="/sn/" hreflang="sn" lang="sn">chiShona</a><a href="/nd/" hreflang="nd" lang="nd">isiNdebele</a><a href="/sw/" hreflang="sw" lang="sw">Kiswahili</a><a href="/fr/" hreflang="fr" lang="fr">Français</a><a href="/pt/" hreflang="pt" lang="pt">Português</a><a href="/es/" hreflang="es" lang="es">Español</a><a href="/de/" hreflang="de" lang="de">Deutsch</a><a href="/it/" hreflang="it" lang="it">Italiano</a><a href="/ar/" hreflang="ar" lang="ar">العربية</a><a href="/hi/" hreflang="hi" lang="hi">हिन्दी</a><a href="/zh/" hreflang="zh" lang="zh">中文</a><a href="/ja/" hreflang="ja" lang="ja">日本語</a><a href="/ru/" hreflang="ru" lang="ru">Русский</a><a href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a></nav>
+    <div class="foot-bottom">
+      <p class="fine">© Teratech Solutions (Private) Limited. All rights reserved.</p>
+      <nav class="share-nav" aria-label="Share"><a href="https://x.com/intent/post?url=https%3A%2F%2Fwavepay.t3ratech.co.zw%2Fguide-recurring-payments.html&amp;text=WavePay" rel="noopener">X</a><a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwavepay.t3ratech.co.zw%2Fguide-recurring-payments.html" rel="noopener">LinkedIn</a><a href="https://github.com/t3ratech" rel="noopener">GitHub</a></nav>
+    </div>
   </div>
 </footer>
-
-<script src="assets/app.js" defer></script>
-<script src="assets/share.js" defer></script>
+<script src="/assets/config.js"></script>
+<script src="/assets/app.js" defer></script>
+<script src="/assets/webmcp.js" defer></script>
 </body>
 </html>

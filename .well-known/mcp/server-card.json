@@ -1,0 +1,77 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/mcp-server-card/v1.json",
+  "version": "1.0",
+  "protocolVersion": "2025-03-26",
+  "serverInfo": {
+    "name": "wavepay",
+    "title": "T3rnel WavePay",
+    "version": "2.1.0"
+  },
+  "description": "Checkout, licensing and settlement API for software — one integration reaches Zimbabwean wallets (EcoCash, OneMoney, InnBucks, Telecash, O'mari, ZimSwitch) and international rails (Visa, Mastercard, PayPal). Merchants self-register with one POST.",
+  "iconUrl": "https://wavepay.t3ratech.co.zw/assets/favicon.svg",
+  "documentationUrl": "https://wavepay.t3ratech.co.zw/docs.html#mcp",
+  "transport": {
+    "type": "streamable-http",
+    "endpoint": "https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp"
+  },
+  "authentication": {
+    "required": false,
+    "schemes": [
+      "api-key"
+    ],
+    "header": "x-wavepay-service-key",
+    "registration": "https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/register",
+    "note": "none for wavepay_register; x-wavepay-service-key: mk_live_… (or mk_test_… for the sandbox) for merchant tools — mint both via POST /v2/register or the register tool"
+  },
+  "capabilities": {
+    "tools": {
+      "listChanged": false
+    }
+  },
+  "tools": [
+    {
+      "name": "wavepay_register",
+      "description": "Register a merchant account — returns merchantId, a live mk_live_… key and a mk_test_… test key on the free tier. Works unsigned."
+    },
+    {
+      "name": "wavepay_providers",
+      "description": "List the payment rails this deployment has enabled right now."
+    },
+    {
+      "name": "wavepay_pricing",
+      "description": "Plans, prices and promotions for a product id."
+    },
+    {
+      "name": "wavepay_checkout",
+      "description": "Create a hosted checkout (or a wallet push with a phone and method) and get the buyer URL or next step."
+    },
+    {
+      "name": "wavepay_checkout_status",
+      "description": "Poll a checkout's settlement status by reference."
+    },
+    {
+      "name": "wavepay_features",
+      "description": "Which flagged capabilities (refunds, recurring, bnpl, card_tokens, paypal_billing, disputes) are on for live money; test keys can use all."
+    },
+    {
+      "name": "wavepay_subscribe",
+      "description": "Open a subscription: automatic (saved card, PayPal) or invoice_and_remind (every wallet). Needs a merchant key."
+    },
+    {
+      "name": "wavepay_bnpl",
+      "description": "Buy now, pay later on a card: deposit now, instalments until the total is paid; prepaid and virtual cards refused."
+    },
+    {
+      "name": "wavepay_refund",
+      "description": "Refund a settled PayPal or test payment; Paynow payments are refused with REFUND_UNSUPPORTED."
+    },
+    {
+      "name": "wavepay_test_billing_run",
+      "description": "Test key only: run the billing engine as if advanceDays had passed."
+    },
+    {
+      "name": "wavepay_catalog",
+      "description": "Everything the caller's merchant key can sell — sites, plans, live prices."
+    }
+  ]
+}

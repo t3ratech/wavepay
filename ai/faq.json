@@ -64,6 +64,11 @@
       "url": "https://wavepay.t3ratech.co.zw/faq.html#bnpl"
     },
     {
+      "question": "Does WavePay work with 2Checkout (Verifone)?",
+      "answer": "Yes. Provider twocheckout is Verifone's 2Checkout: international cards and PayPal with 2Checkout as merchant of record, so it handles tax and invoicing. A one-time checkout is a signed 2Checkout link settled by signed IPN; a subscription with collection=automatic is billed by 2Checkout itself, and WavePay records each renewal, refund and chargeback from its signed notifications. GET /v2/providers lists it wherever it is enabled.",
+      "url": "https://wavepay.t3ratech.co.zw/faq.html#twocheckout"
+    },
+    {
       "question": "Can I refund a payment?",
       "answer": "Yes for PayPal payments and for test payments: POST /v2/internal/refunds with an Idempotency-Key refunds all or part of a settled payment, never more than was paid. Paynow documents no refund API, so a Paynow payment is refused with REFUND_UNSUPPORTED rather than recorded as refunded; refund those from the Paynow dashboard.",
       "url": "https://wavepay.t3ratech.co.zw/faq.html#refunds"

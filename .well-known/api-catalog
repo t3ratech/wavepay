@@ -1,0 +1,50 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://t3rnel-wavepay-production.t3ratech.workers.dev/v2",
+      "service-desc": [
+        {
+          "href": "https://wavepay.t3ratech.co.zw/openapi.json",
+          "type": "application/json"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://wavepay.t3ratech.co.zw/docs.html",
+          "type": "text/html"
+        },
+        {
+          "href": "https://wavepay.t3ratech.co.zw/skill.md",
+          "type": "text/markdown"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://wavepay.t3ratech.co.zw/status.html",
+          "type": "text/html"
+        }
+      ]
+    },
+    {
+      "anchor": "https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp",
+      "service-desc": [
+        {
+          "href": "https://wavepay.t3ratech.co.zw/.well-known/mcp/server-card.json",
+          "type": "application/json"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://wavepay.t3ratech.co.zw/docs.html#mcp",
+          "type": "text/html"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://wavepay.t3ratech.co.zw/status.html",
+          "type": "text/html"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "name": "T3rnel WavePay",
+    "domain": "wavepay.t3ratech.co.zw",
+    "organization": "Teratech Solutions (Private) Limited",
+    "documentation": "https://wavepay.t3ratech.co.zw/docs.html",
+    "contact": "support@t3ratech.co.zw"
+  },
+  "entries": [
+    {
+      "id": "urn:air:wavepay.t3ratech.co.zw:mcp:wavepay",
+      "type": "mcp-server",
+      "name": "WavePay MCP server",
+      "description": "Tools for registering, pricing, checking out, subscribing, refunding and verifying payments.",
+      "url": "https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp",
+      "card": "https://wavepay.t3ratech.co.zw/.well-known/mcp/server-card.json"
+    },
+    {
+      "id": "urn:air:wavepay.t3ratech.co.zw:a2a:wavepay",
+      "type": "a2a-agent",
+      "name": "WavePay agent card",
+      "description": "A2A agent card with the live capability URLs.",
+      "url": "https://wavepay.t3ratech.co.zw/.well-known/agent-card.json"
+    },
+    {
+      "id": "urn:air:wavepay.t3ratech.co.zw:openapi:v2",
+      "type": "openapi",
+      "name": "WavePay API v2",
+      "description": "Every route of the checkout, licensing, billing and merchant API.",
+      "url": "https://wavepay.t3ratech.co.zw/openapi.json"
+    },
+    {
+      "id": "urn:air:wavepay.t3ratech.co.zw:skill:wavepay",
+      "type": "agent-skill",
+      "name": "WavePay skill",
+      "description": "The whole agent onboarding in one Markdown file.",
+      "url": "https://wavepay.t3ratech.co.zw/skill.md"
+    },
+    {
+      "id": "urn:air:wavepay.t3ratech.co.zw:catalog:api",
+      "type": "api-catalog",
+      "name": "API catalog",
+      "description": "RFC 9727 linkset.",
+      "url": "https://wavepay.t3ratech.co.zw/.well-known/api-catalog"
+    }
+  ]
+}

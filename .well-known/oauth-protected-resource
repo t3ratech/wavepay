@@ -1,0 +1,15 @@
+{
+  "resource": "https://t3rnel-wavepay-production.t3ratech.workers.dev/v2",
+  "bearer_methods_supported": [
+    "header"
+  ],
+  "resource_name": "T3rnel WavePay API",
+  "resource_documentation": "https://wavepay.t3ratech.co.zw/auth.md",
+  "resource_signing_alg_values_supported": [],
+  "authentication": {
+    "type": "api-key",
+    "header": "x-wavepay-service-key",
+    "registration_endpoint": "https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/register",
+    "instructions": "https://wavepay.t3ratech.co.zw/auth.md"
+  }
+}

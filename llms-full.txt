@@ -1,0 +1,4722 @@
+# T3rnel WavePay — full documentation
+
+Every public page of https://wavepay.t3ratech.co.zw as Markdown, followed by skill.md.
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/accept-card-and-paypal-payments.html
+
+# Accept Visa, Mastercard and PayPal payments from international…
+
+> For buyers outside Zimbabwe, WavePay offers Visa and Mastercard through the hosted paynow checkout and PayPal through provider paypal, on the same checkout call — so…
+
+PAYMENT RAIL
+
+# Accept Visa, Mastercard and PayPal payments from international buyers
+
+For buyers outside Zimbabwe, WavePay offers Visa and Mastercard through the hosted paynow checkout and PayPal through provider paypal, on the same checkout call — so one integration serves local and international customers.
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month
+
+## How it works
+
+1. **Same registration.** The merchant key you already have works for every rail.
+2. **Pick the provider.** provider "paypal" for PayPal (its checkout also takes Visa, Mastercard, American Express, Discover and JCB); "paynow" for the hosted checkout that carries Visa and Mastercard alongside the Zimbabwean rails.
+3. **Settle in one ledger.** Local and international payments appear in the same ledger, so reconciliation is one feed.
+
+```
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/checkouts \
+  -H 'Content-Type: application/json' -H 'Idempotency-Key: order-1001' \
+  -d '{"productId":"your-product","planId":"pro","provider":"paypal","email":"buyer@example.com"}'
+```
+
+## Good to know
+
+- A seller in Harare, Nairobi, Lagos or Lisbon uses the same API; the rails offered depend on what the deployment enabled.
+- PayPal and PayNow fees are their own.
+
+## Questions
+
+## Can WavePay take international cards?
+
+Yes — Visa and Mastercard are taken through the hosted paynow checkout and through PayPal, which also takes American Express, Discover and JCB.
+
+## Do I need a second integration for PayPal?
+
+No. It is the same POST /v2/checkouts call with provider "paypal".
+
+## Keep going
+
+- [Accept EcoCash payments in your software](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html)
+- [Accept OneMoney, InnBucks, Telecash, O'mari and ZimSwitch payments](https://wavepay.t3ratech.co.zw/accept-zimbabwe-wallet-payments.html)
+- [FAQ](https://wavepay.t3ratech.co.zw/faq.html)
+- [API reference](https://wavepay.t3ratech.co.zw/docs.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html
+
+> To accept EcoCash, register a WavePay merchant, then create a checkout with provider paynow for a hosted page or paynow-mobile with the buyer's phone number to push…
+
+PAYMENT RAIL
+
+# Accept EcoCash payments in your software
+
+To accept EcoCash, register a WavePay merchant, then create a checkout with provider paynow for a hosted page or paynow-mobile with the buyer's phone number to push the EcoCash prompt straight to their handset.
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month
+
+## How it works
+
+1. **Register once.** POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/register with a name and ownerEmail. The live key is shown once.
+2. **Create the checkout.** Use provider paynow for a hosted checkout URL, or paynow-mobile plus phone for an express wallet push.
+3. **Confirm settlement.** Poll GET /v2/checkouts/<reference>/status or receive a signed webhook; a licence key is emailed automatically if licensing is on.
+
+```
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/checkouts \
+  -H 'Content-Type: application/json' -H 'Idempotency-Key: order-1001' \
+  -d '{"productId":"your-product","planId":"pro","provider":"paynow-mobile","email":"buyer@example.com","phone":"+2637XXXXXXXX"}'
+```
+
+## Good to know
+
+- Express push (paynow-mobile) covers EcoCash, OneMoney, InnBucks and O'mari; the buyer approves on their handset with their PIN, and the wallet a deployment pushes to is part of its configuration.
+- Which rails a deployment enables is reported by GET /v2/providers — check it before showing EcoCash in your UI.
+- Provider fees are the provider's own; WavePay takes no percentage of your sales.
+
+## Questions
+
+## Do I need a separate EcoCash merchant integration?
+
+No. WavePay's checkout reaches EcoCash through the same POST /v2/checkouts call you use for every other rail.
+
+## Can I charge an EcoCash user without sending them to a web page?
+
+Yes. Provider paynow-mobile with the buyer's phone number pushes the wallet prompt to the handset.
+
+## Can an agent set EcoCash payments up?
+
+Yes. skill.md and the MCP tool wavepay_checkout cover the full flow with no browser.
+
+## Keep going
+
+- [Accept OneMoney, InnBucks, Telecash, O'mari and ZimSwitch payments](https://wavepay.t3ratech.co.zw/accept-zimbabwe-wallet-payments.html)
+- [Accept Visa, Mastercard and PayPal payments from international buyers](https://wavepay.t3ratech.co.zw/accept-card-and-paypal-payments.html)
+- [FAQ](https://wavepay.t3ratech.co.zw/faq.html)
+- [API reference](https://wavepay.t3ratech.co.zw/docs.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/accept-zimbabwe-wallet-payments.html
+
+# Accept OneMoney, InnBucks, Telecash, O'mari and ZimSwitch…
+
+> WavePay reaches OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through the same checkout call as EcoCash — one integration, with GET /v2/providers reporting which…
+
+PAYMENT RAIL
+
+# Accept OneMoney, InnBucks, Telecash, O'mari and ZimSwitch payments
+
+WavePay reaches OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through the same checkout call as EcoCash — one integration, with GET /v2/providers reporting which are live on your deployment. OneMoney, InnBucks and O'mari also support wallet push.
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month
+
+## How it works
+
+1. **Ask what is live.** GET /v2/providers returns the rails the deployment has enabled — build your payment picker from it, not from a hard-coded list.
+2. **Create the checkout.** POST /v2/checkouts with provider paynow (hosted, all rails) or paynow-mobile (wallet push, EcoCash/OneMoney/InnBucks/O'mari only).
+3. **Reconcile.** Every settlement lands in the payments ledger; drain it with POST /v2/internal/payments using since/limit cursors.
+
+```
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/checkouts \
+  -H 'Content-Type: application/json' -H 'Idempotency-Key: order-1001' \
+  -d '{"productId":"your-product","planId":"pro","provider":"paynow","email":"buyer@example.com"}'
+```
+
+| Rail | Type | How a buyer pays |
+| --- | --- | --- |
+| EcoCash | Mobile wallet | Hosted checkout, or wallet push with paynow-mobile |
+| OneMoney | Mobile wallet | Hosted checkout, or wallet push with paynow-mobile |
+| InnBucks | Mobile wallet | Hosted checkout, or wallet push with paynow-mobile |
+| Telecash | Mobile wallet | Hosted checkout |
+| O'mari | Mobile wallet | Hosted checkout, or wallet push with paynow-mobile |
+| ZimSwitch | Local debit-card network | Hosted checkout |
+
+## Good to know
+
+- One integration covers every rail a deployment enables.
+- Idempotency-Key makes a retried request return the same checkout instead of a second one.
+
+## Questions
+
+## Which Zimbabwean payment methods does WavePay support?
+
+EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch.
+
+## How do I know which ones are enabled for me?
+
+GET /v2/providers lists the live rails for the deployment you are calling.
+
+## Keep going
+
+- [Accept EcoCash payments in your software](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html)
+- [Accept Visa, Mastercard and PayPal payments from international buyers](https://wavepay.t3ratech.co.zw/accept-card-and-paypal-payments.html)
+- [FAQ](https://wavepay.t3ratech.co.zw/faq.html)
+- [API reference](https://wavepay.t3ratech.co.zw/docs.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/ar/
+
+# WavePay — مدفوعات وتراخيص للبرمجيات
+
+> اقبل EcoCash والبطاقات وPayPal عبر واجهة برمجية واحدة. سجّل بطلب واحد، وجرّب بأموال وهمية، ثم انطلق مع التراخيص والاشتراكات والمبالغ المستردة.
+
+الآن مع الاشتراكات والدفع بالتقسيط و2Checkout
+
+# احصل على أجر برنامجك عبر *كل وسيلة دفع يملكها عملاؤك*
+
+واجهة برمجية واحدة لـ EcoCash وOneMoney وInnBucks وZimSwitch والبطاقات وPayPal. سجّل بطلب واحد، وجرّب بأموال وهمية، ثم انطلق مع تراخيص واشتراكات ومبالغ مستردة مدمجة.
+
+[ابدأ مجانًا](https://wavepay.t3ratech.co.zw/pricing.html#register) [اقرأ الوثائق](https://wavepay.t3ratech.co.zw/docs.html) [للوكلاء](https://wavepay.t3ratech.co.zw/skill.md)
+
+- خطة مجانية دون بطاقة
+- لا عمولة نسبية على مبيعاتك
+- REST وMCP
+
+**9**وسائل دفع
+
+**25**دفعات مجانية شهريًا
+
+**0%**رسوم على مبيعاتك
+
+**15**لغة
+
+وسائل الدفع
+
+## كل وسيلة قد يملكها المشتري
+
+محافظ محلية لزيمبابوي، وبطاقات وPayPal لبقية العالم. تعرض نقطة مزودي الخدمة دائمًا ما هو مفعّل اليوم.
+
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · قريبًا
+
+ما تحصل عليه
+
+## الدفع هو الجزء السهل. وWavePay هو كل ما عداه.
+
+### دفع مُستضاف وطلب على المحفظة
+
+أرسل المشترين إلى صفحة مُستضافة، أو أرسل طلب EcoCash مباشرة إلى هواتفهم.
+
+### تراخيص مدمجة
+
+استحقاقات موقّعة ومفاتيح ترخيص بالبريد وتفعيل للأجهزة واستعادة. يتحقق تطبيقك دون اتصال.
+
+### الاشتراكات والتقسيط
+
+خطط متكررة، واشترِ الآن وادفع لاحقًا بالبطاقة، ومهلة تأخير واضحة قبل انتهاء الوصول.
+
+### المبالغ المستردة والعكس
+
+استرداد كامل أو جزئي عبر المزود، مع سجل بمن أجراه ولماذا.
+
+### بيئة اختبار حقيقية
+
+مفتاح اختبار بجانب مفتاحك الفعلي، ومحاكي، وسفر عبر الزمن لرؤية التجديد يحدث.
+
+### مصمم للوكلاء
+
+skill.md وOpenAPI وخادم MCP وأدوات WebMCP، ليتمكن الذكاء الاصطناعي من إعداد الدفع نيابةً عنك.
+
+كيف يعمل
+
+## ثلاثة طلبات من الصفر إلى الدفع
+
+1
+
+### سجّل
+
+طلب واحد يعيد مفتاحًا فعليًا ومفتاح اختبار. خطة مجانية تعمل فورًا.
+
+2
+
+### بِع
+
+أنشئ عملية دفع واحصل على رابط مُستضاف، أو أرسل طلبًا إلى هاتف.
+
+3
+
+### سوِّ
+
+يؤكد webhook موقّع أو استعلام وصول المال. يُرسل مفتاح الترخيص تلقائيًا.
+
+للمطورين
+
+## ابدأ بـ curl. وانتهِ بمفتاح ترخيص.
+
+يُشغَّل كل مثال في الوثائق أولًا في بيئة الاختبار بمفتاح اختبار، فيمكنك التجربة بأمان.
+
+[افتح مرجع الواجهة البرمجية](https://wavepay.t3ratech.co.zw/docs.html)
+
+curl MCP JavaScript
+
+```
+# 1. register: a live key and a test key, shown once 
+curl -sX POST https://wavepay.t3ratech.co.zw/v2/register \
+  -H 'content-type: application/json' \
+  -d '{"name":"My App","ownerEmail":"you@example.com"}'
+
+# 2. sell: returns a hosted checkout URL 
+curl -sX POST https://wavepay.t3ratech.co.zw/v2/checkouts \
+  -H 'x-wavepay-service-key: mk_test_… ' \
+  -H 'idempotency-key: order-1001' \
+  -d '{"productId":"my-app","planId":"pro","provider":"paynow","email":"buyer@example.com"}'
+```
+
+```
+# any MCP client: https://wavepay.t3ratech.co.zw/mcp 
+{ "jsonrpc": "2.0", "id": 1, "method": "tools/call",
+  "params": {
+    "name": "wavepay_checkout",
+    "arguments": { "productId": "my-app", "planId": "pro",
+                   "provider": "paynow", "email": "buyer@example.com" } } }
+
+# tools: wavepay_register, wavepay_providers, wavepay_pricing,
+#        wavepay_checkout, wavepay_checkout_status, wavepay_subscribe … 
+```
+
+```
+const res = await fetch("https://wavepay.t3ratech.co.zw/v2/checkouts", {
+  method: "POST",
+  headers: {
+    "content-type": "application/json",
+    "x-wavepay-service-key": process.env.WAVEPAY_KEY,
+    "idempotency-key": crypto.randomUUID(),
+  },
+  body: JSON.stringify({ productId: "my-app", planId: "pro",
+                         provider: "paypal", email: "buyer@example.com" }),
+});
+const { checkoutUrl, reference } = await res.json();
+```
+
+الأسعار
+
+## التسعير حسب المدفوعات لا حسب العمولة
+
+خطط شهرية ثابتة. يفرض مزودو الدفع رسومهم الخاصة إضافةً إلى ذلك.
+
+### مجاني
+
+$0 للأبد
+
+25 دفعة كل 30 يومًا
+
+- موقع واحد
+- كل وسيلة دفع مفعّلة
+- Webhooks موقّعة
+- سجل المدفوعات
+
+[سجّل مجانًا](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+الأكثر طلبًا
+
+### Basic
+
+$9 شهريًا
+
+250 دفعة كل 30 يومًا
+
+- 3 مواقع
+- قسائم وعروض
+- Webhooks وسجل
+
+[اختر Basic](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Pro
+
+$29 شهريًا
+
+2500 دفعة كل 30 يومًا
+
+- 10 مواقع
+- كل ما في Basic
+- طابور دعم ذو أولوية
+
+[اختر Pro](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+أسئلة
+
+## إجابات قبل أن تسأل
+
+ما وسائل الدفع التي يمكنني قبولها؟
+
+EcoCash وOneMoney وInnBucks وTelecash وO'mari وZimSwitch عبر Paynow؛ وVisa وMastercard وPayPal للمشترين الدوليين. 2Checkout جاهز ويُفعَّل عندما يوافق المزود على حسابنا.
+
+هل تأخذون نسبة من مبيعاتي؟
+
+لا. الخطط أسعار شهرية ثابتة بحسب المدفوعات المعالجة. ويفرض مزودو الدفع رسومهم الخاصة.
+
+هل يمكنني الاختبار دون مال حقيقي؟
+
+نعم. يمنحك التسجيل مفتاح اختبار يستخدم محاكيًا. لا يصل إلى أي مزود ولا يُحتسب ضمن خطتك.
+
+كيف يحصل المشترون على ترخيصهم؟
+
+عند تسوية الدفعة ترسل WavePay مفتاح ترخيص بالبريد، ويمكن لتطبيقك التحقق من الاستحقاق الموقّع دون اتصال.
+
+هل يمكن لوكيل ذكاء اصطناعي استخدام WavePay؟
+
+نعم. وجّهه إلى skill.md أو مستند OpenAPI أو خادم MCP. يستطيع الوكيل التسجيل وتحديد الأسعار والتحصيل والمطابقة دون متصفح.
+
+الأدلة
+
+## إجابات لما تبنيه
+
+### وسائل الدفع
+
+[EcoCash](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html), [OneMoney, InnBucks, Telecash, O'mari, ZimSwitch](https://wavepay.t3ratech.co.zw/accept-zimbabwe-wallet-payments.html), [Visa, Mastercard, PayPal](https://wavepay.t3ratech.co.zw/accept-card-and-paypal-payments.html)
+
+### نوع برنامجك
+
+[إضافات المتصفح](https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html), [الألعاب](https://wavepay.t3ratech.co.zw/payments-for-games.html), [التطبيقات](https://wavepay.t3ratech.co.zw/payments-for-apps.html), [الواجهات البرمجية](https://wavepay.t3ratech.co.zw/payments-for-apis.html), [الروبوتات](https://wavepay.t3ratech.co.zw/payments-for-bots.html)
+
+### أسئلة وأدلة
+
+[الأسئلة الشائعة](https://wavepay.t3ratech.co.zw/faq.html), [الاشتراكات](https://wavepay.t3ratech.co.zw/guide-recurring-payments.html), [اشترِ الآن وادفع لاحقًا](https://wavepay.t3ratech.co.zw/guide-buy-now-pay-later.html), [وضع الاختبار](https://wavepay.t3ratech.co.zw/guide-test-mode.html), [الأدلة](https://wavepay.t3ratech.co.zw/learn.html)
+
+## هل أنت مستعد لقبول أول دفعة؟
+
+سجّل بطلب واحد. دون بطاقة ودون مكالمة.
+
+[ابدأ مجانًا](https://wavepay.t3ratech.co.zw/pricing.html#register)[اقرأ الوثائق](https://wavepay.t3ratech.co.zw/docs.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/compare-wavepay-vs-card-only-processor.html
+
+> A card-only processor cannot take a mobile-wallet payment, so buyers who hold EcoCash or OneMoney but not a card cannot pay; WavePay adds those local rails to Visa…
+
+COMPARE
+
+# WavePay vs a card-only payment processor
+
+A card-only processor cannot take a mobile-wallet payment, so buyers who hold EcoCash or OneMoney but not a card cannot pay; WavePay adds those local rails to Visa, Mastercard and PayPal behind the same checkout call.
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month
+
+|  | Card-only processor | WavePay |
+| --- | --- | --- |
+| Mobile wallets (EcoCash, OneMoney, InnBucks, Telecash, O'mari) | Not offered | Offered; wallet push for EcoCash, OneMoney, InnBucks and O'mari |
+| ZimSwitch | Not offered | Offered |
+| Visa / Mastercard / PayPal | Offered | Offered |
+| Pricing basis | Typically a percentage of sales | Payments processed: Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month |
+| Self-serve for agents | Varies | POST /v2/register, skill.md, MCP tools |
+
+## Questions
+
+## Why add wallets if cards already work?
+
+Because a buyer without a card cannot pay at all; each extra rail is a set of customers who could not otherwise complete the purchase.
+
+## Is a card-only processor ever the better choice?
+
+Yes, when every buyer you serve holds a card and you need nothing else.
+
+## Keep going
+
+- [All guides and comparisons](https://wavepay.t3ratech.co.zw/learn.html)
+- [Pricing](https://wavepay.t3ratech.co.zw/pricing.html)
+- [FAQ](https://wavepay.t3ratech.co.zw/faq.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/compare-wavepay-vs-integrating-each-rail.html
+
+> Integrating each rail yourself means one integration, one reconciliation feed and one failure mode per wallet and card scheme; WavePay replaces them with one checkout…
+
+COMPARE
+
+# WavePay vs integrating each payment rail yourself
+
+Integrating each rail yourself means one integration, one reconciliation feed and one failure mode per wallet and card scheme; WavePay replaces them with one checkout call and one ledger, at the cost of depending on WavePay for the rails it enables.
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month
+
+|  | Each rail yourself | WavePay |
+| --- | --- | --- |
+| Integrations to build | One per wallet, card scheme and PayPal | One: POST /v2/checkouts |
+| Reconciliation | One report per rail | One payments ledger with since/limit cursors |
+| Retries | Each integration's own idempotency rules | Idempotency-Key on every checkout |
+| Licence keys | Build and run key issuing yourself | Built in: Ed25519 entitlements, offline verification |
+| Agent onboarding | Per-provider portals and forms | POST /v2/register or skill.md — no browser |
+| Control | Direct relationship with every provider | WavePay sits between you and the provider |
+
+## Questions
+
+## When should I integrate a rail directly?
+
+When you need one rail only, want the direct provider relationship, and are happy to build its reconciliation and licensing yourself.
+
+## When does WavePay make more sense?
+
+When your buyers hold different rails, or when an agent has to set payments up without a browser.
+
+## Keep going
+
+- [All guides and comparisons](https://wavepay.t3ratech.co.zw/learn.html)
+- [Pricing](https://wavepay.t3ratech.co.zw/pricing.html)
+- [FAQ](https://wavepay.t3ratech.co.zw/faq.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/de/
+
+# WavePay — Zahlungen und Lizenzen für Software
+
+> Nehmen Sie EcoCash, Karten und PayPal mit einer API an. In einer Anfrage registrieren, mit Spielgeld testen und dann mit Lizenzen, Abos und Erstattungen live gehen.
+
+Jetzt mit Abos, Ratenzahlung und 2Checkout
+
+# Lassen Sie sich für Ihre Software bezahlen auf *jedem Weg, den Ihre Kunden nutzen*
+
+Eine API für EcoCash, OneMoney, InnBucks, ZimSwitch, Karten und PayPal. In einer Anfrage registrieren, mit Spielgeld testen und mit eingebauten Lizenzen, Abos und Erstattungen live gehen.
+
+[Kostenlos starten](https://wavepay.t3ratech.co.zw/pricing.html#register) [Dokumentation lesen](https://wavepay.t3ratech.co.zw/docs.html) [Für Agenten](https://wavepay.t3ratech.co.zw/skill.md)
+
+- Kostenloser Tarif, keine Karte nötig
+- Keine prozentuale Gebühr auf Ihre Umsätze
+- REST und MCP
+
+**9**Zahlungsarten
+
+**25**kostenlose Zahlungen pro Monat
+
+**0%**Gebühr auf Ihre Umsätze
+
+**15**Sprachen
+
+Zahlungsarten
+
+## Jede Zahlungsart, die ein Käufer haben könnte
+
+Lokale Wallets für Simbabwe, Karten und PayPal für alle anderen. Der Anbieter-Endpunkt zeigt immer, was heute aktiv ist.
+
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · demnächst
+
+Was Sie bekommen
+
+## Der Checkout ist der leichte Teil. WavePay ist der Rest.
+
+### Gehosteter Checkout und Wallet-Anfrage
+
+Schicken Sie Käufer auf eine gehostete Seite oder senden Sie eine EcoCash-Anfrage direkt aufs Handy.
+
+### Lizenzierung eingebaut
+
+Signierte Berechtigungen, Lizenzschlüssel per E-Mail, Geräteaktivierung und Wiederherstellung. Ihre App prüft offline.
+
+### Abos und Ratenzahlung
+
+Wiederkehrende Pläne, Kartenzahlung später und eine klare Verzugsfrist, bevor der Zugang endet.
+
+### Erstattungen und Rückbuchungen
+
+Volle und teilweise Erstattungen über den Anbieter, mit Nachweis, wer sie warum veranlasst hat.
+
+### Eine echte Testumgebung
+
+Ein Testschlüssel neben Ihrem Live-Schlüssel, ein Simulator und Zeitreise, um eine Verlängerung zu beobachten.
+
+### Für Agenten gebaut
+
+skill.md, OpenAPI, ein MCP-Server und WebMCP-Werkzeuge: Eine KI kann den Checkout für Sie einrichten.
+
+So funktioniert es
+
+## Drei Anfragen von null bis bezahlt
+
+1
+
+### Registrieren
+
+Eine Anfrage liefert einen Live- und einen Testschlüssel. Kostenloser Tarif, sofort aktiv.
+
+2
+
+### Verkaufen
+
+Erstellen Sie einen Checkout und erhalten Sie eine gehostete URL oder senden Sie eine Wallet-Anfrage ans Handy.
+
+3
+
+### Abwickeln
+
+Ein signierter Webhook oder eine Abfrage bestätigt das Geld. Der Lizenzschlüssel geht automatisch per E-Mail raus.
+
+Für Entwickler
+
+## Mit curl anfangen. Mit einem Lizenzschlüssel enden.
+
+Jedes Beispiel der Dokumentation läuft zuerst mit einem Testschlüssel in der Sandbox, damit Sie gefahrlos ausprobieren können.
+
+[API-Referenz öffnen](https://wavepay.t3ratech.co.zw/docs.html)
+
+curl MCP JavaScript
+
+```
+# 1. register: a live key and a test key, shown once 
+curl -sX POST https://wavepay.t3ratech.co.zw/v2/register \
+  -H 'content-type: application/json' \
+  -d '{"name":"My App","ownerEmail":"you@example.com"}'
+
+# 2. sell: returns a hosted checkout URL 
+curl -sX POST https://wavepay.t3ratech.co.zw/v2/checkouts \
+  -H 'x-wavepay-service-key: mk_test_… ' \
+  -H 'idempotency-key: order-1001' \
+  -d '{"productId":"my-app","planId":"pro","provider":"paynow","email":"buyer@example.com"}'
+```
+
+```
+# any MCP client: https://wavepay.t3ratech.co.zw/mcp 
+{ "jsonrpc": "2.0", "id": 1, "method": "tools/call",
+  "params": {
+    "name": "wavepay_checkout",
+    "arguments": { "productId": "my-app", "planId": "pro",
+                   "provider": "paynow", "email": "buyer@example.com" } } }
+
+# tools: wavepay_register, wavepay_providers, wavepay_pricing,
+#        wavepay_checkout, wavepay_checkout_status, wavepay_subscribe … 
+```
+
+```
+const res = await fetch("https://wavepay.t3ratech.co.zw/v2/checkouts", {
+  method: "POST",
+  headers: {
+    "content-type": "application/json",
+    "x-wavepay-service-key": process.env.WAVEPAY_KEY,
+    "idempotency-key": crypto.randomUUID(),
+  },
+  body: JSON.stringify({ productId: "my-app", planId: "pro",
+                         provider: "paypal", email: "buyer@example.com" }),
+});
+const { checkoutUrl, reference } = await res.json();
+```
+
+Preise
+
+## Preis nach Zahlungen, nicht nach Provision
+
+Feste Monatspläne. Die Zahlungsanbieter berechnen ihre eigenen Gebühren zusätzlich.
+
+### Kostenlos
+
+$0 für immer
+
+25 Zahlungen pro 30 Tage
+
+- 1 Website
+- Jede aktive Zahlungsart
+- Signierte Webhooks
+- Zahlungsjournal
+
+[Kostenlos registrieren](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Am beliebtesten
+
+### Basic
+
+$9 pro Monat
+
+250 Zahlungen pro 30 Tage
+
+- 3 Websites
+- Gutscheine und Aktionen
+- Webhooks und Journal
+
+[Basic wählen](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Pro
+
+$29 pro Monat
+
+2.500 Zahlungen pro 30 Tage
+
+- 10 Websites
+- Alles aus Basic
+- Priorisierte Support-Warteschlange
+
+[Pro wählen](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Fragen
+
+## Antworten, bevor Sie fragen
+
+Welche Zahlungsarten kann ich annehmen?
+
+EcoCash, OneMoney, InnBucks, Telecash, O'mari und ZimSwitch über Paynow; Visa, Mastercard und PayPal für internationale Käufer. 2Checkout ist gebaut und wird aktiviert, sobald der Anbieter unser Konto freigibt.
+
+Nehmen Sie einen Prozentsatz meiner Umsätze?
+
+Nein. Die Pläne sind feste Monatspreise nach verarbeiteten Zahlungen. Die Zahlungsanbieter berechnen ihre eigenen Gebühren.
+
+Kann ich ohne echtes Geld testen?
+
+Ja. Die Registrierung gibt Ihnen einen Testschlüssel mit Simulator. Er erreicht nie einen Anbieter und zählt nicht auf Ihren Plan.
+
+Wie erhalten Käufer ihre Lizenz?
+
+Sobald eine Zahlung abgewickelt ist, sendet WavePay einen Lizenzschlüssel per E-Mail, und Ihre App kann die signierte Berechtigung offline prüfen.
+
+Kann ein KI-Agent WavePay nutzen?
+
+Ja. Verweisen Sie ihn auf skill.md, das OpenAPI-Dokument oder den MCP-Server. Ein Agent kann sich registrieren, Preise setzen, kassieren und abgleichen, ganz ohne Browser.
+
+Anleitungen
+
+## Antworten für das, was Sie bauen
+
+### Zahlungsarten
+
+[EcoCash](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html), [OneMoney, InnBucks, Telecash, O'mari, ZimSwitch](https://wavepay.t3ratech.co.zw/accept-zimbabwe-wallet-payments.html), [Visa, Mastercard, PayPal](https://wavepay.t3ratech.co.zw/accept-card-and-paypal-payments.html)
+
+### Ihre Art von Software
+
+[Browser-Erweiterungen](https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html), [Spiele](https://wavepay.t3ratech.co.zw/payments-for-games.html), [Apps](https://wavepay.t3ratech.co.zw/payments-for-apps.html), [APIs](https://wavepay.t3ratech.co.zw/payments-for-apis.html), [Bots](https://wavepay.t3ratech.co.zw/payments-for-bots.html)
+
+### Fragen und Anleitungen
+
+[FAQ](https://wavepay.t3ratech.co.zw/faq.html), [Abonnements](https://wavepay.t3ratech.co.zw/guide-recurring-payments.html), [Jetzt kaufen, später zahlen](https://wavepay.t3ratech.co.zw/guide-buy-now-pay-later.html), [Testmodus](https://wavepay.t3ratech.co.zw/guide-test-mode.html), [Anleitungen](https://wavepay.t3ratech.co.zw/learn.html)
+
+## Bereit für Ihre erste Zahlung?
+
+In einer Anfrage registrieren. Keine Karte, kein Anruf.
+
+[Kostenlos starten](https://wavepay.t3ratech.co.zw/pricing.html#register)[Dokumentation lesen](https://wavepay.t3ratech.co.zw/docs.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/docs.html
+
+# Docs — WavePay
+
+> WavePay developer documentation: merchant registration, checkouts on every rail, wallet push, licensing, webhooks, the payments ledger and MCP tools for agents.
+
+Developer docs
+
+# The whole API in one page
+
+Base URL: `https://t3rnel-wavepay-production.t3ratech.workers.dev`. Public endpoints are rate-limited per client. Merchant endpoints take your key in the `x-wavepay-service-key` header. Agents: [skill.md](https://wavepay.t3ratech.co.zw/skill.md) is the same reference shaped for autonomous clients; `POST /mcp` speaks JSON-RPC tools.
+
+### 0 · Register — no browser
+
+```
+POST /v2/register
+{ "name": "My Product", "ownerEmail": "you@x.com" }
+// 201 → { "merchantId": "mer_…", "key": "mk_live_…",
+//         "planId": "free", "paymentsPerMonth": 25 }
+// The key is shown once — only its hash is stored.
+```
+
+One registration per email; 5/day per client. A lost key is re-minted by the operator against the owner email.
+
+### 1 · Start a checkout
+
+```
+POST /v2/checkouts
+Idempotency-Key: <stable per order>
+{
+  "productId": "your-product",
+  "planId": "pro",
+  "provider": "paynow",        // "paynow-mobile" | "paypal"
+  "email": "buyer@x.com",
+  "phone": "+2637…"            // express wallet push only
+}
+// 201 → { "checkoutUrl": "…", "reference": "pay_…" }
+```
+
+Hand the buyer `checkoutUrl`. With `paynow-mobile` + `phone`, the wallet prompt pushes straight to the handset — no page at all.
+
+### 2 · Watch it settle
+
+```
+GET /v2/checkouts/<reference>/status
+// 200 → { "status": "pending" | "collected" | "expired" }
+
+// settlement push instead — register a webhook on your site:
+POST /v2/internal/sites/webhook
+x-wavepay-service-key: mk_live_…
+{ "siteId": "…", "url": "https://you.dev/hook" }
+// → returns the HMAC secret once; settlements sign with it.
+```
+
+### 3 · Catalogue and pricing
+
+```
+GET /v2/providers                   // live rails
+GET /v2/pricing?productId=…         // plans, prices, promotions
+
+GET /v2/internal/merchant/catalog   // with your key —
+// the sites, plans and coupons your merchant sees
+```
+
+### MCP — tools for agents
+
+```
+POST /mcp                       // JSON-RPC 2.0
+{"jsonrpc":"2.0","id":1,"method":"tools/list"}
+// wavepay_register · wavepay_providers · wavepay_pricing
+// wavepay_checkout · wavepay_checkout_status · wavepay_catalog
+// Merchant tools read the key from the request's
+// x-wavepay-service-key header, same as REST.
+```
+
+### Licensing (optional, built in)
+
+```
+POST /v2/licensing/checkout    // sells + emails a licence key
+POST /v2/licensing/activate    // { "licenseKey", "deviceId" } → signed entitlement
+POST /v2/licensing/recover     // mails the buyer a fresh key
+GET  /v2/licensing/public-key  // Ed25519 trust root — verify entitlements offline
+```
+
+T3rnel Browser sells Pro on this exact flow in production.
+
+### Merchant endpoints
+
+| Endpoint | What it does |
+| --- | --- |
+| `POST /v2/internal/payments` | Your settlement ledger — idempotent drain with `since`/`limit` cursors |
+| `POST /v2/internal/coupons/mint` | Mint discount codes on your products (Basic+) |
+| `GET /v2/internal/merchant/catalog` | Everything your key can sell: sites, plans, live prices |
+| `POST /v2/internal/sites/webhook` | Set the settlement webhook for a site (secret returned once) |
+| `POST /v2/test/settle` | Test-mode settlement — exercise the webhook end-to-end, no money moves |
+| `POST /v2/test/billing/run` | Test key only — run the billing engine as if `advanceDays` had passed, to exercise renewals, instalments and dunning |
+| `GET /v2/features` | Which flagged capabilities are on for live money (test keys can use all of them) |
+| `POST /v2/internal/subscriptions` | Open a subscription (needs `Idempotency-Key`); `GET` lists, `/cancel` ends |
+| `POST /v2/internal/bnpl` | Buy now, pay later on a card: deposit now, instalments until the total is paid |
+| `POST /v2/internal/refunds` | Refund a settled PayPal or test payment, in part or in full |
+| `POST /v2/internal/subscriptions/pause` | Pause a subscription (also at 2Checkout); `/resume` undoes it, `/price` changes the renewal price |
+| `POST /v2/twocheckout/ipn` | 2Checkout's signed order, renewal, refund and chargeback notifications (and `/lcn` for subscription changes) — called by 2Checkout, not by you |
+| `POST /v2/internal/checkouts/otp` | Complete an O'mari payment with the buyer's one-time PIN |
+
+### Test mode
+
+`POST /v2/register` returns `key` (`mk_live_…`) and `testKey` (`mk_test_…`). A test key calls the same routes but settles through a simulator that never contacts a provider and never counts against your cap. Choose the outcome with Paynow's test phones: `0771111111` paid, `0772222222` paid after ten seconds, `0773333333` cancelled, `0774444444` failed; or tag the email (`+decline`, `+cancel`, `+delay`). A test checkout's URL is a hosted page with Approve and Decline buttons. Read [the test-mode guide](https://wavepay.t3ratech.co.zw/guide-test-mode.html).
+
+### Subscriptions, instalments and refunds
+
+**Automatic** collection charges a saved card (Paynow card tokens, once Paynow has approved them for the deployment) or a PayPal subscription. **invoice_and_remind** sends a payment request each period and is the only mode for EcoCash, OneMoney, InnBucks and O'mari, which cannot be debited unattended. **BNPL** takes a deposit and collects the rest from a non-prepaid card until the total is paid; WavePay collects, it does not lend. **Refunds** work for PayPal and test payments; Paynow documents no refund API. These are switched on per deployment — check `GET /v2/features`. See [recurring payments](https://wavepay.t3ratech.co.zw/guide-recurring-payments.html) and [buy now, pay later](https://wavepay.t3ratech.co.zw/guide-buy-now-pay-later.html).
+
+### Rails and rules
+
+**paynow** — hosted PayNow checkout: Visa, Mastercard, ZimSwitch, EcoCash, OneMoney, Telecash, InnBucks, O'mari. **paynow-mobile** — express wallet push to a phone. **twocheckout** — Verifone's 2Checkout: international cards and PayPal, merchant of record, 2Checkout-billed subscriptions, refunds, signed IPN/LCN notifications. **paypal** — international buyers, USD. Prices are minor units (900 = $9.00). Free tier caps at 25 payments/30 days — the cap refuses checkouts as `MERCHANT_LIMIT_REACHED`, never mid-payment. Idempotency-Key retries return the same checkout; `mk_test_…` keys run every route with fake money.
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/es/
+
+# WavePay — pagos y licencias para software
+
+> Acepta EcoCash, tarjetas y PayPal con una sola API. Regístrate en una solicitud, prueba con dinero ficticio y pasa a producción con licencias, suscripciones y reembolsos.
+
+Ahora con suscripciones, pagos a plazos y 2Checkout
+
+# Cobra por tu software en *todos los medios de pago que usan tus clientes*
+
+Una API para EcoCash, OneMoney, InnBucks, ZimSwitch, tarjetas y PayPal. Regístrate en una solicitud, prueba con dinero ficticio y pasa a producción con licencias, suscripciones y reembolsos incluidos.
+
+[Empieza gratis](https://wavepay.t3ratech.co.zw/pricing.html#register) [Leer la documentación](https://wavepay.t3ratech.co.zw/docs.html) [Para agentes](https://wavepay.t3ratech.co.zw/skill.md)
+
+- Plan gratuito, sin tarjeta
+- Sin comisión sobre tus ventas
+- REST y MCP
+
+**9**medios de pago
+
+**25**pagos gratis al mes
+
+**0%**de comisión sobre tus ventas
+
+**15**idiomas
+
+Medios de pago
+
+## Todos los medios que un comprador puede tener
+
+Carteras móviles locales para Zimbabue, tarjetas y PayPal para el resto. El punto de acceso de proveedores siempre indica qué está activo hoy.
+
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · próximamente
+
+Qué obtienes
+
+## Cobrar es la parte fácil. WavePay es el resto.
+
+### Pago alojado y solicitud a la cartera
+
+Envía a los compradores a una página alojada o lanza una solicitud de EcoCash directamente a su teléfono.
+
+### Licencias integradas
+
+Derechos firmados, claves de licencia por correo, activación de dispositivos y recuperación. Tu aplicación verifica sin conexión.
+
+### Suscripciones y pagos a plazos
+
+Planes recurrentes, compra ahora y paga después con tarjeta, y un plazo claro de demora antes de que termine el acceso.
+
+### Reembolsos y reversiones
+
+Reembolsos totales o parciales a través del proveedor, con constancia de quién lo hizo y por qué.
+
+### Un entorno de pruebas real
+
+Una clave de prueba junto a tu clave real, un simulador y viaje en el tiempo para ver una renovación.
+
+### Hecho para agentes
+
+skill.md, OpenAPI, un servidor MCP y herramientas WebMCP: una IA puede configurar el pago por ti.
+
+Cómo funciona
+
+## Tres solicitudes de cero a cobrado
+
+1
+
+### Registrarte
+
+Una solicitud devuelve una clave real y una clave de prueba. Plan gratuito, activo al instante.
+
+2
+
+### Vender
+
+Crea un pago y obtén una URL alojada, o lanza una solicitud a un teléfono.
+
+3
+
+### Liquidar
+
+Un webhook firmado o una consulta confirma el dinero. La clave de licencia se envía sola.
+
+Para desarrolladores
+
+## Empieza con curl. Termina con una clave de licencia.
+
+Cada ejemplo de la documentación se ejecuta primero en el entorno de pruebas con una clave de prueba, así puedes romper cosas sin riesgo.
+
+[Abrir la referencia de la API](https://wavepay.t3ratech.co.zw/docs.html)
+
+curl MCP JavaScript
+
+```
+# 1. register: a live key and a test key, shown once 
+curl -sX POST https://wavepay.t3ratech.co.zw/v2/register \
+  -H 'content-type: application/json' \
+  -d '{"name":"My App","ownerEmail":"you@example.com"}'
+
+# 2. sell: returns a hosted checkout URL 
+curl -sX POST https://wavepay.t3ratech.co.zw/v2/checkouts \
+  -H 'x-wavepay-service-key: mk_test_… ' \
+  -H 'idempotency-key: order-1001' \
+  -d '{"productId":"my-app","planId":"pro","provider":"paynow","email":"buyer@example.com"}'
+```
+
+```
+# any MCP client: https://wavepay.t3ratech.co.zw/mcp 
+{ "jsonrpc": "2.0", "id": 1, "method": "tools/call",
+  "params": {
+    "name": "wavepay_checkout",
+    "arguments": { "productId": "my-app", "planId": "pro",
+                   "provider": "paynow", "email": "buyer@example.com" } } }
+
+# tools: wavepay_register, wavepay_providers, wavepay_pricing,
+#        wavepay_checkout, wavepay_checkout_status, wavepay_subscribe … 
+```
+
+```
+const res = await fetch("https://wavepay.t3ratech.co.zw/v2/checkouts", {
+  method: "POST",
+  headers: {
+    "content-type": "application/json",
+    "x-wavepay-service-key": process.env.WAVEPAY_KEY,
+    "idempotency-key": crypto.randomUUID(),
+  },
+  body: JSON.stringify({ productId: "my-app", planId: "pro",
+                         provider: "paypal", email: "buyer@example.com" }),
+});
+const { checkoutUrl, reference } = await res.json();
+```
+
+Precios
+
+## Precio por pagos procesados, no por comisión
+
+Planes mensuales fijos. Los proveedores de pago cobran sus propias tarifas aparte.
+
+### Gratis
+
+$0 para siempre
+
+25 pagos cada 30 días
+
+- 1 sitio
+- Todos los medios de pago activos
+- Webhooks firmados
+- Registro de pagos
+
+[Regístrate gratis](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+El más elegido
+
+### Basic
+
+$9 al mes
+
+250 pagos cada 30 días
+
+- 3 sitios
+- Cupones y promociones
+- Webhooks y registro
+
+[Elegir Basic](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Pro
+
+$29 al mes
+
+2500 pagos cada 30 días
+
+- 10 sitios
+- Todo lo de Basic
+- Cola de soporte prioritaria
+
+[Elegir Pro](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Preguntas
+
+## Respuestas antes de que preguntes
+
+¿Qué medios de pago puedo aceptar?
+
+EcoCash, OneMoney, InnBucks, Telecash, O'mari y ZimSwitch mediante Paynow; Visa, Mastercard y PayPal para compradores internacionales. 2Checkout está construido y se activa cuando el proveedor apruebe nuestra cuenta.
+
+¿Cobráis un porcentaje de mis ventas?
+
+No. Los planes son precios mensuales fijos según los pagos procesados. Los proveedores de pago cobran sus propias tarifas.
+
+¿Puedo probar sin dinero real?
+
+Sí. El registro te da una clave de prueba que usa un simulador. Nunca llega a un proveedor y no cuenta para tu plan.
+
+¿Cómo reciben los compradores su licencia?
+
+Cuando un pago se liquida, WavePay envía una clave de licencia por correo y tu aplicación puede verificar el derecho firmado sin conexión.
+
+¿Puede un agente de IA usar WavePay?
+
+Sí. Indícale skill.md, el documento OpenAPI o el servidor MCP. Un agente puede registrarse, fijar precios, cobrar y conciliar sin navegador.
+
+Guías
+
+## Respuestas para lo que estás construyendo
+
+### Medios de pago
+
+[EcoCash](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html), [OneMoney, InnBucks, Telecash, O'mari, ZimSwitch](https://wavepay.t3ratech.co.zw/accept-zimbabwe-wallet-payments.html), [Visa, Mastercard, PayPal](https://wavepay.t3ratech.co.zw/accept-card-and-paypal-payments.html)
+
+### Tu tipo de software
+
+[Extensiones de navegador](https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html), [Juegos](https://wavepay.t3ratech.co.zw/payments-for-games.html), [Aplicaciones](https://wavepay.t3ratech.co.zw/payments-for-apps.html), [APIs](https://wavepay.t3ratech.co.zw/payments-for-apis.html), [Bots](https://wavepay.t3ratech.co.zw/payments-for-bots.html)
+
+### Preguntas y guías
+
+[Preguntas frecuentes](https://wavepay.t3ratech.co.zw/faq.html), [Suscripciones](https://wavepay.t3ratech.co.zw/guide-recurring-payments.html), [Compra ahora, paga después](https://wavepay.t3ratech.co.zw/guide-buy-now-pay-later.html), [Modo de prueba](https://wavepay.t3ratech.co.zw/guide-test-mode.html), [Guías](https://wavepay.t3ratech.co.zw/learn.html)
+
+## ¿Listo para cobrar tu primer pago?
+
+Regístrate en una solicitud. Sin tarjeta, sin llamadas.
+
+[Empieza gratis](https://wavepay.t3ratech.co.zw/pricing.html#register)[Leer la documentación](https://wavepay.t3ratech.co.zw/docs.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/faq.html
+
+# WavePay FAQ · WavePay
+
+> WavePay is the checkout, licensing and settlement API for software — apps, browser extensions, games, APIs and bots.
+
+QUESTIONS
+
+# Frequently asked questions
+
+WavePay is the checkout, licensing and settlement API for software — apps, browser extensions, games, APIs and bots. One integration reaches Zimbabwean wallets (EcoCash, OneMoney, InnBucks, Telecash, O'mari, ZimSwitch) and international rails (Visa, Mastercard, PayPal).
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month
+
+## What is WavePay?
+
+WavePay is the checkout, licensing and settlement API for software — apps, browser extensions, games, APIs and bots. One integration reaches Zimbabwean wallets (EcoCash, OneMoney, InnBucks, Telecash, O'mari, ZimSwitch) and international rails (Visa, Mastercard, PayPal).
+
+## How do I start accepting payments?
+
+Two calls. POST /v2/register with a name and an email returns a live merchant key (mk_live_…) once; POST /v2/checkouts with that product and plan returns a hosted checkout URL. The free tier works immediately — 25 payments per 30 days.
+
+## Does WavePay take a percentage of my sales?
+
+No. WavePay is priced by payments processed, not by revenue: Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month. Rail providers charge their own fees on top.
+
+## Which payment methods can my customers use?
+
+EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch for Zimbabwean buyers; Visa, Mastercard and PayPal for international buyers. Which are enabled on a deployment is reported live by GET /v2/providers.
+
+## Can an AI agent set up and run payments by itself?
+
+Yes. skill.md is the whole onboarding in one markdown file, and POST /mcp exposes JSON-RPC tools (wavepay_register, wavepay_providers, wavepay_pricing, wavepay_checkout, wavepay_checkout_status, wavepay_catalog). No browser, OAuth or email round-trip is needed.
+
+## How do I know a payment landed?
+
+Poll GET /v2/checkouts/<reference>/status (pending, collected or expired) or register a signed webhook. Every settlement is also in the payments ledger, which you can drain idempotently with since/limit cursors.
+
+## Can a retry charge a customer twice?
+
+No. POST /v2/checkouts takes an Idempotency-Key; repeating a request with the same key returns the same checkout instead of creating a second one.
+
+## Does WavePay issue licence keys?
+
+Yes. Licensing is built in: a paid checkout emails a licence key, devices activate it for an Ed25519-signed entitlement, and your app verifies that entitlement offline against the public key at GET /v2/licensing/public-key.
+
+## Can I charge someone without a browser?
+
+Yes, for EcoCash, OneMoney, InnBucks and O'mari: use provider paynow-mobile with the buyer's phone number and the wallet prompt is pushed straight to the handset to approve with a PIN. The wallet a deployment pushes to is part of its configuration — GET /v2/providers shows it. Games and bots, where a hosted page cannot open, use this.
+
+## Can I test without moving money?
+
+Yes. POST /v2/register returns a test key (mk_test_…) beside your live one. A test key uses the same routes, settles through a simulator that never contacts a provider, and never counts against your payment cap. Paynow's own test phone numbers choose the outcome: 0771111111 pays, 0772222222 pays after ten seconds, 0773333333 cancels, 0774444444 fails. POST /v2/test/billing/run advances time so renewals and instalments can be tested without waiting, and POST /v2/test/settle exercises your webhook end to end.
+
+## Can I charge customers every month?
+
+Yes, as subscriptions. A saved card (where Paynow has approved card tokens for the deployment) or a PayPal subscription is charged automatically. EcoCash, OneMoney, InnBucks and O'mari cannot be debited without the customer, so each period the customer is sent a fresh payment prompt and their access follows what they actually pay. GET /v2/features reports which of these a deployment has switched on for live money; a test key can use all of them today.
+
+## Can customers buy now and pay later?
+
+Yes, on cards. The customer pays a deposit, the rest is collected from that card on a schedule, and collection continues until the total is paid. Prepaid cards and virtual cards are refused because they can be emptied or closed after delivery. WavePay collects; it does not lend, so the merchant carries the risk that a card stops working, which is why access is suspended after a grace period of missed payments and restored when payment resumes. Mobile wallets are not offered BNPL because they cannot be debited unattended.
+
+## Does WavePay work with 2Checkout (Verifone)?
+
+Yes. Provider twocheckout is Verifone's 2Checkout: international cards and PayPal with 2Checkout as merchant of record, so it handles tax and invoicing. A one-time checkout is a signed 2Checkout link settled by signed IPN; a subscription with collection=automatic is billed by 2Checkout itself, and WavePay records each renewal, refund and chargeback from its signed notifications. GET /v2/providers lists it wherever it is enabled.
+
+## Can I refund a payment?
+
+Yes for PayPal payments and for test payments: POST /v2/internal/refunds with an Idempotency-Key refunds all or part of a settled payment, never more than was paid. Paynow documents no refund API, so a Paynow payment is refused with REFUND_UNSUPPORTED rather than recorded as refunded; refund those from the Paynow dashboard.
+
+## What happens when I hit my plan's payment cap?
+
+New checkouts are refused with MERCHANT_LIMIT_REACHED. A buyer who is already mid-payment is never blocked or double-charged.
+
+## Who runs WavePay?
+
+WavePay is built by T3raTech (TeraTech Solutions (Private) Limited). T3rnel Browser sells its Pro tier on this rail in production.
+
+## Keep going
+
+- [Guides, rails and comparisons](https://wavepay.t3ratech.co.zw/learn.html)
+- [The whole API in one page](https://wavepay.t3ratech.co.zw/docs.html)
+- [Pricing](https://wavepay.t3ratech.co.zw/pricing.html)
+- [skill.md — for agents](https://wavepay.t3ratech.co.zw/skill.md)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/fr/
+
+# WavePay — paiement et licences pour logiciels
+
+> Acceptez EcoCash, cartes et PayPal avec une API. Inscrivez-vous en une requête, testez avec de l'argent fictif, puis passez en production avec licences et remboursements.
+
+Désormais avec abonnements, paiements échelonnés et 2Checkout
+
+# Soyez payé pour votre logiciel sur *chaque moyen de paiement de vos clients*
+
+Une seule API pour EcoCash, OneMoney, InnBucks, ZimSwitch, les cartes et PayPal. Inscription en une requête, tests avec de l'argent fictif, puis mise en production avec licences, abonnements et remboursements intégrés.
+
+[Commencer gratuitement](https://wavepay.t3ratech.co.zw/pricing.html#register) [Lire la documentation](https://wavepay.t3ratech.co.zw/docs.html) [Pour les agents](https://wavepay.t3ratech.co.zw/skill.md)
+
+- Offre gratuite, sans carte bancaire
+- Aucune commission sur vos ventes
+- REST et MCP
+
+**9**moyens de paiement
+
+**25**paiements gratuits par mois
+
+**0%**de frais sur vos ventes
+
+**15**langues
+
+Moyens de paiement
+
+## Tous les moyens que vos clients possèdent
+
+Portefeuilles mobiles locaux pour le Zimbabwe, cartes et PayPal pour les autres. Le point d'accès des fournisseurs indique toujours ce qui est actif aujourd'hui.
+
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · bientôt
+
+Ce que vous obtenez
+
+## Le paiement est la partie facile. WavePay s'occupe du reste.
+
+### Paiement hébergé et demande mobile
+
+Envoyez vos clients vers une page hébergée, ou déclenchez une demande EcoCash directement sur leur téléphone.
+
+### Licences intégrées
+
+Droits signés, clés de licence par e-mail, activation d'appareils et récupération. Votre application vérifie hors ligne.
+
+### Abonnements et paiements échelonnés
+
+Formules récurrentes, payer plus tard par carte, et un délai de retard clair avant la fin de l'accès.
+
+### Remboursements et annulations
+
+Remboursements totaux ou partiels via le fournisseur, avec trace de qui l'a fait et pourquoi.
+
+### Un vrai environnement de test
+
+Une clé de test à côté de votre clé de production, un simulateur et un voyage dans le temps pour voir un renouvellement.
+
+### Conçu pour les agents
+
+skill.md, OpenAPI, un serveur MCP et des outils WebMCP : une IA peut configurer le paiement pour vous.
+
+Comment ça marche
+
+## Trois requêtes, de zéro au paiement
+
+1
+
+### S'inscrire
+
+Une requête renvoie une clé de production et une clé de test. Offre gratuite, active immédiatement.
+
+2
+
+### Vendre
+
+Créez un paiement et obtenez une URL hébergée, ou envoyez une demande à un téléphone.
+
+3
+
+### Encaisser
+
+Un webhook signé ou une interrogation confirme l'argent. La clé de licence est envoyée automatiquement.
+
+Pour les développeurs
+
+## Commencez avec curl. Terminez avec une clé de licence.
+
+Chaque exemple de la documentation s'exécute d'abord dans le bac à sable avec une clé de test : vous pouvez tout casser sans risque.
+
+[Ouvrir la référence de l'API](https://wavepay.t3ratech.co.zw/docs.html)
+
+curl MCP JavaScript
+
+```
+# 1. register: a live key and a test key, shown once 
+curl -sX POST https://wavepay.t3ratech.co.zw/v2/register \
+  -H 'content-type: application/json' \
+  -d '{"name":"My App","ownerEmail":"you@example.com"}'
+
+# 2. sell: returns a hosted checkout URL 
+curl -sX POST https://wavepay.t3ratech.co.zw/v2/checkouts \
+  -H 'x-wavepay-service-key: mk_test_… ' \
+  -H 'idempotency-key: order-1001' \
+  -d '{"productId":"my-app","planId":"pro","provider":"paynow","email":"buyer@example.com"}'
+```
+
+```
+# any MCP client: https://wavepay.t3ratech.co.zw/mcp 
+{ "jsonrpc": "2.0", "id": 1, "method": "tools/call",
+  "params": {
+    "name": "wavepay_checkout",
+    "arguments": { "productId": "my-app", "planId": "pro",
+                   "provider": "paynow", "email": "buyer@example.com" } } }
+
+# tools: wavepay_register, wavepay_providers, wavepay_pricing,
+#        wavepay_checkout, wavepay_checkout_status, wavepay_subscribe … 
+```
+
+```
+const res = await fetch("https://wavepay.t3ratech.co.zw/v2/checkouts", {
+  method: "POST",
+  headers: {
+    "content-type": "application/json",
+    "x-wavepay-service-key": process.env.WAVEPAY_KEY,
+    "idempotency-key": crypto.randomUUID(),
+  },
+  body: JSON.stringify({ productId: "my-app", planId: "pro",
+                         provider: "paypal", email: "buyer@example.com" }),
+});
+const { checkoutUrl, reference } = await res.json();
+```
+
+Tarifs
+
+## Un prix au volume de paiements, pas une commission
+
+Des forfaits mensuels fixes. Les fournisseurs de paiement facturent leurs propres frais en plus.
+
+### Gratuit
+
+$0 pour toujours
+
+25 paiements par période de 30 jours
+
+- 1 site
+- Tous les moyens de paiement actifs
+- Webhooks signés
+- Journal des paiements
+
+[S'inscrire gratuitement](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Le plus choisi
+
+### Basic
+
+$9 par mois
+
+250 paiements par période de 30 jours
+
+- 3 sites
+- Coupons et promotions
+- Webhooks et journal
+
+[Choisir Basic](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Pro
+
+$29 par mois
+
+2 500 paiements par période de 30 jours
+
+- 10 sites
+- Tout ce qui est dans Basic
+- File d'assistance prioritaire
+
+[Choisir Pro](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Questions
+
+## Les réponses avant la question
+
+Quels moyens de paiement puis-je accepter ?
+
+EcoCash, OneMoney, InnBucks, Telecash, O'mari et ZimSwitch via Paynow ; Visa, Mastercard et PayPal pour les acheteurs internationaux. 2Checkout est prêt et sera activé dès que le fournisseur approuvera notre compte.
+
+Prélevez-vous un pourcentage sur mes ventes ?
+
+Non. Les forfaits sont des prix mensuels fixes selon le nombre de paiements traités. Les fournisseurs de paiement facturent leurs propres frais.
+
+Puis-je tester sans argent réel ?
+
+Oui. L'inscription vous donne une clé de test qui utilise un simulateur. Elle n'atteint jamais un fournisseur et ne compte pas dans votre forfait.
+
+Comment les acheteurs reçoivent-ils leur licence ?
+
+Quand un paiement est réglé, WavePay envoie une clé de licence par e-mail, et votre application peut vérifier hors ligne le droit signé.
+
+Un agent IA peut-il utiliser WavePay ?
+
+Oui. Indiquez-lui skill.md, le document OpenAPI ou le serveur MCP. Un agent peut s'inscrire, fixer les prix, encaisser et rapprocher sans navigateur.
+
+Guides
+
+## Des réponses pour ce que vous construisez
+
+### Moyens de paiement
+
+[EcoCash](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html), [OneMoney, InnBucks, Telecash, O'mari, ZimSwitch](https://wavepay.t3ratech.co.zw/accept-zimbabwe-wallet-payments.html), [Visa, Mastercard, PayPal](https://wavepay.t3ratech.co.zw/accept-card-and-paypal-payments.html)
+
+### Votre type de logiciel
+
+[Extensions de navigateur](https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html), [Jeux](https://wavepay.t3ratech.co.zw/payments-for-games.html), [Applications](https://wavepay.t3ratech.co.zw/payments-for-apps.html), [API](https://wavepay.t3ratech.co.zw/payments-for-apis.html), [Bots](https://wavepay.t3ratech.co.zw/payments-for-bots.html)
+
+### Questions et guides
+
+[FAQ](https://wavepay.t3ratech.co.zw/faq.html), [Abonnements](https://wavepay.t3ratech.co.zw/guide-recurring-payments.html), [Payer plus tard](https://wavepay.t3ratech.co.zw/guide-buy-now-pay-later.html), [Mode test](https://wavepay.t3ratech.co.zw/guide-test-mode.html), [Guides](https://wavepay.t3ratech.co.zw/learn.html)
+
+## Prêt à encaisser votre premier paiement ?
+
+Inscription en une requête. Sans carte, sans appel.
+
+[Commencer gratuitement](https://wavepay.t3ratech.co.zw/pricing.html#register)[Lire la documentation](https://wavepay.t3ratech.co.zw/docs.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/guide-2checkout.html
+
+# 2Checkout (Verifone) with WavePay: checkout, subscriptions…
+
+> WavePay sells through 2Checkout as provider twocheckout: a signed buy-link for one-time purchases, 2Checkout-billed subscriptions with every renewal recorded from a…
+
+HOW IT WORKS
+
+# 2Checkout (Verifone) with WavePay: checkout, subscriptions, refunds and notifications
+
+WavePay sells through 2Checkout as provider twocheckout: a signed buy-link for one-time purchases, 2Checkout-billed subscriptions with every renewal recorded from a signed notification, refunds through its REST API, and HMAC-signed IPN and LCN webhooks, with 2Checkout acting as merchant of record for tax and invoicing.
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month
+
+## One-time checkout
+
+POST /v2/checkouts with provider twocheckout returns a link signed with your buy-link secret word. The price, currency, reference and a 24-hour expiry are inside the signature, so none can be edited in the URL. Settlement is proven by the signed IPN or the REST order lookup, never by the redirect alone.
+
+## Subscriptions billed by 2Checkout
+
+Create a subscription with collection=automatic and 2Checkout bills every renewal itself: the period and renewal price travel in the signed link. WavePay extends access by exactly one period when the renewal notification arrives, ignores a resent notification, and never raises its own charge on top. A late renewal marks the subscription past due after three days and ends it after ten.
+
+## Cancel, pause and change the price
+
+Cancel now disables the subscription at 2Checkout; cancel at period end switches renewal off and keeps the paid access. Pause stops the next renewal until you resume it. Price changes what the next renewals cost. Each is applied at 2Checkout first, then recorded here.
+
+## Refunds and chargebacks
+
+POST /v2/internal/refunds refunds a completed order through 2Checkout's REST API, in part or in full, within three months. A refund issued in the 2Checkout dashboard arrives as a notification and is recorded once. A chargeback is recorded for you to see; it never silently refunds or revokes.
+
+## Signed notifications
+
+2Checkout posts IPN (orders, renewals, refunds, reversals, chargebacks) and LCN (subscription changes). Both are checked against an HMAC-SHA256 of the received values before anything happens, and answered with the signed receipt 2Checkout waits for. A notification for an order WavePay did not create is acknowledged and ignored.
+
+## Test orders
+
+Staging places 2Checkout links as test orders: use card 4111111111111111 with any expiry and CVV, and choose the outcome by cardholder name (John Doe succeeds; Mona Doe fails for insufficient funds). A deployment that takes live orders ignores test-order notifications, so a dummy card can never grant a licence.
+
+## Switching it on
+
+The 2Checkout rail is a configuration switch, not a code change: a deployment lists twocheckout in its enabled providers once the account is approved, and GET /v2/providers then offers it to buyers.
+
+## Keep going
+
+- [Testing WavePay with fake money: test keys, simulated outcomes and time travel](https://wavepay.t3ratech.co.zw/guide-test-mode.html)
+- [API reference](https://wavepay.t3ratech.co.zw/docs.html)
+- [FAQ](https://wavepay.t3ratech.co.zw/faq.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/guide-buy-now-pay-later.html
+
+# Buy now, pay later for software: deposits and instalments on…
+
+> WavePay BNPL takes a deposit at checkout and collects the rest from the customer's card on a schedule, retrying with a back-off until the full price is paid; it is…
+
+HOW IT WORKS
+
+# Buy now, pay later for software: deposits and instalments on cards
+
+WavePay BNPL takes a deposit at checkout and collects the rest from the customer's card on a schedule, retrying with a back-off until the full price is paid; it is limited to non-prepaid cards, and WavePay collects but does not lend.
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month
+
+## How a plan runs
+
+POST /v2/internal/bnpl with the number of instalments. The customer pays the deposit and their card is saved. Each interval the next instalment is charged; the last one is only what remains. When paid equals the price the plan completes and stops charging.
+
+## Collection never gives up
+
+A failed instalment is retried after one day, then two, then every three days, with no limit on attempts, until the total is collected or the merchant cancels the plan.
+
+## Which cards
+
+Cards only: provider paynow (Visa, Mastercard, ZimSwitch) or paypal (a vaulted card). Prepaid cards and virtual cards, including mobile-money virtual cards, are refused because they can be emptied or closed after delivery. A card is refused if the issuer reports it prepaid, if its first six digits fall in a range the operator has blocked, or if it cannot be screened at all.
+
+## A refused card
+
+The plan is cancelled and access withdrawn. The deposit is refunded automatically where the provider has a refund API (PayPal); for Paynow, which documents none, the plan's audit record is marked needsRefund so the merchant returns it.
+
+## Access while overdue
+
+Access is suspended after the grace period of missed payments (14 days by default) and restored by the next successful payment. Instalments settle money; they do not extend the access the deposit granted.
+
+## Who carries the risk
+
+The merchant. WavePay is a collection schedule, not a lender: it does not advance the merchant the balance. A card that stops working leaves the instalments unpaid, which is why access follows payment. Confirm that selling on instalments is permitted for your business and customers before you offer it.
+
+## Keep going
+
+- [2Checkout (Verifone) with WavePay: checkout, subscriptions, refunds and notifications](https://wavepay.t3ratech.co.zw/guide-2checkout.html)
+- [API reference](https://wavepay.t3ratech.co.zw/docs.html)
+- [FAQ](https://wavepay.t3ratech.co.zw/faq.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/guide-idempotent-checkouts.html
+
+> Send a stable Idempotency-Key with every POST /v2/checkouts — derived from your order id, not generated per attempt — and a retry after a timeout returns the original…
+
+HOW IT WORKS
+
+# Idempotent checkouts: why a retry should never charge twice
+
+Send a stable Idempotency-Key with every POST /v2/checkouts — derived from your order id, not generated per attempt — and a retry after a timeout returns the original checkout instead of creating a second charge.
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month
+
+## The failure it prevents
+
+A request times out and the client cannot tell whether the checkout was created. Without a key the safe-looking retry creates a second checkout and can charge the buyer twice.
+
+## Choosing the key
+
+Use something stable per order, such as order-1001. A random value per attempt defeats the point: each retry would look like a new request.
+
+## Where it applies
+
+Every checkout, hosted or wallet push. Settlement polling and webhooks are reads and need no key.
+
+## Reconciling
+
+Match on the checkout reference (pay_…) that comes back; the ledger holds one row per settlement.
+
+## Keep going
+
+- [2Checkout (Verifone) with WavePay: checkout, subscriptions, refunds and notifications](https://wavepay.t3ratech.co.zw/guide-2checkout.html)
+- [API reference](https://wavepay.t3ratech.co.zw/docs.html)
+- [FAQ](https://wavepay.t3ratech.co.zw/faq.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/guide-offline-licence-verification.html
+
+> WavePay signs each licence entitlement with an Ed25519 private key it never shares, so your app verifies the signature offline against the public key at GET…
+
+HOW IT WORKS
+
+# How offline licence verification works with Ed25519 entitlements
+
+WavePay signs each licence entitlement with an Ed25519 private key it never shares, so your app verifies the signature offline against the public key at GET /v2/licensing/public-key and never needs to call a server to know a licence is genuine.
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month
+
+## The flow
+
+A paid checkout emails a licence key. The device calls POST /v2/licensing/activate with the key and a deviceId and receives a signed entitlement. The app stores it and checks the signature locally.
+
+## Why Ed25519
+
+Verification needs only the public key, which is safe to embed in the app. Forging an entitlement requires the private key, which stays with the issuer.
+
+## What this buys you
+
+An app that works offline, no per-launch licence call to fail, and a trust root you can pin. When a customer loses a key, POST /v2/licensing/recover mails a fresh one.
+
+## What it does not do
+
+An offline check cannot know a licence was revoked after the entitlement was issued; design entitlement lifetimes to match how quickly you need revocation to bite.
+
+## Keep going
+
+- [2Checkout (Verifone) with WavePay: checkout, subscriptions, refunds and notifications](https://wavepay.t3ratech.co.zw/guide-2checkout.html)
+- [API reference](https://wavepay.t3ratech.co.zw/docs.html)
+- [FAQ](https://wavepay.t3ratech.co.zw/faq.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/guide-recurring-payments.html
+
+# Recurring payments in Zimbabwe: what charges automatically and…
+
+> A card token or a PayPal subscription can be charged every period with nobody present, but mobile wallets such as EcoCash, OneMoney, InnBucks and O'mari cannot be…
+
+HOW IT WORKS
+
+# Recurring payments in Zimbabwe: what charges automatically and what cannot
+
+A card token or a PayPal subscription can be charged every period with nobody present, but mobile wallets such as EcoCash, OneMoney, InnBucks and O'mari cannot be debited unattended, so a WavePay subscription on a wallet sends the customer a fresh payment prompt each period and access follows what they pay.
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month
+
+## Two collection modes
+
+automatic charges a saved instrument: a Paynow card token (Visa, Mastercard or ZimSwitch) or a PayPal subscription. invoice_and_remind raises a normal checkout each period, pushes the wallet prompt or sends a link, and extends access when it is paid. It is the only mode that works on every local rail.
+
+## Why wallets are different
+
+Paynow documents tokens for cards only. A wallet payment needs the customer's PIN every time, so no service can charge it silently. WavePay does not pretend otherwise: it asks each period.
+
+## Paynow card tokens need Paynow's approval
+
+A merchant may only tokenise cards once Paynow has enabled it for the integration. If a subscription asks for automatic collection and no token comes back, it falls back to invoice_and_remind and records why, instead of failing.
+
+## Failed payments
+
+A failed charge is retried the next day, then two days later. Three failures make the subscription past due, and a week after the first failed attempt it ends. A card whose token has expired is replaced by a payment request, and the customer is told.
+
+## Cancelling
+
+POST /v2/internal/subscriptions/cancel ends it now, or with atPeriodEnd true keeps access to the end of the paid period. A PayPal subscription is also cancelled at PayPal.
+
+## Idempotent
+
+Creating a subscription needs an Idempotency-Key, and every renewal is keyed by its period and attempt, so a repeated billing run can never charge a period twice.
+
+## Keep going
+
+- [2Checkout (Verifone) with WavePay: checkout, subscriptions, refunds and notifications](https://wavepay.t3ratech.co.zw/guide-2checkout.html)
+- [API reference](https://wavepay.t3ratech.co.zw/docs.html)
+- [FAQ](https://wavepay.t3ratech.co.zw/faq.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/guide-test-mode.html
+
+# Testing WavePay with fake money: test keys, simulated outcomes…
+
+> POST /v2/register returns a live key and a test key (mk_test_…); the test key calls the same routes but settles through a simulator that never contacts a payment…
+
+HOW IT WORKS
+
+# Testing WavePay with fake money: test keys, simulated outcomes and time travel
+
+POST /v2/register returns a live key and a test key (mk_test_…); the test key calls the same routes but settles through a simulator that never contacts a payment provider, so you can drive every outcome of your integration, including renewals and instalments, without moving money.
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month
+
+## Getting a test key
+
+Registration returns key (mk_live_…) and testKey (mk_test_…) together, both shown once. Send either in the x-wavepay-service-key header. A test key never counts against your plan's payment cap.
+
+## Choosing the outcome
+
+Use Paynow's own test phone numbers: 0771111111 pays, 0772222222 pays after ten seconds, 0773333333 is cancelled by the customer, 0774444444 fails for insufficient balance. Without a phone, tag the email: buyer+decline@example.com fails, +cancel cancels, +delay pays after ten seconds. For card tokens, +prepaid returns a prepaid card (BNPL refuses it) and +tokdecline returns a token whose later charges are declined.
+
+## Hosted pages
+
+A test checkout's checkoutUrl is a WavePay page with Approve and Decline buttons, so the redirect-and-return leg of your integration can be walked end to end. It only ever acts on test payments.
+
+## Time travel
+
+POST /v2/test/billing/run with {"advanceDays": 31} runs the billing engine as if 31 days had passed, once for your test subscriptions and instalment plans only. Run it again to reconcile the charges it raised.
+
+## Features that are not yet live
+
+Subscriptions, BNPL, refunds and card tokens are switched on per deployment. A test key can use every one of them regardless, which is how you build against them before they are enabled for live money. GET /v2/features reports the live state.
+
+## What a test key does not prove
+
+A simulator proves your integration handles every outcome; it does not prove a provider's behaviour. Run one live payment of the smallest amount before launch.
+
+## Keep going
+
+- [2Checkout (Verifone) with WavePay: checkout, subscriptions, refunds and notifications](https://wavepay.t3ratech.co.zw/guide-2checkout.html)
+- [API reference](https://wavepay.t3ratech.co.zw/docs.html)
+- [FAQ](https://wavepay.t3ratech.co.zw/faq.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/hi/
+
+# WavePay — सॉफ़्टवेयर के लिए भुगतान और लाइसेंस
+
+> एक API से EcoCash, कार्ड और PayPal स्वीकार करें। एक अनुरोध में पंजीकरण करें, नकली पैसों से परीक्षण करें, फिर लाइसेंस, सदस्यता और रिफ़ंड के साथ लाइव जाएँ।
+
+अब सदस्यता, किस्तों और 2Checkout के साथ
+
+# अपने सॉफ़्टवेयर का भुगतान पाएँ *हर उस माध्यम से जो आपके ग्राहकों के पास है*
+
+EcoCash, OneMoney, InnBucks, ZimSwitch, कार्ड और PayPal के लिए एक API। एक अनुरोध में पंजीकरण करें, नकली पैसों से परीक्षण करें और लाइसेंस, सदस्यता व रिफ़ंड के साथ लाइव जाएँ।
+
+[मुफ़्त शुरू करें](https://wavepay.t3ratech.co.zw/pricing.html#register) [दस्तावेज़ पढ़ें](https://wavepay.t3ratech.co.zw/docs.html) [एजेंटों के लिए](https://wavepay.t3ratech.co.zw/skill.md)
+
+- मुफ़्त योजना, कार्ड की ज़रूरत नहीं
+- आपकी बिक्री पर कोई प्रतिशत शुल्क नहीं
+- REST और MCP
+
+**9**भुगतान माध्यम
+
+**25**प्रति माह मुफ़्त भुगतान
+
+**0%**आपकी बिक्री पर शुल्क
+
+**15**भाषाएँ
+
+भुगतान माध्यम
+
+## हर वह माध्यम जो खरीदार के पास हो सकता है
+
+ज़िम्बाब्वे के लिए स्थानीय वॉलेट, बाकी दुनिया के लिए कार्ड और PayPal। प्रदाता एंडपॉइंट हमेशा बताता है कि आज क्या चालू है।
+
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · जल्द आ रहा है
+
+आपको क्या मिलता है
+
+## चेकआउट आसान हिस्सा है। बाकी सब WavePay है।
+
+### होस्टेड चेकआउट और वॉलेट पुश
+
+खरीदारों को होस्टेड पेज पर भेजें, या EcoCash अनुरोध सीधे उनके फ़ोन पर भेजें।
+
+### लाइसेंसिंग अंतर्निहित
+
+हस्ताक्षरित अधिकार, ईमेल से लाइसेंस कुंजी, डिवाइस सक्रियण और पुनर्प्राप्ति। आपका ऐप ऑफ़लाइन सत्यापित करता है।
+
+### सदस्यता और किस्तें
+
+आवर्ती योजनाएँ, कार्ड पर अभी खरीदें बाद में भुगतान करें, और पहुँच समाप्त होने से पहले स्पष्ट विलंब अवधि।
+
+### रिफ़ंड और उलटाव
+
+प्रदाता के माध्यम से पूर्ण और आंशिक रिफ़ंड, किसने और क्यों किया इसके रिकॉर्ड के साथ।
+
+### असली परीक्षण वातावरण
+
+आपकी लाइव कुंजी के साथ एक परीक्षण कुंजी, एक सिम्युलेटर, और नवीनीकरण होते देखने के लिए समय यात्रा।
+
+### एजेंटों के लिए बना
+
+skill.md, OpenAPI, एक MCP सर्वर और WebMCP टूल, ताकि AI आपके लिए चेकआउट सेट कर सके।
+
+यह कैसे काम करता है
+
+## शून्य से भुगतान तक तीन अनुरोध
+
+1
+
+### पंजीकरण
+
+एक अनुरोध लाइव कुंजी और परीक्षण कुंजी लौटाता है। मुफ़्त योजना, तुरंत चालू।
+
+2
+
+### बिक्री
+
+चेकआउट बनाएँ और होस्टेड URL पाएँ, या फ़ोन पर वॉलेट अनुरोध भेजें।
+
+3
+
+### निपटान
+
+हस्ताक्षरित वेबहुक या पोल पैसे की पुष्टि करता है। लाइसेंस कुंजी अपने आप ईमेल हो जाती है।
+
+डेवलपरों के लिए
+
+## curl से शुरू करें। लाइसेंस कुंजी पर खत्म करें।
+
+दस्तावेज़ का हर उदाहरण पहले परीक्षण कुंजी के साथ सैंडबॉक्स में चलता है, ताकि आप सुरक्षित रूप से प्रयोग कर सकें।
+
+[API संदर्भ खोलें](https://wavepay.t3ratech.co.zw/docs.html)
+
+curl MCP JavaScript
+
+```
+# 1. register: a live key and a test key, shown once 
+curl -sX POST https://wavepay.t3ratech.co.zw/v2/register \
+  -H 'content-type: application/json' \
+  -d '{"name":"My App","ownerEmail":"you@example.com"}'
+
+# 2. sell: returns a hosted checkout URL 
+curl -sX POST https://wavepay.t3ratech.co.zw/v2/checkouts \
+  -H 'x-wavepay-service-key: mk_test_… ' \
+  -H 'idempotency-key: order-1001' \
+  -d '{"productId":"my-app","planId":"pro","provider":"paynow","email":"buyer@example.com"}'
+```
+
+```
+# any MCP client: https://wavepay.t3ratech.co.zw/mcp 
+{ "jsonrpc": "2.0", "id": 1, "method": "tools/call",
+  "params": {
+    "name": "wavepay_checkout",
+    "arguments": { "productId": "my-app", "planId": "pro",
+                   "provider": "paynow", "email": "buyer@example.com" } } }
+
+# tools: wavepay_register, wavepay_providers, wavepay_pricing,
+#        wavepay_checkout, wavepay_checkout_status, wavepay_subscribe … 
+```
+
+```
+const res = await fetch("https://wavepay.t3ratech.co.zw/v2/checkouts", {
+  method: "POST",
+  headers: {
+    "content-type": "application/json",
+    "x-wavepay-service-key": process.env.WAVEPAY_KEY,
+    "idempotency-key": crypto.randomUUID(),
+  },
+  body: JSON.stringify({ productId: "my-app", planId: "pro",
+                         provider: "paypal", email: "buyer@example.com" }),
+});
+const { checkoutUrl, reference } = await res.json();
+```
+
+मूल्य
+
+## संसाधित भुगतानों पर मूल्य, कमीशन पर नहीं
+
+निश्चित मासिक योजनाएँ। भुगतान प्रदाता अपना शुल्क अलग से लेते हैं।
+
+### मुफ़्त
+
+$0 हमेशा
+
+30 दिनों में 25 भुगतान
+
+- 1 साइट
+- हर चालू भुगतान माध्यम
+- हस्ताक्षरित वेबहुक
+- भुगतान बही
+
+[मुफ़्त पंजीकरण](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+सबसे लोकप्रिय
+
+### Basic
+
+$9 प्रति माह
+
+30 दिनों में 250 भुगतान
+
+- 3 साइट
+- कूपन और प्रमोशन
+- वेबहुक और बही
+
+[Basic लें](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Pro
+
+$29 प्रति माह
+
+30 दिनों में 2,500 भुगतान
+
+- 10 साइट
+- Basic की हर सुविधा
+- प्राथमिकता सहायता कतार
+
+[Pro लें](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+प्रश्न
+
+## आपके पूछने से पहले उत्तर
+
+मैं कौन से भुगतान माध्यम स्वीकार कर सकता हूँ?
+
+Paynow के माध्यम से EcoCash, OneMoney, InnBucks, Telecash, O'mari और ZimSwitch; अंतरराष्ट्रीय खरीदारों के लिए Visa, Mastercard और PayPal। 2Checkout बना हुआ है और प्रदाता द्वारा हमारा खाता स्वीकृत करते ही चालू हो जाएगा।
+
+क्या आप मेरी बिक्री का प्रतिशत लेते हैं?
+
+नहीं। योजनाएँ संसाधित भुगतानों पर आधारित निश्चित मासिक मूल्य हैं। भुगतान प्रदाता अपना शुल्क खुद लेते हैं।
+
+क्या मैं असली पैसे के बिना परीक्षण कर सकता हूँ?
+
+हाँ। पंजीकरण पर आपको सिम्युलेटर वाली परीक्षण कुंजी मिलती है। वह कभी किसी प्रदाता तक नहीं पहुँचती और आपकी योजना में नहीं गिनी जाती।
+
+खरीदारों को लाइसेंस कैसे मिलता है?
+
+भुगतान निपटते ही WavePay लाइसेंस कुंजी ईमेल करता है, और आपका ऐप हस्ताक्षरित अधिकार को ऑफ़लाइन सत्यापित कर सकता है।
+
+क्या कोई AI एजेंट WavePay इस्तेमाल कर सकता है?
+
+हाँ। उसे skill.md, OpenAPI दस्तावेज़ या MCP सर्वर की ओर इंगित करें। एजेंट बिना ब्राउज़र के पंजीकरण, मूल्य निर्धारण, चेकआउट और मिलान कर सकता है।
+
+गाइड
+
+## आप जो बना रहे हैं उसके उत्तर
+
+### भुगतान माध्यम
+
+[EcoCash](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html), [OneMoney, InnBucks, Telecash, O'mari, ZimSwitch](https://wavepay.t3ratech.co.zw/accept-zimbabwe-wallet-payments.html), [Visa, Mastercard, PayPal](https://wavepay.t3ratech.co.zw/accept-card-and-paypal-payments.html)
+
+### आपके प्रकार का सॉफ़्टवेयर
+
+[ब्राउज़र एक्सटेंशन](https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html), [गेम](https://wavepay.t3ratech.co.zw/payments-for-games.html), [ऐप](https://wavepay.t3ratech.co.zw/payments-for-apps.html), [API](https://wavepay.t3ratech.co.zw/payments-for-apis.html), [बॉट](https://wavepay.t3ratech.co.zw/payments-for-bots.html)
+
+### प्रश्न और गाइड
+
+[सवाल-जवाब](https://wavepay.t3ratech.co.zw/faq.html), [सदस्यता](https://wavepay.t3ratech.co.zw/guide-recurring-payments.html), [अभी खरीदें, बाद में भुगतान करें](https://wavepay.t3ratech.co.zw/guide-buy-now-pay-later.html), [परीक्षण मोड](https://wavepay.t3ratech.co.zw/guide-test-mode.html), [गाइड](https://wavepay.t3ratech.co.zw/learn.html)
+
+## अपना पहला भुगतान लेने के लिए तैयार?
+
+एक अनुरोध में पंजीकरण करें। न कार्ड, न कॉल।
+
+[मुफ़्त शुरू करें](https://wavepay.t3ratech.co.zw/pricing.html#register)[दस्तावेज़ पढ़ें](https://wavepay.t3ratech.co.zw/docs.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/id/
+
+# WavePay — pembayaran dan lisensi untuk perangkat lunak
+
+> Terima EcoCash, kartu, dan PayPal dengan satu API. Daftar dalam satu permintaan, uji dengan uang palsu, lalu aktifkan lisensi, langganan, dan pengembalian dana.
+
+Kini dengan langganan, cicilan, dan 2Checkout
+
+# Dapatkan bayaran untuk perangkat lunak Anda lewat *setiap metode yang dimiliki pembeli Anda*
+
+Satu API untuk EcoCash, OneMoney, InnBucks, ZimSwitch, kartu, dan PayPal. Daftar dalam satu permintaan, uji dengan uang palsu, lalu aktifkan dengan lisensi, langganan, dan pengembalian dana bawaan.
+
+[Mulai gratis](https://wavepay.t3ratech.co.zw/pricing.html#register) [Baca dokumentasi](https://wavepay.t3ratech.co.zw/docs.html) [Untuk agen](https://wavepay.t3ratech.co.zw/skill.md)
+
+- Paket gratis, tanpa kartu
+- Tanpa biaya persentase atas penjualan Anda
+- REST dan MCP
+
+**9**metode pembayaran
+
+**25**pembayaran gratis per bulan
+
+**0%**biaya atas penjualan Anda
+
+**15**bahasa
+
+Metode pembayaran
+
+## Setiap metode yang mungkin dimiliki pembeli
+
+Dompet lokal untuk Zimbabwe, kartu dan PayPal untuk lainnya. Endpoint penyedia selalu menunjukkan apa yang aktif hari ini.
+
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · segera hadir
+
+Yang Anda dapatkan
+
+## Checkout adalah bagian yang mudah. WavePay mengurus sisanya.
+
+### Checkout terhosting dan dorongan dompet
+
+Arahkan pembeli ke halaman terhosting, atau kirim permintaan EcoCash langsung ke ponsel mereka.
+
+### Lisensi bawaan
+
+Hak bertanda tangan, kunci lisensi lewat email, aktivasi perangkat, dan pemulihan. Aplikasi Anda memverifikasi secara luring.
+
+### Langganan dan cicilan
+
+Paket berulang, beli sekarang bayar nanti dengan kartu, dan masa tunggakan yang jelas sebelum akses berakhir.
+
+### Pengembalian dana dan pembatalan
+
+Pengembalian penuh dan sebagian lewat penyedia, dengan catatan siapa yang melakukannya dan mengapa.
+
+### Lingkungan uji yang nyata
+
+Kunci uji di samping kunci langsung, simulator, dan perjalanan waktu untuk melihat perpanjangan terjadi.
+
+### Dibuat untuk agen
+
+skill.md, OpenAPI, server MCP, dan alat WebMCP, sehingga AI dapat menyiapkan checkout untuk Anda.
+
+Cara kerjanya
+
+## Tiga permintaan dari nol hingga terbayar
+
+1
+
+### Daftar
+
+Satu permintaan mengembalikan kunci langsung dan kunci uji. Paket gratis, langsung aktif.
+
+2
+
+### Jual
+
+Buat checkout dan dapatkan URL terhosting, atau kirim permintaan dompet ke ponsel.
+
+3
+
+### Selesaikan
+
+Webhook bertanda tangan atau polling mengonfirmasi uang masuk. Kunci lisensi dikirim otomatis lewat email.
+
+Untuk pengembang
+
+## Mulai dengan curl. Akhiri dengan kunci lisensi.
+
+Setiap contoh dalam dokumentasi dijalankan lebih dulu di sandbox dengan kunci uji, sehingga Anda bisa mencoba dengan aman.
+
+[Buka referensi API](https://wavepay.t3ratech.co.zw/docs.html)
+
+curl MCP JavaScript
+
+```
+# 1. register: a live key and a test key, shown once 
+curl -sX POST https://wavepay.t3ratech.co.zw/v2/register \
+  -H 'content-type: application/json' \
+  -d '{"name":"My App","ownerEmail":"you@example.com"}'
+
+# 2. sell: returns a hosted checkout URL 
+curl -sX POST https://wavepay.t3ratech.co.zw/v2/checkouts \
+  -H 'x-wavepay-service-key: mk_test_… ' \
+  -H 'idempotency-key: order-1001' \
+  -d '{"productId":"my-app","planId":"pro","provider":"paynow","email":"buyer@example.com"}'
+```
+
+```
+# any MCP client: https://wavepay.t3ratech.co.zw/mcp 
+{ "jsonrpc": "2.0", "id": 1, "method": "tools/call",
+  "params": {
+    "name": "wavepay_checkout",
+    "arguments": { "productId": "my-app", "planId": "pro",
+                   "provider": "paynow", "email": "buyer@example.com" } } }
+
+# tools: wavepay_register, wavepay_providers, wavepay_pricing,
+#        wavepay_checkout, wavepay_checkout_status, wavepay_subscribe … 
+```
+
+```
+const res = await fetch("https://wavepay.t3ratech.co.zw/v2/checkouts", {
+  method: "POST",
+  headers: {
+    "content-type": "application/json",
+    "x-wavepay-service-key": process.env.WAVEPAY_KEY,
+    "idempotency-key": crypto.randomUUID(),
+  },
+  body: JSON.stringify({ productId: "my-app", planId: "pro",
+                         provider: "paypal", email: "buyer@example.com" }),
+});
+const { checkoutUrl, reference } = await res.json();
+```
+
+Harga
+
+## Harga berdasarkan pembayaran, bukan potongan
+
+Paket bulanan tetap. Penyedia pembayaran mengenakan biayanya sendiri secara terpisah.
+
+### Gratis
+
+$0 selamanya
+
+25 pembayaran per 30 hari
+
+- 1 situs
+- Semua metode pembayaran aktif
+- Webhook bertanda tangan
+- Buku pembayaran
+
+[Daftar gratis](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Paling populer
+
+### Basic
+
+$9 per bulan
+
+250 pembayaran per 30 hari
+
+- 3 situs
+- Kupon dan promosi
+- Webhook dan buku pembayaran
+
+[Pilih Basic](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Pro
+
+$29 per bulan
+
+2.500 pembayaran per 30 hari
+
+- 10 situs
+- Semua yang ada di Basic
+- Antrean dukungan prioritas
+
+[Pilih Pro](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Pertanyaan
+
+## Jawaban sebelum Anda bertanya
+
+Metode pembayaran apa yang bisa saya terima?
+
+EcoCash, OneMoney, InnBucks, Telecash, O'mari, dan ZimSwitch lewat Paynow; Visa, Mastercard, dan PayPal untuk pembeli internasional. 2Checkout sudah dibangun dan akan aktif setelah penyedia menyetujui akun kami.
+
+Apakah Anda mengambil persentase dari penjualan saya?
+
+Tidak. Paket adalah harga bulanan tetap berdasarkan pembayaran yang diproses. Penyedia pembayaran mengenakan biayanya sendiri.
+
+Bisakah saya menguji tanpa uang sungguhan?
+
+Bisa. Pendaftaran memberi Anda kunci uji yang memakai simulator. Kunci itu tidak pernah menjangkau penyedia dan tidak dihitung dalam paket Anda.
+
+Bagaimana pembeli mendapatkan lisensinya?
+
+Saat pembayaran selesai, WavePay mengirim kunci lisensi lewat email, dan aplikasi Anda dapat memverifikasi hak bertanda tangan secara luring.
+
+Bisakah agen AI menggunakan WavePay?
+
+Bisa. Arahkan ke skill.md, dokumen OpenAPI, atau server MCP. Agen dapat mendaftar, menentukan harga, melakukan checkout, dan merekonsiliasi tanpa peramban.
+
+Panduan
+
+## Jawaban untuk apa yang Anda bangun
+
+### Metode pembayaran
+
+[EcoCash](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html), [OneMoney, InnBucks, Telecash, O'mari, ZimSwitch](https://wavepay.t3ratech.co.zw/accept-zimbabwe-wallet-payments.html), [Visa, Mastercard, PayPal](https://wavepay.t3ratech.co.zw/accept-card-and-paypal-payments.html)
+
+### Jenis perangkat lunak Anda
+
+[Ekstensi peramban](https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html), [Gim](https://wavepay.t3ratech.co.zw/payments-for-games.html), [Aplikasi](https://wavepay.t3ratech.co.zw/payments-for-apps.html), [API](https://wavepay.t3ratech.co.zw/payments-for-apis.html), [Bot](https://wavepay.t3ratech.co.zw/payments-for-bots.html)
+
+### Pertanyaan dan panduan
+
+[Tanya jawab](https://wavepay.t3ratech.co.zw/faq.html), [Langganan](https://wavepay.t3ratech.co.zw/guide-recurring-payments.html), [Beli sekarang, bayar nanti](https://wavepay.t3ratech.co.zw/guide-buy-now-pay-later.html), [Mode uji](https://wavepay.t3ratech.co.zw/guide-test-mode.html), [Panduan](https://wavepay.t3ratech.co.zw/learn.html)
+
+## Siap menerima pembayaran pertama Anda?
+
+Daftar dalam satu permintaan. Tanpa kartu, tanpa telepon.
+
+[Mulai gratis](https://wavepay.t3ratech.co.zw/pricing.html#register)[Baca dokumentasi](https://wavepay.t3ratech.co.zw/docs.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/
+
+# WavePay — checkout and licensing for software
+
+> Take EcoCash, cards and PayPal with one API. Register in one request, test with fake money, then go live with licence keys, subscriptions and refunds.
+
+Now with subscriptions, instalments and 2Checkout
+
+# Get paid for your software on *every rail your buyers hold*
+
+One API for EcoCash, OneMoney, InnBucks, ZimSwitch, cards and PayPal. Register in one request, test with fake money, and go live with licence keys, subscriptions and refunds built in.
+
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html#register) [Read the docs](https://wavepay.t3ratech.co.zw/docs.html) [For agents](https://wavepay.t3ratech.co.zw/skill.md)
+
+- Free plan, no card needed
+- No percentage fee on your sales
+- REST and MCP
+
+**9**payment rails
+
+**25**free payments a month
+
+**0%**fee on your sales
+
+**15**languages
+
+Payment rails
+
+## Every rail a buyer might hold
+
+Local wallets for Zimbabwe, cards and PayPal for everyone else. The providers endpoint always says what is live today.
+
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · coming soon
+
+What you get
+
+## Checkout is the easy part. WavePay is the rest of it.
+
+### Hosted checkout and wallet push
+
+Send buyers to a hosted page, or push an EcoCash prompt straight to their phone.
+
+### Licensing built in
+
+Signed entitlements, licence keys by email, device activation and recovery. Your app verifies offline.
+
+### Subscriptions and instalments
+
+Recurring plans, buy now pay later on cards, and a clear past-due period before access ends.
+
+### Refunds and reversals
+
+Full and partial refunds through the provider, with who did it and why on record.
+
+### A real test environment
+
+A test key beside your live key, a simulator, and time travel to watch a renewal happen.
+
+### Built for agents
+
+skill.md, OpenAPI, an MCP server and WebMCP tools, so an AI can set up checkout for you.
+
+How it works
+
+## Three requests from nothing to paid
+
+1
+
+### Register
+
+One request returns a live key and a test key. Free plan, working immediately.
+
+2
+
+### Sell
+
+Create a checkout and get a hosted URL, or push a wallet prompt to a phone.
+
+3
+
+### Settle
+
+A signed webhook or a poll confirms the money. The licence key is emailed automatically.
+
+For developers
+
+## Start with curl. Finish with a licence key.
+
+Every example in the documentation runs against the sandbox with a test key first, so you can break things safely.
+
+[Open the API reference](https://wavepay.t3ratech.co.zw/docs.html)
+
+curl MCP JavaScript
+
+```
+# 1. register: a live key and a test key, shown once 
+curl -sX POST https://wavepay.t3ratech.co.zw/v2/register \
+  -H 'content-type: application/json' \
+  -d '{"name":"My App","ownerEmail":"you@example.com"}'
+
+# 2. sell: returns a hosted checkout URL 
+curl -sX POST https://wavepay.t3ratech.co.zw/v2/checkouts \
+  -H 'x-wavepay-service-key: mk_test_… ' \
+  -H 'idempotency-key: order-1001' \
+  -d '{"productId":"my-app","planId":"pro","provider":"paynow","email":"buyer@example.com"}'
+```
+
+```
+# any MCP client: https://wavepay.t3ratech.co.zw/mcp 
+{ "jsonrpc": "2.0", "id": 1, "method": "tools/call",
+  "params": {
+    "name": "wavepay_checkout",
+    "arguments": { "productId": "my-app", "planId": "pro",
+                   "provider": "paynow", "email": "buyer@example.com" } } }
+
+# tools: wavepay_register, wavepay_providers, wavepay_pricing,
+#        wavepay_checkout, wavepay_checkout_status, wavepay_subscribe … 
+```
+
+```
+const res = await fetch("https://wavepay.t3ratech.co.zw/v2/checkouts", {
+  method: "POST",
+  headers: {
+    "content-type": "application/json",
+    "x-wavepay-service-key": process.env.WAVEPAY_KEY,
+    "idempotency-key": crypto.randomUUID(),
+  },
+  body: JSON.stringify({ productId: "my-app", planId: "pro",
+                         provider: "paypal", email: "buyer@example.com" }),
+});
+const { checkoutUrl, reference } = await res.json();
+```
+
+Pricing
+
+## Priced by payments, not by rake
+
+Flat monthly plans. The payment providers charge their own fees on top.
+
+### Free
+
+$0 forever
+
+25 payments per 30 days
+
+- 1 site
+- Every live rail
+- Signed webhooks
+- Payments ledger
+
+[Register free](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Most popular
+
+### Basic
+
+$9 per month
+
+250 payments per 30 days
+
+- 3 sites
+- Coupons and promotions
+- Webhooks and ledger
+
+[Get Basic](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Pro
+
+$29 per month
+
+2,500 payments per 30 days
+
+- 10 sites
+- Everything in Basic
+- Priority support queue
+
+[Get Pro](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Questions
+
+## Answers before you ask
+
+Which payment methods can I accept?
+
+EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow; Visa, Mastercard and PayPal for international buyers. 2Checkout is built and switches on when the provider approves our account.
+
+Do you take a percentage of my sales?
+
+No. Plans are flat monthly prices based on payments processed. The payment providers charge their own fees.
+
+Can I test without real money?
+
+Yes. Registration gives you a test key that uses a simulator. It never reaches a provider and never counts against your plan.
+
+How do buyers get their licence?
+
+When a payment settles, WavePay emails a licence key, and your app can verify the signed entitlement offline.
+
+Can an AI agent use WavePay?
+
+Yes. Point it at skill.md, the OpenAPI document or the MCP server. An agent can register, price, check out and reconcile without a browser.
+
+Guides
+
+## Answers for the thing you are building
+
+### Payment rails
+
+[EcoCash](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html), [OneMoney, InnBucks, Telecash, O'mari, ZimSwitch](https://wavepay.t3ratech.co.zw/accept-zimbabwe-wallet-payments.html), [Visa, Mastercard, PayPal](https://wavepay.t3ratech.co.zw/accept-card-and-paypal-payments.html)
+
+### Your kind of software
+
+[Browser extensions](https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html), [Games](https://wavepay.t3ratech.co.zw/payments-for-games.html), [Apps](https://wavepay.t3ratech.co.zw/payments-for-apps.html), [APIs](https://wavepay.t3ratech.co.zw/payments-for-apis.html), [Bots](https://wavepay.t3ratech.co.zw/payments-for-bots.html)
+
+### Questions and guides
+
+[FAQ](https://wavepay.t3ratech.co.zw/faq.html), [Subscriptions](https://wavepay.t3ratech.co.zw/guide-recurring-payments.html), [Buy now, pay later](https://wavepay.t3ratech.co.zw/guide-buy-now-pay-later.html), [Test mode](https://wavepay.t3ratech.co.zw/guide-test-mode.html), [Guides](https://wavepay.t3ratech.co.zw/learn.html)
+
+## Ready to take your first payment?
+
+Register in one request. No card, no call.
+
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html#register)[Read the docs](https://wavepay.t3ratech.co.zw/docs.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/it/
+
+# WavePay — pagamenti e licenze per il software
+
+> Accetta EcoCash, carte e PayPal con una sola API. Registrati in una richiesta, prova con denaro finto e vai in produzione con licenze, abbonamenti e rimborsi.
+
+Ora con abbonamenti, pagamenti rateali e 2Checkout
+
+# Fatti pagare il tuo software su *ogni metodo che i tuoi clienti usano*
+
+Una sola API per EcoCash, OneMoney, InnBucks, ZimSwitch, carte e PayPal. Registrati in una richiesta, prova con denaro finto e vai live con licenze, abbonamenti e rimborsi già inclusi.
+
+[Inizia gratis](https://wavepay.t3ratech.co.zw/pricing.html#register) [Leggi la documentazione](https://wavepay.t3ratech.co.zw/docs.html) [Per gli agenti](https://wavepay.t3ratech.co.zw/skill.md)
+
+- Piano gratuito, senza carta
+- Nessuna commissione percentuale sulle tue vendite
+- REST e MCP
+
+**9**metodi di pagamento
+
+**25**pagamenti gratuiti al mese
+
+**0%**di commissione sulle tue vendite
+
+**15**lingue
+
+Metodi di pagamento
+
+## Ogni metodo che un acquirente può avere
+
+Portafogli mobili locali per lo Zimbabwe, carte e PayPal per tutti gli altri. L'endpoint dei fornitori indica sempre cosa è attivo oggi.
+
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · in arrivo
+
+Cosa ottieni
+
+## Il checkout è la parte facile. WavePay è tutto il resto.
+
+### Checkout ospitato e richiesta al portafoglio
+
+Manda gli acquirenti a una pagina ospitata, oppure invia una richiesta EcoCash direttamente al loro telefono.
+
+### Licenze integrate
+
+Diritti firmati, chiavi di licenza via e-mail, attivazione dei dispositivi e recupero. La tua app verifica offline.
+
+### Abbonamenti e rate
+
+Piani ricorrenti, paga dopo con carta e un periodo di ritardo chiaro prima che l'accesso termini.
+
+### Rimborsi e storni
+
+Rimborsi totali e parziali tramite il fornitore, con traccia di chi li ha fatti e perché.
+
+### Un vero ambiente di prova
+
+Una chiave di prova accanto a quella live, un simulatore e un viaggio nel tempo per vedere un rinnovo.
+
+### Pensato per gli agenti
+
+skill.md, OpenAPI, un server MCP e strumenti WebMCP: un'IA può configurare il checkout per te.
+
+Come funziona
+
+## Tre richieste da zero a pagato
+
+1
+
+### Registrati
+
+Una richiesta restituisce una chiave live e una di prova. Piano gratuito, attivo subito.
+
+2
+
+### Vendi
+
+Crea un checkout e ottieni un URL ospitato, oppure invia una richiesta a un telefono.
+
+3
+
+### Incassa
+
+Un webhook firmato o un controllo conferma il denaro. La chiave di licenza arriva via e-mail in automatico.
+
+Per gli sviluppatori
+
+## Inizia con curl. Finisci con una chiave di licenza.
+
+Ogni esempio della documentazione gira prima nella sandbox con una chiave di prova, così puoi sbagliare senza rischi.
+
+[Apri il riferimento API](https://wavepay.t3ratech.co.zw/docs.html)
+
+curl MCP JavaScript
+
+```
+# 1. register: a live key and a test key, shown once 
+curl -sX POST https://wavepay.t3ratech.co.zw/v2/register \
+  -H 'content-type: application/json' \
+  -d '{"name":"My App","ownerEmail":"you@example.com"}'
+
+# 2. sell: returns a hosted checkout URL 
+curl -sX POST https://wavepay.t3ratech.co.zw/v2/checkouts \
+  -H 'x-wavepay-service-key: mk_test_… ' \
+  -H 'idempotency-key: order-1001' \
+  -d '{"productId":"my-app","planId":"pro","provider":"paynow","email":"buyer@example.com"}'
+```
+
+```
+# any MCP client: https://wavepay.t3ratech.co.zw/mcp 
+{ "jsonrpc": "2.0", "id": 1, "method": "tools/call",
+  "params": {
+    "name": "wavepay_checkout",
+    "arguments": { "productId": "my-app", "planId": "pro",
+                   "provider": "paynow", "email": "buyer@example.com" } } }
+
+# tools: wavepay_register, wavepay_providers, wavepay_pricing,
+#        wavepay_checkout, wavepay_checkout_status, wavepay_subscribe … 
+```
+
+```
+const res = await fetch("https://wavepay.t3ratech.co.zw/v2/checkouts", {
+  method: "POST",
+  headers: {
+    "content-type": "application/json",
+    "x-wavepay-service-key": process.env.WAVEPAY_KEY,
+    "idempotency-key": crypto.randomUUID(),
+  },
+  body: JSON.stringify({ productId: "my-app", planId: "pro",
+                         provider: "paypal", email: "buyer@example.com" }),
+});
+const { checkoutUrl, reference } = await res.json();
+```
+
+Prezzi
+
+## Prezzo per pagamenti elaborati, non per commissione
+
+Piani mensili fissi. I fornitori di pagamento applicano le loro commissioni a parte.
+
+### Gratis
+
+$0 per sempre
+
+25 pagamenti ogni 30 giorni
+
+- 1 sito
+- Ogni metodo attivo
+- Webhook firmati
+- Registro dei pagamenti
+
+[Registrati gratis](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Il più scelto
+
+### Basic
+
+$9 al mese
+
+250 pagamenti ogni 30 giorni
+
+- 3 siti
+- Coupon e promozioni
+- Webhook e registro
+
+[Scegli Basic](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Pro
+
+$29 al mese
+
+2.500 pagamenti ogni 30 giorni
+
+- 10 siti
+- Tutto ciò che c'è in Basic
+- Coda di supporto prioritaria
+
+[Scegli Pro](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Domande
+
+## Risposte prima che tu chieda
+
+Quali metodi di pagamento posso accettare?
+
+EcoCash, OneMoney, InnBucks, Telecash, O'mari e ZimSwitch tramite Paynow; Visa, Mastercard e PayPal per gli acquirenti internazionali. 2Checkout è pronto e si attiva quando il fornitore approverà il nostro account.
+
+Prendete una percentuale sulle mie vendite?
+
+No. I piani sono prezzi mensili fissi in base ai pagamenti elaborati. I fornitori di pagamento applicano le proprie commissioni.
+
+Posso provare senza denaro reale?
+
+Sì. La registrazione ti dà una chiave di prova che usa un simulatore. Non raggiunge mai un fornitore e non conta nel tuo piano.
+
+Come ricevono la licenza gli acquirenti?
+
+Quando un pagamento è regolato, WavePay invia una chiave di licenza via e-mail e la tua app può verificare offline il diritto firmato.
+
+Un agente IA può usare WavePay?
+
+Sì. Indicagli skill.md, il documento OpenAPI o il server MCP. Un agente può registrarsi, fissare i prezzi, incassare e riconciliare senza browser.
+
+Guide
+
+## Risposte per ciò che stai costruendo
+
+### Metodi di pagamento
+
+[EcoCash](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html), [OneMoney, InnBucks, Telecash, O'mari, ZimSwitch](https://wavepay.t3ratech.co.zw/accept-zimbabwe-wallet-payments.html), [Visa, Mastercard, PayPal](https://wavepay.t3ratech.co.zw/accept-card-and-paypal-payments.html)
+
+### Il tuo tipo di software
+
+[Estensioni del browser](https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html), [Giochi](https://wavepay.t3ratech.co.zw/payments-for-games.html), [App](https://wavepay.t3ratech.co.zw/payments-for-apps.html), [API](https://wavepay.t3ratech.co.zw/payments-for-apis.html), [Bot](https://wavepay.t3ratech.co.zw/payments-for-bots.html)
+
+### Domande e guide
+
+[Domande frequenti](https://wavepay.t3ratech.co.zw/faq.html), [Abbonamenti](https://wavepay.t3ratech.co.zw/guide-recurring-payments.html), [Compra ora, paga dopo](https://wavepay.t3ratech.co.zw/guide-buy-now-pay-later.html), [Modalità di prova](https://wavepay.t3ratech.co.zw/guide-test-mode.html), [Guide](https://wavepay.t3ratech.co.zw/learn.html)
+
+## Pronto a incassare il tuo primo pagamento?
+
+Registrati in una richiesta. Niente carta, niente telefonate.
+
+[Inizia gratis](https://wavepay.t3ratech.co.zw/pricing.html#register)[Leggi la documentazione](https://wavepay.t3ratech.co.zw/docs.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/ja/
+
+# WavePay — ソフトウェアの決済とライセンス
+
+> 1つのAPIでEcoCash、カード、PayPalに対応。1回のリクエストで登録し、擬似資金でテストして、ライセンス・定期課金・返金とともに本番へ。
+
+定期課金、分割払い、2Checkoutに対応しました
+
+# あなたのソフトウェアの代金を *購入者が持つあらゆる決済手段で受け取る*
+
+EcoCash、OneMoney、InnBucks、ZimSwitch、カード、PayPalを1つのAPIで。1回のリクエストで登録し、擬似資金でテストし、ライセンス・定期課金・返金が組み込まれた状態で本番へ。
+
+[無料で始める](https://wavepay.t3ratech.co.zw/pricing.html#register) [ドキュメントを読む](https://wavepay.t3ratech.co.zw/docs.html) [エージェント向け](https://wavepay.t3ratech.co.zw/skill.md)
+
+- 無料プラン、カード不要
+- 売上に対する手数料なし
+- RESTとMCP
+
+**9**種類の決済手段
+
+**25**毎月の無料決済数
+
+**0%**売上にかかる手数料
+
+**15**言語
+
+決済手段
+
+## 購入者が持ちうるあらゆる手段に対応
+
+ジンバブエ向けの現地ウォレットと、それ以外の地域向けのカードおよびPayPal。プロバイダーのエンドポイントで、現在有効な手段をいつでも確認できます。
+
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · 近日対応
+
+できること
+
+## 決済は簡単な部分です。残りはWavePayが担います。
+
+### ホスト型チェックアウトとウォレット請求
+
+購入者をホスト型ページへ誘導するか、EcoCashの請求を直接スマートフォンへ送信します。
+
+### ライセンス管理を内蔵
+
+署名付き権利、メールでのライセンスキー送付、デバイス認証と復旧。アプリはオフラインで検証できます。
+
+### 定期課金と分割払い
+
+継続課金プラン、カードでの後払い、アクセス終了前の明確な猶予期間。
+
+### 返金と取消
+
+プロバイダー経由で全額・一部返金を行い、誰がなぜ実施したかを記録します。
+
+### 本物のテスト環境
+
+本番キーの隣にテストキー、シミュレーター、そして更新を確認できるタイムトラベル機能。
+
+### エージェント向けに設計
+
+skill.md、OpenAPI、MCPサーバー、WebMCPツールにより、AIがチェックアウトを設定できます。
+
+仕組み
+
+## 3回のリクエストで、ゼロから入金まで
+
+1
+
+### 登録
+
+1回のリクエストで本番キーとテストキーが返ります。無料プランですぐに利用できます。
+
+2
+
+### 販売
+
+チェックアウトを作成してホスト型URLを取得するか、スマートフォンへウォレット請求を送ります。
+
+3
+
+### 精算
+
+署名付きWebhookまたはポーリングで入金を確認し、ライセンスキーは自動でメール送信されます。
+
+開発者向け
+
+## curlで始めて、ライセンスキーで終える。
+
+ドキュメントのすべての例は、まずテストキーを使ってサンドボックスで動作するため、安心して試せます。
+
+[APIリファレンスを開く](https://wavepay.t3ratech.co.zw/docs.html)
+
+curl MCP JavaScript
+
+```
+# 1. register: a live key and a test key, shown once 
+curl -sX POST https://wavepay.t3ratech.co.zw/v2/register \
+  -H 'content-type: application/json' \
+  -d '{"name":"My App","ownerEmail":"you@example.com"}'
+
+# 2. sell: returns a hosted checkout URL 
+curl -sX POST https://wavepay.t3ratech.co.zw/v2/checkouts \
+  -H 'x-wavepay-service-key: mk_test_… ' \
+  -H 'idempotency-key: order-1001' \
+  -d '{"productId":"my-app","planId":"pro","provider":"paynow","email":"buyer@example.com"}'
+```
+
+```
+# any MCP client: https://wavepay.t3ratech.co.zw/mcp 
+{ "jsonrpc": "2.0", "id": 1, "method": "tools/call",
+  "params": {
+    "name": "wavepay_checkout",
+    "arguments": { "productId": "my-app", "planId": "pro",
+                   "provider": "paynow", "email": "buyer@example.com" } } }
+
+# tools: wavepay_register, wavepay_providers, wavepay_pricing,
+#        wavepay_checkout, wavepay_checkout_status, wavepay_subscribe … 
+```
+
+```
+const res = await fetch("https://wavepay.t3ratech.co.zw/v2/checkouts", {
+  method: "POST",
+  headers: {
+    "content-type": "application/json",
+    "x-wavepay-service-key": process.env.WAVEPAY_KEY,
+    "idempotency-key": crypto.randomUUID(),
+  },
+  body: JSON.stringify({ productId: "my-app", planId: "pro",
+                         provider: "paypal", email: "buyer@example.com" }),
+});
+const { checkoutUrl, reference } = await res.json();
+```
+
+料金
+
+## 手数料ではなく、決済件数で決まる料金
+
+月額固定のプラン。決済プロバイダーの手数料は別途かかります。
+
+### 無料
+
+$0 ずっと
+
+30日あたり25件の決済
+
+- 1サイト
+- 有効なすべての決済手段
+- 署名付きWebhook
+- 決済台帳
+
+[無料で登録](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+一番人気
+
+### Basic
+
+$9 月額
+
+30日あたり250件の決済
+
+- 3サイト
+- クーポンとプロモーション
+- Webhookと台帳
+
+[Basicを選ぶ](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Pro
+
+$29 月額
+
+30日あたり2,500件の決済
+
+- 10サイト
+- Basicのすべて
+- 優先サポート窓口
+
+[Proを選ぶ](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+よくある質問
+
+## 聞かれる前にお答えします
+
+どの決済手段を受け付けられますか？
+
+Paynow経由でEcoCash、OneMoney、InnBucks、Telecash、O'mari、ZimSwitch。海外の購入者向けにVisa、Mastercard、PayPal。2Checkoutは開発済みで、プロバイダーによるアカウント承認後に有効化されます。
+
+売上の何パーセントかを受け取りますか？
+
+いいえ。処理した決済件数に基づく月額固定のプランです。決済プロバイダーは独自の手数料を請求します。
+
+本物のお金なしでテストできますか？
+
+はい。登録するとシミュレーターを使うテストキーが発行されます。プロバイダーには届かず、プランの件数にも数えられません。
+
+購入者はどうやってライセンスを受け取りますか？
+
+決済が完了すると、WavePayがライセンスキーをメールで送信し、アプリは署名付き権利をオフラインで検証できます。
+
+AIエージェントはWavePayを使えますか？
+
+はい。skill.md、OpenAPIドキュメント、MCPサーバーを案内してください。エージェントはブラウザなしで登録、価格設定、決済、照合ができます。
+
+ガイド
+
+## 作っているものに合わせた答え
+
+### 決済手段
+
+[EcoCash](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html), [OneMoney, InnBucks, Telecash, O'mari, ZimSwitch](https://wavepay.t3ratech.co.zw/accept-zimbabwe-wallet-payments.html), [Visa, Mastercard, PayPal](https://wavepay.t3ratech.co.zw/accept-card-and-paypal-payments.html)
+
+### あなたのソフトウェアの種類
+
+[ブラウザ拡張機能](https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html), [ゲーム](https://wavepay.t3ratech.co.zw/payments-for-games.html), [アプリ](https://wavepay.t3ratech.co.zw/payments-for-apps.html), [API](https://wavepay.t3ratech.co.zw/payments-for-apis.html), [ボット](https://wavepay.t3ratech.co.zw/payments-for-bots.html)
+
+### 質問とガイド
+
+[よくある質問](https://wavepay.t3ratech.co.zw/faq.html), [定期課金](https://wavepay.t3ratech.co.zw/guide-recurring-payments.html), [後払い](https://wavepay.t3ratech.co.zw/guide-buy-now-pay-later.html), [テストモード](https://wavepay.t3ratech.co.zw/guide-test-mode.html), [ガイド](https://wavepay.t3ratech.co.zw/learn.html)
+
+## 最初の支払いを受け取る準備はできましたか？
+
+1回のリクエストで登録。カードも電話も不要です。
+
+[無料で始める](https://wavepay.t3ratech.co.zw/pricing.html#register)[ドキュメントを読む](https://wavepay.t3ratech.co.zw/docs.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/learn.html
+
+> Everything WavePay does, by the question you are trying to answer: which rails it reaches, how to charge for each kind of software, how it compares, and how the…
+
+GUIDES
+
+# Guides
+
+Everything WavePay does, by the question you are trying to answer: which rails it reaches, how to charge for each kind of software, how it compares, and how the licensing and idempotency mechanics work.
+
+## Payment rails
+
+- [Accept EcoCash payments in your software](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html)
+- [Accept OneMoney, InnBucks, Telecash, O'mari and ZimSwitch payments](https://wavepay.t3ratech.co.zw/accept-zimbabwe-wallet-payments.html)
+- [Accept Visa, Mastercard and PayPal payments from international buyers](https://wavepay.t3ratech.co.zw/accept-card-and-paypal-payments.html)
+
+## By kind of software
+
+- [How to charge for a browser extension](https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html)
+- [How to take payments in a game](https://wavepay.t3ratech.co.zw/payments-for-games.html)
+- [How to charge for an app or SaaS](https://wavepay.t3ratech.co.zw/payments-for-apps.html)
+- [How to charge for API access](https://wavepay.t3ratech.co.zw/payments-for-apis.html)
+- [How to charge for a bot](https://wavepay.t3ratech.co.zw/payments-for-bots.html)
+
+## Comparisons
+
+- [WavePay vs integrating each payment rail yourself](https://wavepay.t3ratech.co.zw/compare-wavepay-vs-integrating-each-rail.html)
+- [WavePay vs a card-only payment processor](https://wavepay.t3ratech.co.zw/compare-wavepay-vs-card-only-processor.html)
+
+## How it works
+
+- [2Checkout (Verifone) with WavePay: checkout, subscriptions, refunds and notifications](https://wavepay.t3ratech.co.zw/guide-2checkout.html)
+- [Testing WavePay with fake money: test keys, simulated outcomes and time travel](https://wavepay.t3ratech.co.zw/guide-test-mode.html)
+- [Recurring payments in Zimbabwe: what charges automatically and what cannot](https://wavepay.t3ratech.co.zw/guide-recurring-payments.html)
+- [Buy now, pay later for software: deposits and instalments on cards](https://wavepay.t3ratech.co.zw/guide-buy-now-pay-later.html)
+- [How offline licence verification works with Ed25519 entitlements](https://wavepay.t3ratech.co.zw/guide-offline-licence-verification.html)
+- [Idempotent checkouts: why a retry should never charge twice](https://wavepay.t3ratech.co.zw/guide-idempotent-checkouts.html)
+
+## Questions
+
+- [Frequently asked questions](https://wavepay.t3ratech.co.zw/faq.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/nd/
+
+# WavePay — inkokhelo lamalayisense ezinhlelo
+
+> Samukela i-EcoCash, amakhadi le-PayPal nge-API eyodwa. Bhalisa ngesicelo esisodwa, linga ngemali yokulingisa, uqale ngamalayisense lokubuyisela imali.
+
+Manje lokukhokha ngezikhathi, ngezigaba le-2Checkout
+
+# Khokhelwa izinhlelo zakho nge *yonke indlela abathengi bakho abayisebenzisayo*
+
+I-API eyodwa ye-EcoCash, i-OneMoney, i-InnBucks, i-ZimSwitch, amakhadi le-PayPal. Bhalisa ngesicelo esisodwa, linga ngemali yokulingisa, bese uqala ngamalayisense, ukukhokha ngezikhathi lokubuyisela imali okufakiwe.
+
+[Qala mahala](https://wavepay.t3ratech.co.zw/pricing.html#register) [Funda imibhalo](https://wavepay.t3ratech.co.zw/docs.html) [Kuma-ejenti](https://wavepay.t3ratech.co.zw/skill.md)
+
+- Uhlelo lwamahala, akukho khadi elidingekayo
+- Akukho mkhawulo wephesenti ekuthengiseni kwakho
+- I-REST le-MCP
+
+**9**izindlela zokukhokha
+
+**25**izinkokhelo zamahala ngenyanga
+
+**0%**imali ekuthengiseni kwakho
+
+**15**izilimi
+
+Izindlela zokukhokha
+
+## Zonke izindlela umthengi angaba lazo
+
+Izikhwama zasekhaya zeZimbabwe, amakhadi le-PayPal kwabanye. Indawo yabahlinzeki ihlala itshengisa okusebenzayo namuhla.
+
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · kuyeza
+
+Okuzakuthola
+
+## Ukukhokha yikhona okulula. I-WavePay yikho konke okuseleyo.
+
+### Ikhasi lokukhokha lesicelo sesikhwama
+
+Thumela abathengi ekhasini lokukhokha, loba uthumele isicelo se-EcoCash ngqo efoyinini labo.
+
+### Amalayisense akhelwe ngaphakathi
+
+Amalungelo asayiniwe, okhiye bamalayisense nge-imeyili, ukusebenzisa amadivayisi lokubuyiselwa. I-app yakho iyahlola ingelayo i-inthanethi.
+
+### Ukukhokha ngezikhathi langezigaba
+
+Izinhlelo eziphindaphindwayo, thenga manje ukhokhe emva kwesikhathi ngekhadi, lesikhathi esicacileyo sokubambezela ukufinyelela kungakapheli.
+
+### Ukubuyisela imali lokuhlehlisa
+
+Ukubuyisela imali yonke loba ingxenye ngomhlinzeki, lerekhodi lokuthi ngubani owakwenzayo lesizatho.
+
+### Indawo yangempela yokulinga
+
+Ukhiye wokulinga eduze kokhiye wakho wangempela, i-simulator, lokuhamba kwesikhathi ukubona ukuvuselelwa.
+
+### Yakhelwe ama-ejenti
+
+I-skill.md, i-OpenAPI, iseva ye-MCP lamathuluzi e-WebMCP, ukuze i-AI ikulungisele ukukhokha.
+
+Isebenza njani
+
+## Izicelo ezintathu ukusuka kunalutho kuze kube khokhelwe
+
+1
+
+### Bhalisa
+
+Isicelo esisodwa sibuyisa ukhiye wangempela lokhiye wokulinga. Uhlelo lwamahala, lusebenza ngokuphangisa.
+
+2
+
+### Thengisa
+
+Dala ukukhokha uthole i-URL yekhasi, loba uthumele isicelo sesikhwama efoyinini.
+
+3
+
+### Qedisa
+
+I-webhook esayiniwe loba ukubuzisisa kuqinisekisa imali. Ukhiye welayisense uthunyelwa ngokuzenzakalelayo nge-imeyili.
+
+Kubakhi
+
+## Qala nge-curl. Qeda ngokhiye welayisense.
+
+Isibonelo ngasinye semibhalo siqala sisebenze endaweni yokulinga ngokhiye wokulinga, ukuze ulingeke uphephile.
+
+[Vula isalathiso se-API](https://wavepay.t3ratech.co.zw/docs.html)
+
+curl MCP JavaScript
+
+```
+# 1. register: a live key and a test key, shown once 
+curl -sX POST https://wavepay.t3ratech.co.zw/v2/register \
+  -H 'content-type: application/json' \
+  -d '{"name":"My App","ownerEmail":"you@example.com"}'
+
+# 2. sell: returns a hosted checkout URL 
+curl -sX POST https://wavepay.t3ratech.co.zw/v2/checkouts \
+  -H 'x-wavepay-service-key: mk_test_… ' \
+  -H 'idempotency-key: order-1001' \
+  -d '{"productId":"my-app","planId":"pro","provider":"paynow","email":"buyer@example.com"}'
+```
+
+```
+# any MCP client: https://wavepay.t3ratech.co.zw/mcp 
+{ "jsonrpc": "2.0", "id": 1, "method": "tools/call",
+  "params": {
+    "name": "wavepay_checkout",
+    "arguments": { "productId": "my-app", "planId": "pro",
+                   "provider": "paynow", "email": "buyer@example.com" } } }
+
+# tools: wavepay_register, wavepay_providers, wavepay_pricing,
+#        wavepay_checkout, wavepay_checkout_status, wavepay_subscribe … 
+```
+
+```
+const res = await fetch("https://wavepay.t3ratech.co.zw/v2/checkouts", {
+  method: "POST",
+  headers: {
+    "content-type": "application/json",
+    "x-wavepay-service-key": process.env.WAVEPAY_KEY,
+    "idempotency-key": crypto.randomUUID(),
+  },
+  body: JSON.stringify({ productId: "my-app", planId: "pro",
+                         provider: "paypal", email: "buyer@example.com" }),
+});
+const { checkoutUrl, reference } = await res.json();
+```
+
+Intengo
+
+## Intengo ngokuya ngezinkokhelo, hatshi ngokusikwa
+
+Izinhlelo zenyanga zentengo emisiweyo. Abahlinzeki bokukhokha bakhokhisa izimali zabo ngokwehlukileyo.
+
+### Mahala
+
+$0 kuze kube nininini
+
+Izinkokhelo ezingu-25 ezinsukwini ezingu-30
+
+- Isayithi eli-1
+- Yonke indlela yokukhokha esebenzayo
+- Ama-webhook asayiniwe
+- Ibhuku lezinkokhelo
+
+[Bhalisa mahala](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Okukhethwa kakhulu
+
+### Basic
+
+$9 ngenyanga
+
+Izinkokhelo ezingu-250 ezinsukwini ezingu-30
+
+- Amasayithi angu-3
+- Amakhuphoni lezethulo
+- Ama-webhook lebhuku
+
+[Thatha i-Basic](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Pro
+
+$29 ngenyanga
+
+Izinkokhelo ezingu-2,500 ezinsukwini ezingu-30
+
+- Amasayithi ali-10
+- Konke okukuBasic
+- Ulayini wosekelo olubalulekileyo
+
+[Thatha i-Pro](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Imibuzo
+
+## Izimpendulo ungakabuzi
+
+Ngingasamukela zimuphi izindlela zokukhokha?
+
+I-EcoCash, i-OneMoney, i-InnBucks, i-Telecash, i-O'mari le-ZimSwitch nge-Paynow; i-Visa, i-Mastercard le-PayPal kubathengi bamazwe angaphandle. I-2Checkout yakhiwe izavulwa lapho umhlinzeki evuma i-akhawunti yethu.
+
+Niyathatha ipesenti yokuthengisa kwami yini?
+
+Hatshi. Izinhlelo zintengo zenyanga ezimisiweyo ngokuya ngezinkokhelo ezilungisiweyo. Abahlinzeki bokukhokha bakhokhisa izimali zabo.
+
+Ngingalinga ngaphandle kwemali yangempela yini?
+
+Yebo. Ukubhalisa kukunika ukhiye wokulinga osebenzisa i-simulator. Kawufinyeleli kumhlinzeki kawubalwa kuhlelo lwakho.
+
+Abathengi bayitholaphi ilayisense yabo?
+
+Lapho inkokhelo isiphelile, i-WavePay ithumela ukhiye welayisense nge-imeyili, ne-app yakho ingahlola ilungelo elisayiniweyo ingelayo i-inthanethi.
+
+I-ejenti ye-AI ingasebenzisa i-WavePay yini?
+
+Yebo. Yikhombise i-skill.md, imibhalo ye-OpenAPI loba iseva ye-MCP. I-ejenti ingabhalisa, ibeke intengo, ikhokhise iqathanise ingelayo isiphequluli.
+
+Izikhokhelo
+
+## Izimpendulo zalokho okukhiyayo
+
+### Izindlela zokukhokha
+
+[EcoCash](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html), [OneMoney, InnBucks, Telecash, O'mari, ZimSwitch](https://wavepay.t3ratech.co.zw/accept-zimbabwe-wallet-payments.html), [Visa, Mastercard, PayPal](https://wavepay.t3ratech.co.zw/accept-card-and-paypal-payments.html)
+
+### Uhlobo lohlelo lwakho
+
+[Izengezo zesiphequluli](https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html), [Imidlalo](https://wavepay.t3ratech.co.zw/payments-for-games.html), [Ama-app](https://wavepay.t3ratech.co.zw/payments-for-apps.html), [Ama-API](https://wavepay.t3ratech.co.zw/payments-for-apis.html), [Ama-bot](https://wavepay.t3ratech.co.zw/payments-for-bots.html)
+
+### Imibuzo lezikhokhelo
+
+[Imibuzo](https://wavepay.t3ratech.co.zw/faq.html), [Ukukhokha ngezikhathi](https://wavepay.t3ratech.co.zw/guide-recurring-payments.html), [Thenga manje, khokha emva kwesikhathi](https://wavepay.t3ratech.co.zw/guide-buy-now-pay-later.html), [Indlela yokulinga](https://wavepay.t3ratech.co.zw/guide-test-mode.html), [Izikhokhelo](https://wavepay.t3ratech.co.zw/learn.html)
+
+## Usukulungele ukwamukela inkokhelo yakho yokuqala?
+
+Bhalisa ngesicelo esisodwa. Akukho khadi, akukho mbiko.
+
+[Qala mahala](https://wavepay.t3ratech.co.zw/pricing.html#register)[Funda imibhalo](https://wavepay.t3ratech.co.zw/docs.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/payments-for-apis.html
+
+> Charge for an API with WavePay by selling plans through checkout, issuing a licence key on payment, and gating requests on the key — settlement arrives by signed…
+
+USE CASE
+
+# How to charge for API access
+
+Charge for an API with WavePay by selling plans through checkout, issuing a licence key on payment, and gating requests on the key — settlement arrives by signed webhook so access can be granted automatically.
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month
+
+## The flow
+
+1. Sell: a checkout per plan with POST /v2/checkouts.
+2. Issue: the paid checkout emails the licence key; activation returns a signed entitlement.
+3. Gate: your API checks the entitlement or key before serving a request.
+4. Automate: register a webhook with POST /v2/internal/sites/webhook; the HMAC secret is returned once.
+
+## Questions
+
+## How does my API learn that someone paid?
+
+Through a signed webhook, or by polling checkout status.
+
+## Is the webhook authentic?
+
+Settlements are signed with the HMAC secret returned when you registered the webhook.
+
+## Keep going
+
+- [How to charge for a browser extension](https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html)
+- [How to take payments in a game](https://wavepay.t3ratech.co.zw/payments-for-games.html)
+- [Accept EcoCash payments in your software](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html)
+- [FAQ](https://wavepay.t3ratech.co.zw/faq.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/payments-for-apps.html
+
+> Charge for an app or SaaS with WavePay by pricing plans as data, sending buyers to a hosted checkout, and unlocking seats from licence activations or your signed…
+
+USE CASE
+
+# How to charge for an app or SaaS
+
+Charge for an app or SaaS with WavePay by pricing plans as data, sending buyers to a hosted checkout, and unlocking seats from licence activations or your signed settlement webhook.
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month
+
+## The flow
+
+1. Plans are data: GET /v2/pricing?productId=… returns plans, prices and promotions.
+2. Promotions without a release: mint coupons with POST /v2/internal/coupons/mint (Basic and above).
+3. Settle: signed webhooks, or drain the ledger with POST /v2/internal/payments.
+4. Seats: activation codes and device quotas come from the licensing endpoints.
+
+## Questions
+
+## Can I run a sale without redeploying?
+
+Yes. Pricing is data, so a promotion is a row, not a release.
+
+## Where do I see every payment?
+
+In the payments ledger — one feed for every rail, drained with since/limit cursors.
+
+## Keep going
+
+- [How to charge for a browser extension](https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html)
+- [How to take payments in a game](https://wavepay.t3ratech.co.zw/payments-for-games.html)
+- [Accept EcoCash payments in your software](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html)
+- [FAQ](https://wavepay.t3ratech.co.zw/faq.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/payments-for-bots.html
+
+> Charge for a bot with WavePay by pushing a wallet prompt to the user's phone with paynow-mobile, so the payment happens inside the chat flow without a browser, then…
+
+USE CASE
+
+# How to charge for a bot
+
+Charge for a bot with WavePay by pushing a wallet prompt to the user's phone with paynow-mobile, so the payment happens inside the chat flow without a browser, then unlock features when status reads collected.
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month
+
+## The flow
+
+1. Collect the phone number in chat, then POST /v2/checkouts with paynow-mobile.
+2. Poll GET /v2/checkouts/<reference>/status until collected, or use a webhook.
+3. Unlock the user's features and store the reference for support.
+4. Agents can do all of it through POST /mcp — wavepay_checkout and wavepay_checkout_status.
+
+## Questions
+
+## Can a bot take payment without a web page?
+
+Yes, with paynow-mobile and the buyer's phone number.
+
+## Can the bot's own agent run the integration?
+
+Yes. The MCP tools expose registration, pricing, checkout and status.
+
+## Keep going
+
+- [How to charge for a browser extension](https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html)
+- [How to take payments in a game](https://wavepay.t3ratech.co.zw/payments-for-games.html)
+- [Accept EcoCash payments in your software](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html)
+- [FAQ](https://wavepay.t3ratech.co.zw/faq.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html
+
+> Sell a browser extension with WavePay by creating a checkout for your Pro plan, emailing a licence key on payment, and letting the extension verify an Ed25519-signed…
+
+USE CASE
+
+# How to charge for a browser extension
+
+Sell a browser extension with WavePay by creating a checkout for your Pro plan, emailing a licence key on payment, and letting the extension verify an Ed25519-signed entitlement offline — T3rnel Browser sells Pro this way in production.
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month
+
+## The flow
+
+1. Checkout: POST /v2/checkouts for the plan; the buyer pays with the rail they hold.
+2. Licence: a paid checkout emails a licence key automatically.
+3. Activation: POST /v2/licensing/activate with the key and a deviceId returns a signed entitlement.
+4. Verification: the extension checks the entitlement offline against GET /v2/licensing/public-key — no call home on every launch.
+5. Recovery: POST /v2/licensing/recover mails a lost key again.
+
+## Questions
+
+## Does my extension need a server to check licences?
+
+No. Entitlements are Ed25519-signed, so the extension verifies them offline against the public key.
+
+## Who already does this?
+
+T3rnel Browser sells its Pro tier on this exact flow.
+
+## Keep going
+
+- [How to take payments in a game](https://wavepay.t3ratech.co.zw/payments-for-games.html)
+- [How to charge for an app or SaaS](https://wavepay.t3ratech.co.zw/payments-for-apps.html)
+- [Accept EcoCash payments in your software](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html)
+- [FAQ](https://wavepay.t3ratech.co.zw/faq.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/payments-for-games.html
+
+> In a game, charge a player without leaving the session by using provider paynow-mobile with their phone number — the EcoCash, OneMoney, InnBucks or O'mari prompt is…
+
+USE CASE
+
+# How to take payments in a game
+
+In a game, charge a player without leaving the session by using provider paynow-mobile with their phone number — the EcoCash, OneMoney, InnBucks or O'mari prompt is pushed to their handset and your game polls checkout status until it reads collected.
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Basic: 250 payments per 30 days for $9/month; Pro: 2,500 payments per 30 days for $29/month
+
+## The flow
+
+1. Create: POST /v2/checkouts with provider paynow-mobile and the player's phone (EcoCash, OneMoney or InnBucks).
+2. Wait: poll GET /v2/checkouts/<reference>/status — pending, collected or expired.
+3. Grant: unlock the item when the status reads collected, or on your signed webhook.
+4. Retry safely: reuse the same Idempotency-Key so a network retry cannot charge twice.
+
+## Questions
+
+## Does the player need to open a web page?
+
+No. With paynow-mobile the prompt arrives on their handset, for EcoCash, OneMoney, InnBucks and O'mari wallets.
+
+## How do I avoid double-charging on a retry?
+
+Send the same Idempotency-Key; the same checkout is returned.
+
+## Keep going
+
+- [How to charge for a browser extension](https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html)
+- [How to charge for an app or SaaS](https://wavepay.t3ratech.co.zw/payments-for-apps.html)
+- [Accept EcoCash payments in your software](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html)
+- [FAQ](https://wavepay.t3ratech.co.zw/faq.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/pricing.html
+
+# Pricing — WavePay
+
+> WavePay pricing by payments processed: Free $0 for 25 payments a month, Basic $9 for 250, Pro $29 for 2,500. Every rail included, no percentage rake.
+
+Merchant pricing
+
+# Priced by payments processed, not by rake
+
+Flat tiers. The ladder below the page's fold: the category norm (Lemon Squeezy ~5%+50¢, Paddle ~5%+50¢, Gumroad 10%, Keygen ~$100/mo) takes a slice of every sale — WavePay sells headroom instead. Start free; a payment count that outgrows the tier is refused by name, never silently charged.
+
+### Free
+
+$0 forever
+
+- 25 payments / 30 days
+- 1 site (product)
+- Every live rail
+- Signed settlement webhooks
+- Payments ledger
+
+Register free — one POST
+
+### Basic
+
+$9 USD / month
+
+- 250 payments / 30 days
+- 3 sites
+- Coupons & promotions
+- Webhooks + ledger
+
+Get Basic — $9/mo
+
+Scale
+
+### Pro
+
+$29 USD / month
+
+- 2,500 payments / 30 days
+- 10 sites
+- Coupons, webhooks, ledger
+- Priority support queue
+
+Get Pro — $29/mo
+
+### Start in one POST — no form, no call
+
+```
+# Register — returns your live merchant key once. Free tier, working now:
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/register \
+  -H 'Content-Type: application/json' \
+  -d '{"name":"My Product","ownerEmail":"you@example.com"}'
+# → 201 { "merchantId": "mer_…", "key": "mk_live_…", "planId": "free", "paymentsPerMonth": 25 }
+
+# Upgrade — a normal checkout on the wavepay product, your own rails:
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/checkouts \
+  -H 'Content-Type: application/json' -H 'Idempotency-Key: upgrade-' \
+  -d '{"productId":"wavepay","planId":"pro","provider":"paynow","email":"you@example.com"}'
+# → 201 { "checkoutUrl": "https://www.paynow.co.zw/…", … } — settle it and
+#   your merchant's plan_id moves to pro. provider "paypal" works too.
+```
+
+Agents: [skill.md](https://wavepay.t3ratech.co.zw/skill.md) is the same story in one markdown file, and `POST /mcp` exposes it all as tools. Registration returns a live key and a test key (`mk_test_…`) — the test key uses the same routes with fake money, never reaches a provider and never counts against the cap. Subscriptions, buy now pay later and refunds are usable in test mode today and switched on for live money per deployment (`GET /v2/features`). Questions: [support@t3ratech.co.zw](mailto:support@t3ratech.co.zw).
+
+### Fair fine print
+
+The tier caps payments *created* in the rolling 30-day window — a hit cap refuses new checkouts with `MERCHANT_LIMIT_REACHED`, it never blocks or double-charges a buyer mid-payment. Provider fees are the providers' own (PayNow and PayPal take theirs; WavePay's price is the plan). Every plan can take every rail the deployment enables — check [status](https://wavepay.t3ratech.co.zw/status.html) for the live list.
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/pt/
+
+# WavePay — pagamentos e licenças para software
+
+> Aceite EcoCash, cartões e PayPal com uma só API. Registe-se num pedido, teste com dinheiro fictício e passe para produção com licenças, subscrições e reembolsos.
+
+Agora com subscrições, pagamentos em prestações e 2Checkout
+
+# Seja pago pelo seu software em *todos os meios que os seus clientes usam*
+
+Uma API para EcoCash, OneMoney, InnBucks, ZimSwitch, cartões e PayPal. Registe-se num pedido, teste com dinheiro fictício e passe para produção com licenças, subscrições e reembolsos incluídos.
+
+[Começar grátis](https://wavepay.t3ratech.co.zw/pricing.html#register) [Ler a documentação](https://wavepay.t3ratech.co.zw/docs.html) [Para agentes](https://wavepay.t3ratech.co.zw/skill.md)
+
+- Plano gratuito, sem cartão
+- Sem comissão sobre as suas vendas
+- REST e MCP
+
+**9**meios de pagamento
+
+**25**pagamentos gratuitos por mês
+
+**0%**de taxa sobre as suas vendas
+
+**15**idiomas
+
+Meios de pagamento
+
+## Todos os meios que um cliente pode ter
+
+Carteiras móveis locais para o Zimbabué, cartões e PayPal para o resto do mundo. O ponto de acesso dos fornecedores indica sempre o que está ativo hoje.
+
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · em breve
+
+O que recebe
+
+## O checkout é a parte fácil. A WavePay trata do resto.
+
+### Checkout alojado e pedido na carteira
+
+Envie os clientes para uma página alojada ou envie um pedido EcoCash diretamente para o telemóvel.
+
+### Licenciamento integrado
+
+Direitos assinados, chaves de licença por e-mail, ativação de dispositivos e recuperação. A sua aplicação verifica offline.
+
+### Subscrições e prestações
+
+Planos recorrentes, compre agora e pague depois com cartão, e um prazo claro de atraso antes de terminar o acesso.
+
+### Reembolsos e estornos
+
+Reembolsos totais ou parciais através do fornecedor, com registo de quem os fez e porquê.
+
+### Um ambiente de teste real
+
+Uma chave de teste ao lado da chave de produção, um simulador e viagem no tempo para ver uma renovação acontecer.
+
+### Feito para agentes
+
+skill.md, OpenAPI, um servidor MCP e ferramentas WebMCP: uma IA pode configurar o checkout por si.
+
+Como funciona
+
+## Três pedidos do zero ao pagamento
+
+1
+
+### Registar
+
+Um pedido devolve uma chave de produção e uma chave de teste. Plano gratuito, ativo de imediato.
+
+2
+
+### Vender
+
+Crie um checkout e obtenha um URL alojado, ou envie um pedido para um telemóvel.
+
+3
+
+### Liquidar
+
+Um webhook assinado ou uma consulta confirma o dinheiro. A chave de licença é enviada automaticamente.
+
+Para programadores
+
+## Comece com curl. Termine com uma chave de licença.
+
+Todos os exemplos da documentação correm primeiro no ambiente de testes com uma chave de teste, para poder errar em segurança.
+
+[Abrir a referência da API](https://wavepay.t3ratech.co.zw/docs.html)
+
+curl MCP JavaScript
+
+```
+# 1. register: a live key and a test key, shown once 
+curl -sX POST https://wavepay.t3ratech.co.zw/v2/register \
+  -H 'content-type: application/json' \
+  -d '{"name":"My App","ownerEmail":"you@example.com"}'
+
+# 2. sell: returns a hosted checkout URL 
+curl -sX POST https://wavepay.t3ratech.co.zw/v2/checkouts \
+  -H 'x-wavepay-service-key: mk_test_… ' \
+  -H 'idempotency-key: order-1001' \
+  -d '{"productId":"my-app","planId":"pro","provider":"paynow","email":"buyer@example.com"}'
+```
+
+```
+# any MCP client: https://wavepay.t3ratech.co.zw/mcp 
+{ "jsonrpc": "2.0", "id": 1, "method": "tools/call",
+  "params": {
+    "name": "wavepay_checkout",
+    "arguments": { "productId": "my-app", "planId": "pro",
+                   "provider": "paynow", "email": "buyer@example.com" } } }
+
+# tools: wavepay_register, wavepay_providers, wavepay_pricing,
+#        wavepay_checkout, wavepay_checkout_status, wavepay_subscribe … 
+```
+
+```
+const res = await fetch("https://wavepay.t3ratech.co.zw/v2/checkouts", {
+  method: "POST",
+  headers: {
+    "content-type": "application/json",
+    "x-wavepay-service-key": process.env.WAVEPAY_KEY,
+    "idempotency-key": crypto.randomUUID(),
+  },
+  body: JSON.stringify({ productId: "my-app", planId: "pro",
+                         provider: "paypal", email: "buyer@example.com" }),
+});
+const { checkoutUrl, reference } = await res.json();
+```
+
+Preços
+
+## Preço por pagamentos processados, não por comissão
+
+Planos mensais fixos. Os fornecedores de pagamento cobram as suas próprias taxas.
+
+### Grátis
+
+$0 para sempre
+
+25 pagamentos por 30 dias
+
+- 1 site
+- Todos os meios de pagamento ativos
+- Webhooks assinados
+- Registo de pagamentos
+
+[Registar grátis](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Mais popular
+
+### Basic
+
+$9 por mês
+
+250 pagamentos por 30 dias
+
+- 3 sites
+- Cupões e promoções
+- Webhooks e registo
+
+[Escolher Basic](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Pro
+
+$29 por mês
+
+2500 pagamentos por 30 dias
+
+- 10 sites
+- Tudo o que está no Basic
+- Fila de suporte prioritária
+
+[Escolher Pro](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Perguntas
+
+## Respostas antes de perguntar
+
+Que meios de pagamento posso aceitar?
+
+EcoCash, OneMoney, InnBucks, Telecash, O'mari e ZimSwitch através da Paynow; Visa, Mastercard e PayPal para compradores internacionais. O 2Checkout está construído e ativa-se quando o fornecedor aprovar a nossa conta.
+
+Cobram uma percentagem das minhas vendas?
+
+Não. Os planos são preços mensais fixos conforme os pagamentos processados. Os fornecedores de pagamento cobram as suas próprias taxas.
+
+Posso testar sem dinheiro real?
+
+Sim. O registo dá-lhe uma chave de teste que usa um simulador. Nunca chega a um fornecedor e não conta para o seu plano.
+
+Como recebem os compradores a licença?
+
+Quando um pagamento é liquidado, a WavePay envia uma chave de licença por e-mail e a sua aplicação pode verificar offline o direito assinado.
+
+Um agente de IA pode usar a WavePay?
+
+Sim. Indique-lhe o skill.md, o documento OpenAPI ou o servidor MCP. Um agente pode registar-se, definir preços, cobrar e reconciliar sem navegador.
+
+Guias
+
+## Respostas para o que está a construir
+
+### Meios de pagamento
+
+[EcoCash](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html), [OneMoney, InnBucks, Telecash, O'mari, ZimSwitch](https://wavepay.t3ratech.co.zw/accept-zimbabwe-wallet-payments.html), [Visa, Mastercard, PayPal](https://wavepay.t3ratech.co.zw/accept-card-and-paypal-payments.html)
+
+### O seu tipo de software
+
+[Extensões de navegador](https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html), [Jogos](https://wavepay.t3ratech.co.zw/payments-for-games.html), [Aplicações](https://wavepay.t3ratech.co.zw/payments-for-apps.html), [APIs](https://wavepay.t3ratech.co.zw/payments-for-apis.html), [Bots](https://wavepay.t3ratech.co.zw/payments-for-bots.html)
+
+### Perguntas e guias
+
+[Perguntas frequentes](https://wavepay.t3ratech.co.zw/faq.html), [Subscrições](https://wavepay.t3ratech.co.zw/guide-recurring-payments.html), [Compre agora, pague depois](https://wavepay.t3ratech.co.zw/guide-buy-now-pay-later.html), [Modo de teste](https://wavepay.t3ratech.co.zw/guide-test-mode.html), [Guias](https://wavepay.t3ratech.co.zw/learn.html)
+
+## Pronto para receber o primeiro pagamento?
+
+Registo num pedido. Sem cartão, sem chamada.
+
+[Começar grátis](https://wavepay.t3ratech.co.zw/pricing.html#register)[Ler a documentação](https://wavepay.t3ratech.co.zw/docs.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/ru/
+
+# WavePay — платежи и лицензии для программ
+
+> Принимайте EcoCash, карты и PayPal через один API. Зарегистрируйтесь одним запросом, проверьте на тестовых деньгах и запускайтесь с лицензиями, подписками и возвратами.
+
+Теперь с подписками, рассрочкой и 2Checkout
+
+# Получайте деньги за свою программу через *любой способ оплаты ваших покупателей*
+
+Один API для EcoCash, OneMoney, InnBucks, ZimSwitch, карт и PayPal. Регистрация одним запросом, тесты на условных деньгах и запуск со встроенными лицензиями, подписками и возвратами.
+
+[Начать бесплатно](https://wavepay.t3ratech.co.zw/pricing.html#register) [Читать документацию](https://wavepay.t3ratech.co.zw/docs.html) [Для агентов](https://wavepay.t3ratech.co.zw/skill.md)
+
+- Бесплатный тариф, без карты
+- Без процента с ваших продаж
+- REST и MCP
+
+**9**способов оплаты
+
+**25**бесплатных платежей в месяц
+
+**0%**комиссии с ваших продаж
+
+**15**языков
+
+Способы оплаты
+
+## Все способы, которые могут быть у покупателя
+
+Местные кошельки для Зимбабве, карты и PayPal для остальных. Эндпоинт провайдеров всегда показывает, что работает сегодня.
+
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · скоро
+
+Что вы получаете
+
+## Оплата — самая простая часть. Остальное — WavePay.
+
+### Страница оплаты и запрос в кошелёк
+
+Отправляйте покупателей на страницу оплаты или присылайте запрос EcoCash прямо на телефон.
+
+### Лицензирование встроено
+
+Подписанные права, лицензионные ключи по почте, активация устройств и восстановление. Приложение проверяет всё офлайн.
+
+### Подписки и рассрочка
+
+Регулярные тарифы, «заплатить позже» по карте и понятный срок просрочки до окончания доступа.
+
+### Возвраты и отмены
+
+Полные и частичные возвраты через провайдера с записью о том, кто и почему их сделал.
+
+### Настоящая тестовая среда
+
+Тестовый ключ рядом с боевым, симулятор и перемотка времени, чтобы увидеть продление.
+
+### Создано для агентов
+
+skill.md, OpenAPI, MCP-сервер и инструменты WebMCP: ИИ может настроить оплату за вас.
+
+Как это работает
+
+## Три запроса от нуля до оплаты
+
+1
+
+### Регистрация
+
+Один запрос возвращает боевой и тестовый ключи. Бесплатный тариф работает сразу.
+
+2
+
+### Продажа
+
+Создайте платёж и получите ссылку на страницу оплаты или отправьте запрос в кошелёк на телефон.
+
+3
+
+### Расчёт
+
+Подписанный вебхук или опрос подтверждает поступление. Лицензионный ключ отправляется автоматически.
+
+Разработчикам
+
+## Начните с curl. Закончите лицензионным ключом.
+
+Каждый пример в документации сначала запускается в песочнице с тестовым ключом, так что можно безопасно экспериментировать.
+
+[Открыть справочник API](https://wavepay.t3ratech.co.zw/docs.html)
+
+curl MCP JavaScript
+
+```
+# 1. register: a live key and a test key, shown once 
+curl -sX POST https://wavepay.t3ratech.co.zw/v2/register \
+  -H 'content-type: application/json' \
+  -d '{"name":"My App","ownerEmail":"you@example.com"}'
+
+# 2. sell: returns a hosted checkout URL 
+curl -sX POST https://wavepay.t3ratech.co.zw/v2/checkouts \
+  -H 'x-wavepay-service-key: mk_test_… ' \
+  -H 'idempotency-key: order-1001' \
+  -d '{"productId":"my-app","planId":"pro","provider":"paynow","email":"buyer@example.com"}'
+```
+
+```
+# any MCP client: https://wavepay.t3ratech.co.zw/mcp 
+{ "jsonrpc": "2.0", "id": 1, "method": "tools/call",
+  "params": {
+    "name": "wavepay_checkout",
+    "arguments": { "productId": "my-app", "planId": "pro",
+                   "provider": "paynow", "email": "buyer@example.com" } } }
+
+# tools: wavepay_register, wavepay_providers, wavepay_pricing,
+#        wavepay_checkout, wavepay_checkout_status, wavepay_subscribe … 
+```
+
+```
+const res = await fetch("https://wavepay.t3ratech.co.zw/v2/checkouts", {
+  method: "POST",
+  headers: {
+    "content-type": "application/json",
+    "x-wavepay-service-key": process.env.WAVEPAY_KEY,
+    "idempotency-key": crypto.randomUUID(),
+  },
+  body: JSON.stringify({ productId: "my-app", planId: "pro",
+                         provider: "paypal", email: "buyer@example.com" }),
+});
+const { checkoutUrl, reference } = await res.json();
+```
+
+Цены
+
+## Цена за обработанные платежи, а не процент
+
+Фиксированные месячные тарифы. Платёжные провайдеры берут свои комиссии отдельно.
+
+### Бесплатный
+
+$0 навсегда
+
+25 платежей за 30 дней
+
+- 1 сайт
+- Все включённые способы оплаты
+- Подписанные вебхуки
+- Журнал платежей
+
+[Зарегистрироваться бесплатно](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Самый популярный
+
+### Basic
+
+$9 в месяц
+
+250 платежей за 30 дней
+
+- 3 сайта
+- Купоны и акции
+- Вебхуки и журнал
+
+[Выбрать Basic](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Pro
+
+$29 в месяц
+
+2 500 платежей за 30 дней
+
+- 10 сайтов
+- Всё из Basic
+- Приоритетная очередь поддержки
+
+[Выбрать Pro](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Вопросы
+
+## Ответы, пока вы не спросили
+
+Какие способы оплаты я могу принимать?
+
+EcoCash, OneMoney, InnBucks, Telecash, O'mari и ZimSwitch через Paynow; Visa, Mastercard и PayPal для иностранных покупателей. 2Checkout готов и включится, когда провайдер одобрит наш аккаунт.
+
+Вы берёте процент с моих продаж?
+
+Нет. Тарифы — фиксированная месячная цена в зависимости от числа обработанных платежей. Платёжные провайдеры берут собственные комиссии.
+
+Можно ли тестировать без реальных денег?
+
+Да. При регистрации вы получаете тестовый ключ, работающий через симулятор. Он никогда не обращается к провайдеру и не учитывается в тарифе.
+
+Как покупатели получают лицензию?
+
+Когда платёж проведён, WavePay отправляет лицензионный ключ по почте, а ваше приложение может проверить подписанное право офлайн.
+
+Может ли ИИ-агент пользоваться WavePay?
+
+Да. Укажите ему skill.md, документ OpenAPI или MCP-сервер. Агент может зарегистрироваться, назначить цены, принять оплату и сверить данные без браузера.
+
+Руководства
+
+## Ответы для того, что вы создаёте
+
+### Способы оплаты
+
+[EcoCash](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html), [OneMoney, InnBucks, Telecash, O'mari, ZimSwitch](https://wavepay.t3ratech.co.zw/accept-zimbabwe-wallet-payments.html), [Visa, Mastercard, PayPal](https://wavepay.t3ratech.co.zw/accept-card-and-paypal-payments.html)
+
+### Ваш тип программы
+
+[Расширения браузера](https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html), [Игры](https://wavepay.t3ratech.co.zw/payments-for-games.html), [Приложения](https://wavepay.t3ratech.co.zw/payments-for-apps.html), [API](https://wavepay.t3ratech.co.zw/payments-for-apis.html), [Боты](https://wavepay.t3ratech.co.zw/payments-for-bots.html)
+
+### Вопросы и руководства
+
+[Вопросы и ответы](https://wavepay.t3ratech.co.zw/faq.html), [Подписки](https://wavepay.t3ratech.co.zw/guide-recurring-payments.html), [Купить сейчас, заплатить позже](https://wavepay.t3ratech.co.zw/guide-buy-now-pay-later.html), [Тестовый режим](https://wavepay.t3ratech.co.zw/guide-test-mode.html), [Руководства](https://wavepay.t3ratech.co.zw/learn.html)
+
+## Готовы принять первый платёж?
+
+Регистрация одним запросом. Без карты и без звонков.
+
+[Начать бесплатно](https://wavepay.t3ratech.co.zw/pricing.html#register)[Читать документацию](https://wavepay.t3ratech.co.zw/docs.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/sn/
+
+# WavePay — mari nemalayisensi ezvirongwa
+
+> Tambira EcoCash, makadhi nePayPal neAPI imwe. Nyoresa nechikumbiro chimwe, edza nemari yekunyepedzera, wobva waenda pamhepo nemalayisensi nekudzosera mari.
+
+Zvino nezvibhadharo zvenguva, kubhadhara nechikamu ne2Checkout
+
+# Bhadharwa zvirongwa zvako kuburikidza *nenzira dzese dzinoshandiswa nevatengi vako*
+
+API imwe yeEcoCash, OneMoney, InnBucks, ZimSwitch, makadhi nePayPal. Nyoresa nechikumbiro chimwe, edza nemari yekunyepedzera, wobva waenda pamhepo nemalayisensi, zvibhadharo zvenguva nekudzosera mari zvakabatanidzwa.
+
+[Tanga mahara](https://wavepay.t3ratech.co.zw/pricing.html#register) [Verenga zvinyorwa](https://wavepay.t3ratech.co.zw/docs.html) [Kumaejenti](https://wavepay.t3ratech.co.zw/skill.md)
+
+- Hurongwa hwemahara, hapana kadhi inodiwa
+- Hapana muripo wepeadzo pakutengesa kwako
+- REST neMCP
+
+**9**nzira dzekubhadhara
+
+**25**zvibhadharo zvemahara pamwedzi
+
+**0%**muripo pakutengesa kwako
+
+**15**mitauro
+
+Nzira dzekubhadhara
+
+## Nzira dzese dzinogona kunge dzine mutengi
+
+Zvikwama zvemunharaunda yeZimbabwe, makadhi nePayPal kune vamwe. Chiteshi chevanopa masevhisi chinogara chichiratidza zviri kushanda nhasi.
+
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · zvichauya
+
+Zvauchawana
+
+## Kubhadhara ndiko kuri nyore. WavePay ndiyo yese yasara.
+
+### Peji rekubhadhara nechikumbiro chechikwama
+
+Tumira vatengi kupeji rekubhadhara, kana kuti tumira chikumbiro cheEcoCash zvakananga kufoni yavo.
+
+### Malayisensi akabatanidzwa
+
+Kodzero dzakasainwa, makiyi emalayisensi neemail, kuvhura midziyo nekudzorerwa. App yako inongoongorora isina internet.
+
+### Zvibhadharo zvenguva nezvechikamu
+
+Hurongwa hunodzokororwa, tenga zvino bhadhara gare gare nekadhi, uye nguva yakajeka yekunonoka kusati kwapera kupinda.
+
+### Kudzosera mari nekubvisa
+
+Kudzosera mari yese kana chikamu kuburikidza nemupi wesevhisi, nerekodhi yewakazviita uye nei.
+
+### Nzvimbo chaiyo yekuyedza
+
+Kiyi yekuyedza padivi pekiyi yako chaiyo, simulator, nekufamba kwenguva kuti uone kuvandudzwa.
+
+### Yakagadzirirwa maejenti
+
+skill.md, OpenAPI, sevha yeMCP nezvishandiso zveWebMCP, kuti AI igone kugadzirira kubhadhara pamusoro pako.
+
+Zvinoshanda sei
+
+## Zvikumbiro zvitatu kubva pachiro kusvika wabhadharwa
+
+1
+
+### Nyoresa
+
+Chikumbiro chimwe chinodzosa kiyi chaiyo nekiyi yekuyedza. Hurongwa hwemahara, hunoshanda pakarepo.
+
+2
+
+### Tengesa
+
+Gadzira kubhadhara uwane lonko repeji, kana kutumira chikumbiro chechikwama kufoni.
+
+3
+
+### Pedzisa
+
+Webhook yakasainwa kana kubvunza zvinosimbisa mari. Kiyi yerayisensi inotumirwa neemail pachayo.
+
+Kuvagadziri
+
+## Tanga necurl. Pedzisa nekiyi yerayisensi.
+
+Muenzaniso wese mumagwaro unotanga wamhanya musandbox nekiyi yekuyedza, kuti ukwanise kukanganisa uchichengeteka.
+
+[Vhura mareferenzi eAPI](https://wavepay.t3ratech.co.zw/docs.html)
+
+curl MCP JavaScript
+
+```
+# 1. register: a live key and a test key, shown once 
+curl -sX POST https://wavepay.t3ratech.co.zw/v2/register \
+  -H 'content-type: application/json' \
+  -d '{"name":"My App","ownerEmail":"you@example.com"}'
+
+# 2. sell: returns a hosted checkout URL 
+curl -sX POST https://wavepay.t3ratech.co.zw/v2/checkouts \
+  -H 'x-wavepay-service-key: mk_test_… ' \
+  -H 'idempotency-key: order-1001' \
+  -d '{"productId":"my-app","planId":"pro","provider":"paynow","email":"buyer@example.com"}'
+```
+
+```
+# any MCP client: https://wavepay.t3ratech.co.zw/mcp 
+{ "jsonrpc": "2.0", "id": 1, "method": "tools/call",
+  "params": {
+    "name": "wavepay_checkout",
+    "arguments": { "productId": "my-app", "planId": "pro",
+                   "provider": "paynow", "email": "buyer@example.com" } } }
+
+# tools: wavepay_register, wavepay_providers, wavepay_pricing,
+#        wavepay_checkout, wavepay_checkout_status, wavepay_subscribe … 
+```
+
+```
+const res = await fetch("https://wavepay.t3ratech.co.zw/v2/checkouts", {
+  method: "POST",
+  headers: {
+    "content-type": "application/json",
+    "x-wavepay-service-key": process.env.WAVEPAY_KEY,
+    "idempotency-key": crypto.randomUUID(),
+  },
+  body: JSON.stringify({ productId: "my-app", planId: "pro",
+                         provider: "paypal", email: "buyer@example.com" }),
+});
+const { checkoutUrl, reference } = await res.json();
+```
+
+Mitengo
+
+## Mutengo unotsamira pazvibhadharo, kwete pakucheka
+
+Hurongwa hwemwedzi hune mutengo wakatemwa. Vanopa masevhisi ekubhadhara vanobhadharisa mari yavo vega.
+
+### Mahara
+
+$0 nekusingaperi
+
+Zvibhadharo 25 mumazuva 30
+
+- Saiti 1
+- Nzira yese yekubhadhara iri kushanda
+- Webhooks dzakasainwa
+- Bhuku rezvibhadharo
+
+[Nyoresa mahara](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Hwunonyanyosarudzwa
+
+### Basic
+
+$9 pamwedzi
+
+Zvibhadharo 250 mumazuva 30
+
+- Saiti 3
+- Makuponi nemipiro
+- Webhooks nebhuku
+
+[Tora Basic](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Pro
+
+$29 pamwedzi
+
+Zvibhadharo 2,500 mumazuva 30
+
+- Saiti 10
+- Zvese zviri muBasic
+- Mutsetse werutsigiro rwekutanga
+
+[Tora Pro](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Mibvunzo
+
+## Mhinduro usati wabvunza
+
+Ndinogona kutambira nzira dzekubhadhara dzipi?
+
+EcoCash, OneMoney, InnBucks, Telecash, O'mari neZimSwitch kuburikidza nePaynow; Visa, Mastercard nePayPal kuvatengi vekunze. 2Checkout yakagadzirwa uye ichavhurwa kana mupi wesevhisi achibvumidza account yedu.
+
+Munotora muhuwandu hwekutengesa kwangu here?
+
+Kwete. Hurongwa hwemwedzi hune mutengo wakatemwa unotsamira pazvibhadharo zvakagadziriswa. Vanopa masevhisi ekubhadhara vanobhadharisa mari yavo vega.
+
+Ndinogona kuyedza ndisina mari chaiyo here?
+
+Hongu. Kunyoresa kunokupa kiyi yekuyedza inoshandisa simulator. Haimborasa kumupi wesevhisi uye haiverengwi muhurongwa hwako.
+
+Vatengi vanowana sei rayisensi yavo?
+
+Mubhadharo kana wapera, WavePay inotumira kiyi yerayisensi neemail, uye app yako inogona kusimbisa kodzero yakasainwa isina internet.
+
+Ejenti yeAI inogona kushandisa WavePay here?
+
+Hongu. Iratidze skill.md, gwaro reOpenAPI kana sevha yeMCP. Ejenti inogona kunyoresa, kuisa mitengo, kubhadharisa nekuenzanisa isina browser.
+
+Nzira dzekutevera
+
+## Mhinduro dzezvauri kuvaka
+
+### Nzira dzekubhadhara
+
+[EcoCash](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html), [OneMoney, InnBucks, Telecash, O'mari, ZimSwitch](https://wavepay.t3ratech.co.zw/accept-zimbabwe-wallet-payments.html), [Visa, Mastercard, PayPal](https://wavepay.t3ratech.co.zw/accept-card-and-paypal-payments.html)
+
+### Mhando yechirongwa chako
+
+[Zvowedzera zvebrowser](https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html), [Mitambo](https://wavepay.t3ratech.co.zw/payments-for-games.html), [Maapp](https://wavepay.t3ratech.co.zw/payments-for-apps.html), [Maapi](https://wavepay.t3ratech.co.zw/payments-for-apis.html), [Mabot](https://wavepay.t3ratech.co.zw/payments-for-bots.html)
+
+### Mibvunzo nenzira dzekutevera
+
+[Mibvunzo](https://wavepay.t3ratech.co.zw/faq.html), [Zvibhadharo zvenguva](https://wavepay.t3ratech.co.zw/guide-recurring-payments.html), [Tenga zvino, bhadhara gare gare](https://wavepay.t3ratech.co.zw/guide-buy-now-pay-later.html), [Mararamiro ekuyedza](https://wavepay.t3ratech.co.zw/guide-test-mode.html), [Nzira dzekutevera](https://wavepay.t3ratech.co.zw/learn.html)
+
+## Wagadzirira kutambira mubhadharo wako wekutanga here?
+
+Nyoresa nechikumbiro chimwe. Hapana kadhi, hapana runhare.
+
+[Tanga mahara](https://wavepay.t3ratech.co.zw/pricing.html#register)[Verenga zvinyorwa](https://wavepay.t3ratech.co.zw/docs.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/sw/
+
+# WavePay — malipo na leseni kwa programu
+
+> Pokea EcoCash, kadi na PayPal kwa API moja. Jisajili kwa ombi moja, jaribu kwa pesa bandia, kisha anza kutumia leseni, usajili na marejesho.
+
+Sasa na usajili, malipo ya awamu na 2Checkout
+
+# Lipwa kwa programu yako kupitia *kila njia ambayo wateja wako wanatumia*
+
+API moja kwa EcoCash, OneMoney, InnBucks, ZimSwitch, kadi na PayPal. Jisajili kwa ombi moja, jaribu kwa pesa bandia, kisha anza na leseni, usajili na marejesho vilivyojengwa ndani.
+
+[Anza bila malipo](https://wavepay.t3ratech.co.zw/pricing.html#register) [Soma nyaraka](https://wavepay.t3ratech.co.zw/docs.html) [Kwa mawakala](https://wavepay.t3ratech.co.zw/skill.md)
+
+- Mpango bure, bila kadi
+- Hakuna ada ya asilimia kwenye mauzo yako
+- REST na MCP
+
+**9**njia za malipo
+
+**25**malipo ya bure kwa mwezi
+
+**0%**ada kwenye mauzo yako
+
+**15**lugha
+
+Njia za malipo
+
+## Kila njia ambayo mnunuzi anaweza kuwa nayo
+
+Pochi za simu za ndani kwa Zimbabwe, kadi na PayPal kwa wengine. Kiungo cha watoa huduma daima kinaonyesha kilicho hai leo.
+
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · inakuja
+
+Unachopata
+
+## Malipo ni sehemu rahisi. WavePay ni yote yaliyobaki.
+
+### Malipo ya ukurasa na ombi la pochi
+
+Wapeleke wanunuzi kwenye ukurasa wa malipo, au tuma ombi la EcoCash moja kwa moja kwenye simu yao.
+
+### Leseni zimejengwa ndani
+
+Haki zilizotiwa saini, funguo za leseni kwa barua pepe, uwezeshaji wa vifaa na urejeshaji. Programu yako inathibitisha bila mtandao.
+
+### Usajili na malipo ya awamu
+
+Mipango ya kujirudia, nunua sasa lipa baadaye kwa kadi, na muda wazi wa kuchelewa kabla ya ufikiaji kuisha.
+
+### Marejesho na ubatilishaji
+
+Marejesho kamili na sehemu kupitia mtoa huduma, pamoja na kumbukumbu ya nani alifanya na kwa nini.
+
+### Mazingira halisi ya majaribio
+
+Ufunguo wa majaribio kando ya ufunguo wako halisi, kiigaji, na kusafiri wakati kuona upyaishaji ukitokea.
+
+### Imejengwa kwa mawakala
+
+skill.md, OpenAPI, seva ya MCP na zana za WebMCP, ili AI iweze kuweka malipo kwa ajili yako.
+
+Jinsi inavyofanya kazi
+
+## Maombi matatu kutoka sifuri hadi kulipwa
+
+1
+
+### Jisajili
+
+Ombi moja linarudisha ufunguo halisi na wa majaribio. Mpango bure, unafanya kazi mara moja.
+
+2
+
+### Uza
+
+Unda malipo upate kiungo cha ukurasa, au tuma ombi la pochi kwenye simu.
+
+3
+
+### Kamilisha
+
+Webhook iliyotiwa saini au uchunguzi unathibitisha pesa. Ufunguo wa leseni hutumwa kiotomatiki.
+
+Kwa wasanidi
+
+## Anza na curl. Malizia na ufunguo wa leseni.
+
+Kila mfano katika nyaraka unaendeshwa kwanza kwenye mazingira ya majaribio na ufunguo wa majaribio, ili uweze kukosea salama.
+
+[Fungua marejeo ya API](https://wavepay.t3ratech.co.zw/docs.html)
+
+curl MCP JavaScript
+
+```
+# 1. register: a live key and a test key, shown once 
+curl -sX POST https://wavepay.t3ratech.co.zw/v2/register \
+  -H 'content-type: application/json' \
+  -d '{"name":"My App","ownerEmail":"you@example.com"}'
+
+# 2. sell: returns a hosted checkout URL 
+curl -sX POST https://wavepay.t3ratech.co.zw/v2/checkouts \
+  -H 'x-wavepay-service-key: mk_test_… ' \
+  -H 'idempotency-key: order-1001' \
+  -d '{"productId":"my-app","planId":"pro","provider":"paynow","email":"buyer@example.com"}'
+```
+
+```
+# any MCP client: https://wavepay.t3ratech.co.zw/mcp 
+{ "jsonrpc": "2.0", "id": 1, "method": "tools/call",
+  "params": {
+    "name": "wavepay_checkout",
+    "arguments": { "productId": "my-app", "planId": "pro",
+                   "provider": "paynow", "email": "buyer@example.com" } } }
+
+# tools: wavepay_register, wavepay_providers, wavepay_pricing,
+#        wavepay_checkout, wavepay_checkout_status, wavepay_subscribe … 
+```
+
+```
+const res = await fetch("https://wavepay.t3ratech.co.zw/v2/checkouts", {
+  method: "POST",
+  headers: {
+    "content-type": "application/json",
+    "x-wavepay-service-key": process.env.WAVEPAY_KEY,
+    "idempotency-key": crypto.randomUUID(),
+  },
+  body: JSON.stringify({ productId: "my-app", planId: "pro",
+                         provider: "paypal", email: "buyer@example.com" }),
+});
+const { checkoutUrl, reference } = await res.json();
+```
+
+Bei
+
+## Bei kwa malipo yaliyochakatwa, si kwa makato
+
+Mipango ya kila mwezi yenye bei thabiti. Watoa huduma za malipo hutoza ada zao wenyewe.
+
+### Bure
+
+$0 milele
+
+Malipo 25 kwa siku 30
+
+- Tovuti 1
+- Kila njia ya malipo iliyo hai
+- Webhooks zilizotiwa saini
+- Daftari la malipo
+
+[Jisajili bure](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Maarufu zaidi
+
+### Basic
+
+$9 kwa mwezi
+
+Malipo 250 kwa siku 30
+
+- Tovuti 3
+- Kuponi na ofa
+- Webhooks na daftari
+
+[Chagua Basic](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Pro
+
+$29 kwa mwezi
+
+Malipo 2,500 kwa siku 30
+
+- Tovuti 10
+- Kila kitu cha Basic
+- Foleni ya msaada wa kipaumbele
+
+[Chagua Pro](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Maswali
+
+## Majibu kabla hujauliza
+
+Ninaweza kupokea njia gani za malipo?
+
+EcoCash, OneMoney, InnBucks, Telecash, O'mari na ZimSwitch kupitia Paynow; Visa, Mastercard na PayPal kwa wanunuzi wa kimataifa. 2Checkout imejengwa na itawashwa mtoa huduma atakapoidhinisha akaunti yetu.
+
+Mnachukua asilimia ya mauzo yangu?
+
+Hapana. Mipango ni bei thabiti za kila mwezi kulingana na malipo yaliyochakatwa. Watoa huduma za malipo hutoza ada zao wenyewe.
+
+Naweza kujaribu bila pesa halisi?
+
+Ndiyo. Usajili hukupa ufunguo wa majaribio unaotumia kiigaji. Haufiki kwa mtoa huduma wala haujumuishwi kwenye mpango wako.
+
+Wanunuzi wanapataje leseni yao?
+
+Malipo yakikamilika, WavePay hutuma ufunguo wa leseni kwa barua pepe, na programu yako inaweza kuthibitisha haki iliyotiwa saini bila mtandao.
+
+Wakala wa AI anaweza kutumia WavePay?
+
+Ndiyo. Mwelekeze kwenye skill.md, hati ya OpenAPI au seva ya MCP. Wakala anaweza kujisajili, kupanga bei, kupokea malipo na kulinganisha bila kivinjari.
+
+Miongozo
+
+## Majibu kwa unachojenga
+
+### Njia za malipo
+
+[EcoCash](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html), [OneMoney, InnBucks, Telecash, O'mari, ZimSwitch](https://wavepay.t3ratech.co.zw/accept-zimbabwe-wallet-payments.html), [Visa, Mastercard, PayPal](https://wavepay.t3ratech.co.zw/accept-card-and-paypal-payments.html)
+
+### Aina yako ya programu
+
+[Viendelezi vya kivinjari](https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html), [Michezo](https://wavepay.t3ratech.co.zw/payments-for-games.html), [Programu](https://wavepay.t3ratech.co.zw/payments-for-apps.html), [API](https://wavepay.t3ratech.co.zw/payments-for-apis.html), [Boti](https://wavepay.t3ratech.co.zw/payments-for-bots.html)
+
+### Maswali na miongozo
+
+[Maswali](https://wavepay.t3ratech.co.zw/faq.html), [Usajili](https://wavepay.t3ratech.co.zw/guide-recurring-payments.html), [Nunua sasa, lipa baadaye](https://wavepay.t3ratech.co.zw/guide-buy-now-pay-later.html), [Hali ya majaribio](https://wavepay.t3ratech.co.zw/guide-test-mode.html), [Miongozo](https://wavepay.t3ratech.co.zw/learn.html)
+
+## Tayari kupokea malipo yako ya kwanza?
+
+Jisajili kwa ombi moja. Bila kadi, bila simu.
+
+[Anza bila malipo](https://wavepay.t3ratech.co.zw/pricing.html#register)[Soma nyaraka](https://wavepay.t3ratech.co.zw/docs.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/zh/
+
+# WavePay — 软件的支付与许可证服务
+
+> 用一个 API 接收 EcoCash、银行卡和 PayPal。一次请求完成注册，用模拟资金测试，再上线并使用许可证、订阅和退款功能。
+
+现已支持订阅、分期付款和 2Checkout
+
+# 让你的软件收款覆盖 *买家手里的每一种支付方式*
+
+一个 API 对接 EcoCash、OneMoney、InnBucks、ZimSwitch、银行卡和 PayPal。一次请求注册，用模拟资金测试，上线后内置许可证、订阅和退款。
+
+[免费开始](https://wavepay.t3ratech.co.zw/pricing.html#register) [阅读文档](https://wavepay.t3ratech.co.zw/docs.html) [面向智能体](https://wavepay.t3ratech.co.zw/skill.md)
+
+- 免费方案，无需银行卡
+- 不抽取销售额的百分比
+- REST 与 MCP
+
+**9**种支付渠道
+
+**25**每月免费付款笔数
+
+**0%**销售手续费
+
+**15**种语言
+
+支付渠道
+
+## 买家可能持有的每一种渠道
+
+面向津巴布韦的本地钱包，以及面向其他地区的银行卡和 PayPal。提供商接口始终显示当前已启用的渠道。
+
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · 即将推出
+
+你将获得
+
+## 结账只是简单的部分，其余都交给 WavePay。
+
+### 托管结账与钱包推送
+
+把买家引导到托管页面，或直接向其手机推送 EcoCash 请求。
+
+### 内置许可证管理
+
+签名授权、邮件发送许可证密钥、设备激活与找回。你的应用可离线验证。
+
+### 订阅与分期
+
+周期性方案、银行卡先买后付，以及访问权限结束前清晰的宽限期。
+
+### 退款与冲正
+
+通过支付提供商进行全额或部分退款，并记录操作人和原因。
+
+### 真正的测试环境
+
+在正式密钥旁提供测试密钥、模拟器，以及可快进时间观察续订的功能。
+
+### 为智能体而建
+
+skill.md、OpenAPI、MCP 服务器和 WebMCP 工具，让 AI 替你配置结账。
+
+工作方式
+
+## 从零到收款只需三次请求
+
+1
+
+### 注册
+
+一次请求返回正式密钥和测试密钥。免费方案，立即可用。
+
+2
+
+### 销售
+
+创建结账并获得托管链接，或向手机推送钱包请求。
+
+3
+
+### 结算
+
+签名的 Webhook 或轮询确认到账，许可证密钥自动通过邮件发出。
+
+面向开发者
+
+## 从 curl 开始，以许可证密钥结束。
+
+文档中的每个示例都先在沙盒中用测试密钥运行，你可以放心试错。
+
+[打开 API 参考](https://wavepay.t3ratech.co.zw/docs.html)
+
+curl MCP JavaScript
+
+```
+# 1. register: a live key and a test key, shown once 
+curl -sX POST https://wavepay.t3ratech.co.zw/v2/register \
+  -H 'content-type: application/json' \
+  -d '{"name":"My App","ownerEmail":"you@example.com"}'
+
+# 2. sell: returns a hosted checkout URL 
+curl -sX POST https://wavepay.t3ratech.co.zw/v2/checkouts \
+  -H 'x-wavepay-service-key: mk_test_… ' \
+  -H 'idempotency-key: order-1001' \
+  -d '{"productId":"my-app","planId":"pro","provider":"paynow","email":"buyer@example.com"}'
+```
+
+```
+# any MCP client: https://wavepay.t3ratech.co.zw/mcp 
+{ "jsonrpc": "2.0", "id": 1, "method": "tools/call",
+  "params": {
+    "name": "wavepay_checkout",
+    "arguments": { "productId": "my-app", "planId": "pro",
+                   "provider": "paynow", "email": "buyer@example.com" } } }
+
+# tools: wavepay_register, wavepay_providers, wavepay_pricing,
+#        wavepay_checkout, wavepay_checkout_status, wavepay_subscribe … 
+```
+
+```
+const res = await fetch("https://wavepay.t3ratech.co.zw/v2/checkouts", {
+  method: "POST",
+  headers: {
+    "content-type": "application/json",
+    "x-wavepay-service-key": process.env.WAVEPAY_KEY,
+    "idempotency-key": crypto.randomUUID(),
+  },
+  body: JSON.stringify({ productId: "my-app", planId: "pro",
+                         provider: "paypal", email: "buyer@example.com" }),
+});
+const { checkoutUrl, reference } = await res.json();
+```
+
+价格
+
+## 按付款笔数计价，而非抽成
+
+固定月费方案。支付提供商另外收取其自身费用。
+
+### 免费版
+
+$0 永久
+
+每 30 天 25 笔付款
+
+- 1 个站点
+- 所有已启用的支付渠道
+- 签名 Webhook
+- 付款账本
+
+[免费注册](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+最受欢迎
+
+### Basic
+
+$9 每月
+
+每 30 天 250 笔付款
+
+- 3 个站点
+- 优惠券与促销
+- Webhook 与账本
+
+[选择 Basic](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Pro
+
+$29 每月
+
+每 30 天 2,500 笔付款
+
+- 10 个站点
+- 包含 Basic 的全部功能
+- 优先支持队列
+
+[选择 Pro](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+问答
+
+## 在你提问之前先给出答案
+
+我可以接受哪些支付方式？
+
+通过 Paynow 接入 EcoCash、OneMoney、InnBucks、Telecash、O'mari 和 ZimSwitch；面向国际买家提供 Visa、Mastercard 和 PayPal。2Checkout 已开发完成，待提供商批准我们的账户后启用。
+
+你们会抽取我销售额的百分比吗？
+
+不会。方案是按处理付款笔数计的固定月费。支付提供商会收取其自身费用。
+
+可以不用真钱进行测试吗？
+
+可以。注册后你会得到使用模拟器的测试密钥，它不会触达任何提供商，也不计入你的方案额度。
+
+买家如何获得许可证？
+
+付款结算后，WavePay 会通过邮件发送许可证密钥，你的应用可离线验证签名授权。
+
+AI 智能体可以使用 WavePay 吗？
+
+可以。让它读取 skill.md、OpenAPI 文档或 MCP 服务器即可。智能体无需浏览器就能完成注册、定价、结账和对账。
+
+指南
+
+## 为你正在构建的产品提供解答
+
+### 支付渠道
+
+[EcoCash](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html), [OneMoney, InnBucks, Telecash, O'mari, ZimSwitch](https://wavepay.t3ratech.co.zw/accept-zimbabwe-wallet-payments.html), [Visa, Mastercard, PayPal](https://wavepay.t3ratech.co.zw/accept-card-and-paypal-payments.html)
+
+### 你的软件类型
+
+[浏览器扩展](https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html), [游戏](https://wavepay.t3ratech.co.zw/payments-for-games.html), [应用](https://wavepay.t3ratech.co.zw/payments-for-apps.html), [API](https://wavepay.t3ratech.co.zw/payments-for-apis.html), [机器人](https://wavepay.t3ratech.co.zw/payments-for-bots.html)
+
+### 问答与指南
+
+[常见问题](https://wavepay.t3ratech.co.zw/faq.html), [订阅](https://wavepay.t3ratech.co.zw/guide-recurring-payments.html), [先买后付](https://wavepay.t3ratech.co.zw/guide-buy-now-pay-later.html), [测试模式](https://wavepay.t3ratech.co.zw/guide-test-mode.html), [指南](https://wavepay.t3ratech.co.zw/learn.html)
+
+## 准备好收第一笔款了吗？
+
+一次请求注册。无需银行卡，无需通话。
+
+[免费开始](https://wavepay.t3ratech.co.zw/pricing.html#register)[阅读文档](https://wavepay.t3ratech.co.zw/docs.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/skill.md
+
+# WavePay — instructions for agents
+
+Canonical instructions: https://wavepay.t3ratech.co.zw/skill.md
+
+You are reading this because your operator handed you this link, or you found
+the service and want a key. This file is the whole onboarding — no browser,
+no OAuth, no email round-trip stands between you and a merchant account.
+Everything below is a real endpoint; every claim is one curl away from proof.
+
+## What this is
+
+WavePay is a checkout, licensing and settlement API for software. You build
+the product — an app, a browser extension, a game, an API, a bot — and WavePay
+is the part that charges people for it. One integration reaches Zimbabwean
+wallets (EcoCash, OneMoney, InnBucks, Telecash, O'mari, ZimSwitch) and
+international rails (Visa, Mastercard, PayPal). The same API works for a seller
+in Harare, Nairobi, Lagos or Lisbon — the rails offered to a checkout depend on
+what the deployment enabled, and `/v2/providers` always tells the truth about that.
+
+Beyond a single payment it can take **subscriptions**, **buy now pay later**
+(deposit plus instalments on a card), and **refunds** — each switched on per
+deployment, and each fully usable in test mode today. See "What is live" below.
+
+Base URL: `https://t3rnel-wavepay-production.t3ratech.workers.dev`
+
+## The short version
+
+1. Register once:
+
+   ```
+   POST /v2/register
+   { "name": "<your product or shop>", "ownerEmail": "<your operator's inbox>" }
+   ```
+
+   The response is `{ "merchantId": "mer_…", "key": "mk_live_…", "testKey": "mk_test_…",
+   "planId": "free", "paymentsPerMonth": 25 }`. Save both keys in your client's
+   secret storage — they are shown once; only their hashes are stored. The live key
+   works immediately on the free tier: real checkouts, capped at 25 payments per
+   rolling 30 days. The test key is a sandbox: same routes, fake money, no cap.
+
+2. Send a key as `x-wavepay-service-key: mk_live_…` (or `mk_test_…`) on
+   merchant-scoped calls — `/v2/internal/merchant/catalog`, `/v2/internal/payments`,
+   `/v2/internal/coupons/*`, `/v2/internal/sites/webhook`, and the billing routes below.
+
+3. `GET /v2/internal/merchant/catalog` with a key is your sign-in check: it
+   returns the sites bound to your merchant and their live prices. A 401 means
+   the key is wrong or revoked — it is refused loudly, never silently
+   downgraded to anonymous.
+
+4. Register once. A repeat `ownerEmail` gets `409 MERCHANT_ALREADY_REGISTERED`.
+   Lost keys are minted by the operator after proof — your email on the
+   merchant is the record, mail `support@t3ratech.co.zw` with the merchantId.
+
+## Selling
+
+```bash
+# a checkout — the buyer gets a hosted page; wallets push straight to the phone
+curl -sX POST .../v2/checkouts -H 'content-type: application/json' \
+  -H 'idempotency-key: <stable key per order>' \
+  -d '{"productId":"<your product>","planId":"<plan>","provider":"paynow","email":"buyer@x.com"}'
+# → 201 { "checkoutUrl": "…", "reference": "pay_…", "amountMinor": 900, "currency": "USD" }
+
+# watch it settle
+curl -s ".../v2/checkouts/<reference>/status"
+# → { "status": "pending" | "collected" | "expired" }
+
+# or get settlements pushed: register a webhook on your site and every
+# settled payment POSTs an HMAC-signed event to it.
+```
+
+For wallet-push checkouts without a browser (games, bots, terminals) use
+`provider: "paynow-mobile"` plus the buyer's `phone` — PayNow pushes the
+wallet prompt to the handset. Pass `"method"` (`ecocash`, `onemoney`, `innbucks`
+or `omari`) to choose the wallet per checkout:
+
+- **InnBucks** returns `action: { type: "innbucks_code", authorizationCode,
+  authorizationExpires, deepLink }` — the buyer enters the code in the InnBucks app
+  or follows the deep link.
+- **O'mari** texts the buyer a one-time PIN and returns `action: { type: "omari_otp",
+  otpReference }`. Submit what the buyer reads out with
+  `POST /v2/internal/checkouts/otp { "reference", "otp" }`.
+
+## Test mode — fake money, same routes
+
+A `mk_test_…` key makes every checkout settle through a simulator. **It never
+contacts PayNow, PayPal or any provider**, on any provider id, and never counts
+against your cap. Choose the outcome with the inputs:
+
+| Input | Outcome |
+|---|---|
+| phone `0771111111` (or `+263771111111`) | paid |
+| phone `0772222222` | paid after ten seconds (pending until then) |
+| phone `0773333333` | cancelled by the customer |
+| phone `0774444444` | failed — insufficient balance |
+| email `buyer+decline@x.com` / `+cancel` / `+delay` | failed / cancelled / paid after ten seconds |
+| `+prepaid` on a card-token or BNPL checkout | the saved card is prepaid (BNPL refuses it) |
+| `+tokdecline` | the saved card token is declined when charged later |
+
+A test checkout's `checkoutUrl` is `/v2/test/pay/<reference>`, a page with Approve
+and Decline buttons. `POST /v2/test/settle {"reference"}` settles one directly and
+fires your webhook. `POST /v2/test/billing/run {"advanceDays": 31}` runs the billing
+engine as if 31 days had passed, for your **test** subscriptions and instalment
+plans only (run it twice: once to raise charges, once to reconcile them).
+
+A test key can use every feature below even when it is not yet switched on for live
+money. A live key and a test key can never touch each other's payments.
+
+## What is live
+
+Some capabilities are behind feature flags, switched on per deployment:
+
+| Flag | Switches on |
+|---|---|
+| `refunds` | `POST /v2/internal/refunds` for live payments |
+| `recurring` | subscriptions |
+| `bnpl` | buy now, pay later |
+| `card_tokens` | saving a PayNow card token for automatic charging (needs PayNow's approval too) |
+| `paypal_billing` | PayPal subscriptions and vaulted-card charges |
+| `disputes` | reading PayPal disputes (operator key) |
+
+Ask the deployment:
+
+```
+GET /v2/features
+# → { "features": [ { "flag": "refunds", "live": false, "test": true }, … ] }
+```
+
+A live key calling a feature that is off gets `403 FEATURE_DISABLED`. Never assume;
+read the flag.
+
+## Subscriptions
+
+```bash
+curl -sX POST .../v2/internal/subscriptions -H 'x-wavepay-service-key: mk_…' \
+  -H 'content-type: application/json' -H 'idempotency-key: <stable key per subscription>' \
+  -d '{"productId":"…","planId":"<a time-limited plan>","provider":"paynow","email":"…",
+       "externalSubject":"<your customer id>","collection":"invoice_and_remind"}'
+# → 201 { "id":"sub_…","status":"trialing","collection":"invoice_and_remind","checkout":{…} }
+```
+
+The plan must be time-limited with a price; the period is the plan's duration.
+Hand the buyer `checkout.checkoutUrl`; when it settles the subscription is `active`.
+List with `GET /v2/internal/subscriptions`; end with
+`POST /v2/internal/subscriptions/cancel {"id","atPeriodEnd":true}`; pause and resume with `/pause` and `/resume`; change the renewal price with `/price {"id","amountMinor"}`.
+
+How each period is collected — **this is the honest part**:
+
+- `collection: "automatic"` charges a saved instrument with nobody present: a PayNow
+  **card** token (Visa, Mastercard, ZimSwitch) once PayNow has approved tokenisation
+  for the deployment, or a PayPal subscription. If no token comes back the
+  subscription falls back to `invoice_and_remind` and records why.
+- `collection: "invoice_and_remind"` (the default, and the only mode for mobile
+  wallets) raises a fresh checkout each period and sends the buyer the link or the
+  wallet prompt. **EcoCash, OneMoney, InnBucks and O'mari cannot be debited
+  unattended** — each period needs the customer's PIN.
+- A failed charge is retried after 1 day, then 2 days. Three failures → `past_due`;
+  a week after the first failed attempt the subscription ends. Access follows what
+  was actually paid.
+- Retried requests are safe: creation needs an `Idempotency-Key` and every renewal
+  is keyed by period and attempt.
+
+## 2Checkout (Verifone)
+
+`provider: "twocheckout"` is the international card rail run by Verifone's 2Checkout, which acts as
+merchant of record: it takes the payment, handles tax and invoicing, and pays out to the merchant.
+`GET /v2/providers` lists it on a deployment where it is enabled, and a test key can use it today.
+
+- **One-time**: `POST /v2/checkouts` with `provider: "twocheckout"` returns a signed 2Checkout link
+  (valid for 24 hours). The buyer pays on 2Checkout's page; settlement arrives as a signed IPN and is
+  confirmed by REST, never by the redirect alone.
+- **Subscriptions**: `POST /v2/internal/subscriptions` with `provider: "twocheckout"` and
+  `collection: "automatic"` makes 2Checkout bill every renewal itself (the period and the renewal
+  price are signed into the link). WavePay records each renewal from the signed notification, extends
+  access by exactly one period, and never charges on top of 2Checkout's own charge.
+- **Manage them**: `POST /v2/internal/subscriptions/cancel` (`atPeriodEnd` switches renewal off and
+  keeps the paid access; otherwise the subscription is disabled now), `/pause` and `/resume`
+  (access runs to the end of the paid period), and `/price` (what the next renewals cost).
+- **Refunds**: `POST /v2/internal/refunds` refunds a completed order through 2Checkout, in part or in
+  full, up to three months after the sale. A refund made in 2Checkout's own dashboard is recorded too.
+- **Notifications**: 2Checkout calls `POST /v2/twocheckout/ipn` (orders, renewals, refunds,
+  chargebacks) and `POST /v2/twocheckout/lcn` (subscription changes). Both are HMAC-SHA256 signed and
+  answered with the signed read receipt 2Checkout requires; `GET` on either returns a liveness answer.
+- **Test orders**: a deployment can place every 2Checkout link as a test order (dummy cards:
+  `4111111111111111`, any expiry and CVV; the cardholder name picks the outcome, for example
+  `John Doe` succeeds and `Mona Doe` fails for insufficient funds). A deployment that takes live
+  orders ignores test-order notifications, so a dummy card can never grant a licence.
+
+## Buy now, pay later
+
+```bash
+curl -sX POST .../v2/internal/bnpl -H 'x-wavepay-service-key: mk_…' \
+  -H 'content-type: application/json' -H 'idempotency-key: <stable key per plan>' \
+  -d '{"productId":"…","planId":"…","provider":"paynow","email":"…",
+       "externalSubject":"<your customer id>","instalments":4}'
+# → 201 { "id":"bnpl_…","totalMinor":500,"depositMinor":100,"instalmentMinor":100,… }
+```
+
+The buyer pays a deposit (default: an equal share; or set `depositMinor`), their
+card is saved, and the balance is collected every `intervalDays` (default 30) **until
+the total is paid** — a failed instalment is retried after 1 day, then 2, then every
+3 days with no limit on attempts, until it clears or you cancel
+(`POST /v2/internal/bnpl/cancel {"id"}`).
+
+- **Cards only**: `provider` is `paynow` or `paypal`. Wallets and crypto cannot be
+  debited unattended and are refused with `COLLECTION_NOT_SUPPORTED`.
+- **Prepaid and virtual cards are refused** — by the issuer's reported funding type,
+  by the operator's blocked BIN ranges (`BNPL_BLOCKED_BIN_PREFIXES`), or because the
+  card cannot be screened at all. A refused card cancels the plan and withdraws
+  access; the deposit is refunded automatically where the provider can refund
+  (PayPal) and otherwise flagged `needsRefund` for you to return.
+- **Access** is suspended after 14 days of missed payments and restored by the next
+  successful one. Instalments settle money; they never extend the access the
+  deposit granted.
+- **WavePay collects; it does not lend.** You are paid as instalments arrive and
+  carry the risk that a card stops working. Confirm that selling on instalments
+  is permitted for your business before offering it.
+
+## Refunds
+
+```bash
+curl -sX POST .../v2/internal/refunds -H 'x-wavepay-service-key: mk_…' \
+  -H 'content-type: application/json' -H 'idempotency-key: <stable key per refund>' \
+  -d '{"reference":"pay_…","amountMinor":250,"reason":"duplicate","revokeAccess":false}'
+# → 201 { "id":"rfd_…","status":"completed","amountMinor":250,… }
+```
+
+Partial or full, never more than was paid in total, safe to retry. Works for
+**PayPal** payments and for **test** payments. PayNow documents no refund API, so a
+PayNow payment is refused with `REFUND_UNSUPPORTED` — it is never recorded as
+refunded when it was not.
+
+## MCP
+
+`POST /mcp` — JSON-RPC 2.0 (Streamable HTTP). `initialize`, then `tools/list`:
+
+- `wavepay_register` — the same mint as `POST /v2/register` (live key and test key)
+- `wavepay_providers` — live rail catalog
+- `wavepay_pricing` — `{ "productId": "…" }` → plans, prices, promotions
+- `wavepay_checkout` — `{ "productId", "planId", "provider", "email", "phone?", "method?" }`
+- `wavepay_checkout_status` — `{ "reference" }`
+- `wavepay_catalog` — your merchant catalog; pass the key in
+  `x-wavepay-service-key` on the HTTP request carrying the JSON-RPC frame
+- `wavepay_features` — which flagged features are live
+- `wavepay_subscribe`, `wavepay_bnpl`, `wavepay_refund` — the routes above, same keys,
+  same errors (`idempotencyKey` is an argument)
+- `wavepay_test_billing_run` — `{ "advanceDays" }`, test key only
+
+## Tiers — priced by payments processed
+
+| Tier | Price | Payments / 30 days | Sites | Coupons | Webhooks |
+|------|-------|--------------------|-------|---------|----------|
+| Free | $0 | 25 | 1 | — | ✓ |
+| Basic | $9/mo | 250 | 3 | ✓ | ✓ |
+| Pro | $29/mo | 2,500 | 10 | ✓ | ✓ |
+
+Test-mode keys (`mk_test_…`) never count against the cap. Hitting the cap
+refuses new checkouts with `MERCHANT_LIMIT_REACHED` (429) — never a silent
+charge. Upgrading is a normal checkout on `productId: "wavepay"`,
+`planId: "basic" | "pro"` — the settlement moves your merchant's `plan_id`.
+
+## Rules that protect you
+
+- Rate limits are per client and named: `429` with the bucket in the code.
+  Register 5/day, checkout 10/min, poll 30/min.
+- Idempotency is real: re-send the same `idempotency-key` and you get the
+  same checkout back — never a double charge. Subscriptions, BNPL plans and
+  refunds require one.
+- Test mode is a mode on the key, not a different API: `mk_test_…` mints
+  fake payments against the same routes.
+- Licence keys, if your product uses them, are Ed25519-signed entitlements —
+  your app verifies them offline with `/v2/licensing/public-key`.
+
+## Status
+
+Live probes: `https://wavepay.t3ratech.co.zw/status.html` — every check on
+that page is a real HTTP request, run in the reader's browser.

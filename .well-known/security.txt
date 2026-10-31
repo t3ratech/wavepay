@@ -1,0 +1,5 @@
+Contact: mailto:security@t3ratech.co.zw
+Expires: 2027-01-01T00:00:00Z
+Preferred-Languages: en
+Canonical: https://wavepay.t3ratech.co.zw/.well-known/security.txt
+Policy: https://wavepay.t3ratech.co.zw/docs.html#security

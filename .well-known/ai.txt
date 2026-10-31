@@ -16,4 +16,4 @@ Summary: https://wavepay.t3ratech.co.zw/ai/summary.json
 Faq: https://wavepay.t3ratech.co.zw/ai/faq.json
 Service: https://wavepay.t3ratech.co.zw/ai/service.json
 Skill: https://wavepay.t3ratech.co.zw/skill.md
-Contact: t3ratech.dev@gmail.com
+Contact: support@t3ratech.co.zw

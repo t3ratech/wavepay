@@ -7,6 +7,6 @@
   "auth": { "type": "none", "instructions": "Registration is unsigned. Merchant calls carry x-wavepay-service-key: mk_live_… (real money) or mk_test_… (fake money, same routes) — both minted by POST /v2/register." },
   "api": { "type": "openapi", "url": "https://wavepay.t3ratech.co.zw/openapi.json", "is_user_authenticated": false },
   "logo_url": "https://wavepay.t3ratech.co.zw/assets/favicon.svg",
-  "contact_email": "t3ratech.dev@gmail.com",
+  "contact_email": "support@t3ratech.co.zw",
   "legal_info_url": "https://wavepay.t3ratech.co.zw/docs.html"
 }

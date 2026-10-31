@@ -49,7 +49,7 @@ Base URL: `https://t3rnel-wavepay-production.t3ratech.workers.dev`
 
 4. Register once. A repeat `ownerEmail` gets `409 MERCHANT_ALREADY_REGISTERED`.
    Lost keys are minted by the operator after proof — your email on the
-   merchant is the record, mail `t3ratech.dev@gmail.com` with the merchantId.
+   merchant is the record, mail `support@t3ratech.co.zw` with the merchantId.
 
 ## Selling
 
@@ -141,7 +141,7 @@ curl -sX POST .../v2/internal/subscriptions -H 'x-wavepay-service-key: mk_…' \
 The plan must be time-limited with a price; the period is the plan's duration.
 Hand the buyer `checkout.checkoutUrl`; when it settles the subscription is `active`.
 List with `GET /v2/internal/subscriptions`; end with
-`POST /v2/internal/subscriptions/cancel {"id","atPeriodEnd":true}`.
+`POST /v2/internal/subscriptions/cancel {"id","atPeriodEnd":true}`; pause and resume with `/pause` and `/resume`; change the renewal price with `/price {"id","amountMinor"}`.
 
 How each period is collected — **this is the honest part**:
 
@@ -158,6 +158,32 @@ How each period is collected — **this is the honest part**:
   was actually paid.
 - Retried requests are safe: creation needs an `Idempotency-Key` and every renewal
   is keyed by period and attempt.
+
+## 2Checkout (Verifone)
+
+`provider: "twocheckout"` is the international card rail run by Verifone's 2Checkout, which acts as
+merchant of record: it takes the payment, handles tax and invoicing, and pays out to the merchant.
+`GET /v2/providers` lists it on a deployment where it is enabled, and a test key can use it today.
+
+- **One-time**: `POST /v2/checkouts` with `provider: "twocheckout"` returns a signed 2Checkout link
+  (valid for 24 hours). The buyer pays on 2Checkout's page; settlement arrives as a signed IPN and is
+  confirmed by REST, never by the redirect alone.
+- **Subscriptions**: `POST /v2/internal/subscriptions` with `provider: "twocheckout"` and
+  `collection: "automatic"` makes 2Checkout bill every renewal itself (the period and the renewal
+  price are signed into the link). WavePay records each renewal from the signed notification, extends
+  access by exactly one period, and never charges on top of 2Checkout's own charge.
+- **Manage them**: `POST /v2/internal/subscriptions/cancel` (`atPeriodEnd` switches renewal off and
+  keeps the paid access; otherwise the subscription is disabled now), `/pause` and `/resume`
+  (access runs to the end of the paid period), and `/price` (what the next renewals cost).
+- **Refunds**: `POST /v2/internal/refunds` refunds a completed order through 2Checkout, in part or in
+  full, up to three months after the sale. A refund made in 2Checkout's own dashboard is recorded too.
+- **Notifications**: 2Checkout calls `POST /v2/twocheckout/ipn` (orders, renewals, refunds,
+  chargebacks) and `POST /v2/twocheckout/lcn` (subscription changes). Both are HMAC-SHA256 signed and
+  answered with the signed read receipt 2Checkout requires; `GET` on either returns a liveness answer.
+- **Test orders**: a deployment can place every 2Checkout link as a test order (dummy cards:
+  `4111111111111111`, any expiry and CVV; the cardholder name picks the outcome, for example
+  `John Doe` succeeds and `Mona Doe` fails for insufficient funds). A deployment that takes live
+  orders ignores test-order notifications, so a dummy card can never grant a licence.
 
 ## Buy now, pay later
 

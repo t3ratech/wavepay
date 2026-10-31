@@ -5,7 +5,7 @@
     "version": "2.1.0",
     "description": "Checkout, licensing and settlement API for software. One POST registers a merchant and returns a live key and a test key; one POST starts a checkout. Local wallets (EcoCash, OneMoney, InnBucks, O'mari, ZimSwitch) and international rails (cards, PayPal) through one integration; subscriptions, buy-now-pay-later and refunds behind feature flags (GET /v2/features), all usable in test mode. Agents: skill.md is the canonical onboarding; POST /mcp speaks JSON-RPC tools.",
     "contact": {
-      "email": "t3ratech.dev@gmail.com",
+      "email": "support@t3ratech.co.zw",
       "url": "https://wavepay.t3ratech.co.zw/docs.html"
     },
     "license": {
@@ -69,6 +69,72 @@
         "responses": {
           "200": {
             "description": "{ providers: [{ id, label, methods }] }"
+          }
+        }
+      }
+    },
+    "/v2/site/providers": {
+      "get": {
+        "summary": "Providers the public website may describe",
+        "description": "Shaped by SITE_PROVIDER_VIEW: `real` (default) lists only providers that can take payments now; `all` lists every provider WavePay has built, each marked `live`. Not the product API — GET /v2/providers always reports the real set.",
+        "security": [],
+        "operationId": "listSiteProviders",
+        "responses": {
+          "200": {
+            "description": "{ view: 'all'|'real', providers: [{ id, name, accepts, instruments, live }] }"
+          }
+        }
+      }
+    },
+    "/v2/mail/unsubscribe": {
+      "get": {
+        "summary": "Unsubscribe confirmation page",
+        "description": "Opened from the unsubscribe link in a bulk email. Shows a confirmation; it changes nothing, so a mail scanner opening the link cannot unsubscribe anyone. Query: h (recipient hash), t (token).",
+        "security": [],
+        "operationId": "unsubscribePage",
+        "responses": {
+          "200": {
+            "description": "HTML confirmation page"
+          },
+          "400": {
+            "description": "Link altered or incomplete"
+          }
+        }
+      },
+      "post": {
+        "summary": "Unsubscribe (or resubscribe)",
+        "description": "Performs the unsubscribe. Accepts the RFC 8058 one-click body `List-Unsubscribe=One-Click` that mail clients send from their own Unsubscribe button; `action=resubscribe` reverses it.",
+        "security": [],
+        "operationId": "unsubscribe",
+        "responses": {
+          "200": {
+            "description": "HTML result page"
+          },
+          "400": {
+            "description": "Link altered or incomplete"
+          }
+        }
+      }
+    },
+    "/v2/internal/mailing/import": {
+      "post": {
+        "summary": "Import another product's registrants onto the mailing list",
+        "description": "Global service key only. Body `{ source: 'market-pulse'|'admin', addresses: string[1..500] }`. Idempotent; an address that unsubscribed stays unsubscribed.",
+        "security": [
+          {
+            "merchantKey": []
+          }
+        ],
+        "operationId": "importMailingAddresses",
+        "responses": {
+          "200": {
+            "description": "{ received, added, existing, invalid }"
+          },
+          "400": {
+            "description": "Invalid source or addresses"
+          },
+          "401": {
+            "description": "Not the global service key"
           }
         }
       }
@@ -819,6 +885,176 @@
           },
           "409": {
             "description": "NOT_A_TEST_PAYMENT"
+          }
+        }
+      }
+    },
+    "/v2/internal/subscriptions/pause": {
+      "post": {
+        "summary": "Pause a subscription: keeps paid access, stops the next renewal (also at 2Checkout)",
+        "operationId": "pauseSubscription",
+        "security": [
+          {
+            "merchantKey": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "403": {
+            "description": "FEATURE_DISABLED or MERCHANT_SCOPE"
+          }
+        }
+      }
+    },
+    "/v2/internal/subscriptions/resume": {
+      "post": {
+        "summary": "Resume a paused subscription",
+        "operationId": "resumeSubscription",
+        "security": [
+          {
+            "merchantKey": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "403": {
+            "description": "FEATURE_DISABLED or MERCHANT_SCOPE"
+          }
+        }
+      }
+    },
+    "/v2/internal/subscriptions/price": {
+      "post": {
+        "summary": "Change what the next renewals cost (also at 2Checkout)",
+        "operationId": "setSubscriptionPrice",
+        "security": [
+          {
+            "merchantKey": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "amountMinor": {
+                    "type": "integer",
+                    "minimum": 1
+                  }
+                },
+                "required": [
+                  "id",
+                  "amountMinor"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "403": {
+            "description": "FEATURE_DISABLED or MERCHANT_SCOPE"
+          }
+        }
+      }
+    },
+    "/v2/twocheckout/ipn": {
+      "post": {
+        "summary": "2Checkout IPN: signed order, renewal, refund and chargeback notification",
+        "operationId": "twocheckoutIPN",
+        "description": "HMAC-SHA256 signed by 2Checkout; answered with the signed read receipt. Not for merchants to call.",
+        "responses": {
+          "200": {
+            "description": "Acknowledged"
+          },
+          "202": {
+            "description": "Acknowledged, nothing to do"
+          },
+          "401": {
+            "description": "PROVIDER_SIGNATURE_INVALID"
+          }
+        }
+      },
+      "get": {
+        "summary": "2Checkout IPN endpoint liveness (2Checkout checks a URL with a GET when it is saved)",
+        "operationId": "twocheckoutIPNLiveness",
+        "responses": {
+          "200": {
+            "description": "{ok, endpoint}"
+          }
+        }
+      }
+    },
+    "/v2/twocheckout/lcn": {
+      "post": {
+        "summary": "2Checkout LCN: signed subscription change notification",
+        "operationId": "twocheckoutLCN",
+        "description": "HMAC-SHA256 signed by 2Checkout; answered with the signed read receipt. Not for merchants to call.",
+        "responses": {
+          "200": {
+            "description": "Acknowledged"
+          },
+          "202": {
+            "description": "Acknowledged, nothing to do"
+          },
+          "401": {
+            "description": "PROVIDER_SIGNATURE_INVALID"
+          }
+        }
+      },
+      "get": {
+        "summary": "2Checkout LCN endpoint liveness (2Checkout checks a URL with a GET when it is saved)",
+        "operationId": "twocheckoutLCNLiveness",
+        "responses": {
+          "200": {
+            "description": "{ok, endpoint}"
           }
         }
       }
