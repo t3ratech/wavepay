@@ -505,6 +505,10 @@ blockquote.answer, [data-answer] { border-inline-start: 4px solid var(--wp-zw-ye
   .head-actions .btn-sm { padding-inline: 12px; }
   .lang-dd > summary { padding: 0 10px; }
 }
+@media (max-width: 440px) {
+  /* the menu button must stay on screen; the hero already carries Start free and the menu carries Sign in */
+  .head-actions .btn-primary.btn-sm { display: none; }
+}
 
 
 /* =====================================================================================================
@@ -658,6 +662,18 @@ blockquote.answer, [data-answer] { padding-inline-start: 18px; }
 .home-hero .trust svg { color: var(--wp-zw-yellow); }
 .plans-3 .plan ul, .plans-5 .plan ul { align-content: start; }
 
-.status-grid { grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); }
+.status-grid { grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr)); }
 .block.wrap > h1 { font-size: clamp(1.9rem, 3.6vw, 3rem); line-height: 1.12; }
 .block.wrap > .lede { max-inline-size: 72ch; }
+
+/* Wide comparison tables scroll inside themselves instead of widening the page on phones */
+@media (max-width: 760px) {
+  main table { display: block; overflow-x: auto; max-inline-size: 100%; }
+}
+
+/* Grid children may shrink below their widest code block or table; those scroll inside themselves */
+.docs-shell > *, .page-grid > *, .prose > * { min-inline-size: 0; }
+@media (max-width: 880px) {
+  .docs-shell, .page-grid { grid-template-columns: minmax(0, 1fr); }
+}
+.code-block pre, .prose pre { max-inline-size: 100%; overflow-x: auto; }
