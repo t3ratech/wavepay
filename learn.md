@@ -32,6 +32,9 @@ Everything WavePay does, by the question you are trying to answer: which rails i
 - [WavePay vs integrating each payment rail yourself](https://wavepay.t3ratech.co.zw/compare-wavepay-vs-integrating-each-rail.html)
 - [WavePay vs a card-only payment processor](https://wavepay.t3ratech.co.zw/compare-wavepay-vs-card-only-processor.html)
 - [WavePay vs integrating PayPal directly](https://wavepay.t3ratech.co.zw/compare-wavepay-vs-paypal-direct.html)
+- [WavePay vs integrating Paynow directly](https://wavepay.t3ratech.co.zw/compare-wavepay-vs-paynow-direct.html)
+- [WavePay vs 2Checkout (Verifone)](https://wavepay.t3ratech.co.zw/compare-wavepay-vs-2checkout-verifone.html)
+- [WavePay vs Flutterwave](https://wavepay.t3ratech.co.zw/compare-wavepay-vs-flutterwave.html)
 
 ## How it works
 

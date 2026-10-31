@@ -2,7 +2,7 @@
 
 > Tambira EcoCash, makadhi nePayPal neAPI imwe. Nyoresa nechikumbiro chimwe, edza nemari yekunyepedzera, wobva waenda pamhepo nemalayisensi nekudzosera mari.
 
-Zvino nezvibhadharo zvenguva, kubhadhara nechikamu ne2Checkout
+Now with crypto, subscriptions and your own PayPal account
 
 # Bhadharwa zvirongwa zvako kuburikidza *nenzira dzese dzinoshandiswa nevatengi vako*
 
@@ -11,14 +11,14 @@ API imwe yeEcoCash, OneMoney, InnBucks, ZimSwitch, makadhi nePayPal. Nyoresa nec
 [Tanga mahara](https://wavepay.t3ratech.co.zw/pricing.html#register) [Verenga zvinyorwa](https://wavepay.t3ratech.co.zw/docs.html) [Kumaejenti](https://wavepay.t3ratech.co.zw/skill.md)
 
 - Hurongwa hwemahara, hapana kadhi inodiwa
-- Hapana muripo wepeadzo pakutengesa kwako
+- A fee that falls as you grow
 - REST neMCP
 
-**9**nzira dzekubhadhara
+**20**payment methods
 
 **25**zvibhadharo zvemahara pamwedzi
 
-**0%**muripo pakutengesa kwako
+**2%→0.4%**usage fee, falling with volume
 
 **15**mitauro
 
@@ -26,9 +26,9 @@ Nzira dzekubhadhara
 
 ## Nzira dzese dzinogona kunge dzine mutengi
 
-Zvikwama zvemunharaunda yeZimbabwe, makadhi nePayPal kune vamwe. Chiteshi chevanopa masevhisi chinogara chichiratidza zviri kushanda nhasi.
+Zimbabwean wallets, cards, PayPal and eleven crypto rails. The providers endpoint always says what is live today.
 
-EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · zvichauya
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal Bitcoin Ethereum Solana BNB Litecoin Dogecoin Tron USDT USDC 2Checkout · zvichauya
 
 Zvauchawana
 
@@ -133,7 +133,7 @@ Mitengo
 
 ## Mutengo unotsamira pazvibhadharo, kwete pakucheka
 
-Hurongwa hwemwedzi hune mutengo wakatemwa. Vanopa masevhisi ekubhadhara vanobhadharisa mari yavo vega.
+A plan for the software, plus a small percentage that falls as your volume grows. Provider fees are paid to the provider at cost.
 
 ### Mahara
 
@@ -148,8 +148,6 @@ Zvibhadharo 25 mumazuva 30
 
 [Nyoresa mahara](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-Hwunonyanyosarudzwa
-
 ### Starter
 
 $15 pamwedzi
@@ -161,6 +159,8 @@ Zvibhadharo 100 mumazuva 30
 - Webhooks nebhuku
 
 [Tora Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Recommended
 
 ### Growth
 
@@ -174,17 +174,43 @@ Zvibhadharo 500 mumazuva 30
 
 [Tora Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
+### Scale
+
+$149 pamwedzi
+
+2,500 payments per 30 days
+
+- 30 sites
+- Everything in Growth
+- Priority support
+
+[Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Enterprise
+
+From $499 pamwedzi
+
+Custom volume and an SLA
+
+- Unlimited sites
+- Everything in Scale
+- Onboarding and an SLA
+
+[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
+
+[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+
 Mibvunzo
 
 ## Mhinduro usati wabvunza
 
 Ndinogona kutambira nzira dzekubhadhara dzipi?
 
-EcoCash, OneMoney, InnBucks, Telecash, O'mari neZimSwitch kuburikidza nePaynow; Visa, Mastercard nePayPal kuvatengi vekunze. 2Checkout yakagadzirwa uye ichavhurwa kana mupi wesevhisi achibvumidza account yedu.
+EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow; Visa, Mastercard and PayPal; and crypto on eleven rails (Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT, USDC). 2Checkout is built and switches on when the provider approves our account.
 
 Munotora muhuwandu hwekutengesa kwangu here?
 
-Kwete. Hurongwa hwemwedzi hune mutengo wakatemwa unotsamira pazvibhadharo zvakagadziriswa. Vanopa masevhisi ekubhadhara vanobhadharisa mari yavo vega.
+Only after your plan's included payments, and the percentage falls as your volume grows (from 2% down to 0.4%, with a small minimum per payment). Provider fees are paid to the provider at cost with no WavePay markup.
 
 Ndinogona kuyedza ndisina mari chaiyo here?
 

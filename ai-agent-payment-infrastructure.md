@@ -8,7 +8,7 @@ USE CASE
 
 WavePay is payment infrastructure for AI agents: skill.md is the whole onboarding, POST /mcp exposes registration, providers, pricing, checkout and status as MCP tools, and an agent can register, check out and reconcile with no browser, OAuth flow or email round-trip.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
 
 ## The flow
 

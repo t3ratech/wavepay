@@ -8,7 +8,7 @@ USE CASE
 
 WavePay is a developer-first payment API: register with one POST, get a live key and a test key, create idempotent checkouts, receive HMAC-signed settlement webhooks, and read every payment from a cursor-paged ledger — all described in a public OpenAPI file.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
 
 ## The flow
 

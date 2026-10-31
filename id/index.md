@@ -2,7 +2,7 @@
 
 > Terima EcoCash, kartu, dan PayPal dengan satu API. Daftar dalam satu permintaan, uji dengan uang palsu, lalu aktifkan lisensi, langganan, dan pengembalian dana.
 
-Kini dengan langganan, cicilan, dan 2Checkout
+Now with crypto, subscriptions and your own PayPal account
 
 # Dapatkan bayaran untuk perangkat lunak Anda lewat *setiap metode yang dimiliki pembeli Anda*
 
@@ -11,14 +11,14 @@ Satu API untuk EcoCash, OneMoney, InnBucks, ZimSwitch, kartu, dan PayPal. Daftar
 [Mulai gratis](https://wavepay.t3ratech.co.zw/pricing.html#register) [Baca dokumentasi](https://wavepay.t3ratech.co.zw/docs.html) [Untuk agen](https://wavepay.t3ratech.co.zw/skill.md)
 
 - Paket gratis, tanpa kartu
-- Tanpa biaya persentase atas penjualan Anda
+- A fee that falls as you grow
 - REST dan MCP
 
-**9**metode pembayaran
+**20**payment methods
 
 **25**pembayaran gratis per bulan
 
-**0%**biaya atas penjualan Anda
+**2%→0.4%**usage fee, falling with volume
 
 **15**bahasa
 
@@ -26,9 +26,9 @@ Metode pembayaran
 
 ## Setiap metode yang mungkin dimiliki pembeli
 
-Dompet lokal untuk Zimbabwe, kartu dan PayPal untuk lainnya. Endpoint penyedia selalu menunjukkan apa yang aktif hari ini.
+Zimbabwean wallets, cards, PayPal and eleven crypto rails. The providers endpoint always says what is live today.
 
-EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · segera hadir
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal Bitcoin Ethereum Solana BNB Litecoin Dogecoin Tron USDT USDC 2Checkout · segera hadir
 
 Yang Anda dapatkan
 
@@ -133,7 +133,7 @@ Harga
 
 ## Harga berdasarkan pembayaran, bukan potongan
 
-Paket bulanan tetap. Penyedia pembayaran mengenakan biayanya sendiri secara terpisah.
+A plan for the software, plus a small percentage that falls as your volume grows. Provider fees are paid to the provider at cost.
 
 ### Gratis
 
@@ -148,8 +148,6 @@ $0 selamanya
 
 [Daftar gratis](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-Paling populer
-
 ### Starter
 
 $15 per bulan
@@ -161,6 +159,8 @@ $15 per bulan
 - Webhook dan buku pembayaran
 
 [Pilih Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Recommended
 
 ### Growth
 
@@ -174,17 +174,43 @@ $49 per bulan
 
 [Pilih Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
+### Scale
+
+$149 per bulan
+
+2,500 payments per 30 days
+
+- 30 sites
+- Everything in Growth
+- Priority support
+
+[Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Enterprise
+
+From $499 per bulan
+
+Custom volume and an SLA
+
+- Unlimited sites
+- Everything in Scale
+- Onboarding and an SLA
+
+[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
+
+[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+
 Pertanyaan
 
 ## Jawaban sebelum Anda bertanya
 
 Metode pembayaran apa yang bisa saya terima?
 
-EcoCash, OneMoney, InnBucks, Telecash, O'mari, dan ZimSwitch lewat Paynow; Visa, Mastercard, dan PayPal untuk pembeli internasional. 2Checkout sudah dibangun dan akan aktif setelah penyedia menyetujui akun kami.
+EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow; Visa, Mastercard and PayPal; and crypto on eleven rails (Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT, USDC). 2Checkout is built and switches on when the provider approves our account.
 
 Apakah Anda mengambil persentase dari penjualan saya?
 
-Tidak. Paket adalah harga bulanan tetap berdasarkan pembayaran yang diproses. Penyedia pembayaran mengenakan biayanya sendiri.
+Only after your plan's included payments, and the percentage falls as your volume grows (from 2% down to 0.4%, with a small minimum per payment). Provider fees are paid to the provider at cost with no WavePay markup.
 
 Bisakah saya menguji tanpa uang sungguhan?
 

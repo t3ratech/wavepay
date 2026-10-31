@@ -17,7 +17,7 @@ PAYMENT RAIL
 
 For buyers outside Zimbabwe, WavePay offers Visa and Mastercard through the hosted paynow checkout and PayPal through provider paypal, on the same checkout call — so one integration serves local and international customers.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
 
 ## How it works
 
@@ -66,7 +66,7 @@ PAYMENT RAIL
 
 To accept EcoCash, register a WavePay merchant, then create a checkout with provider paynow for a hosted page or paynow-mobile with the buyer's phone number to push the EcoCash prompt straight to their handset.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
 
 ## How it works
 
@@ -122,7 +122,7 @@ PAYMENT RAIL
 
 WavePay reaches OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through the same checkout call as EcoCash — one integration, with GET /v2/providers reporting which are live on your deployment. OneMoney, InnBucks and O'mari also support wallet push.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
 
 ## How it works
 
@@ -170,6 +170,78 @@ GET /v2/providers lists the live rails for the deployment you are calling.
 
 ---
 
+Source: https://wavepay.t3ratech.co.zw/accessibility.html
+
+> WavePay aims for WCAG 2.2 level AA on every page: keyboard operation, visible focus, contrast in light and dark themes, reduced motion, right-to-left languages, and…
+
+LEGAL
+
+# Accessibility statement
+
+WavePay aims for WCAG 2.2 level AA on every page: keyboard operation, visible focus, contrast in light and dark themes, reduced motion, right-to-left languages, and how to report a barrier.
+
+Updated 2026-10-31 · TeraTech Solutions (Private) Limited
+
+## Our commitment
+
+We build this site to WCAG 2.2 level AA and check every page with an automated conformance test as well as by hand.
+
+## What we do
+
+- Semantic landmarks, one heading hierarchy per page, a skip link, and descriptive link text.
+- Everything works with a keyboard, with visible focus and no focus traps; the search and menus close with Escape.
+- Text contrast of at least 4.5:1 in light, dark and system themes; the theme is your choice and is remembered.
+- Text can be resized and the layout reflows to a 320px window; touch targets are at least 44px on phones.
+- Motion respects `prefers-reduced-motion`; images have text alternatives.
+- Fifteen languages, including right-to-left Arabic, each with its own page and a language chooser that names each language in its own script.
+
+## Known limits
+
+- Translations other than English are machine-assisted drafts and may read awkwardly; native review is under way.
+- Some payment pages belong to providers (Paynow, PayPal, 2Checkout); their accessibility is theirs to maintain.
+- Code examples are text in scrollable blocks that can be copied with the Copy button.
+
+## Tell us about a barrier
+
+Write to [support@t3ratech.co.zw](mailto:support@t3ratech.co.zw) with the page and what went wrong. We aim to reply within five working days and to fix real barriers quickly.
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/ai-act.html
+
+> How WavePay uses AI and automation: no automated decisions about people's payments, where AI drafts text or images, human review, and how to ask about or dispute an…
+
+LEGAL
+
+# EU AI Act and automated decisions
+
+How WavePay uses AI and automation: no automated decisions about people's payments, where AI drafts text or images, human review, and how to ask about or dispute an automated output.
+
+Updated 2026-10-31 · TeraTech Solutions (Private) Limited
+
+## The short version
+
+WavePay is payment infrastructure. It does not use AI to approve, decline, score or profile buyers or merchants. A payment settles because the provider confirms the exact amount, never because a model decided it.
+
+## Where automation exists
+
+- **Rules, not models:** settlement checks, usage metering, rate limits and the crypto quote are deterministic code you can read about in the [API reference](https://wavepay.t3ratech.co.zw/docs/index.html).
+- **AI-drafted support replies:** where we use AI to draft an answer to a support email, a person reviews it before it is sent to you.
+- **AI-generated images:** illustrations on this site may be AI-generated; they illustrate and do not depict real customers or results.
+- **Agent access:** WavePay offers MCP tools so that AI agents you run can use the API with your keys. Those agents are yours; you remain responsible for what they do.
+
+## Classification
+
+On our reading WavePay is not a high-risk AI system under the EU AI Act: it makes no decisions in the high-risk areas of the Act (such as creditworthiness scoring of individuals). If that changes, we will say so here before it ships.
+
+## Your rights
+
+If you think an automated output affected you, write to [support@t3ratech.co.zw](mailto:support@t3ratech.co.zw). A person will look at it, explain what happened and correct it where it was wrong.
+
+
+---
+
 Source: https://wavepay.t3ratech.co.zw/ai-agent-payment-infrastructure.html
 
 # Payment infrastructure for AI agents: MCP payment tools and a…
@@ -182,7 +254,7 @@ USE CASE
 
 WavePay is payment infrastructure for AI agents: skill.md is the whole onboarding, POST /mcp exposes registration, providers, pricing, checkout and status as MCP tools, and an agent can register, check out and reconcile with no browser, OAuth flow or email round-trip.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
 
 ## The flow
 
@@ -217,7 +289,7 @@ Source: https://wavepay.t3ratech.co.zw/ar/
 
 > اقبل EcoCash والبطاقات وPayPal عبر واجهة برمجية واحدة. سجّل بطلب واحد، وجرّب بأموال وهمية، ثم انطلق مع التراخيص والاشتراكات والمبالغ المستردة.
 
-الآن مع الاشتراكات والدفع بالتقسيط و2Checkout
+Now with crypto, subscriptions and your own PayPal account
 
 # احصل على أجر برنامجك عبر *كل وسيلة دفع يملكها عملاؤك*
 
@@ -226,14 +298,14 @@ Source: https://wavepay.t3ratech.co.zw/ar/
 [ابدأ مجانًا](https://wavepay.t3ratech.co.zw/pricing.html#register) [اقرأ الوثائق](https://wavepay.t3ratech.co.zw/docs.html) [للوكلاء](https://wavepay.t3ratech.co.zw/skill.md)
 
 - خطة مجانية دون بطاقة
-- لا عمولة نسبية على مبيعاتك
+- A fee that falls as you grow
 - REST وMCP
 
-**9**وسائل دفع
+**20**payment methods
 
 **25**دفعات مجانية شهريًا
 
-**0%**رسوم على مبيعاتك
+**2%→0.4%**usage fee, falling with volume
 
 **15**لغة
 
@@ -241,9 +313,9 @@ Source: https://wavepay.t3ratech.co.zw/ar/
 
 ## كل وسيلة قد يملكها المشتري
 
-محافظ محلية لزيمبابوي، وبطاقات وPayPal لبقية العالم. تعرض نقطة مزودي الخدمة دائمًا ما هو مفعّل اليوم.
+Zimbabwean wallets, cards, PayPal and eleven crypto rails. The providers endpoint always says what is live today.
 
-EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · قريبًا
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal Bitcoin Ethereum Solana BNB Litecoin Dogecoin Tron USDT USDC 2Checkout · قريبًا
 
 ما تحصل عليه
 
@@ -348,7 +420,7 @@ const { checkoutUrl, reference } = await res.json();
 
 ## التسعير حسب المدفوعات لا حسب العمولة
 
-خطط شهرية ثابتة. يفرض مزودو الدفع رسومهم الخاصة إضافةً إلى ذلك.
+A plan for the software, plus a small percentage that falls as your volume grows. Provider fees are paid to the provider at cost.
 
 ### مجاني
 
@@ -363,8 +435,6 @@ $0 للأبد
 
 [سجّل مجانًا](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-الأكثر طلبًا
-
 ### Starter
 
 $15 شهريًا
@@ -376,6 +446,8 @@ $15 شهريًا
 - Webhooks وسجل
 
 [اختر Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Recommended
 
 ### Growth
 
@@ -389,17 +461,43 @@ $49 شهريًا
 
 [اختر Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
+### Scale
+
+$149 شهريًا
+
+2,500 payments per 30 days
+
+- 30 sites
+- Everything in Growth
+- Priority support
+
+[Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Enterprise
+
+From $499 شهريًا
+
+Custom volume and an SLA
+
+- Unlimited sites
+- Everything in Scale
+- Onboarding and an SLA
+
+[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
+
+[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+
 أسئلة
 
 ## إجابات قبل أن تسأل
 
 ما وسائل الدفع التي يمكنني قبولها؟
 
-EcoCash وOneMoney وInnBucks وTelecash وO'mari وZimSwitch عبر Paynow؛ وVisa وMastercard وPayPal للمشترين الدوليين. 2Checkout جاهز ويُفعَّل عندما يوافق المزود على حسابنا.
+EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow; Visa, Mastercard and PayPal; and crypto on eleven rails (Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT, USDC). 2Checkout is built and switches on when the provider approves our account.
 
 هل تأخذون نسبة من مبيعاتي؟
 
-لا. الخطط أسعار شهرية ثابتة بحسب المدفوعات المعالجة. ويفرض مزودو الدفع رسومهم الخاصة.
+Only after your plan's included payments, and the percentage falls as your volume grows (from 2% down to 0.4%, with a small minimum per payment). Provider fees are paid to the provider at cost with no WavePay markup.
 
 هل يمكنني الاختبار دون مال حقيقي؟
 
@@ -438,6 +536,46 @@ EcoCash وOneMoney وInnBucks وTelecash وO'mari وZimSwitch عبر Paynow؛ و
 
 ---
 
+Source: https://wavepay.t3ratech.co.zw/compare-wavepay-vs-2checkout-verifone.html
+
+> 2Checkout, now Verifone, is a merchant of record that sells on your behalf and handles tax; WavePay is not a merchant of record: it routes buyers to payment rails, can…
+
+COMPARE
+
+# WavePay vs 2Checkout (Verifone)
+
+2Checkout, now Verifone, is a merchant of record that sells on your behalf and handles tax; WavePay is not a merchant of record: it routes buyers to payment rails, can use 2Checkout as one of them where it is enabled, and adds Zimbabwean wallets, crypto, licensing and one ledger.
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+
+|  | 2Checkout (Verifone) | WavePay |
+| --- | --- | --- |
+| Role | Merchant of record: it is the seller to your buyer | A checkout, licensing and ledger layer: your provider account stays the seller |
+| Sales tax and invoicing | Handled by 2Checkout as seller | Your responsibility, with the provider you connect |
+| Zimbabwean wallets | Not its focus | EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow |
+| Crypto | Check Verifone | Eleven rails quoted in US dollars |
+| Availability for your business | Depends on Verifone's seller and payout coverage for your country | WavePay itself has no country gate; each rail has its own |
+| 2Checkout as a rail | Native | Built and tested on staging; switched on in production after Verifone approves the account |
+
+## Questions
+
+## Can I use both?
+
+Yes, once 2Checkout is enabled on your deployment: it is one of the rails behind the same checkout call.
+
+## Who is the seller in a WavePay payment?
+
+You are, through the provider account the money lands in. WavePay does not act as merchant of record.
+
+## Keep going
+
+- [All guides and comparisons](https://wavepay.t3ratech.co.zw/learn.html)
+- [Pricing](https://wavepay.t3ratech.co.zw/pricing.html)
+- [FAQ](https://wavepay.t3ratech.co.zw/faq.html)
+
+
+---
+
 Source: https://wavepay.t3ratech.co.zw/compare-wavepay-vs-card-only-processor.html
 
 > A card-only processor cannot take a mobile-wallet payment, so buyers who hold EcoCash or OneMoney but not a card cannot pay; WavePay adds those local rails to Visa…
@@ -448,14 +586,14 @@ COMPARE
 
 A card-only processor cannot take a mobile-wallet payment, so buyers who hold EcoCash or OneMoney but not a card cannot pay; WavePay adds those local rails to Visa, Mastercard and PayPal behind the same checkout call.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
 
 |  | Card-only processor | WavePay |
 | --- | --- | --- |
 | Mobile wallets (EcoCash, OneMoney, InnBucks, Telecash, O'mari) | Not offered | Offered; wallet push for EcoCash, OneMoney, InnBucks and O'mari |
 | ZimSwitch | Not offered | Offered |
 | Visa / Mastercard / PayPal | Offered | Offered |
-| Pricing basis | Typically a percentage of sales | Payments processed: Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month |
+| Pricing basis | Typically a percentage of sales | Payments processed: Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month |
 | Self-serve for agents | Varies | POST /v2/register, skill.md, MCP tools |
 
 ## Questions
@@ -477,6 +615,46 @@ Yes, when every buyer you serve holds a card and you need nothing else.
 
 ---
 
+Source: https://wavepay.t3ratech.co.zw/compare-wavepay-vs-flutterwave.html
+
+> Flutterwave is a pan-African payment gateway with its own country coverage; WavePay concentrates on Zimbabwean rails, PayPal and crypto behind one agent-ready API with…
+
+COMPARE
+
+# WavePay vs Flutterwave
+
+Flutterwave is a pan-African payment gateway with its own country coverage; WavePay concentrates on Zimbabwean rails, PayPal and crypto behind one agent-ready API with licensing built in, so choose by where your buyers and your business are.
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+
+|  | Flutterwave | WavePay |
+| --- | --- | --- |
+| Focus | Payments across many African countries | Zimbabwe first, plus international rails |
+| Zimbabwean wallets | Check Flutterwave's current Zimbabwe coverage | EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow |
+| Crypto | Check Flutterwave | Eleven rails quoted in US dollars |
+| Licence keys | Not part of the product | Built in: signed entitlements verified offline |
+| AI agents | Check Flutterwave | MCP tools, skill.md, a one-call registration with no browser |
+| Who pays you | Flutterwave settles to you per its terms | The provider you connect pays you directly (own keys), or T3raTech for T3raTech's own products |
+
+## Questions
+
+## Is WavePay a Flutterwave alternative?
+
+For Zimbabwean wallets plus PayPal and crypto behind one API, yes. If your buyers are in countries WavePay's rails do not cover, a pan-African gateway may fit better.
+
+## Can I combine them?
+
+Not today: Flutterwave is not a WavePay rail.
+
+## Keep going
+
+- [All guides and comparisons](https://wavepay.t3ratech.co.zw/learn.html)
+- [Pricing](https://wavepay.t3ratech.co.zw/pricing.html)
+- [FAQ](https://wavepay.t3ratech.co.zw/faq.html)
+
+
+---
+
 Source: https://wavepay.t3ratech.co.zw/compare-wavepay-vs-integrating-each-rail.html
 
 > Integrating each rail yourself means one integration, one reconciliation feed and one failure mode per wallet and card scheme; WavePay replaces them with one checkout…
@@ -487,7 +665,7 @@ COMPARE
 
 Integrating each rail yourself means one integration, one reconciliation feed and one failure mode per wallet and card scheme; WavePay replaces them with one checkout call and one ledger, at the cost of depending on WavePay for the rails it enables.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
 
 |  | Each rail yourself | WavePay |
 | --- | --- | --- |
@@ -517,6 +695,47 @@ When your buyers hold different rails, or when an agent has to set payments up w
 
 ---
 
+Source: https://wavepay.t3ratech.co.zw/compare-wavepay-vs-paynow-direct.html
+
+> Paynow is the Zimbabwean gateway WavePay itself uses for EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch; integrate Paynow directly if you need only…
+
+COMPARE
+
+# WavePay vs integrating Paynow directly
+
+Paynow is the Zimbabwean gateway WavePay itself uses for EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch; integrate Paynow directly if you need only Paynow, and use WavePay when you also want PayPal, crypto, subscriptions, licensing and one ledger across rails.
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+
+|  | Paynow directly | WavePay |
+| --- | --- | --- |
+| Zimbabwean wallets and ZimSwitch | Yes, it is the gateway | Yes, through Paynow: the same wallets, one checkout call |
+| Other rails | Not its job | PayPal, crypto on eleven rails, 2Checkout where enabled |
+| Fees on a payment | Paynow's own fees, published on its fees page | The same provider fees, paid at cost with no WavePay markup, plus a WavePay plan and a small falling percentage after the included payments |
+| Subscriptions and instalments | You build the schedule and the retries | Built in where the rail allows recurring charges |
+| Licence keys | You build them | Built in: signed entitlements verified offline |
+| Reconciliation | Paynow's reports | One payments ledger across every rail |
+| Agent onboarding | Merchant sign-up with Paynow | POST /v2/register or skill.md (you still connect a Paynow account for Paynow payments) |
+
+## Questions
+
+## Does WavePay replace Paynow?
+
+No. WavePay sits in front of Paynow for Zimbabwean wallets and cards; Paynow still takes the payment and charges its own fees.
+
+## When should I use Paynow directly?
+
+When Paynow is your only rail, you are happy to build reconciliation and licensing yourself, and you want no layer between you and the provider.
+
+## Keep going
+
+- [All guides and comparisons](https://wavepay.t3ratech.co.zw/learn.html)
+- [Pricing](https://wavepay.t3ratech.co.zw/pricing.html)
+- [FAQ](https://wavepay.t3ratech.co.zw/faq.html)
+
+
+---
+
 Source: https://wavepay.t3ratech.co.zw/compare-wavepay-vs-paypal-direct.html
 
 > Integrating PayPal directly gives you one rail and its own reconciliation; WavePay puts PayPal, Zimbabwean wallets, cards and crypto behind one checkout and one…
@@ -527,7 +746,7 @@ COMPARE
 
 Integrating PayPal directly gives you one rail and its own reconciliation; WavePay puts PayPal, Zimbabwean wallets, cards and crypto behind one checkout and one ledger, and lets a merchant connect their own PayPal account so PayPal still pays them directly.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
 
 |  | PayPal directly | WavePay |
 | --- | --- | --- |
@@ -556,6 +775,95 @@ For the rails PayPal does not cover for your buyers, the single ledger and webho
 
 ---
 
+Source: https://wavepay.t3ratech.co.zw/compare.html
+
+# Compare WavePay with PayPal, Paynow, 2Checkout, Flutterwave and…
+
+> How WavePay compares with integrating PayPal, Paynow, 2Checkout (Verifone) or Flutterwave directly, with a card-only processor, or with building each payment rail…
+
+COMPARE
+
+# Compare WavePay with PayPal, Paynow, 2Checkout, Flutterwave and doing it yourself
+
+How WavePay compares with integrating PayPal, Paynow, 2Checkout (Verifone) or Flutterwave directly, with a card-only processor, or with building each payment rail yourself.
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+
+### [WavePay vs integrating each payment rail yourself](https://wavepay.t3ratech.co.zw/compare-wavepay-vs-integrating-each-rail.html)
+
+Integrating each rail yourself means one integration, one reconciliation feed and one failure mode per wallet and card scheme; WavePay replaces them with one checkout call and one ledger, at the cost of depending on WavePay for the rails it enables.
+
+### [WavePay vs a card-only payment processor](https://wavepay.t3ratech.co.zw/compare-wavepay-vs-card-only-processor.html)
+
+A card-only processor cannot take a mobile-wallet payment, so buyers who hold EcoCash or OneMoney but not a card cannot pay; WavePay adds those local rails to Visa, Mastercard and PayPal behind the same checkout call.
+
+### [WavePay vs integrating PayPal directly](https://wavepay.t3ratech.co.zw/compare-wavepay-vs-paypal-direct.html)
+
+Integrating PayPal directly gives you one rail and its own reconciliation; WavePay puts PayPal, Zimbabwean wallets, cards and crypto behind one checkout and one ledger, and lets a merchant connect their own PayPal account so PayPal still pays them directly.
+
+### [WavePay vs integrating Paynow directly](https://wavepay.t3ratech.co.zw/compare-wavepay-vs-paynow-direct.html)
+
+Paynow is the Zimbabwean gateway WavePay itself uses for EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch; integrate Paynow directly if you need only Paynow, and use WavePay when you also want PayPal, crypto, subscriptions, licensing and one ledger across rails.
+
+### [WavePay vs 2Checkout (Verifone)](https://wavepay.t3ratech.co.zw/compare-wavepay-vs-2checkout-verifone.html)
+
+2Checkout, now Verifone, is a merchant of record that sells on your behalf and handles tax; WavePay is not a merchant of record: it routes buyers to payment rails, can use 2Checkout as one of them where it is enabled, and adds Zimbabwean wallets, crypto, licensing and one ledger.
+
+### [WavePay vs Flutterwave](https://wavepay.t3ratech.co.zw/compare-wavepay-vs-flutterwave.html)
+
+Flutterwave is a pan-African payment gateway with its own country coverage; WavePay concentrates on Zimbabwean rails, PayPal and crypto behind one agent-ready API with licensing built in, so choose by where your buyers and your business are.
+
+## How to choose
+
+WavePay is a checkout, licensing and ledger layer. It does not replace the provider that takes the money: it puts the providers behind one call. Choose a provider directly when you need exactly that provider, you want no layer between you and it, and you are happy to build reconciliation, retries and licensing yourself. Choose WavePay when you need several rails (Zimbabwean wallets, cards, PayPal, crypto), subscriptions or licence keys, or an integration an AI agent can run on its own.
+
+Statements about other providers describe their public positioning; provider terms, fees and country coverage change, so confirm them on the provider's own pages before you decide.
+
+## Keep going
+
+- [Pricing](https://wavepay.t3ratech.co.zw/pricing.html)
+- [All guides](https://wavepay.t3ratech.co.zw/learn.html)
+- [Security and trust](https://wavepay.t3ratech.co.zw/security.html)
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/cookies.html
+
+> The cookies and storage this website uses: a theme preference, Google Analytics 4 and ShareThis, what each is for and how to refuse analytics.
+
+LEGAL
+
+# Cookies and similar technologies
+
+The cookies and storage this website uses: a theme preference, Google Analytics 4 and ShareThis, what each is for and how to refuse analytics.
+
+Updated 2026-10-31 · TeraTech Solutions (Private) Limited
+
+## What this means
+
+We use few. The ones that make the site work need no consent; analytics and sharing use cookies you can refuse.
+
+## Strictly necessary
+
+- `wp_theme`: remembers your light, dark or system choice so the page does not flash. Stored for up to a year.
+- Language: your language is the page you are on (for example /fr/); no cookie is needed.
+
+## Analytics
+
+Google Analytics 4 measures page views and interactions so we can improve the site. It sets cookies such as `_ga`. You can refuse by turning on Do Not Track or a tracking blocker, or by opting out through Google's browser add-on. We use it for aggregate numbers, not to build profiles.
+
+## Sharing
+
+The share buttons in the footer are provided by ShareThis, which may set its own cookies when the buttons load. Plain share links are used if scripts are blocked.
+
+## Checkout and sign-in
+
+The hosted checkout and your provider's pages set whatever cookies the provider needs; those are governed by the provider's policy.
+
+
+---
+
 Source: https://wavepay.t3ratech.co.zw/crypto-payment-api.html
 
 # Crypto payment API: Bitcoin, Ethereum, Solana, BNB, Litecoin…
@@ -568,7 +876,7 @@ USE CASE
 
 WavePay takes crypto on eleven rails — Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT on three networks and USDC — by quoting the US-dollar price at a fresh rate, showing the exact amount and address, and settling the payment when the exchange credits the deposit.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
 
 ## The flow
 
@@ -603,7 +911,7 @@ Source: https://wavepay.t3ratech.co.zw/de/
 
 > Nehmen Sie EcoCash, Karten und PayPal mit einer API an. In einer Anfrage registrieren, mit Spielgeld testen und dann mit Lizenzen, Abos und Erstattungen live gehen.
 
-Jetzt mit Abos, Ratenzahlung und 2Checkout
+Now with crypto, subscriptions and your own PayPal account
 
 # Lassen Sie sich für Ihre Software bezahlen auf *jedem Weg, den Ihre Kunden nutzen*
 
@@ -612,14 +920,14 @@ Eine API für EcoCash, OneMoney, InnBucks, ZimSwitch, Karten und PayPal. In eine
 [Kostenlos starten](https://wavepay.t3ratech.co.zw/pricing.html#register) [Dokumentation lesen](https://wavepay.t3ratech.co.zw/docs.html) [Für Agenten](https://wavepay.t3ratech.co.zw/skill.md)
 
 - Kostenloser Tarif, keine Karte nötig
-- Keine prozentuale Gebühr auf Ihre Umsätze
+- A fee that falls as you grow
 - REST und MCP
 
-**9**Zahlungsarten
+**20**payment methods
 
 **25**kostenlose Zahlungen pro Monat
 
-**0%**Gebühr auf Ihre Umsätze
+**2%→0.4%**usage fee, falling with volume
 
 **15**Sprachen
 
@@ -627,9 +935,9 @@ Zahlungsarten
 
 ## Jede Zahlungsart, die ein Käufer haben könnte
 
-Lokale Wallets für Simbabwe, Karten und PayPal für alle anderen. Der Anbieter-Endpunkt zeigt immer, was heute aktiv ist.
+Zimbabwean wallets, cards, PayPal and eleven crypto rails. The providers endpoint always says what is live today.
 
-EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · demnächst
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal Bitcoin Ethereum Solana BNB Litecoin Dogecoin Tron USDT USDC 2Checkout · demnächst
 
 Was Sie bekommen
 
@@ -734,7 +1042,7 @@ Preise
 
 ## Preis nach Zahlungen, nicht nach Provision
 
-Feste Monatspläne. Die Zahlungsanbieter berechnen ihre eigenen Gebühren zusätzlich.
+A plan for the software, plus a small percentage that falls as your volume grows. Provider fees are paid to the provider at cost.
 
 ### Kostenlos
 
@@ -749,8 +1057,6 @@ $0 für immer
 
 [Kostenlos registrieren](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-Am beliebtesten
-
 ### Starter
 
 $15 pro Monat
@@ -762,6 +1068,8 @@ $15 pro Monat
 - Webhooks und Journal
 
 [Starter wählen](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Recommended
 
 ### Growth
 
@@ -775,17 +1083,43 @@ $49 pro Monat
 
 [Growth wählen](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
+### Scale
+
+$149 pro Monat
+
+2,500 payments per 30 days
+
+- 30 sites
+- Everything in Growth
+- Priority support
+
+[Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Enterprise
+
+From $499 pro Monat
+
+Custom volume and an SLA
+
+- Unlimited sites
+- Everything in Scale
+- Onboarding and an SLA
+
+[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
+
+[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+
 Fragen
 
 ## Antworten, bevor Sie fragen
 
 Welche Zahlungsarten kann ich annehmen?
 
-EcoCash, OneMoney, InnBucks, Telecash, O'mari und ZimSwitch über Paynow; Visa, Mastercard und PayPal für internationale Käufer. 2Checkout ist gebaut und wird aktiviert, sobald der Anbieter unser Konto freigibt.
+EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow; Visa, Mastercard and PayPal; and crypto on eleven rails (Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT, USDC). 2Checkout is built and switches on when the provider approves our account.
 
 Nehmen Sie einen Prozentsatz meiner Umsätze?
 
-Nein. Die Pläne sind feste Monatspreise nach verarbeiteten Zahlungen. Die Zahlungsanbieter berechnen ihre eigenen Gebühren.
+Only after your plan's included payments, and the percentage falls as your volume grows (from 2% down to 0.4%, with a small minimum per payment). Provider fees are paid to the provider at cost with no WavePay markup.
 
 Kann ich ohne echtes Geld testen?
 
@@ -836,7 +1170,7 @@ USE CASE
 
 WavePay is a developer-first payment API: register with one POST, get a live key and a test key, create idempotent checkouts, receive HMAC-signed settlement webhooks, and read every payment from a cursor-paged ledger — all described in a public OpenAPI file.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
 
 ## The flow
 
@@ -960,6 +1294,7 @@ T3rnel Browser sells Pro on this exact flow in production.
 | `GET /v2/internal/merchant/catalog` | Everything your key can sell: sites, plans, live prices |
 | `GET/PUT/DELETE /v2/internal/merchant/settlement[/{provider}]` | Connect your own PayPal account so payments land with you; credentials are checked, sealed and never returned |
 | `GET /v2/price-list` | WavePay's own price list: plans, usage schedule, modes (also [/pricing.json](https://wavepay.t3ratech.co.zw/pricing.json)) |
+| `GET /v2/internal/merchant/invoices` | Your usage invoices: month, amount, status |
 | `GET /v2/crypto/rails` | The crypto rails and which can be quoted right now; pay with `provider: "crypto"` and `method` set to a rail id |
 | `GET /v2/internal/merchant/usage` | Your usage meter for the month and the total due |
 | `POST /v2/internal/sites/webhook` | Set the settlement webhook for a site (secret returned once) |
@@ -988,13 +1323,1383 @@ T3rnel Browser sells Pro on this exact flow in production.
 
 ---
 
+Source: https://wavepay.t3ratech.co.zw/docs/agents.html
+
+> The same API as MCP tools, plus the machine-readable files agents read. Every mcp and agents operation with parameters, responses and a working example.
+
+API reference
+
+# MCP and agents
+
+The same API as MCP tools, plus the machine-readable files agents read.
+
+MCP endpoint — JSON-RPC 2.0 over HTTP. Tools: wavepay_register, wavepay_providers, wavepay_pricing, wavepay_checkout, wavepay_checkout_status, wavepay_features, wavepay_subscribe, wavepay_bnpl, wavepay_refund, wavepay_test_billing_run, wavepay_catalog
+
+Authentication: None (public)
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | JSON-RPC response |
+
+#### Example
+
+```
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp
+```
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/docs/billing.html
+
+> Recurring charges, buy-now-pay-later schedules and refunds. Every subscriptions, instalments and refunds operation with parameters, responses and a working example.
+
+API reference
+
+# Subscriptions, instalments and refunds
+
+Recurring charges, buy-now-pay-later schedules and refunds.
+
+Open a subscription (flag: recurring; test keys always)
+
+Authentication: Merchant key in x-wavepay-service-key
+
+#### Parameters
+
+| Name | In | Required | Type |
+| --- | --- | --- | --- |
+| `Idempotency-Key` | header | yes | string |
+
+#### Body (JSON)
+
+| Field | Type | Required |
+| --- | --- | --- |
+| `productId` | string | yes |
+| `planId` | string | yes |
+| `provider` | paynow \| paynow-mobile \| paypal | yes |
+| `email` | string | yes |
+| `phone` | string | no |
+| `externalSubject` | string | yes |
+| `collection` | automatic \| invoice_and_remind | no |
+| `method` | string | no |
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 201 | OK |
+| 403 | FEATURE_DISABLED (flag off for live money) or MERCHANT_SCOPE |
+
+#### Example
+
+```
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/internal/subscriptions \
+  -H 'x-wavepay-service-key: mk_live_…' \
+  -H 'content-type: application/json' \
+  -d '{"productId":"…","planId":"…","provider":"paynow","email":"…","phone":"…","externalSubject":"…","collection":"automatic","method":"…"}'
+```
+
+List this merchant's subscriptions
+
+Authentication: Merchant key in x-wavepay-service-key
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | OK |
+| 403 | FEATURE_DISABLED (flag off for live money) or MERCHANT_SCOPE |
+
+#### Example
+
+```
+curl -sX GET https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/internal/subscriptions \
+  -H 'x-wavepay-service-key: mk_live_…'
+```
+
+Cancel a subscription now or at period end
+
+Authentication: Merchant key in x-wavepay-service-key
+
+#### Body (JSON)
+
+| Field | Type | Required |
+| --- | --- | --- |
+| `id` | string | yes |
+| `atPeriodEnd` | boolean | no |
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | OK |
+| 403 | FEATURE_DISABLED (flag off for live money) or MERCHANT_SCOPE |
+
+#### Example
+
+```
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/internal/subscriptions/cancel \
+  -H 'x-wavepay-service-key: mk_live_…' \
+  -H 'content-type: application/json' \
+  -d '{"id":"…","atPeriodEnd":true}'
+```
+
+Start buy-now-pay-later (flag: bnpl; test keys always)
+
+Authentication: Merchant key in x-wavepay-service-key
+
+#### Parameters
+
+| Name | In | Required | Type |
+| --- | --- | --- | --- |
+| `Idempotency-Key` | header | yes | string |
+
+#### Body (JSON)
+
+| Field | Type | Required |
+| --- | --- | --- |
+| `productId` | string | yes |
+| `planId` | string | yes |
+| `provider` | paynow \| paypal | yes |
+| `email` | string | yes |
+| `externalSubject` | string | yes |
+| `instalments` | integer | yes |
+| `depositMinor` | integer | no |
+| `intervalDays` | integer | no |
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 201 | OK |
+| 403 | FEATURE_DISABLED (flag off for live money) or MERCHANT_SCOPE |
+
+#### Example
+
+```
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/internal/bnpl \
+  -H 'x-wavepay-service-key: mk_live_…' \
+  -H 'content-type: application/json' \
+  -d '{"productId":"…","planId":"…","provider":"paynow","email":"…","externalSubject":"…","instalments":0,"depositMinor":0,"intervalDays":0}'
+```
+
+List this merchant's BNPL plans
+
+Authentication: Merchant key in x-wavepay-service-key
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | OK |
+| 403 | FEATURE_DISABLED (flag off for live money) or MERCHANT_SCOPE |
+
+#### Example
+
+```
+curl -sX GET https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/internal/bnpl \
+  -H 'x-wavepay-service-key: mk_live_…'
+```
+
+Cancel a BNPL plan
+
+Authentication: Merchant key in x-wavepay-service-key
+
+#### Body (JSON)
+
+| Field | Type | Required |
+| --- | --- | --- |
+| `id` | string | yes |
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | OK |
+| 403 | FEATURE_DISABLED (flag off for live money) or MERCHANT_SCOPE |
+
+#### Example
+
+```
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/internal/bnpl/cancel \
+  -H 'x-wavepay-service-key: mk_live_…' \
+  -H 'content-type: application/json' \
+  -d '{"id":"…"}'
+```
+
+Refund a settled payment (flag: refunds; test keys always)
+
+Authentication: Merchant key in x-wavepay-service-key
+
+#### Parameters
+
+| Name | In | Required | Type |
+| --- | --- | --- | --- |
+| `Idempotency-Key` | header | yes | string |
+
+#### Body (JSON)
+
+| Field | Type | Required |
+| --- | --- | --- |
+| `reference` | string | yes |
+| `amountMinor` | integer | no |
+| `reason` | string | no |
+| `revokeAccess` | boolean | no |
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 201 | OK |
+| 403 | FEATURE_DISABLED (flag off for live money) or MERCHANT_SCOPE |
+
+#### Example
+
+```
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/internal/refunds \
+  -H 'x-wavepay-service-key: mk_live_…' \
+  -H 'content-type: application/json' \
+  -d '{"reference":"…","amountMinor":0,"reason":"…","revokeAccess":true}'
+```
+
+Run the billing engine as if advanceDays had passed (mk_test_ keys only)
+
+Authentication: None (public)
+
+#### Body (JSON)
+
+| Field | Type | Required |
+| --- | --- | --- |
+| `advanceDays` | integer | no |
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | OK |
+| 403 | FEATURE_DISABLED (flag off for live money) or MERCHANT_SCOPE |
+
+#### Example
+
+```
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/test/billing/run \
+  -H 'content-type: application/json' \
+  -d '{"advanceDays":0}'
+```
+
+Pause a subscription: keeps paid access, stops the next renewal (also at 2Checkout)
+
+Authentication: Merchant key in x-wavepay-service-key
+
+#### Body (JSON)
+
+| Field | Type | Required |
+| --- | --- | --- |
+| `id` | string | yes |
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | OK |
+| 403 | FEATURE_DISABLED or MERCHANT_SCOPE |
+
+#### Example
+
+```
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/internal/subscriptions/pause \
+  -H 'x-wavepay-service-key: mk_live_…' \
+  -H 'content-type: application/json' \
+  -d '{"id":"…"}'
+```
+
+Resume a paused subscription
+
+Authentication: Merchant key in x-wavepay-service-key
+
+#### Body (JSON)
+
+| Field | Type | Required |
+| --- | --- | --- |
+| `id` | string | yes |
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | OK |
+| 403 | FEATURE_DISABLED or MERCHANT_SCOPE |
+
+#### Example
+
+```
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/internal/subscriptions/resume \
+  -H 'x-wavepay-service-key: mk_live_…' \
+  -H 'content-type: application/json' \
+  -d '{"id":"…"}'
+```
+
+Change what the next renewals cost (also at 2Checkout)
+
+Authentication: Merchant key in x-wavepay-service-key
+
+#### Body (JSON)
+
+| Field | Type | Required |
+| --- | --- | --- |
+| `id` | string | yes |
+| `amountMinor` | integer | yes |
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | OK |
+| 403 | FEATURE_DISABLED or MERCHANT_SCOPE |
+
+#### Example
+
+```
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/internal/subscriptions/price \
+  -H 'x-wavepay-service-key: mk_live_…' \
+  -H 'content-type: application/json' \
+  -d '{"id":"…","amountMinor":0}'
+```
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/docs/checkouts.html
+
+> Create a checkout for a plan, send the buyer to the hosted page (or push a wallet prompt), and read the result.
+
+API reference
+
+# Checkouts and payments
+
+Create a checkout for a plan, send the buyer to the hosted page (or push a wallet prompt), and read the result.
+
+Enabled payment rails on this deployment
+
+Authentication: None (public)
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | { providers: [{ id, label, methods }] } |
+
+#### Example
+
+```
+curl -sX GET https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/providers
+```
+
+Plans, prices and promotions for a product
+
+Authentication: None (public)
+
+#### Parameters
+
+| Name | In | Required | Type |
+| --- | --- | --- | --- |
+| `productId` | query | yes | string |
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | { plans: [{ planId, priceMinor, currency, promotion }] } |
+
+#### Example
+
+```
+curl -sX GET https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/pricing
+```
+
+Create a buyer-facing hosted checkout
+
+Authentication: None (public)
+
+#### Body (JSON)
+
+| Field | Type | Required |
+| --- | --- | --- |
+| `productId` | string | yes |
+| `planId` | string | yes |
+| `provider` | string | no |
+| `email` | string | no |
+| `amountMinor` | integer | no |
+| `currency` | string | no |
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 201 | { reference: pay_…, checkoutUrl, provider, amountMinor, currency, test } |
+
+#### Example
+
+```
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/checkouts \
+  -H 'content-type: application/json' \
+  -d '{"productId":"…","planId":"…","provider":"…","email":"…","amountMinor":0,"currency":"…"}'
+```
+
+Poll a checkout's settlement status
+
+Authentication: None (public)
+
+#### Parameters
+
+| Name | In | Required | Type |
+| --- | --- | --- | --- |
+| `reference` | path | yes | string |
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | { reference, state, amountMinor, currency } |
+
+#### Example
+
+```
+curl -sX GET https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/checkouts/<reference>/status
+```
+
+Create a server-side checkout (merchant-scoped)
+
+Authentication: Merchant key in x-wavepay-service-key
+
+#### Parameters
+
+| Name | In | Required | Type |
+| --- | --- | --- | --- |
+| `idempotency-key` | header | yes | string |
+
+#### Body (JSON)
+
+| Field | Type | Required |
+| --- | --- | --- |
+| `productId` | string | yes |
+| `planId` | string | yes |
+| `provider` | string | yes |
+| `email` | string | no |
+| `externalSubject` | string | no |
+| `amountMinor` | integer | no |
+| `currency` | string | no |
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 201 | { reference, checkoutUrl, provider, amountMinor, currency, test } |
+| 403 | MERCHANT_SCOPE — product not bound to this merchant |
+
+#### Example
+
+```
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/internal/checkouts \
+  -H 'x-wavepay-service-key: mk_live_…' \
+  -H 'content-type: application/json' \
+  -d '{"productId":"…","planId":"…","provider":"…","email":"…","externalSubject":"…","amountMinor":0,"currency":"…"}'
+```
+
+Poll a checkout's status (merchant)
+
+Authentication: Merchant key in x-wavepay-service-key
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | { reference, state } |
+
+#### Example
+
+```
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/internal/checkouts/status \
+  -H 'x-wavepay-service-key: mk_live_…'
+```
+
+Reconciliation ledger — idempotent drain with since/limit cursors
+
+Authentication: Merchant key in x-wavepay-service-key
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | { payments: [{ reference, amountMinor, currency, settledAt }], cursor } |
+
+#### Example
+
+```
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/internal/payments \
+  -H 'x-wavepay-service-key: mk_live_…'
+```
+
+Complete an O'mari payment with the buyer's one-time PIN
+
+Authentication: Merchant key in x-wavepay-service-key
+
+#### Body (JSON)
+
+| Field | Type | Required |
+| --- | --- | --- |
+| `reference` | string | yes |
+| `otp` | string | yes |
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | OK |
+| 403 | FEATURE_DISABLED (flag off for live money) or MERCHANT_SCOPE |
+
+#### Example
+
+```
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/internal/checkouts/otp \
+  -H 'x-wavepay-service-key: mk_live_…' \
+  -H 'content-type: application/json' \
+  -d '{"reference":"…","otp":"…"}'
+```
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/docs/crypto.html
+
+> Eleven rails quoted in US dollars. The buyer sends the exact amount; the exchange deposit settles the payment.
+
+API reference
+
+# Crypto
+
+Eleven rails quoted in US dollars. The buyer sends the exact amount; the exchange deposit settles the payment.
+
+The crypto rails WavePay takes (Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT, USDC) and which can be quoted right now
+
+Authentication: None (public)
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | { rails: [{ id, symbol, network, address, confirmations, quotable }] } |
+
+#### Example
+
+```
+curl -sX GET https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/crypto/rails
+```
+
+Global key: store coin prices in US dollars (a checkout refuses a rate older than ten minutes)
+
+Authentication: Global service key (operator only)
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | { ok, coins } |
+| 400 | unknown coin or a price that is not positive |
+
+#### Example
+
+```
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/internal/crypto/rates \
+  -H 'x-wavepay-service-key: <global key>'
+```
+
+Global key: open crypto payments with rail, exact base-unit amount and address — what the watcher looks for
+
+Authentication: Global service key (operator only)
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | { payments: [{ reference, rail, baseUnits, address, createdAt }] } |
+
+#### Example
+
+```
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/internal/crypto/pending \
+  -H 'x-wavepay-service-key: <global key>'
+```
+
+Global key: settle a payment from a deposit the exchange credited. Re-verified: rail, address, exact amount, and the transaction never settled a payment before
+
+Authentication: Global service key (operator only)
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | the payment's status |
+| 409 | TRANSFER_ALREADY_USED |
+| 422 | PAYMENT_MISMATCH — not the deposit that was asked for |
+
+#### Example
+
+```
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/internal/crypto/settle \
+  -H 'x-wavepay-service-key: <global key>'
+```
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/docs/errors.html
+
+> Every WavePay error code with its HTTP status and what it means.
+
+API reference
+
+# Errors
+
+Every error is JSON, `{ "error": { "code": "…" } }`, with the HTTP status below.
+
+| Code | HTTP | Meaning |
+| --- | --- | --- |
+| `INVALID_AMOUNT` | 400 | See the operation that returned it. |
+| `INVALID_CURRENCY` | 400 | See the operation that returned it. |
+| `INVALID_OTP` | 400 | See the operation that returned it. |
+| `INVALID_REQUEST` | 400 | The request is malformed or a field is missing or not allowed. |
+| `PROMO_CODE_INVALID` | 400 | See the operation that returned it. |
+| `PROOF_EXPIRED` | 400 | See the operation that returned it. |
+| `SETTLEMENT_PROVIDER_UNSUPPORTED` | 400 | That provider cannot be connected as your own account. |
+| `INVALID_DEVICE_PROOF` | 401 | See the operation that returned it. |
+| `PROVIDER_SIGNATURE_INVALID` | 401 | See the operation that returned it. |
+| `SERVICE_UNAUTHORIZED` | 401 | The x-wavepay-service-key header is missing, wrong or revoked. |
+| `UNAUTHORIZED` | 401 | Missing or wrong credentials. |
+| `CHARGE_DECLINED` | 402 | See the operation that returned it. |
+| `CHECKOUT_ASSOCIATION_DENIED` | 403 | See the operation that returned it. |
+| `FEATURE_DISABLED` | 403 | See the operation that returned it. |
+| `LICENSE_REVOKED` | 403 | See the operation that returned it. |
+| `LIVE_KEY_REQUIRED` | 403 | A test key cannot do this; use your live key. |
+| `MERCHANT_SCOPE` | 403 | Your key may not touch this resource (it belongs to another merchant, or the route needs the global key). |
+| `MERCHANT_SCOPE_REQUIRED` | 403 | This route needs a merchant key, not the global key. |
+| `NOT_A_TEST_KEY` | 403 | See the operation that returned it. |
+| `RESERVATION_ASSOCIATION_DENIED` | 403 | See the operation that returned it. |
+| `ACTIVATION_NOT_FOUND` | 404 | See the operation that returned it. |
+| `BNPL_NOT_FOUND` | 404 | See the operation that returned it. |
+| `COUPON_NOT_FOUND` | 404 | See the operation that returned it. |
+| `KEY_NOT_FOUND` | 404 | See the operation that returned it. |
+| `LICENSE_NOT_FOUND` | 404 | See the operation that returned it. |
+| `MERCHANT_NOT_FOUND` | 404 | See the operation that returned it. |
+| `PAYMENT_NOT_FOUND` | 404 | See the operation that returned it. |
+| `PLAN_NOT_FOUND` | 404 | See the operation that returned it. |
+| `PRODUCT_NOT_FOUND` | 404 | See the operation that returned it. |
+| `PROMOTION_NOT_FOUND` | 404 | See the operation that returned it. |
+| `RECOVERY_NOT_FOUND` | 404 | See the operation that returned it. |
+| `SITE_NOT_FOUND` | 404 | See the operation that returned it. |
+| `SUBSCRIPTION_NOT_FOUND` | 404 | See the operation that returned it. |
+| `UNKNOWN_CHECKOUT` | 404 | See the operation that returned it. |
+| `UNKNOWN_LICENSE` | 404 | See the operation that returned it. |
+| `COLLECTION_NOT_SUPPORTED` | 409 | See the operation that returned it. |
+| `COUPON_ALREADY_REDEEMED` | 409 | See the operation that returned it. |
+| `COUPON_NOT_REDEEMABLE` | 409 | See the operation that returned it. |
+| `ENTITLEMENT_UNAVAILABLE` | 409 | See the operation that returned it. |
+| `IDEMPOTENCY_CONFLICT` | 409 | The same Idempotency-Key was used with a different request. |
+| `LICENSE_ACTIVATION_LIMIT_REACHED` | 409 | See the operation that returned it. |
+| `LICENSE_NOT_READY` | 409 | See the operation that returned it. |
+| `LICENSING_DISABLED` | 409 | See the operation that returned it. |
+| `MERCHANT_ALREADY_REGISTERED` | 409 | That owner email already has a merchant. |
+| `NO_CONTACT` | 409 | See the operation that returned it. |
+| `NOT_A_TEST_PAYMENT` | 409 | See the operation that returned it. |
+| `OTP_UNSUPPORTED` | 409 | See the operation that returned it. |
+| `PAYMENT_NOT_APPROVED` | 409 | See the operation that returned it. |
+| `PAYMENT_NOT_READY` | 409 | See the operation that returned it. |
+| `PAYMENT_NOT_REFUNDABLE` | 409 | See the operation that returned it. |
+| `PAYMENT_REPLAY` | 409 | See the operation that returned it. |
+| `PLAN_NOT_RECURRING` | 409 | See the operation that returned it. |
+| `PROMO_CODE_EXHAUSTED` | 409 | See the operation that returned it. |
+| `PROMO_CODE_REVOKED` | 409 | See the operation that returned it. |
+| `PROMOTION_NOT_ACTIVE` | 409 | See the operation that returned it. |
+| `PROVIDER_DISABLED` | 409 | That provider is not enabled on this deployment, or the merchant's account for it cannot be used. |
+| `REFUND_EXCEEDS_PAYMENT` | 409 | See the operation that returned it. |
+| `REFUND_REFUSED` | 409 | See the operation that returned it. |
+| `REFUND_UNSUPPORTED` | 409 | See the operation that returned it. |
+| `RESERVATION_STATE_CONFLICT` | 409 | See the operation that returned it. |
+| `RESERVATION_UNAVAILABLE` | 409 | See the operation that returned it. |
+| `SUBSCRIPTION_NOT_ACTIVE` | 409 | See the operation that returned it. |
+| `TRANSFER_ALREADY_USED` | 409 | That transaction already settled a payment. |
+| `CREDENTIALS_REJECTED` | 422 | The provider refused the credentials you connected. |
+| `ENVIRONMENT_MISMATCH` | 422 | Sandbox credentials on a live deployment, or the reverse. |
+| `PAYMENT_MISMATCH` | 422 | The payment, amount or address does not match what was asked for. |
+| `MERCHANT_LIMIT_REACHED` | 429 | The Free plan's monthly allowance is used. Paid plans are never refused: they are charged by usage. |
+| `RATE_LIMITED` | 429 | Too many requests; wait and retry. |
+| `PROVIDER_AUTH_FAILED` | 502 | See the operation that returned it. |
+| `PROVIDER_RESPONSE_INVALID` | 502 | See the operation that returned it. |
+| `PROVIDER_UNAVAILABLE` | 502 | The provider could not be reached; retry. |
+| `CONFIGURATION_ERROR` | 503 | See the operation that returned it. |
+| `CRYPTO_BUSY` | 503 | Every payable amount for that coin is taken by open payments; retry shortly. |
+| `RATE_UNAVAILABLE` | 503 | No crypto price newer than ten minutes for that coin; retry shortly. |
+| `SETTLEMENT_ACCOUNT_UNUSABLE` | 503 | Your connected account's credentials stopped working; reconnect it. The payment is refused, never paid to anyone else. |
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/docs/
+
+> Register, test with fake money and take a payment: the WavePay API reference start page, with conventions for money, idempotency and errors.
+
+API reference
+
+# Get started
+
+[Download the whole reference as Markdown](https://wavepay.t3ratech.co.zw/wavepay-docs.md)
+
+Base URL: `https://t3rnel-wavepay-production.t3ratech.workers.dev`. JSON in, JSON out. Everything under `/v2/internal/` takes your key in the `x-wavepay-service-key` header; checkout pages and the price list are public.
+
+## 1. Register
+
+One call creates your merchant and returns a live key and a test key. Both are shown once and only their hashes are stored.
+
+```
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/register \
+  -H 'content-type: application/json' \
+  -d '{"name":"My product","ownerEmail":"you@example.com"}'
+```
+
+## 2. Test with fake money
+
+The `mk_test_…` key uses the same routes and settles through a simulator. It never reaches a provider and never counts against your plan.
+
+## 3. Take a payment
+
+```
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/checkouts \
+  -H 'content-type: application/json' -H 'Idempotency-Key: order-1001' \
+  -d '{"productId":"my-product","planId":"growth","provider":"paynow","email":"buyer@example.com"}'
+```
+
+Send the buyer to `checkoutUrl`, then read `GET /v2/checkouts/<reference>/status` or receive the signed webhook. Providers: `paynow`, `paynow-mobile`, `paypal`, `crypto` (set `method` to a rail id) and `twocheckout` where enabled.
+
+## Conventions
+
+- **Money** is in minor units (cents). **Idempotency**: send an `Idempotency-Key` on every checkout; a repeat returns the same checkout.
+- **Errors** are `{"error":{"code":"…"}}` with a meaningful HTTP status; see [Errors](https://wavepay.t3ratech.co.zw/docs/errors.html).
+- **One page for models:** [wavepay-docs.md](https://wavepay.t3ratech.co.zw/wavepay-docs.md) is this whole reference as a single Markdown file, and [llms.txt](https://wavepay.t3ratech.co.zw/llms.txt) indexes the site.
+- **Security:** Secrets are shown once and stored only as hashes (merchant keys) or sealed with AES-GCM (provider credentials, buyer addresses); they are never logged or returned. [How we protect your keys and data](https://wavepay.t3ratech.co.zw/security.html).
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/docs/licensing.html
+
+> Signed entitlements that your software verifies offline. Every licences operation with parameters, responses and a working example.
+
+API reference
+
+# Licences
+
+Signed entitlements that your software verifies offline.
+
+Sell and email a licence key
+
+Authentication: None (public)
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 201 | Checkout created; key emailed on settle |
+
+#### Example
+
+```
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/licensing/checkout
+```
+
+Activate a licence key on a device
+
+Authentication: None (public)
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | { entitlement } — signed, verifiable offline |
+
+#### Example
+
+```
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/licensing/activate
+```
+
+Mail the buyer a fresh licence key
+
+Authentication: None (public)
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | Recovery email sent |
+
+#### Example
+
+```
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/licensing/recover
+```
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/docs/merchants.html
+
+> Register, receive keys, bind products to sites, and read what a key can sell. Every merchants, sites and keys operation with parameters, responses and a working example.
+
+API reference
+
+# Merchants, sites and keys
+
+Register, receive keys, bind products to sites, and read what a key can sell.
+
+Register a merchant account — no key required — returns a live key and a test key
+
+Authentication: None (public)
+
+#### Body (JSON)
+
+| Field | Type | Required |
+| --- | --- | --- |
+| `name` | string | yes |
+| `ownerEmail` | string | yes |
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | { merchantId, key: mk_live_… shown once, planId, paymentsPerMonth } |
+| 409 | MERCHANT_ALREADY_REGISTERED |
+
+#### Example
+
+```
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/register \
+  -H 'content-type: application/json' \
+  -d '{"name":"…","ownerEmail":"…"}'
+```
+
+Everything this key can sell — sites, plans, live prices. The sign-in check.
+
+Authentication: Merchant key in x-wavepay-service-key
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | { merchantId, sites: [{ siteId, products, plans }], key: { mode, planId } } |
+| 401 | key missing, wrong, or revoked — refused loudly |
+
+#### Example
+
+```
+curl -sX GET https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/internal/merchant/catalog \
+  -H 'x-wavepay-service-key: mk_live_…'
+```
+
+Set or rotate a site's settlement webhook URL+secret (secret shown once)
+
+Authentication: Merchant key in x-wavepay-service-key
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | { webhookUrl, secret } |
+
+#### Example
+
+```
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/internal/sites/webhook \
+  -H 'x-wavepay-service-key: mk_live_…'
+```
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/docs/other.html
+
+> Routes that fit no other resource. Every everything else operation with parameters, responses and a working example.
+
+API reference
+
+# Everything else
+
+Routes that fit no other resource.
+
+Providers the public website may describe
+
+Authentication: None (public)
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | { view: 'all'\|'real', providers: [{ id, name, accepts, instruments, live }] } |
+
+#### Example
+
+```
+curl -sX GET https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/site/providers
+```
+
+Unsubscribe confirmation page
+
+Authentication: None (public)
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | HTML confirmation page |
+| 400 | Link altered or incomplete |
+
+#### Example
+
+```
+curl -sX GET https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/mail/unsubscribe
+```
+
+Unsubscribe (or resubscribe)
+
+Authentication: None (public)
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | HTML result page |
+| 400 | Link altered or incomplete |
+
+#### Example
+
+```
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/mail/unsubscribe
+```
+
+Import another product's registrants onto the mailing list
+
+Authentication: Merchant key in x-wavepay-service-key
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | { received, added, existing, invalid } |
+| 400 | Invalid source or addresses |
+| 401 | Not the global service key |
+
+#### Example
+
+```
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/internal/mailing/import \
+  -H 'x-wavepay-service-key: mk_live_…'
+```
+
+Which flagged capabilities are on for live money (test keys can use all)
+
+Authentication: None (public)
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | { features: [{flag, live, test}] } |
+
+#### Example
+
+```
+curl -sX GET https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/features
+```
+
+Saved payment methods (never the token)
+
+Authentication: Merchant key in x-wavepay-service-key
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | OK |
+| 403 | FEATURE_DISABLED (flag off for live money) or MERCHANT_SCOPE |
+
+#### Example
+
+```
+curl -sX GET https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/internal/payment-methods \
+  -H 'x-wavepay-service-key: mk_live_…'
+```
+
+PayPal disputes (operator key, flag: disputes)
+
+Authentication: Merchant key in x-wavepay-service-key
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | OK |
+| 403 | FEATURE_DISABLED (flag off for live money) or MERCHANT_SCOPE |
+
+#### Example
+
+```
+curl -sX GET https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/internal/paypal/disputes \
+  -H 'x-wavepay-service-key: mk_live_…'
+```
+
+2Checkout IPN: signed order, renewal, refund and chargeback notification
+
+Authentication: None (public)
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | Acknowledged |
+| 202 | Acknowledged, nothing to do |
+| 401 | PROVIDER_SIGNATURE_INVALID |
+
+#### Example
+
+```
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/twocheckout/ipn
+```
+
+2Checkout IPN endpoint liveness (2Checkout checks a URL with a GET when it is saved)
+
+Authentication: None (public)
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | {ok, endpoint} |
+
+#### Example
+
+```
+curl -sX GET https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/twocheckout/ipn
+```
+
+2Checkout LCN: signed subscription change notification
+
+Authentication: None (public)
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | Acknowledged |
+| 202 | Acknowledged, nothing to do |
+| 401 | PROVIDER_SIGNATURE_INVALID |
+
+#### Example
+
+```
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/twocheckout/lcn
+```
+
+2Checkout LCN endpoint liveness (2Checkout checks a URL with a GET when it is saved)
+
+Authentication: None (public)
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | {ok, endpoint} |
+
+#### Example
+
+```
+curl -sX GET https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/twocheckout/lcn
+```
+
+Your usage invoices (month, amount, status)
+
+Authentication: Merchant key in x-wavepay-service-key
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | { invoices: [{ id, month, planId, payments, chargedPayments, amountMinor, status, createdAt, dueAt, paidAt }] } |
+| 403 | a global key, which has no merchant |
+
+#### Example
+
+```
+curl -sX GET https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/internal/merchant/invoices \
+  -H 'x-wavepay-service-key: mk_live_…'
+```
+
+Global key: invoice a month's usage now (default last month); dryRun lists who would be invoiced. Idempotent
+
+Authentication: Global service key (operator only)
+
+#### Body (JSON)
+
+| Field | Type | Required |
+| --- | --- | --- |
+| `month` | string | no |
+| `dryRun` | boolean | no |
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | { month, created: [{ merchantId, invoiceId, amountMinor, emailed }], skipped } |
+
+#### Example
+
+```
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/internal/invoices/run \
+  -H 'x-wavepay-service-key: <global key>' \
+  -H 'content-type: application/json' \
+  -d '{"month":"…","dryRun":true}'
+```
+
+The emailed pay link for a usage invoice: needs its token (?t=), opens a checkout for the invoice amount and redirects to it
+
+Authentication: None (public)
+
+#### Parameters
+
+| Name | In | Required | Type |
+| --- | --- | --- | --- |
+| `id` | path | yes | string |
+| `provider` | path | yes | string |
+| `t` | query | yes | string |
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 302 | redirect to the provider's checkout |
+| 401 | wrong token |
+
+#### Example
+
+```
+curl -sX GET https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/invoices/<id>/pay/<provider>
+```
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/docs/pricing.html
+
+> WavePay's own price list and your usage meter. The same data is at /pricing.json. Every pricing and usage operation with parameters, responses and a working example.
+
+API reference
+
+# Pricing and usage
+
+WavePay's own price list and your usage meter. The same data is at /pricing.json.
+
+WavePay's own price list: plans, the usage schedule and the modes (same data as /pricing.json)
+
+Authentication: None (public)
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | { currency, plans: [{ id, name, monthlyMinor, annualMinor, includedPayments, sites }], usage: { tiers }, providerFees, modes } |
+
+#### Example
+
+```
+curl -sX GET https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/price-list
+```
+
+This month's usage meter for your key: payments, included allowance, usage fee by tier, total due
+
+Authentication: Merchant key in x-wavepay-service-key
+
+#### Parameters
+
+| Name | In | Required | Type |
+| --- | --- | --- | --- |
+| `month` | query | no | string |
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | { month, plan, payments, includedPayments, nonUsdPayments, usage: { feeMinor, chargedPayments, byTier }, totalDueMinor } |
+| 403 | a global key, which has no merchant |
+
+#### Example
+
+```
+curl -sX GET https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/internal/merchant/usage \
+  -H 'x-wavepay-service-key: mk_live_…'
+```
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/docs/settlement.html
+
+> Connect your own provider account so the provider pays you directly. WavePay never holds your money in this mode.
+
+API reference
+
+# Where the money lands
+
+Connect your own provider account so the provider pays you directly. WavePay never holds your money in this mode.
+
+The provider accounts your key has connected (masked); the secret is never returned
+
+Authentication: Merchant key in x-wavepay-service-key
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | { accounts: [{ provider, mode: 'own-keys', environment, account, status, connectedAt, verifiedAt }] } |
+| 403 | a global key, which has no merchant |
+
+#### Example
+
+```
+curl -sX GET https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/internal/merchant/settlement \
+  -H 'x-wavepay-service-key: mk_live_…'
+```
+
+Connect your own provider account so the money lands with you (own keys). Credentials are checked with the provider, sealed, and never returned
+
+Authentication: Merchant key in x-wavepay-service-key
+
+#### Parameters
+
+| Name | In | Required | Type |
+| --- | --- | --- | --- |
+| `provider` | path | yes | string |
+
+#### Body (JSON)
+
+| Field | Type | Required |
+| --- | --- | --- |
+| `clientId` | string | yes |
+| `clientSecret` | string | yes |
+| `environment` | sandbox \| production | no |
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | { account: { provider, mode, environment, account, status, connectedAt, verifiedAt } } |
+| 400 | SETTLEMENT_PROVIDER_UNSUPPORTED or INVALID_REQUEST |
+| 403 | LIVE_KEY_REQUIRED (a test key cannot hold an account) or a global key |
+| 422 | CREDENTIALS_REJECTED (the provider refused them) or ENVIRONMENT_MISMATCH (sandbox keys on a production Worker, or the reverse) |
+
+#### Example
+
+```
+curl -sX PUT https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/internal/merchant/settlement/<provider> \
+  -H 'x-wavepay-service-key: mk_live_…' \
+  -H 'content-type: application/json' \
+  -d '{"clientId":"…","clientSecret":"…","environment":"sandbox"}'
+```
+
+Disconnect the account; later payments settle through the deployment's account again
+
+Authentication: Merchant key in x-wavepay-service-key
+
+#### Parameters
+
+| Name | In | Required | Type |
+| --- | --- | --- | --- |
+| `provider` | path | yes | string |
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | { disconnected: boolean } |
+
+#### Example
+
+```
+curl -sX DELETE https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/internal/merchant/settlement/<provider> \
+  -H 'x-wavepay-service-key: mk_live_…'
+```
+
+
+---
+
+Source: https://wavepay.t3ratech.co.zw/docs/testing.html
+
+> A test key uses the same routes with fake money. Every test mode operation with parameters, responses and a working example.
+
+API reference
+
+# Test mode
+
+A test key uses the same routes with fake money.
+
+Settle a test checkout end-to-end — exercises the webhook without touching a provider (mk_test_* keys only)
+
+Authentication: None (public)
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | Settled in test mode |
+
+#### Example
+
+```
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/test/settle
+```
+
+Hosted page for a test checkout: Approve or Decline (test payments only)
+
+Authentication: None (public)
+
+#### Parameters
+
+| Name | In | Required | Type |
+| --- | --- | --- | --- |
+| `reference` | path | yes | string |
+
+#### Responses
+
+| Status | Meaning |
+| --- | --- |
+| 200 | HTML |
+| 409 | NOT_A_TEST_PAYMENT |
+
+#### Example
+
+```
+curl -sX GET https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/test/pay/<reference>
+```
+
+
+---
+
 Source: https://wavepay.t3ratech.co.zw/es/
 
 # WavePay — pagos y licencias para software
 
 > Acepta EcoCash, tarjetas y PayPal con una sola API. Regístrate en una solicitud, prueba con dinero ficticio y pasa a producción con licencias, suscripciones y reembolsos.
 
-Ahora con suscripciones, pagos a plazos y 2Checkout
+Now with crypto, subscriptions and your own PayPal account
 
 # Cobra por tu software en *todos los medios de pago que usan tus clientes*
 
@@ -1003,14 +2708,14 @@ Una API para EcoCash, OneMoney, InnBucks, ZimSwitch, tarjetas y PayPal. Regístr
 [Empieza gratis](https://wavepay.t3ratech.co.zw/pricing.html#register) [Leer la documentación](https://wavepay.t3ratech.co.zw/docs.html) [Para agentes](https://wavepay.t3ratech.co.zw/skill.md)
 
 - Plan gratuito, sin tarjeta
-- Sin comisión sobre tus ventas
+- A fee that falls as you grow
 - REST y MCP
 
-**9**medios de pago
+**20**payment methods
 
 **25**pagos gratis al mes
 
-**0%**de comisión sobre tus ventas
+**2%→0.4%**usage fee, falling with volume
 
 **15**idiomas
 
@@ -1018,9 +2723,9 @@ Medios de pago
 
 ## Todos los medios que un comprador puede tener
 
-Carteras móviles locales para Zimbabue, tarjetas y PayPal para el resto. El punto de acceso de proveedores siempre indica qué está activo hoy.
+Zimbabwean wallets, cards, PayPal and eleven crypto rails. The providers endpoint always says what is live today.
 
-EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · próximamente
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal Bitcoin Ethereum Solana BNB Litecoin Dogecoin Tron USDT USDC 2Checkout · próximamente
 
 Qué obtienes
 
@@ -1125,7 +2830,7 @@ Precios
 
 ## Precio por pagos procesados, no por comisión
 
-Planes mensuales fijos. Los proveedores de pago cobran sus propias tarifas aparte.
+A plan for the software, plus a small percentage that falls as your volume grows. Provider fees are paid to the provider at cost.
 
 ### Gratis
 
@@ -1140,8 +2845,6 @@ $0 para siempre
 
 [Regístrate gratis](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-El más elegido
-
 ### Starter
 
 $15 al mes
@@ -1153,6 +2856,8 @@ $15 al mes
 - Webhooks y registro
 
 [Elegir Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Recommended
 
 ### Growth
 
@@ -1166,17 +2871,43 @@ $49 al mes
 
 [Elegir Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
+### Scale
+
+$149 al mes
+
+2,500 payments per 30 days
+
+- 30 sites
+- Everything in Growth
+- Priority support
+
+[Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Enterprise
+
+From $499 al mes
+
+Custom volume and an SLA
+
+- Unlimited sites
+- Everything in Scale
+- Onboarding and an SLA
+
+[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
+
+[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+
 Preguntas
 
 ## Respuestas antes de que preguntes
 
 ¿Qué medios de pago puedo aceptar?
 
-EcoCash, OneMoney, InnBucks, Telecash, O'mari y ZimSwitch mediante Paynow; Visa, Mastercard y PayPal para compradores internacionales. 2Checkout está construido y se activa cuando el proveedor apruebe nuestra cuenta.
+EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow; Visa, Mastercard and PayPal; and crypto on eleven rails (Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT, USDC). 2Checkout is built and switches on when the provider approves our account.
 
 ¿Cobráis un porcentaje de mis ventas?
 
-No. Los planes son precios mensuales fijos según los pagos procesados. Los proveedores de pago cobran sus propias tarifas.
+Only after your plan's included payments, and the percentage falls as your volume grows (from 2% down to 0.4%, with a small minimum per payment). Provider fees are paid to the provider at cost with no WavePay markup.
 
 ¿Puedo probar sin dinero real?
 
@@ -1227,7 +2958,7 @@ QUESTIONS
 
 WavePay is the checkout, licensing and settlement API for software — apps, browser extensions, games, APIs and bots. One integration reaches Zimbabwean wallets (EcoCash, OneMoney, InnBucks, Telecash, O'mari, ZimSwitch) and international rails (Visa, Mastercard, PayPal).
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
 
 ## What is WavePay?
 
@@ -1239,7 +2970,7 @@ Two calls. POST /v2/register with a name and an email returns a live merchant ke
 
 ## Does WavePay take a percentage of my sales?
 
-Only after your plan's included payments, and the percentage falls as your volume grows (2% down to 0.4%, with a small minimum per payment). The plan fee covers the software: Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month. Provider fees are paid to the provider at cost with no WavePay markup. Full schedule: /pricing.html and /pricing.json.
+Only after your plan's included payments, and the percentage falls as your volume grows (2% down to 0.4%, with a small minimum per payment). The plan fee covers the software: Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month. Provider fees are paid to the provider at cost with no WavePay markup. Full schedule: /pricing.html and /pricing.json.
 
 ## Which payment methods can my customers use?
 
@@ -1309,7 +3040,7 @@ Source: https://wavepay.t3ratech.co.zw/fr/
 
 > Acceptez EcoCash, cartes et PayPal avec une API. Inscrivez-vous en une requête, testez avec de l'argent fictif, puis passez en production avec licences et remboursements.
 
-Désormais avec abonnements, paiements échelonnés et 2Checkout
+Now with crypto, subscriptions and your own PayPal account
 
 # Soyez payé pour votre logiciel sur *chaque moyen de paiement de vos clients*
 
@@ -1318,14 +3049,14 @@ Une seule API pour EcoCash, OneMoney, InnBucks, ZimSwitch, les cartes et PayPal.
 [Commencer gratuitement](https://wavepay.t3ratech.co.zw/pricing.html#register) [Lire la documentation](https://wavepay.t3ratech.co.zw/docs.html) [Pour les agents](https://wavepay.t3ratech.co.zw/skill.md)
 
 - Offre gratuite, sans carte bancaire
-- Aucune commission sur vos ventes
+- A fee that falls as you grow
 - REST et MCP
 
-**9**moyens de paiement
+**20**payment methods
 
 **25**paiements gratuits par mois
 
-**0%**de frais sur vos ventes
+**2%→0.4%**usage fee, falling with volume
 
 **15**langues
 
@@ -1333,9 +3064,9 @@ Moyens de paiement
 
 ## Tous les moyens que vos clients possèdent
 
-Portefeuilles mobiles locaux pour le Zimbabwe, cartes et PayPal pour les autres. Le point d'accès des fournisseurs indique toujours ce qui est actif aujourd'hui.
+Zimbabwean wallets, cards, PayPal and eleven crypto rails. The providers endpoint always says what is live today.
 
-EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · bientôt
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal Bitcoin Ethereum Solana BNB Litecoin Dogecoin Tron USDT USDC 2Checkout · bientôt
 
 Ce que vous obtenez
 
@@ -1440,7 +3171,7 @@ Tarifs
 
 ## Un prix au volume de paiements, pas une commission
 
-Des forfaits mensuels fixes. Les fournisseurs de paiement facturent leurs propres frais en plus.
+A plan for the software, plus a small percentage that falls as your volume grows. Provider fees are paid to the provider at cost.
 
 ### Gratuit
 
@@ -1455,8 +3186,6 @@ $0 pour toujours
 
 [S'inscrire gratuitement](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-Le plus choisi
-
 ### Starter
 
 $15 par mois
@@ -1468,6 +3197,8 @@ $15 par mois
 - Webhooks et journal
 
 [Choisir Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Recommended
 
 ### Growth
 
@@ -1481,17 +3212,43 @@ $49 par mois
 
 [Choisir Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
+### Scale
+
+$149 par mois
+
+2,500 payments per 30 days
+
+- 30 sites
+- Everything in Growth
+- Priority support
+
+[Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Enterprise
+
+From $499 par mois
+
+Custom volume and an SLA
+
+- Unlimited sites
+- Everything in Scale
+- Onboarding and an SLA
+
+[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
+
+[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+
 Questions
 
 ## Les réponses avant la question
 
 Quels moyens de paiement puis-je accepter ?
 
-EcoCash, OneMoney, InnBucks, Telecash, O'mari et ZimSwitch via Paynow ; Visa, Mastercard et PayPal pour les acheteurs internationaux. 2Checkout est prêt et sera activé dès que le fournisseur approuvera notre compte.
+EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow; Visa, Mastercard and PayPal; and crypto on eleven rails (Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT, USDC). 2Checkout is built and switches on when the provider approves our account.
 
 Prélevez-vous un pourcentage sur mes ventes ?
 
-Non. Les forfaits sont des prix mensuels fixes selon le nombre de paiements traités. Les fournisseurs de paiement facturent leurs propres frais.
+Only after your plan's included payments, and the percentage falls as your volume grows (from 2% down to 0.4%, with a small minimum per payment). Provider fees are paid to the provider at cost with no WavePay markup.
 
 Puis-je tester sans argent réel ?
 
@@ -1542,7 +3299,7 @@ HOW IT WORKS
 
 WavePay sells through 2Checkout as provider twocheckout: a signed buy-link for one-time purchases, 2Checkout-billed subscriptions with every renewal recorded from a signed notification, refunds through its REST API, and HMAC-signed IPN and LCN webhooks, with 2Checkout acting as merchant of record for tax and invoicing.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
 
 ## One-time checkout
 
@@ -1593,7 +3350,7 @@ HOW IT WORKS
 
 WavePay BNPL takes a deposit at checkout and collects the rest from the customer's card on a schedule, retrying with a back-off until the full price is paid; it is limited to non-prepaid cards, and WavePay collects but does not lend.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
 
 ## How a plan runs
 
@@ -1638,7 +3395,7 @@ HOW IT WORKS
 
 Send a stable Idempotency-Key with every POST /v2/checkouts — derived from your order id, not generated per attempt — and a retry after a timeout returns the original checkout instead of creating a second charge.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
 
 ## The failure it prevents
 
@@ -1675,7 +3432,7 @@ HOW IT WORKS
 
 WavePay signs each licence entitlement with an Ed25519 private key it never shares, so your app verifies the signature offline against the public key at GET /v2/licensing/public-key and never needs to call a server to know a licence is genuine.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
 
 ## The flow
 
@@ -1714,7 +3471,7 @@ HOW IT WORKS
 
 A card token or a PayPal subscription can be charged every period with nobody present, but mobile wallets such as EcoCash, OneMoney, InnBucks and O'mari cannot be debited unattended, so a WavePay subscription on a wallet sends the customer a fresh payment prompt each period and access follows what they pay.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
 
 ## Two collection modes
 
@@ -1761,7 +3518,7 @@ HOW IT WORKS
 
 POST /v2/register returns a live key and a test key (mk_test_…); the test key calls the same routes but settles through a simulator that never contacts a payment provider, so you can drive every outcome of your integration, including renewals and instalments, without moving money.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
 
 ## Getting a test key
 
@@ -1802,7 +3559,7 @@ Source: https://wavepay.t3ratech.co.zw/hi/
 
 > एक API से EcoCash, कार्ड और PayPal स्वीकार करें। एक अनुरोध में पंजीकरण करें, नकली पैसों से परीक्षण करें, फिर लाइसेंस, सदस्यता और रिफ़ंड के साथ लाइव जाएँ।
 
-अब सदस्यता, किस्तों और 2Checkout के साथ
+Now with crypto, subscriptions and your own PayPal account
 
 # अपने सॉफ़्टवेयर का भुगतान पाएँ *हर उस माध्यम से जो आपके ग्राहकों के पास है*
 
@@ -1811,14 +3568,14 @@ EcoCash, OneMoney, InnBucks, ZimSwitch, कार्ड और PayPal के ल
 [मुफ़्त शुरू करें](https://wavepay.t3ratech.co.zw/pricing.html#register) [दस्तावेज़ पढ़ें](https://wavepay.t3ratech.co.zw/docs.html) [एजेंटों के लिए](https://wavepay.t3ratech.co.zw/skill.md)
 
 - मुफ़्त योजना, कार्ड की ज़रूरत नहीं
-- आपकी बिक्री पर कोई प्रतिशत शुल्क नहीं
+- A fee that falls as you grow
 - REST और MCP
 
-**9**भुगतान माध्यम
+**20**payment methods
 
 **25**प्रति माह मुफ़्त भुगतान
 
-**0%**आपकी बिक्री पर शुल्क
+**2%→0.4%**usage fee, falling with volume
 
 **15**भाषाएँ
 
@@ -1826,9 +3583,9 @@ EcoCash, OneMoney, InnBucks, ZimSwitch, कार्ड और PayPal के ल
 
 ## हर वह माध्यम जो खरीदार के पास हो सकता है
 
-ज़िम्बाब्वे के लिए स्थानीय वॉलेट, बाकी दुनिया के लिए कार्ड और PayPal। प्रदाता एंडपॉइंट हमेशा बताता है कि आज क्या चालू है।
+Zimbabwean wallets, cards, PayPal and eleven crypto rails. The providers endpoint always says what is live today.
 
-EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · जल्द आ रहा है
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal Bitcoin Ethereum Solana BNB Litecoin Dogecoin Tron USDT USDC 2Checkout · जल्द आ रहा है
 
 आपको क्या मिलता है
 
@@ -1933,7 +3690,7 @@ const { checkoutUrl, reference } = await res.json();
 
 ## संसाधित भुगतानों पर मूल्य, कमीशन पर नहीं
 
-निश्चित मासिक योजनाएँ। भुगतान प्रदाता अपना शुल्क अलग से लेते हैं।
+A plan for the software, plus a small percentage that falls as your volume grows. Provider fees are paid to the provider at cost.
 
 ### मुफ़्त
 
@@ -1948,8 +3705,6 @@ $0 हमेशा
 
 [मुफ़्त पंजीकरण](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-सबसे लोकप्रिय
-
 ### Starter
 
 $15 प्रति माह
@@ -1961,6 +3716,8 @@ $15 प्रति माह
 - वेबहुक और बही
 
 [Starter लें](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Recommended
 
 ### Growth
 
@@ -1974,17 +3731,43 @@ $49 प्रति माह
 
 [Growth लें](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
+### Scale
+
+$149 प्रति माह
+
+2,500 payments per 30 days
+
+- 30 sites
+- Everything in Growth
+- Priority support
+
+[Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Enterprise
+
+From $499 प्रति माह
+
+Custom volume and an SLA
+
+- Unlimited sites
+- Everything in Scale
+- Onboarding and an SLA
+
+[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
+
+[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+
 प्रश्न
 
 ## आपके पूछने से पहले उत्तर
 
 मैं कौन से भुगतान माध्यम स्वीकार कर सकता हूँ?
 
-Paynow के माध्यम से EcoCash, OneMoney, InnBucks, Telecash, O'mari और ZimSwitch; अंतरराष्ट्रीय खरीदारों के लिए Visa, Mastercard और PayPal। 2Checkout बना हुआ है और प्रदाता द्वारा हमारा खाता स्वीकृत करते ही चालू हो जाएगा।
+EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow; Visa, Mastercard and PayPal; and crypto on eleven rails (Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT, USDC). 2Checkout is built and switches on when the provider approves our account.
 
 क्या आप मेरी बिक्री का प्रतिशत लेते हैं?
 
-नहीं। योजनाएँ संसाधित भुगतानों पर आधारित निश्चित मासिक मूल्य हैं। भुगतान प्रदाता अपना शुल्क खुद लेते हैं।
+Only after your plan's included payments, and the percentage falls as your volume grows (from 2% down to 0.4%, with a small minimum per payment). Provider fees are paid to the provider at cost with no WavePay markup.
 
 क्या मैं असली पैसे के बिना परीक्षण कर सकता हूँ?
 
@@ -2029,7 +3812,7 @@ Source: https://wavepay.t3ratech.co.zw/id/
 
 > Terima EcoCash, kartu, dan PayPal dengan satu API. Daftar dalam satu permintaan, uji dengan uang palsu, lalu aktifkan lisensi, langganan, dan pengembalian dana.
 
-Kini dengan langganan, cicilan, dan 2Checkout
+Now with crypto, subscriptions and your own PayPal account
 
 # Dapatkan bayaran untuk perangkat lunak Anda lewat *setiap metode yang dimiliki pembeli Anda*
 
@@ -2038,14 +3821,14 @@ Satu API untuk EcoCash, OneMoney, InnBucks, ZimSwitch, kartu, dan PayPal. Daftar
 [Mulai gratis](https://wavepay.t3ratech.co.zw/pricing.html#register) [Baca dokumentasi](https://wavepay.t3ratech.co.zw/docs.html) [Untuk agen](https://wavepay.t3ratech.co.zw/skill.md)
 
 - Paket gratis, tanpa kartu
-- Tanpa biaya persentase atas penjualan Anda
+- A fee that falls as you grow
 - REST dan MCP
 
-**9**metode pembayaran
+**20**payment methods
 
 **25**pembayaran gratis per bulan
 
-**0%**biaya atas penjualan Anda
+**2%→0.4%**usage fee, falling with volume
 
 **15**bahasa
 
@@ -2053,9 +3836,9 @@ Metode pembayaran
 
 ## Setiap metode yang mungkin dimiliki pembeli
 
-Dompet lokal untuk Zimbabwe, kartu dan PayPal untuk lainnya. Endpoint penyedia selalu menunjukkan apa yang aktif hari ini.
+Zimbabwean wallets, cards, PayPal and eleven crypto rails. The providers endpoint always says what is live today.
 
-EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · segera hadir
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal Bitcoin Ethereum Solana BNB Litecoin Dogecoin Tron USDT USDC 2Checkout · segera hadir
 
 Yang Anda dapatkan
 
@@ -2160,7 +3943,7 @@ Harga
 
 ## Harga berdasarkan pembayaran, bukan potongan
 
-Paket bulanan tetap. Penyedia pembayaran mengenakan biayanya sendiri secara terpisah.
+A plan for the software, plus a small percentage that falls as your volume grows. Provider fees are paid to the provider at cost.
 
 ### Gratis
 
@@ -2175,8 +3958,6 @@ $0 selamanya
 
 [Daftar gratis](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-Paling populer
-
 ### Starter
 
 $15 per bulan
@@ -2188,6 +3969,8 @@ $15 per bulan
 - Webhook dan buku pembayaran
 
 [Pilih Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Recommended
 
 ### Growth
 
@@ -2201,17 +3984,43 @@ $49 per bulan
 
 [Pilih Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
+### Scale
+
+$149 per bulan
+
+2,500 payments per 30 days
+
+- 30 sites
+- Everything in Growth
+- Priority support
+
+[Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Enterprise
+
+From $499 per bulan
+
+Custom volume and an SLA
+
+- Unlimited sites
+- Everything in Scale
+- Onboarding and an SLA
+
+[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
+
+[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+
 Pertanyaan
 
 ## Jawaban sebelum Anda bertanya
 
 Metode pembayaran apa yang bisa saya terima?
 
-EcoCash, OneMoney, InnBucks, Telecash, O'mari, dan ZimSwitch lewat Paynow; Visa, Mastercard, dan PayPal untuk pembeli internasional. 2Checkout sudah dibangun dan akan aktif setelah penyedia menyetujui akun kami.
+EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow; Visa, Mastercard and PayPal; and crypto on eleven rails (Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT, USDC). 2Checkout is built and switches on when the provider approves our account.
 
 Apakah Anda mengambil persentase dari penjualan saya?
 
-Tidak. Paket adalah harga bulanan tetap berdasarkan pembayaran yang diproses. Penyedia pembayaran mengenakan biayanya sendiri.
+Only after your plan's included payments, and the percentage falls as your volume grows (from 2% down to 0.4%, with a small minimum per payment). Provider fees are paid to the provider at cost with no WavePay markup.
 
 Bisakah saya menguji tanpa uang sungguhan?
 
@@ -2256,7 +4065,7 @@ Source: https://wavepay.t3ratech.co.zw/
 
 > Take EcoCash, cards and PayPal with one API. Register in one request, test with fake money, then go live with licence keys, subscriptions and refunds.
 
-Now with subscriptions, instalments and 2Checkout
+Now with crypto, subscriptions and your own PayPal account
 
 # Get paid for your software on *every rail your buyers hold*
 
@@ -2265,14 +4074,14 @@ One API for EcoCash, OneMoney, InnBucks, ZimSwitch, cards and PayPal. Register i
 [Start free](https://wavepay.t3ratech.co.zw/pricing.html#register) [Read the docs](https://wavepay.t3ratech.co.zw/docs.html) [For agents](https://wavepay.t3ratech.co.zw/skill.md)
 
 - Free plan, no card needed
-- No percentage fee on your sales
+- A fee that falls as you grow
 - REST and MCP
 
-**9**payment rails
+**20**payment methods
 
 **25**free payments a month
 
-**0%**fee on your sales
+**2%→0.4%**usage fee, falling with volume
 
 **15**languages
 
@@ -2280,9 +4089,9 @@ Payment rails
 
 ## Every rail a buyer might hold
 
-Local wallets for Zimbabwe, cards and PayPal for everyone else. The providers endpoint always says what is live today.
+Zimbabwean wallets, cards, PayPal and eleven crypto rails. The providers endpoint always says what is live today.
 
-EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · coming soon
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal Bitcoin Ethereum Solana BNB Litecoin Dogecoin Tron USDT USDC 2Checkout · coming soon
 
 What you get
 
@@ -2387,7 +4196,7 @@ Pricing
 
 ## Priced by payments, not by rake
 
-Flat monthly plans. The payment providers charge their own fees on top.
+A plan for the software, plus a small percentage that falls as your volume grows. Provider fees are paid to the provider at cost.
 
 ### Free
 
@@ -2402,8 +4211,6 @@ $0 forever
 
 [Register free](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-Most popular
-
 ### Starter
 
 $15 per month
@@ -2415,6 +4222,8 @@ $15 per month
 - Webhooks and ledger
 
 [Get Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Recommended
 
 ### Growth
 
@@ -2428,17 +4237,43 @@ $49 per month
 
 [Get Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
+### Scale
+
+$149 per month
+
+2,500 payments per 30 days
+
+- 30 sites
+- Everything in Growth
+- Priority support
+
+[Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Enterprise
+
+From $499 per month
+
+Custom volume and an SLA
+
+- Unlimited sites
+- Everything in Scale
+- Onboarding and an SLA
+
+[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
+
+[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+
 Questions
 
 ## Answers before you ask
 
 Which payment methods can I accept?
 
-EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow; Visa, Mastercard and PayPal for international buyers. 2Checkout is built and switches on when the provider approves our account.
+EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow; Visa, Mastercard and PayPal; and crypto on eleven rails (Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT, USDC). 2Checkout is built and switches on when the provider approves our account.
 
 Do you take a percentage of my sales?
 
-No. Plans are flat monthly prices based on payments processed. The payment providers charge their own fees.
+Only after your plan's included payments, and the percentage falls as your volume grows (from 2% down to 0.4%, with a small minimum per payment). Provider fees are paid to the provider at cost with no WavePay markup.
 
 Can I test without real money?
 
@@ -2489,7 +4324,7 @@ USE CASE
 
 Any MCP client can use WavePay by adding the endpoint https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp; Claude Code adds it with one command, and a plain API client needs only POST /v2/register and POST /v2/checkouts.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
 
 ## The flow
 
@@ -2524,7 +4359,7 @@ Source: https://wavepay.t3ratech.co.zw/it/
 
 > Accetta EcoCash, carte e PayPal con una sola API. Registrati in una richiesta, prova con denaro finto e vai in produzione con licenze, abbonamenti e rimborsi.
 
-Ora con abbonamenti, pagamenti rateali e 2Checkout
+Now with crypto, subscriptions and your own PayPal account
 
 # Fatti pagare il tuo software su *ogni metodo che i tuoi clienti usano*
 
@@ -2533,14 +4368,14 @@ Una sola API per EcoCash, OneMoney, InnBucks, ZimSwitch, carte e PayPal. Registr
 [Inizia gratis](https://wavepay.t3ratech.co.zw/pricing.html#register) [Leggi la documentazione](https://wavepay.t3ratech.co.zw/docs.html) [Per gli agenti](https://wavepay.t3ratech.co.zw/skill.md)
 
 - Piano gratuito, senza carta
-- Nessuna commissione percentuale sulle tue vendite
+- A fee that falls as you grow
 - REST e MCP
 
-**9**metodi di pagamento
+**20**payment methods
 
 **25**pagamenti gratuiti al mese
 
-**0%**di commissione sulle tue vendite
+**2%→0.4%**usage fee, falling with volume
 
 **15**lingue
 
@@ -2548,9 +4383,9 @@ Metodi di pagamento
 
 ## Ogni metodo che un acquirente può avere
 
-Portafogli mobili locali per lo Zimbabwe, carte e PayPal per tutti gli altri. L'endpoint dei fornitori indica sempre cosa è attivo oggi.
+Zimbabwean wallets, cards, PayPal and eleven crypto rails. The providers endpoint always says what is live today.
 
-EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · in arrivo
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal Bitcoin Ethereum Solana BNB Litecoin Dogecoin Tron USDT USDC 2Checkout · in arrivo
 
 Cosa ottieni
 
@@ -2655,7 +4490,7 @@ Prezzi
 
 ## Prezzo per pagamenti elaborati, non per commissione
 
-Piani mensili fissi. I fornitori di pagamento applicano le loro commissioni a parte.
+A plan for the software, plus a small percentage that falls as your volume grows. Provider fees are paid to the provider at cost.
 
 ### Gratis
 
@@ -2670,8 +4505,6 @@ $0 per sempre
 
 [Registrati gratis](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-Il più scelto
-
 ### Starter
 
 $15 al mese
@@ -2683,6 +4516,8 @@ $15 al mese
 - Webhook e registro
 
 [Scegli Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Recommended
 
 ### Growth
 
@@ -2696,17 +4531,43 @@ $49 al mese
 
 [Scegli Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
+### Scale
+
+$149 al mese
+
+2,500 payments per 30 days
+
+- 30 sites
+- Everything in Growth
+- Priority support
+
+[Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Enterprise
+
+From $499 al mese
+
+Custom volume and an SLA
+
+- Unlimited sites
+- Everything in Scale
+- Onboarding and an SLA
+
+[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
+
+[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+
 Domande
 
 ## Risposte prima che tu chieda
 
 Quali metodi di pagamento posso accettare?
 
-EcoCash, OneMoney, InnBucks, Telecash, O'mari e ZimSwitch tramite Paynow; Visa, Mastercard e PayPal per gli acquirenti internazionali. 2Checkout è pronto e si attiva quando il fornitore approverà il nostro account.
+EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow; Visa, Mastercard and PayPal; and crypto on eleven rails (Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT, USDC). 2Checkout is built and switches on when the provider approves our account.
 
 Prendete una percentuale sulle mie vendite?
 
-No. I piani sono prezzi mensili fissi in base ai pagamenti elaborati. I fornitori di pagamento applicano le proprie commissioni.
+Only after your plan's included payments, and the percentage falls as your volume grows (from 2% down to 0.4%, with a small minimum per payment). Provider fees are paid to the provider at cost with no WavePay markup.
 
 Posso provare senza denaro reale?
 
@@ -2751,7 +4612,7 @@ Source: https://wavepay.t3ratech.co.zw/ja/
 
 > 1つのAPIでEcoCash、カード、PayPalに対応。1回のリクエストで登録し、擬似資金でテストして、ライセンス・定期課金・返金とともに本番へ。
 
-定期課金、分割払い、2Checkoutに対応しました
+Now with crypto, subscriptions and your own PayPal account
 
 # あなたのソフトウェアの代金を *購入者が持つあらゆる決済手段で受け取る*
 
@@ -2760,14 +4621,14 @@ EcoCash、OneMoney、InnBucks、ZimSwitch、カード、PayPalを1つのAPIで�
 [無料で始める](https://wavepay.t3ratech.co.zw/pricing.html#register) [ドキュメントを読む](https://wavepay.t3ratech.co.zw/docs.html) [エージェント向け](https://wavepay.t3ratech.co.zw/skill.md)
 
 - 無料プラン、カード不要
-- 売上に対する手数料なし
+- A fee that falls as you grow
 - RESTとMCP
 
-**9**種類の決済手段
+**20**payment methods
 
 **25**毎月の無料決済数
 
-**0%**売上にかかる手数料
+**2%→0.4%**usage fee, falling with volume
 
 **15**言語
 
@@ -2775,9 +4636,9 @@ EcoCash、OneMoney、InnBucks、ZimSwitch、カード、PayPalを1つのAPIで�
 
 ## 購入者が持ちうるあらゆる手段に対応
 
-ジンバブエ向けの現地ウォレットと、それ以外の地域向けのカードおよびPayPal。プロバイダーのエンドポイントで、現在有効な手段をいつでも確認できます。
+Zimbabwean wallets, cards, PayPal and eleven crypto rails. The providers endpoint always says what is live today.
 
-EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · 近日対応
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal Bitcoin Ethereum Solana BNB Litecoin Dogecoin Tron USDT USDC 2Checkout · 近日対応
 
 できること
 
@@ -2882,7 +4743,7 @@ const { checkoutUrl, reference } = await res.json();
 
 ## 手数料ではなく、決済件数で決まる料金
 
-月額固定のプラン。決済プロバイダーの手数料は別途かかります。
+A plan for the software, plus a small percentage that falls as your volume grows. Provider fees are paid to the provider at cost.
 
 ### 無料
 
@@ -2897,8 +4758,6 @@ $0 ずっと
 
 [無料で登録](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-一番人気
-
 ### Starter
 
 $15 月額
@@ -2910,6 +4769,8 @@ $15 月額
 - Webhookと台帳
 
 [Starterを選ぶ](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Recommended
 
 ### Growth
 
@@ -2923,17 +4784,43 @@ $49 月額
 
 [Growthを選ぶ](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
+### Scale
+
+$149 月額
+
+2,500 payments per 30 days
+
+- 30 sites
+- Everything in Growth
+- Priority support
+
+[Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Enterprise
+
+From $499 月額
+
+Custom volume and an SLA
+
+- Unlimited sites
+- Everything in Scale
+- Onboarding and an SLA
+
+[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
+
+[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+
 よくある質問
 
 ## 聞かれる前にお答えします
 
 どの決済手段を受け付けられますか？
 
-Paynow経由でEcoCash、OneMoney、InnBucks、Telecash、O'mari、ZimSwitch。海外の購入者向けにVisa、Mastercard、PayPal。2Checkoutは開発済みで、プロバイダーによるアカウント承認後に有効化されます。
+EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow; Visa, Mastercard and PayPal; and crypto on eleven rails (Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT, USDC). 2Checkout is built and switches on when the provider approves our account.
 
 売上の何パーセントかを受け取りますか？
 
-いいえ。処理した決済件数に基づく月額固定のプランです。決済プロバイダーは独自の手数料を請求します。
+Only after your plan's included payments, and the percentage falls as your volume grows (from 2% down to 0.4%, with a small minimum per payment). Provider fees are paid to the provider at cost with no WavePay markup.
 
 本物のお金なしでテストできますか？
 
@@ -3008,6 +4895,9 @@ Everything WavePay does, by the question you are trying to answer: which rails i
 - [WavePay vs integrating each payment rail yourself](https://wavepay.t3ratech.co.zw/compare-wavepay-vs-integrating-each-rail.html)
 - [WavePay vs a card-only payment processor](https://wavepay.t3ratech.co.zw/compare-wavepay-vs-card-only-processor.html)
 - [WavePay vs integrating PayPal directly](https://wavepay.t3ratech.co.zw/compare-wavepay-vs-paypal-direct.html)
+- [WavePay vs integrating Paynow directly](https://wavepay.t3ratech.co.zw/compare-wavepay-vs-paynow-direct.html)
+- [WavePay vs 2Checkout (Verifone)](https://wavepay.t3ratech.co.zw/compare-wavepay-vs-2checkout-verifone.html)
+- [WavePay vs Flutterwave](https://wavepay.t3ratech.co.zw/compare-wavepay-vs-flutterwave.html)
 
 ## How it works
 
@@ -3037,7 +4927,7 @@ USE CASE
 
 WavePay is a multi-currency payment gateway API: Visa and Mastercard and PayPal for international buyers, Paynow for Zimbabwean wallets in US dollars, and eleven crypto rails quoted in US dollars, all through one checkout call and one ledger.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
 
 ## The flow
 
@@ -3072,7 +4962,7 @@ Source: https://wavepay.t3ratech.co.zw/nd/
 
 > Samukela i-EcoCash, amakhadi le-PayPal nge-API eyodwa. Bhalisa ngesicelo esisodwa, linga ngemali yokulingisa, uqale ngamalayisense lokubuyisela imali.
 
-Manje lokukhokha ngezikhathi, ngezigaba le-2Checkout
+Now with crypto, subscriptions and your own PayPal account
 
 # Khokhelwa izinhlelo zakho nge *yonke indlela abathengi bakho abayisebenzisayo*
 
@@ -3081,14 +4971,14 @@ I-API eyodwa ye-EcoCash, i-OneMoney, i-InnBucks, i-ZimSwitch, amakhadi le-PayPal
 [Qala mahala](https://wavepay.t3ratech.co.zw/pricing.html#register) [Funda imibhalo](https://wavepay.t3ratech.co.zw/docs.html) [Kuma-ejenti](https://wavepay.t3ratech.co.zw/skill.md)
 
 - Uhlelo lwamahala, akukho khadi elidingekayo
-- Akukho mkhawulo wephesenti ekuthengiseni kwakho
+- A fee that falls as you grow
 - I-REST le-MCP
 
-**9**izindlela zokukhokha
+**20**payment methods
 
 **25**izinkokhelo zamahala ngenyanga
 
-**0%**imali ekuthengiseni kwakho
+**2%→0.4%**usage fee, falling with volume
 
 **15**izilimi
 
@@ -3096,9 +4986,9 @@ Izindlela zokukhokha
 
 ## Zonke izindlela umthengi angaba lazo
 
-Izikhwama zasekhaya zeZimbabwe, amakhadi le-PayPal kwabanye. Indawo yabahlinzeki ihlala itshengisa okusebenzayo namuhla.
+Zimbabwean wallets, cards, PayPal and eleven crypto rails. The providers endpoint always says what is live today.
 
-EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · kuyeza
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal Bitcoin Ethereum Solana BNB Litecoin Dogecoin Tron USDT USDC 2Checkout · kuyeza
 
 Okuzakuthola
 
@@ -3203,7 +5093,7 @@ Intengo
 
 ## Intengo ngokuya ngezinkokhelo, hatshi ngokusikwa
 
-Izinhlelo zenyanga zentengo emisiweyo. Abahlinzeki bokukhokha bakhokhisa izimali zabo ngokwehlukileyo.
+A plan for the software, plus a small percentage that falls as your volume grows. Provider fees are paid to the provider at cost.
 
 ### Mahala
 
@@ -3218,8 +5108,6 @@ Izinkokhelo ezingu-25 ezinsukwini ezingu-30
 
 [Bhalisa mahala](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-Okukhethwa kakhulu
-
 ### Starter
 
 $15 ngenyanga
@@ -3231,6 +5119,8 @@ Izinkokhelo ezingu-100 ezinsukwini ezingu-30
 - Ama-webhook lebhuku
 
 [Thatha i-Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Recommended
 
 ### Growth
 
@@ -3244,17 +5134,43 @@ Izinkokhelo ezingu-500 ezinsukwini ezingu-30
 
 [Thatha i-Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
+### Scale
+
+$149 ngenyanga
+
+2,500 payments per 30 days
+
+- 30 sites
+- Everything in Growth
+- Priority support
+
+[Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Enterprise
+
+From $499 ngenyanga
+
+Custom volume and an SLA
+
+- Unlimited sites
+- Everything in Scale
+- Onboarding and an SLA
+
+[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
+
+[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+
 Imibuzo
 
 ## Izimpendulo ungakabuzi
 
 Ngingasamukela zimuphi izindlela zokukhokha?
 
-I-EcoCash, i-OneMoney, i-InnBucks, i-Telecash, i-O'mari le-ZimSwitch nge-Paynow; i-Visa, i-Mastercard le-PayPal kubathengi bamazwe angaphandle. I-2Checkout yakhiwe izavulwa lapho umhlinzeki evuma i-akhawunti yethu.
+EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow; Visa, Mastercard and PayPal; and crypto on eleven rails (Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT, USDC). 2Checkout is built and switches on when the provider approves our account.
 
 Niyathatha ipesenti yokuthengisa kwami yini?
 
-Hatshi. Izinhlelo zintengo zenyanga ezimisiweyo ngokuya ngezinkokhelo ezilungisiweyo. Abahlinzeki bokukhokha bakhokhisa izimali zabo.
+Only after your plan's included payments, and the percentage falls as your volume grows (from 2% down to 0.4%, with a small minimum per payment). Provider fees are paid to the provider at cost with no WavePay markup.
 
 Ngingalinga ngaphandle kwemali yangempela yini?
 
@@ -3303,7 +5219,7 @@ USE CASE
 
 Charge for an API with WavePay by selling plans through checkout, issuing a licence key on payment, and gating requests on the key — settlement arrives by signed webhook so access can be granted automatically.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
 
 ## The flow
 
@@ -3342,7 +5258,7 @@ USE CASE
 
 Charge for an app or SaaS with WavePay by pricing plans as data, sending buyers to a hosted checkout, and unlocking seats from licence activations or your signed settlement webhook.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
 
 ## The flow
 
@@ -3381,7 +5297,7 @@ USE CASE
 
 Charge for a bot with WavePay by pushing a wallet prompt to the user's phone with paynow-mobile, so the payment happens inside the chat flow without a browser, then unlock features when status reads collected.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
 
 ## The flow
 
@@ -3420,7 +5336,7 @@ USE CASE
 
 Sell a browser extension with WavePay by creating a checkout for your Pro plan, emailing a licence key on payment, and letting the extension verify an Ed25519-signed entitlement offline — T3rnel Browser sells Pro this way in production.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
 
 ## The flow
 
@@ -3460,7 +5376,7 @@ USE CASE
 
 In a game, charge a player without leaving the session by using provider paynow-mobile with their phone number — the EcoCash, OneMoney, InnBucks or O'mari prompt is pushed to their handset and your game polls checkout status until it reads collected.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
 
 ## The flow
 
@@ -3508,7 +5424,7 @@ $0 forever
 25 payments a month, test mode, one site. Stops at the cap; never charges.
 
 - 25 payments / month included
-- 1 sites
+- 1 site
 - Signed webhooks + payments ledger
 
 Register free — one POST
@@ -3526,7 +5442,7 @@ $15 USD / month
 
 Get Starter — $15/mo
 
-Popular
+Recommended
 
 ### Growth
 
@@ -3613,13 +5529,74 @@ Free stops at its 25 payments and never charges. Paid plans never refuse a buyer
 
 ---
 
+Source: https://wavepay.t3ratech.co.zw/privacy.html
+
+> What personal data WavePay processes, why, which processors we use, how long we keep it and how to exercise your rights under Zimbabwe's data protection law and the GDPR.
+
+LEGAL
+
+# Privacy policy
+
+What personal data WavePay processes, why, which processors we use, how long we keep it and how to exercise your rights under Zimbabwe's data protection law and the GDPR.
+
+Updated 2026-10-31 · TeraTech Solutions (Private) Limited
+
+## Who we are
+
+WavePay is operated by TeraTech Solutions (Private) Limited, Harare, Zimbabwe ("T3raTech", "we"). For merchants' buyers we are usually a processor acting for the merchant; for merchants and website visitors we are the controller. Contact: [support@t3ratech.co.zw](mailto:support@t3ratech.co.zw).
+
+## What we process
+
+- **Merchants:** name, owner email, keys (as hashes), connected provider account identifiers (credentials sealed), plan and usage.
+- **Buyers:** email address and, for wallet prompts, phone number (encrypted, with keyed hashes for lookups), payment reference, amount, currency, status and the provider's reference.
+- **Licence holders:** licence key activations and the device public key used to verify them.
+- **Visitors:** page views and interactions through Google Analytics 4, a language and theme preference, and network address for rate limiting and abuse protection.
+
+## What we never process
+
+Card numbers, card security codes and bank passwords. They are entered on the provider's own page and never reach WavePay. We do not sell personal data and we do not build advertising profiles.
+
+## Why we process it (lawful bases)
+
+To run the service and your contract (settle payments, issue licences, send receipts); legitimate interests (security, fraud and abuse prevention, reconciliation, improving the service); legal obligations (financial records, tax); and consent where we ask for it (newsletters: every message carries one-click unsubscribe).
+
+## Processors and recipients
+
+- Cloudflare: hosting, network and database.
+- Paynow, PayPal and Verifone (2Checkout): the payment providers you or the buyer choose.
+- SendGrid: transactional and newsletter email.
+- Binance: reading credited crypto deposits for T3raTech's own sales.
+- Google Analytics and ShareThis: website analytics and share buttons (see [cookies](https://wavepay.t3ratech.co.zw/cookies.html)).
+- GitHub Pages: hosting of part of this website.
+
+Each processes data only for the purpose above and under its own terms.
+
+## International transfers
+
+Our processors operate worldwide, so data may be processed outside Zimbabwe. We rely on the safeguards each processor offers and on the data protection law that applies to you.
+
+## Retention
+
+We keep payment and ledger records for as long as financial record-keeping requires, buyer contact data only as long as it is needed to settle, support and receipt a payment, and operational logs for a short period. Ask us to delete what the law does not require us to keep.
+
+## Your rights
+
+Under the Cyber and Data Protection Act 2021 of Zimbabwe, and under the GDPR where it applies, you may ask for access, correction, deletion, restriction, portability and to object, and to complain to the supervisory authority (in Zimbabwe, POTRAZ). Write to [support@t3ratech.co.zw](mailto:support@t3ratech.co.zw); we answer within one month. Buyers: your merchant decides why your data is collected, so we will also pass your request to them.
+
+## Children and changes
+
+WavePay is for businesses and is not directed at children. We will post changes here with a new date; material changes are also emailed to merchants.
+
+
+---
+
 Source: https://wavepay.t3ratech.co.zw/pt/
 
 # WavePay — pagamentos e licenças para software
 
 > Aceite EcoCash, cartões e PayPal com uma só API. Registe-se num pedido, teste com dinheiro fictício e passe para produção com licenças, subscrições e reembolsos.
 
-Agora com subscrições, pagamentos em prestações e 2Checkout
+Now with crypto, subscriptions and your own PayPal account
 
 # Seja pago pelo seu software em *todos os meios que os seus clientes usam*
 
@@ -3628,14 +5605,14 @@ Uma API para EcoCash, OneMoney, InnBucks, ZimSwitch, cartões e PayPal. Registe-
 [Começar grátis](https://wavepay.t3ratech.co.zw/pricing.html#register) [Ler a documentação](https://wavepay.t3ratech.co.zw/docs.html) [Para agentes](https://wavepay.t3ratech.co.zw/skill.md)
 
 - Plano gratuito, sem cartão
-- Sem comissão sobre as suas vendas
+- A fee that falls as you grow
 - REST e MCP
 
-**9**meios de pagamento
+**20**payment methods
 
 **25**pagamentos gratuitos por mês
 
-**0%**de taxa sobre as suas vendas
+**2%→0.4%**usage fee, falling with volume
 
 **15**idiomas
 
@@ -3643,9 +5620,9 @@ Meios de pagamento
 
 ## Todos os meios que um cliente pode ter
 
-Carteiras móveis locais para o Zimbabué, cartões e PayPal para o resto do mundo. O ponto de acesso dos fornecedores indica sempre o que está ativo hoje.
+Zimbabwean wallets, cards, PayPal and eleven crypto rails. The providers endpoint always says what is live today.
 
-EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · em breve
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal Bitcoin Ethereum Solana BNB Litecoin Dogecoin Tron USDT USDC 2Checkout · em breve
 
 O que recebe
 
@@ -3750,7 +5727,7 @@ Preços
 
 ## Preço por pagamentos processados, não por comissão
 
-Planos mensais fixos. Os fornecedores de pagamento cobram as suas próprias taxas.
+A plan for the software, plus a small percentage that falls as your volume grows. Provider fees are paid to the provider at cost.
 
 ### Grátis
 
@@ -3765,8 +5742,6 @@ $0 para sempre
 
 [Registar grátis](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-Mais popular
-
 ### Starter
 
 $15 por mês
@@ -3778,6 +5753,8 @@ $15 por mês
 - Webhooks e registo
 
 [Escolher Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Recommended
 
 ### Growth
 
@@ -3791,17 +5768,43 @@ $49 por mês
 
 [Escolher Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
+### Scale
+
+$149 por mês
+
+2,500 payments per 30 days
+
+- 30 sites
+- Everything in Growth
+- Priority support
+
+[Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Enterprise
+
+From $499 por mês
+
+Custom volume and an SLA
+
+- Unlimited sites
+- Everything in Scale
+- Onboarding and an SLA
+
+[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
+
+[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+
 Perguntas
 
 ## Respostas antes de perguntar
 
 Que meios de pagamento posso aceitar?
 
-EcoCash, OneMoney, InnBucks, Telecash, O'mari e ZimSwitch através da Paynow; Visa, Mastercard e PayPal para compradores internacionais. O 2Checkout está construído e ativa-se quando o fornecedor aprovar a nossa conta.
+EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow; Visa, Mastercard and PayPal; and crypto on eleven rails (Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT, USDC). 2Checkout is built and switches on when the provider approves our account.
 
 Cobram uma percentagem das minhas vendas?
 
-Não. Os planos são preços mensais fixos conforme os pagamentos processados. Os fornecedores de pagamento cobram as suas próprias taxas.
+Only after your plan's included payments, and the percentage falls as your volume grows (from 2% down to 0.4%, with a small minimum per payment). Provider fees are paid to the provider at cost with no WavePay markup.
 
 Posso testar sem dinheiro real?
 
@@ -3846,7 +5849,7 @@ Source: https://wavepay.t3ratech.co.zw/ru/
 
 > Принимайте EcoCash, карты и PayPal через один API. Зарегистрируйтесь одним запросом, проверьте на тестовых деньгах и запускайтесь с лицензиями, подписками и возвратами.
 
-Теперь с подписками, рассрочкой и 2Checkout
+Now with crypto, subscriptions and your own PayPal account
 
 # Получайте деньги за свою программу через *любой способ оплаты ваших покупателей*
 
@@ -3855,14 +5858,14 @@ Source: https://wavepay.t3ratech.co.zw/ru/
 [Начать бесплатно](https://wavepay.t3ratech.co.zw/pricing.html#register) [Читать документацию](https://wavepay.t3ratech.co.zw/docs.html) [Для агентов](https://wavepay.t3ratech.co.zw/skill.md)
 
 - Бесплатный тариф, без карты
-- Без процента с ваших продаж
+- A fee that falls as you grow
 - REST и MCP
 
-**9**способов оплаты
+**20**payment methods
 
 **25**бесплатных платежей в месяц
 
-**0%**комиссии с ваших продаж
+**2%→0.4%**usage fee, falling with volume
 
 **15**языков
 
@@ -3870,9 +5873,9 @@ Source: https://wavepay.t3ratech.co.zw/ru/
 
 ## Все способы, которые могут быть у покупателя
 
-Местные кошельки для Зимбабве, карты и PayPal для остальных. Эндпоинт провайдеров всегда показывает, что работает сегодня.
+Zimbabwean wallets, cards, PayPal and eleven crypto rails. The providers endpoint always says what is live today.
 
-EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · скоро
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal Bitcoin Ethereum Solana BNB Litecoin Dogecoin Tron USDT USDC 2Checkout · скоро
 
 Что вы получаете
 
@@ -3977,7 +5980,7 @@ const { checkoutUrl, reference } = await res.json();
 
 ## Цена за обработанные платежи, а не процент
 
-Фиксированные месячные тарифы. Платёжные провайдеры берут свои комиссии отдельно.
+A plan for the software, plus a small percentage that falls as your volume grows. Provider fees are paid to the provider at cost.
 
 ### Бесплатный
 
@@ -3992,8 +5995,6 @@ $0 навсегда
 
 [Зарегистрироваться бесплатно](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-Самый популярный
-
 ### Starter
 
 $15 в месяц
@@ -4005,6 +6006,8 @@ $15 в месяц
 - Вебхуки и журнал
 
 [Выбрать Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Recommended
 
 ### Growth
 
@@ -4018,17 +6021,43 @@ $49 в месяц
 
 [Выбрать Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
+### Scale
+
+$149 в месяц
+
+2,500 payments per 30 days
+
+- 30 sites
+- Everything in Growth
+- Priority support
+
+[Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Enterprise
+
+From $499 в месяц
+
+Custom volume and an SLA
+
+- Unlimited sites
+- Everything in Scale
+- Onboarding and an SLA
+
+[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
+
+[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+
 Вопросы
 
 ## Ответы, пока вы не спросили
 
 Какие способы оплаты я могу принимать?
 
-EcoCash, OneMoney, InnBucks, Telecash, O'mari и ZimSwitch через Paynow; Visa, Mastercard и PayPal для иностранных покупателей. 2Checkout готов и включится, когда провайдер одобрит наш аккаунт.
+EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow; Visa, Mastercard and PayPal; and crypto on eleven rails (Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT, USDC). 2Checkout is built and switches on when the provider approves our account.
 
 Вы берёте процент с моих продаж?
 
-Нет. Тарифы — фиксированная месячная цена в зависимости от числа обработанных платежей. Платёжные провайдеры берут собственные комиссии.
+Only after your plan's included payments, and the percentage falls as your volume grows (from 2% down to 0.4%, with a small minimum per payment). Provider fees are paid to the provider at cost with no WavePay markup.
 
 Можно ли тестировать без реальных денег?
 
@@ -4079,7 +6108,7 @@ USE CASE
 
 WavePay is a subscription payment API for SaaS: recurring billing on PayPal and stored instruments where the provider allows it, buy-now-pay-later instalments, refunds, and signed licence keys that verify offline, behind the same checkout call.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
 
 ## The flow
 
@@ -4108,13 +6137,83 @@ No. Paid WavePay plans never refuse a buyer: payments beyond the plan's allowanc
 
 ---
 
+Source: https://wavepay.t3ratech.co.zw/security.html
+
+> How WavePay keeps API keys, provider credentials and buyer data safe: hashed and sealed secrets, no card numbers, signed webhooks, scoped keys, and how to report a…
+
+TRUST
+
+# How WavePay protects your keys, your buyers and your money
+
+How WavePay keeps API keys, provider credentials and buyer data safe: hashed and sealed secrets, no card numbers, signed webhooks, scoped keys, and how to report a vulnerability.
+
+Updated 2026-10-31 · TeraTech Solutions (Private) Limited
+
+## The short version
+
+### We never see a card number
+
+Card entry happens on the provider's own hosted page (Paynow, PayPal, 2Checkout). WavePay does not receive, store or transmit card numbers, so a breach of WavePay cannot leak them.
+
+### Secrets are shown once
+
+Your API keys are shown to you once and kept only as one-way hashes. We cannot read them back, and neither can anyone who copies our database.
+
+### Your provider keys are sealed
+
+If you connect your own PayPal account, its credentials are checked with PayPal and then encrypted at rest with AES-GCM under a key kept separate from the data. They are never logged and never returned by any route.
+
+### Your money goes to you
+
+With your own provider account connected, the provider pays you directly and WavePay never holds your funds.
+
+## Keys and access
+
+- **Scoped keys.** A merchant key can touch only that merchant's own sites, plans and payments. A test key settles with fake money and cannot connect a real provider account.
+- **Revocable.** A key can be revoked at any time; a revoked key stops working at once.
+- **Environment separation.** A live deployment refuses sandbox provider credentials and the reverse, so a test key can never be mistaken for a live account.
+- **Constant-time checks.** Secrets are compared in constant time, and operator credentials are separate from merchant credentials.
+
+## Payments are checked, not trusted
+
+- **Verified with the provider.** A payment is settled only after WavePay has read it from the provider and the amount, currency, reference and plan match what was asked for.
+- **No double settlement.** Each provider event or transaction can settle a payment once; a replay is refused. Checkouts take an Idempotency-Key, so a retry returns the same checkout and never charges twice.
+- **Signed webhooks.** Settlement webhooks carry an HMAC signature you verify with your own secret. Licences are signed with Ed25519 and your software verifies them offline.
+- **A failure never pays the wrong person.** If a connected account's credentials stop working, the payment is refused. It is never redirected to another account.
+
+## Data we hold and how
+
+- Buyer email addresses and phone numbers are encrypted at rest and also kept as keyed hashes for lookups, so an address can be matched without being stored in the clear.
+- Traffic is encrypted in transit (TLS) and the service runs on Cloudflare's network with its database in the same platform.
+- Requests are rate limited per client to blunt abuse, and routes that take no secret are limited in what they reveal.
+- We keep what the service needs to settle, reconcile and support payments, and what the law requires us to keep as financial records. See the [privacy policy](https://wavepay.t3ratech.co.zw/privacy.html).
+
+## What we ask of you
+
+- Keep your live key out of client-side code and source control; use the test key while building.
+- Verify the webhook signature on every delivery, and treat a status read from our API, not a redirect, as the truth about a payment.
+- Connect your own provider account with its own limited credentials where the provider offers them, and tell us if a key may have leaked so we can revoke it.
+
+## Report a vulnerability
+
+Email [security@t3ratech.co.zw](mailto:security@t3ratech.co.zw). Our [security.txt](https://wavepay.t3ratech.co.zw/.well-known/security.txt) has the details. Please report privately, give us a reasonable time to fix before you publish, and do not access other people's data or disrupt the service. We acknowledge reports promptly, keep you informed, and credit researchers who want credit.
+
+We do not publish internal architecture, limits or hostnames: that detail helps attackers and does not help you decide whether to trust us. If you need more for a security review, [ask us](mailto:support@t3ratech.co.zw) and we will answer under confidentiality.
+
+## If something goes wrong
+
+If we find that merchant or buyer data was exposed, we tell affected merchants without undue delay, say what happened and what to do, and fix the cause. Subscribers to [status](https://wavepay.t3ratech.co.zw/status.html) see service incidents as they happen.
+
+
+---
+
 Source: https://wavepay.t3ratech.co.zw/sn/
 
 # WavePay — mari nemalayisensi ezvirongwa
 
 > Tambira EcoCash, makadhi nePayPal neAPI imwe. Nyoresa nechikumbiro chimwe, edza nemari yekunyepedzera, wobva waenda pamhepo nemalayisensi nekudzosera mari.
 
-Zvino nezvibhadharo zvenguva, kubhadhara nechikamu ne2Checkout
+Now with crypto, subscriptions and your own PayPal account
 
 # Bhadharwa zvirongwa zvako kuburikidza *nenzira dzese dzinoshandiswa nevatengi vako*
 
@@ -4123,14 +6222,14 @@ API imwe yeEcoCash, OneMoney, InnBucks, ZimSwitch, makadhi nePayPal. Nyoresa nec
 [Tanga mahara](https://wavepay.t3ratech.co.zw/pricing.html#register) [Verenga zvinyorwa](https://wavepay.t3ratech.co.zw/docs.html) [Kumaejenti](https://wavepay.t3ratech.co.zw/skill.md)
 
 - Hurongwa hwemahara, hapana kadhi inodiwa
-- Hapana muripo wepeadzo pakutengesa kwako
+- A fee that falls as you grow
 - REST neMCP
 
-**9**nzira dzekubhadhara
+**20**payment methods
 
 **25**zvibhadharo zvemahara pamwedzi
 
-**0%**muripo pakutengesa kwako
+**2%→0.4%**usage fee, falling with volume
 
 **15**mitauro
 
@@ -4138,9 +6237,9 @@ Nzira dzekubhadhara
 
 ## Nzira dzese dzinogona kunge dzine mutengi
 
-Zvikwama zvemunharaunda yeZimbabwe, makadhi nePayPal kune vamwe. Chiteshi chevanopa masevhisi chinogara chichiratidza zviri kushanda nhasi.
+Zimbabwean wallets, cards, PayPal and eleven crypto rails. The providers endpoint always says what is live today.
 
-EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · zvichauya
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal Bitcoin Ethereum Solana BNB Litecoin Dogecoin Tron USDT USDC 2Checkout · zvichauya
 
 Zvauchawana
 
@@ -4245,7 +6344,7 @@ Mitengo
 
 ## Mutengo unotsamira pazvibhadharo, kwete pakucheka
 
-Hurongwa hwemwedzi hune mutengo wakatemwa. Vanopa masevhisi ekubhadhara vanobhadharisa mari yavo vega.
+A plan for the software, plus a small percentage that falls as your volume grows. Provider fees are paid to the provider at cost.
 
 ### Mahara
 
@@ -4260,8 +6359,6 @@ Zvibhadharo 25 mumazuva 30
 
 [Nyoresa mahara](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-Hwunonyanyosarudzwa
-
 ### Starter
 
 $15 pamwedzi
@@ -4273,6 +6370,8 @@ Zvibhadharo 100 mumazuva 30
 - Webhooks nebhuku
 
 [Tora Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Recommended
 
 ### Growth
 
@@ -4286,17 +6385,43 @@ Zvibhadharo 500 mumazuva 30
 
 [Tora Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
+### Scale
+
+$149 pamwedzi
+
+2,500 payments per 30 days
+
+- 30 sites
+- Everything in Growth
+- Priority support
+
+[Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Enterprise
+
+From $499 pamwedzi
+
+Custom volume and an SLA
+
+- Unlimited sites
+- Everything in Scale
+- Onboarding and an SLA
+
+[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
+
+[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+
 Mibvunzo
 
 ## Mhinduro usati wabvunza
 
 Ndinogona kutambira nzira dzekubhadhara dzipi?
 
-EcoCash, OneMoney, InnBucks, Telecash, O'mari neZimSwitch kuburikidza nePaynow; Visa, Mastercard nePayPal kuvatengi vekunze. 2Checkout yakagadzirwa uye ichavhurwa kana mupi wesevhisi achibvumidza account yedu.
+EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow; Visa, Mastercard and PayPal; and crypto on eleven rails (Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT, USDC). 2Checkout is built and switches on when the provider approves our account.
 
 Munotora muhuwandu hwekutengesa kwangu here?
 
-Kwete. Hurongwa hwemwedzi hune mutengo wakatemwa unotsamira pazvibhadharo zvakagadziriswa. Vanopa masevhisi ekubhadhara vanobhadharisa mari yavo vega.
+Only after your plan's included payments, and the percentage falls as your volume grows (from 2% down to 0.4%, with a small minimum per payment). Provider fees are paid to the provider at cost with no WavePay markup.
 
 Ndinogona kuyedza ndisina mari chaiyo here?
 
@@ -4341,7 +6466,7 @@ Source: https://wavepay.t3ratech.co.zw/sw/
 
 > Pokea EcoCash, kadi na PayPal kwa API moja. Jisajili kwa ombi moja, jaribu kwa pesa bandia, kisha anza kutumia leseni, usajili na marejesho.
 
-Sasa na usajili, malipo ya awamu na 2Checkout
+Now with crypto, subscriptions and your own PayPal account
 
 # Lipwa kwa programu yako kupitia *kila njia ambayo wateja wako wanatumia*
 
@@ -4350,14 +6475,14 @@ API moja kwa EcoCash, OneMoney, InnBucks, ZimSwitch, kadi na PayPal. Jisajili kw
 [Anza bila malipo](https://wavepay.t3ratech.co.zw/pricing.html#register) [Soma nyaraka](https://wavepay.t3ratech.co.zw/docs.html) [Kwa mawakala](https://wavepay.t3ratech.co.zw/skill.md)
 
 - Mpango bure, bila kadi
-- Hakuna ada ya asilimia kwenye mauzo yako
+- A fee that falls as you grow
 - REST na MCP
 
-**9**njia za malipo
+**20**payment methods
 
 **25**malipo ya bure kwa mwezi
 
-**0%**ada kwenye mauzo yako
+**2%→0.4%**usage fee, falling with volume
 
 **15**lugha
 
@@ -4365,9 +6490,9 @@ Njia za malipo
 
 ## Kila njia ambayo mnunuzi anaweza kuwa nayo
 
-Pochi za simu za ndani kwa Zimbabwe, kadi na PayPal kwa wengine. Kiungo cha watoa huduma daima kinaonyesha kilicho hai leo.
+Zimbabwean wallets, cards, PayPal and eleven crypto rails. The providers endpoint always says what is live today.
 
-EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · inakuja
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal Bitcoin Ethereum Solana BNB Litecoin Dogecoin Tron USDT USDC 2Checkout · inakuja
 
 Unachopata
 
@@ -4472,7 +6597,7 @@ Bei
 
 ## Bei kwa malipo yaliyochakatwa, si kwa makato
 
-Mipango ya kila mwezi yenye bei thabiti. Watoa huduma za malipo hutoza ada zao wenyewe.
+A plan for the software, plus a small percentage that falls as your volume grows. Provider fees are paid to the provider at cost.
 
 ### Bure
 
@@ -4487,8 +6612,6 @@ Malipo 25 kwa siku 30
 
 [Jisajili bure](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-Maarufu zaidi
-
 ### Starter
 
 $15 kwa mwezi
@@ -4500,6 +6623,8 @@ Malipo 100 kwa siku 30
 - Webhooks na daftari
 
 [Chagua Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Recommended
 
 ### Growth
 
@@ -4513,17 +6638,43 @@ Malipo 500 kwa siku 30
 
 [Chagua Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
+### Scale
+
+$149 kwa mwezi
+
+2,500 payments per 30 days
+
+- 30 sites
+- Everything in Growth
+- Priority support
+
+[Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Enterprise
+
+From $499 kwa mwezi
+
+Custom volume and an SLA
+
+- Unlimited sites
+- Everything in Scale
+- Onboarding and an SLA
+
+[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
+
+[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+
 Maswali
 
 ## Majibu kabla hujauliza
 
 Ninaweza kupokea njia gani za malipo?
 
-EcoCash, OneMoney, InnBucks, Telecash, O'mari na ZimSwitch kupitia Paynow; Visa, Mastercard na PayPal kwa wanunuzi wa kimataifa. 2Checkout imejengwa na itawashwa mtoa huduma atakapoidhinisha akaunti yetu.
+EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow; Visa, Mastercard and PayPal; and crypto on eleven rails (Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT, USDC). 2Checkout is built and switches on when the provider approves our account.
 
 Mnachukua asilimia ya mauzo yangu?
 
-Hapana. Mipango ni bei thabiti za kila mwezi kulingana na malipo yaliyochakatwa. Watoa huduma za malipo hutoza ada zao wenyewe.
+Only after your plan's included payments, and the percentage falls as your volume grows (from 2% down to 0.4%, with a small minimum per payment). Provider fees are paid to the provider at cost with no WavePay markup.
 
 Naweza kujaribu bila pesa halisi?
 
@@ -4562,13 +6713,68 @@ Jisajili kwa ombi moja. Bila kadi, bila simu.
 
 ---
 
+Source: https://wavepay.t3ratech.co.zw/terms.html
+
+> The terms for using WavePay: the service, accounts and keys, fees and taxes, acceptable use, refunds and chargebacks, availability, liability and governing law.
+
+LEGAL
+
+# Terms of service
+
+The terms for using WavePay: the service, accounts and keys, fees and taxes, acceptable use, refunds and chargebacks, availability, liability and governing law.
+
+Updated 2026-10-31 · TeraTech Solutions (Private) Limited
+
+## 1. The service
+
+WavePay provides checkout, licensing and a payments ledger over third-party payment providers. We are not a bank, we do not lend, and (unless a page says otherwise) we do not hold your funds: the provider you connect pays you. We are not the merchant of record.
+
+## 2. Your account and keys
+
+You are responsible for your keys and for what is done with them. Keep them secret, revoke any that may have leaked, and tell us promptly. You must give accurate details and have the right to use the provider accounts you connect.
+
+## 3. Fees and taxes
+
+Fees are the plan and usage fees on the [pricing page](https://wavepay.t3ratech.co.zw/pricing.html) (also at [pricing.json](https://wavepay.t3ratech.co.zw/pricing.json)), exclusive of VAT where it applies, billed monthly in arrears. Provider fees, bank charges and transfer taxes are paid by you to the provider at cost; we add no markup. We may change prices on notice; a change does not affect a month already billed.
+
+## 4. Acceptable use
+
+Do not use WavePay for anything illegal, for goods or services the providers prohibit, to test stolen payment instruments, to evade provider rules, to attack or overload the service, or to access data that is not yours.
+
+## 5. Refunds, disputes and chargebacks
+
+Refunds go through the provider. Disputes and chargebacks are between you, the buyer and the provider, and the liability for them is yours. We help with records.
+
+## 6. Providers and crypto
+
+Each provider's own terms apply to its rails and may limit what it will process or where it operates. Crypto payments to T3raTech's own sales are irreversible once confirmed and are settled when the exchange credits the exact amount quoted.
+
+## 7. Availability
+
+We aim for a reliable service and publish [status](https://wavepay.t3ratech.co.zw/status.html), but unless an Enterprise agreement says otherwise we do not promise uninterrupted service. Providers can fail independently of us.
+
+## 8. Liability
+
+To the extent the law allows, we are not liable for indirect or consequential loss, and our total liability for a claim is limited to the fees you paid us in the three months before it arose. Nothing limits liability that cannot be limited by law.
+
+## 9. Ending
+
+You may stop at any time and disconnect your accounts. We may suspend a merchant who breaks these terms or the providers' rules, or whose use creates risk, and will say why where we can.
+
+## 10. Law and changes
+
+These terms are governed by the laws of Zimbabwe and disputes go to its courts, without limiting rights you have as a consumer elsewhere. We will post changes with a new date.
+
+
+---
+
 Source: https://wavepay.t3ratech.co.zw/zh/
 
 # WavePay — 软件的支付与许可证服务
 
 > 用一个 API 接收 EcoCash、银行卡和 PayPal。一次请求完成注册，用模拟资金测试，再上线并使用许可证、订阅和退款功能。
 
-现已支持订阅、分期付款和 2Checkout
+Now with crypto, subscriptions and your own PayPal account
 
 # 让你的软件收款覆盖 *买家手里的每一种支付方式*
 
@@ -4577,14 +6783,14 @@ Source: https://wavepay.t3ratech.co.zw/zh/
 [免费开始](https://wavepay.t3ratech.co.zw/pricing.html#register) [阅读文档](https://wavepay.t3ratech.co.zw/docs.html) [面向智能体](https://wavepay.t3ratech.co.zw/skill.md)
 
 - 免费方案，无需银行卡
-- 不抽取销售额的百分比
+- A fee that falls as you grow
 - REST 与 MCP
 
-**9**种支付渠道
+**20**payment methods
 
 **25**每月免费付款笔数
 
-**0%**销售手续费
+**2%→0.4%**usage fee, falling with volume
 
 **15**种语言
 
@@ -4592,9 +6798,9 @@ Source: https://wavepay.t3ratech.co.zw/zh/
 
 ## 买家可能持有的每一种渠道
 
-面向津巴布韦的本地钱包，以及面向其他地区的银行卡和 PayPal。提供商接口始终显示当前已启用的渠道。
+Zimbabwean wallets, cards, PayPal and eleven crypto rails. The providers endpoint always says what is live today.
 
-EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · 即将推出
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal Bitcoin Ethereum Solana BNB Litecoin Dogecoin Tron USDT USDC 2Checkout · 即将推出
 
 你将获得
 
@@ -4699,7 +6905,7 @@ const { checkoutUrl, reference } = await res.json();
 
 ## 按付款笔数计价，而非抽成
 
-固定月费方案。支付提供商另外收取其自身费用。
+A plan for the software, plus a small percentage that falls as your volume grows. Provider fees are paid to the provider at cost.
 
 ### 免费版
 
@@ -4714,8 +6920,6 @@ $0 永久
 
 [免费注册](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-最受欢迎
-
 ### Starter
 
 $15 每月
@@ -4727,6 +6931,8 @@ $15 每月
 - Webhook 与账本
 
 [选择 Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Recommended
 
 ### Growth
 
@@ -4740,17 +6946,43 @@ $49 每月
 
 [选择 Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
+### Scale
+
+$149 每月
+
+2,500 payments per 30 days
+
+- 30 sites
+- Everything in Growth
+- Priority support
+
+[Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Enterprise
+
+From $499 每月
+
+Custom volume and an SLA
+
+- Unlimited sites
+- Everything in Scale
+- Onboarding and an SLA
+
+[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
+
+[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+
 问答
 
 ## 在你提问之前先给出答案
 
 我可以接受哪些支付方式？
 
-通过 Paynow 接入 EcoCash、OneMoney、InnBucks、Telecash、O'mari 和 ZimSwitch；面向国际买家提供 Visa、Mastercard 和 PayPal。2Checkout 已开发完成，待提供商批准我们的账户后启用。
+EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow; Visa, Mastercard and PayPal; and crypto on eleven rails (Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT, USDC). 2Checkout is built and switches on when the provider approves our account.
 
 你们会抽取我销售额的百分比吗？
 
-不会。方案是按处理付款笔数计的固定月费。支付提供商会收取其自身费用。
+Only after your plan's included payments, and the percentage falls as your volume grows (from 2% down to 0.4%, with a small minimum per payment). Provider fees are paid to the provider at cost with no WavePay markup.
 
 可以不用真钱进行测试吗？
 
@@ -4801,7 +7033,7 @@ USE CASE
 
 WavePay is a Zimbabwe payment gateway API: one POST /v2/checkouts reaches EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow, plus Visa, Mastercard and PayPal for international buyers, with signed settlement webhooks and one payments ledger.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
 
 ## The flow
 

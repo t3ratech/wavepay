@@ -8,7 +8,7 @@ PAYMENT RAIL
 
 WavePay reaches OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through the same checkout call as EcoCash — one integration, with GET /v2/providers reporting which are live on your deployment. OneMoney, InnBucks and O'mari also support wallet push.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
 
 ## How it works
 

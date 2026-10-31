@@ -2,7 +2,7 @@
 
 > Samukela i-EcoCash, amakhadi le-PayPal nge-API eyodwa. Bhalisa ngesicelo esisodwa, linga ngemali yokulingisa, uqale ngamalayisense lokubuyisela imali.
 
-Manje lokukhokha ngezikhathi, ngezigaba le-2Checkout
+Now with crypto, subscriptions and your own PayPal account
 
 # Khokhelwa izinhlelo zakho nge *yonke indlela abathengi bakho abayisebenzisayo*
 
@@ -11,14 +11,14 @@ I-API eyodwa ye-EcoCash, i-OneMoney, i-InnBucks, i-ZimSwitch, amakhadi le-PayPal
 [Qala mahala](https://wavepay.t3ratech.co.zw/pricing.html#register) [Funda imibhalo](https://wavepay.t3ratech.co.zw/docs.html) [Kuma-ejenti](https://wavepay.t3ratech.co.zw/skill.md)
 
 - Uhlelo lwamahala, akukho khadi elidingekayo
-- Akukho mkhawulo wephesenti ekuthengiseni kwakho
+- A fee that falls as you grow
 - I-REST le-MCP
 
-**9**izindlela zokukhokha
+**20**payment methods
 
 **25**izinkokhelo zamahala ngenyanga
 
-**0%**imali ekuthengiseni kwakho
+**2%→0.4%**usage fee, falling with volume
 
 **15**izilimi
 
@@ -26,9 +26,9 @@ Izindlela zokukhokha
 
 ## Zonke izindlela umthengi angaba lazo
 
-Izikhwama zasekhaya zeZimbabwe, amakhadi le-PayPal kwabanye. Indawo yabahlinzeki ihlala itshengisa okusebenzayo namuhla.
+Zimbabwean wallets, cards, PayPal and eleven crypto rails. The providers endpoint always says what is live today.
 
-EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · kuyeza
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal Bitcoin Ethereum Solana BNB Litecoin Dogecoin Tron USDT USDC 2Checkout · kuyeza
 
 Okuzakuthola
 
@@ -133,7 +133,7 @@ Intengo
 
 ## Intengo ngokuya ngezinkokhelo, hatshi ngokusikwa
 
-Izinhlelo zenyanga zentengo emisiweyo. Abahlinzeki bokukhokha bakhokhisa izimali zabo ngokwehlukileyo.
+A plan for the software, plus a small percentage that falls as your volume grows. Provider fees are paid to the provider at cost.
 
 ### Mahala
 
@@ -148,8 +148,6 @@ Izinkokhelo ezingu-25 ezinsukwini ezingu-30
 
 [Bhalisa mahala](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-Okukhethwa kakhulu
-
 ### Starter
 
 $15 ngenyanga
@@ -161,6 +159,8 @@ Izinkokhelo ezingu-100 ezinsukwini ezingu-30
 - Ama-webhook lebhuku
 
 [Thatha i-Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Recommended
 
 ### Growth
 
@@ -174,17 +174,43 @@ Izinkokhelo ezingu-500 ezinsukwini ezingu-30
 
 [Thatha i-Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
+### Scale
+
+$149 ngenyanga
+
+2,500 payments per 30 days
+
+- 30 sites
+- Everything in Growth
+- Priority support
+
+[Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Enterprise
+
+From $499 ngenyanga
+
+Custom volume and an SLA
+
+- Unlimited sites
+- Everything in Scale
+- Onboarding and an SLA
+
+[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
+
+[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+
 Imibuzo
 
 ## Izimpendulo ungakabuzi
 
 Ngingasamukela zimuphi izindlela zokukhokha?
 
-I-EcoCash, i-OneMoney, i-InnBucks, i-Telecash, i-O'mari le-ZimSwitch nge-Paynow; i-Visa, i-Mastercard le-PayPal kubathengi bamazwe angaphandle. I-2Checkout yakhiwe izavulwa lapho umhlinzeki evuma i-akhawunti yethu.
+EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow; Visa, Mastercard and PayPal; and crypto on eleven rails (Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT, USDC). 2Checkout is built and switches on when the provider approves our account.
 
 Niyathatha ipesenti yokuthengisa kwami yini?
 
-Hatshi. Izinhlelo zintengo zenyanga ezimisiweyo ngokuya ngezinkokhelo ezilungisiweyo. Abahlinzeki bokukhokha bakhokhisa izimali zabo.
+Only after your plan's included payments, and the percentage falls as your volume grows (from 2% down to 0.4%, with a small minimum per payment). Provider fees are paid to the provider at cost with no WavePay markup.
 
 Ngingalinga ngaphandle kwemali yangempela yini?
 

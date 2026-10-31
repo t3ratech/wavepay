@@ -2,7 +2,7 @@
 
 > एक API से EcoCash, कार्ड और PayPal स्वीकार करें। एक अनुरोध में पंजीकरण करें, नकली पैसों से परीक्षण करें, फिर लाइसेंस, सदस्यता और रिफ़ंड के साथ लाइव जाएँ।
 
-अब सदस्यता, किस्तों और 2Checkout के साथ
+Now with crypto, subscriptions and your own PayPal account
 
 # अपने सॉफ़्टवेयर का भुगतान पाएँ *हर उस माध्यम से जो आपके ग्राहकों के पास है*
 
@@ -11,14 +11,14 @@ EcoCash, OneMoney, InnBucks, ZimSwitch, कार्ड और PayPal के ल
 [मुफ़्त शुरू करें](https://wavepay.t3ratech.co.zw/pricing.html#register) [दस्तावेज़ पढ़ें](https://wavepay.t3ratech.co.zw/docs.html) [एजेंटों के लिए](https://wavepay.t3ratech.co.zw/skill.md)
 
 - मुफ़्त योजना, कार्ड की ज़रूरत नहीं
-- आपकी बिक्री पर कोई प्रतिशत शुल्क नहीं
+- A fee that falls as you grow
 - REST और MCP
 
-**9**भुगतान माध्यम
+**20**payment methods
 
 **25**प्रति माह मुफ़्त भुगतान
 
-**0%**आपकी बिक्री पर शुल्क
+**2%→0.4%**usage fee, falling with volume
 
 **15**भाषाएँ
 
@@ -26,9 +26,9 @@ EcoCash, OneMoney, InnBucks, ZimSwitch, कार्ड और PayPal के ल
 
 ## हर वह माध्यम जो खरीदार के पास हो सकता है
 
-ज़िम्बाब्वे के लिए स्थानीय वॉलेट, बाकी दुनिया के लिए कार्ड और PayPal। प्रदाता एंडपॉइंट हमेशा बताता है कि आज क्या चालू है।
+Zimbabwean wallets, cards, PayPal and eleven crypto rails. The providers endpoint always says what is live today.
 
-EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · जल्द आ रहा है
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal Bitcoin Ethereum Solana BNB Litecoin Dogecoin Tron USDT USDC 2Checkout · जल्द आ रहा है
 
 आपको क्या मिलता है
 
@@ -133,7 +133,7 @@ const { checkoutUrl, reference } = await res.json();
 
 ## संसाधित भुगतानों पर मूल्य, कमीशन पर नहीं
 
-निश्चित मासिक योजनाएँ। भुगतान प्रदाता अपना शुल्क अलग से लेते हैं।
+A plan for the software, plus a small percentage that falls as your volume grows. Provider fees are paid to the provider at cost.
 
 ### मुफ़्त
 
@@ -148,8 +148,6 @@ $0 हमेशा
 
 [मुफ़्त पंजीकरण](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-सबसे लोकप्रिय
-
 ### Starter
 
 $15 प्रति माह
@@ -161,6 +159,8 @@ $15 प्रति माह
 - वेबहुक और बही
 
 [Starter लें](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Recommended
 
 ### Growth
 
@@ -174,17 +174,43 @@ $49 प्रति माह
 
 [Growth लें](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
+### Scale
+
+$149 प्रति माह
+
+2,500 payments per 30 days
+
+- 30 sites
+- Everything in Growth
+- Priority support
+
+[Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Enterprise
+
+From $499 प्रति माह
+
+Custom volume and an SLA
+
+- Unlimited sites
+- Everything in Scale
+- Onboarding and an SLA
+
+[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
+
+[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+
 प्रश्न
 
 ## आपके पूछने से पहले उत्तर
 
 मैं कौन से भुगतान माध्यम स्वीकार कर सकता हूँ?
 
-Paynow के माध्यम से EcoCash, OneMoney, InnBucks, Telecash, O'mari और ZimSwitch; अंतरराष्ट्रीय खरीदारों के लिए Visa, Mastercard और PayPal। 2Checkout बना हुआ है और प्रदाता द्वारा हमारा खाता स्वीकृत करते ही चालू हो जाएगा।
+EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow; Visa, Mastercard and PayPal; and crypto on eleven rails (Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT, USDC). 2Checkout is built and switches on when the provider approves our account.
 
 क्या आप मेरी बिक्री का प्रतिशत लेते हैं?
 
-नहीं। योजनाएँ संसाधित भुगतानों पर आधारित निश्चित मासिक मूल्य हैं। भुगतान प्रदाता अपना शुल्क खुद लेते हैं।
+Only after your plan's included payments, and the percentage falls as your volume grows (from 2% down to 0.4%, with a small minimum per payment). Provider fees are paid to the provider at cost with no WavePay markup.
 
 क्या मैं असली पैसे के बिना परीक्षण कर सकता हूँ?
 

@@ -2,7 +2,7 @@
 
 > Pokea EcoCash, kadi na PayPal kwa API moja. Jisajili kwa ombi moja, jaribu kwa pesa bandia, kisha anza kutumia leseni, usajili na marejesho.
 
-Sasa na usajili, malipo ya awamu na 2Checkout
+Now with crypto, subscriptions and your own PayPal account
 
 # Lipwa kwa programu yako kupitia *kila njia ambayo wateja wako wanatumia*
 
@@ -11,14 +11,14 @@ API moja kwa EcoCash, OneMoney, InnBucks, ZimSwitch, kadi na PayPal. Jisajili kw
 [Anza bila malipo](https://wavepay.t3ratech.co.zw/pricing.html#register) [Soma nyaraka](https://wavepay.t3ratech.co.zw/docs.html) [Kwa mawakala](https://wavepay.t3ratech.co.zw/skill.md)
 
 - Mpango bure, bila kadi
-- Hakuna ada ya asilimia kwenye mauzo yako
+- A fee that falls as you grow
 - REST na MCP
 
-**9**njia za malipo
+**20**payment methods
 
 **25**malipo ya bure kwa mwezi
 
-**0%**ada kwenye mauzo yako
+**2%→0.4%**usage fee, falling with volume
 
 **15**lugha
 
@@ -26,9 +26,9 @@ Njia za malipo
 
 ## Kila njia ambayo mnunuzi anaweza kuwa nayo
 
-Pochi za simu za ndani kwa Zimbabwe, kadi na PayPal kwa wengine. Kiungo cha watoa huduma daima kinaonyesha kilicho hai leo.
+Zimbabwean wallets, cards, PayPal and eleven crypto rails. The providers endpoint always says what is live today.
 
-EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · inakuja
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal Bitcoin Ethereum Solana BNB Litecoin Dogecoin Tron USDT USDC 2Checkout · inakuja
 
 Unachopata
 
@@ -133,7 +133,7 @@ Bei
 
 ## Bei kwa malipo yaliyochakatwa, si kwa makato
 
-Mipango ya kila mwezi yenye bei thabiti. Watoa huduma za malipo hutoza ada zao wenyewe.
+A plan for the software, plus a small percentage that falls as your volume grows. Provider fees are paid to the provider at cost.
 
 ### Bure
 
@@ -148,8 +148,6 @@ Malipo 25 kwa siku 30
 
 [Jisajili bure](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-Maarufu zaidi
-
 ### Starter
 
 $15 kwa mwezi
@@ -161,6 +159,8 @@ Malipo 100 kwa siku 30
 - Webhooks na daftari
 
 [Chagua Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Recommended
 
 ### Growth
 
@@ -174,17 +174,43 @@ Malipo 500 kwa siku 30
 
 [Chagua Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
+### Scale
+
+$149 kwa mwezi
+
+2,500 payments per 30 days
+
+- 30 sites
+- Everything in Growth
+- Priority support
+
+[Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Enterprise
+
+From $499 kwa mwezi
+
+Custom volume and an SLA
+
+- Unlimited sites
+- Everything in Scale
+- Onboarding and an SLA
+
+[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
+
+[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+
 Maswali
 
 ## Majibu kabla hujauliza
 
 Ninaweza kupokea njia gani za malipo?
 
-EcoCash, OneMoney, InnBucks, Telecash, O'mari na ZimSwitch kupitia Paynow; Visa, Mastercard na PayPal kwa wanunuzi wa kimataifa. 2Checkout imejengwa na itawashwa mtoa huduma atakapoidhinisha akaunti yetu.
+EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow; Visa, Mastercard and PayPal; and crypto on eleven rails (Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT, USDC). 2Checkout is built and switches on when the provider approves our account.
 
 Mnachukua asilimia ya mauzo yangu?
 
-Hapana. Mipango ni bei thabiti za kila mwezi kulingana na malipo yaliyochakatwa. Watoa huduma za malipo hutoza ada zao wenyewe.
+Only after your plan's included payments, and the percentage falls as your volume grows (from 2% down to 0.4%, with a small minimum per payment). Provider fees are paid to the provider at cost with no WavePay markup.
 
 Naweza kujaribu bila pesa halisi?
 

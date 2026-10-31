@@ -95,6 +95,20 @@ try {
       "price": "49.00",
       "priceCurrency": "USD",
       "description": "500 دفعة كل 30 يومًا"
+    },
+    {
+      "@type": "Offer",
+      "name": "Scale",
+      "price": "149.00",
+      "priceCurrency": "USD",
+      "description": "2,500 payments per 30 days"
+    },
+    {
+      "@type": "Offer",
+      "name": "Enterprise",
+      "price": "499.00",
+      "priceCurrency": "USD",
+      "description": "Custom volume and an SLA"
     }
   ],
   "publisher": {
@@ -166,7 +180,7 @@ try {
       "name": "ما وسائل الدفع التي يمكنني قبولها؟",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "EcoCash وOneMoney وInnBucks وTelecash وO'mari وZimSwitch عبر Paynow؛ وVisa وMastercard وPayPal للمشترين الدوليين. 2Checkout جاهز ويُفعَّل عندما يوافق المزود على حسابنا."
+        "text": "EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow; Visa, Mastercard and PayPal; and crypto on eleven rails (Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT, USDC). 2Checkout is built and switches on when the provider approves our account."
       }
     },
     {
@@ -174,7 +188,7 @@ try {
       "name": "هل تأخذون نسبة من مبيعاتي؟",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "لا. الخطط أسعار شهرية ثابتة بحسب المدفوعات المعالجة. ويفرض مزودو الدفع رسومهم الخاصة."
+        "text": "Only after your plan's included payments, and the percentage falls as your volume grows (from 2% down to 0.4%, with a small minimum per payment). Provider fees are paid to the provider at cost with no WavePay markup."
       }
     },
     {
@@ -210,24 +224,26 @@ try {
 <body>
 <a class="skip" href="#main">انتقل إلى المحتوى</a>
 <header class="site-head">
+  <span class="flag-stripe" aria-hidden="true"></span>
   <div class="wrap">
     <a class="brand" href="/ar/">
       <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M2 12c2.5-4 5-6 7.5-6S14 8.5 16.5 12s5 6 7.5 6"/></svg></span>
       <span>WavePay<small>by T3raTech</small></span>
     </a>
     <nav class="site-nav" aria-label="Primary">
-      <details class="menu"><summary>المنتج</summary><div class="menu-panel"><a href="/accept-card-and-paypal-payments.html">وسائل الدفع</a><a href="/guide-recurring-payments.html">الاشتراكات</a><a href="/guide-buy-now-pay-later.html">اشترِ الآن وادفع لاحقًا</a><a href="/guide-offline-licence-verification.html">التراخيص</a><a href="/guide-test-mode.html">وضع الاختبار</a></div></details><details class="menu"><summary>المطورون</summary><div class="menu-panel"><a href="/docs.html">الوثائق</a><a href="/openapi.json">مرجع الواجهة البرمجية</a><a href="/skill.md">MCP والوكلاء</a><a href="/status.html">حالة الخدمة</a></div></details><details class="menu"><summary>الحلول</summary><div class="menu-panel"><a href="/payments-for-browser-extensions.html">إضافات المتصفح</a><a href="/payments-for-games.html">الألعاب</a><a href="/payments-for-apps.html">التطبيقات</a><a href="/payments-for-apis.html">الواجهات البرمجية</a><a href="/payments-for-bots.html">الروبوتات</a></div></details>
+      <details class="menu"><summary>المنتج</summary><div class="menu-panel"><a href="/accept-card-and-paypal-payments.html">وسائل الدفع</a><a href="/zimbabwe-payment-gateway-api.html">Zimbabwe payments</a><a href="/multi-currency-payment-gateway.html">Multi-currency</a><a href="/crypto-payment-api.html">Crypto payments</a><a href="/guide-recurring-payments.html">الاشتراكات</a><a href="/guide-buy-now-pay-later.html">اشترِ الآن وادفع لاحقًا</a><a href="/guide-offline-licence-verification.html">التراخيص</a><a href="/guide-test-mode.html">وضع الاختبار</a></div></details><details class="menu"><summary>المطورون</summary><div class="menu-panel"><a href="/docs.html">الوثائق</a><a href="/docs/index.html">API reference</a><a href="/wavepay-docs.md">One-page docs (Markdown)</a><a href="/openapi.json">مرجع الواجهة البرمجية</a><a href="/skill.md">MCP والوكلاء</a><a href="/integrations-claude-code-openclaw-openfang.html">Integrations: Claude Code, OpenClaw, OpenFang</a><a href="/status.html">حالة الخدمة</a></div></details><details class="menu"><summary>الحلول</summary><div class="menu-panel"><a href="/developer-payment-api.html">Developer API</a><a href="/saas-subscription-payment-api.html">SaaS subscriptions</a><a href="/ai-agent-payment-infrastructure.html">AI agents and MCP</a><a href="/payments-for-browser-extensions.html">إضافات المتصفح</a><a href="/payments-for-games.html">الألعاب</a><a href="/payments-for-apps.html">التطبيقات</a><a href="/payments-for-apis.html">الواجهات البرمجية</a><a href="/payments-for-bots.html">الروبوتات</a></div></details><details class="menu"><summary>Compare</summary><div class="menu-panel"><a href="/compare.html">All comparisons</a><a href="/compare-wavepay-vs-paypal-direct.html">vs PayPal directly</a><a href="/compare-wavepay-vs-paynow-direct.html">vs Paynow directly</a><a href="/compare-wavepay-vs-2checkout-verifone.html">vs 2Checkout (Verifone)</a><a href="/compare-wavepay-vs-flutterwave.html">vs Flutterwave</a><a href="/compare-wavepay-vs-integrating-each-rail.html">vs integrating each rail</a><a href="/compare-wavepay-vs-card-only-processor.html">vs a card-only processor</a></div></details>
       <a href="/pricing.html">الأسعار</a>
-      <a href="/docs.html">الوثائق</a>
+      <a href="/docs/index.html">الوثائق</a>
     </nav>
     <div class="head-actions">
+      <button type="button" class="search-btn" data-search-open aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span class="label">Search</span><kbd>/</kbd></button>
       <div class="prefs">
-        <select aria-label="اللغة" data-lang-nav><option value="/" data-code="en">English</option><option value="/sn/" data-code="sn">chiShona</option><option value="/nd/" data-code="nd">isiNdebele</option><option value="/sw/" data-code="sw">Kiswahili</option><option value="/fr/" data-code="fr">Français</option><option value="/pt/" data-code="pt">Português</option><option value="/es/" data-code="es">Español</option><option value="/de/" data-code="de">Deutsch</option><option value="/it/" data-code="it">Italiano</option><option value="/ar/" data-code="ar" selected>العربية</option><option value="/hi/" data-code="hi">हिन्दी</option><option value="/zh/" data-code="zh">中文</option><option value="/ja/" data-code="ja">日本語</option><option value="/ru/" data-code="ru">Русский</option><option value="/id/" data-code="id">Bahasa Indonesia</option></select>
+        <details class="lang-dd"><summary aria-label="اللغة"><span class="flag" aria-hidden="true">🇸🇦</span><span>العربية</span></summary><div class="lang-list"><a href="/" hreflang="en" lang="en"><span class="flag" aria-hidden="true">🇬🇧</span>English</a><a href="/sn/" hreflang="sn" lang="sn"><span class="flag" aria-hidden="true">🇿🇼</span>chiShona</a><a href="/nd/" hreflang="nd" lang="nd"><span class="flag" aria-hidden="true">🇿🇼</span>isiNdebele</a><a href="/sw/" hreflang="sw" lang="sw"><span class="flag" aria-hidden="true">🇰🇪</span>Kiswahili</a><a href="/fr/" hreflang="fr" lang="fr"><span class="flag" aria-hidden="true">🇫🇷</span>Français</a><a href="/pt/" hreflang="pt" lang="pt"><span class="flag" aria-hidden="true">🇵🇹</span>Português</a><a href="/es/" hreflang="es" lang="es"><span class="flag" aria-hidden="true">🇪🇸</span>Español</a><a href="/de/" hreflang="de" lang="de"><span class="flag" aria-hidden="true">🇩🇪</span>Deutsch</a><a href="/it/" hreflang="it" lang="it"><span class="flag" aria-hidden="true">🇮🇹</span>Italiano</a><a href="/ar/" hreflang="ar" lang="ar" aria-current="true"><span class="flag" aria-hidden="true">🇸🇦</span>العربية</a><a href="/hi/" hreflang="hi" lang="hi"><span class="flag" aria-hidden="true">🇮🇳</span>हिन्दी</a><a href="/zh/" hreflang="zh" lang="zh"><span class="flag" aria-hidden="true">🇨🇳</span>中文</a><a href="/ja/" hreflang="ja" lang="ja"><span class="flag" aria-hidden="true">🇯🇵</span>日本語</a><a href="/ru/" hreflang="ru" lang="ru"><span class="flag" aria-hidden="true">🇷🇺</span>Русский</a><a href="/id/" hreflang="id" lang="id"><span class="flag" aria-hidden="true">🇮🇩</span>Bahasa Indonesia</a></div></details>
         <div class="theme-switch" role="group" aria-label="Theme"><button type="button" data-theme-choice="system" aria-pressed="false" aria-label="سمة النظام" title="سمة النظام"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></button><button type="button" data-theme-choice="light" aria-pressed="false" aria-label="سمة فاتحة" title="سمة فاتحة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button><button type="button" data-theme-choice="dark" aria-pressed="false" aria-label="سمة داكنة" title="سمة داكنة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button></div>
       </div>
       <a class="btn btn-ghost btn-sm" href="/portal/login">تسجيل الدخول</a>
       <a class="btn btn-primary btn-sm" href="/pricing.html">ابدأ مجانًا</a>
-      <details class="burger"><summary aria-label="القائمة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary><nav class="mobile-nav" aria-label="Mobile"><h2>المنتج</h2><a href="/accept-card-and-paypal-payments.html">وسائل الدفع</a><a href="/guide-recurring-payments.html">الاشتراكات</a><a href="/guide-buy-now-pay-later.html">اشترِ الآن وادفع لاحقًا</a><a href="/guide-offline-licence-verification.html">التراخيص</a><a href="/guide-test-mode.html">وضع الاختبار</a><h2>المطورون</h2><a href="/docs.html">الوثائق</a><a href="/openapi.json">مرجع الواجهة البرمجية</a><a href="/skill.md">MCP والوكلاء</a><a href="/status.html">حالة الخدمة</a><h2>الحلول</h2><a href="/payments-for-browser-extensions.html">إضافات المتصفح</a><a href="/payments-for-games.html">الألعاب</a><a href="/payments-for-apps.html">التطبيقات</a><a href="/payments-for-apis.html">الواجهات البرمجية</a><a href="/payments-for-bots.html">الروبوتات</a><a href="/pricing.html">الأسعار</a><a href="/docs.html">الوثائق</a><a href="/portal/login">تسجيل الدخول</a></nav></details>
+      <details class="burger"><summary aria-label="القائمة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary><nav class="mobile-nav" aria-label="Mobile"><h2>المنتج</h2><a href="/accept-card-and-paypal-payments.html">وسائل الدفع</a><a href="/zimbabwe-payment-gateway-api.html">Zimbabwe payments</a><a href="/multi-currency-payment-gateway.html">Multi-currency</a><a href="/crypto-payment-api.html">Crypto payments</a><a href="/guide-recurring-payments.html">الاشتراكات</a><a href="/guide-buy-now-pay-later.html">اشترِ الآن وادفع لاحقًا</a><a href="/guide-offline-licence-verification.html">التراخيص</a><a href="/guide-test-mode.html">وضع الاختبار</a><h2>المطورون</h2><a href="/docs.html">الوثائق</a><a href="/docs/index.html">API reference</a><a href="/wavepay-docs.md">One-page docs (Markdown)</a><a href="/openapi.json">مرجع الواجهة البرمجية</a><a href="/skill.md">MCP والوكلاء</a><a href="/integrations-claude-code-openclaw-openfang.html">Integrations: Claude Code, OpenClaw, OpenFang</a><a href="/status.html">حالة الخدمة</a><h2>الحلول</h2><a href="/developer-payment-api.html">Developer API</a><a href="/saas-subscription-payment-api.html">SaaS subscriptions</a><a href="/ai-agent-payment-infrastructure.html">AI agents and MCP</a><a href="/payments-for-browser-extensions.html">إضافات المتصفح</a><a href="/payments-for-games.html">الألعاب</a><a href="/payments-for-apps.html">التطبيقات</a><a href="/payments-for-apis.html">الواجهات البرمجية</a><a href="/payments-for-bots.html">الروبوتات</a><h2>Compare</h2><a href="/compare.html">All comparisons</a><a href="/compare-wavepay-vs-paypal-direct.html">vs PayPal directly</a><a href="/compare-wavepay-vs-paynow-direct.html">vs Paynow directly</a><a href="/compare-wavepay-vs-2checkout-verifone.html">vs 2Checkout (Verifone)</a><a href="/compare-wavepay-vs-flutterwave.html">vs Flutterwave</a><a href="/compare-wavepay-vs-integrating-each-rail.html">vs integrating each rail</a><a href="/compare-wavepay-vs-card-only-processor.html">vs a card-only processor</a><a href="/pricing.html">الأسعار</a><a href="/docs/index.html">الوثائق</a><a href="/portal/login">تسجيل الدخول</a></nav></details>
     </div>
   </div>
 </header>
@@ -236,7 +252,7 @@ try {
   <div class="hero-band">
     <section class="hero wrap">
       <div>
-        <span class="eyebrow">الآن مع الاشتراكات والدفع بالتقسيط و2Checkout</span>
+        <span class="eyebrow">Now with crypto, subscriptions and your own PayPal account</span>
         <h1>احصل على أجر برنامجك عبر <em>كل وسيلة دفع يملكها عملاؤك</em></h1>
         <p class="lede">واجهة برمجية واحدة لـ EcoCash وOneMoney وInnBucks وZimSwitch والبطاقات وPayPal. سجّل بطلب واحد، وجرّب بأموال وهمية، ثم انطلق مع تراخيص واشتراكات ومبالغ مستردة مدمجة.</p>
         <div class="cta-row">
@@ -244,19 +260,21 @@ try {
           <a class="btn btn-ghost btn-lg" href="/docs.html">اقرأ الوثائق</a>
           <a class="btn btn-ghost btn-lg" href="/skill.md">للوكلاء</a>
         </div>
-        <ul class="trust"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke-width="1.6"/><path d="M7.5 12.5l3 3 6-7"/></svg>خطة مجانية دون بطاقة</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke-width="1.6"/><path d="M7.5 12.5l3 3 6-7"/></svg>لا عمولة نسبية على مبيعاتك</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke-width="1.6"/><path d="M7.5 12.5l3 3 6-7"/></svg>REST وMCP</li></ul>
+        <ul class="trust"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke-width="1.6"/><path d="M7.5 12.5l3 3 6-7"/></svg>خطة مجانية دون بطاقة</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke-width="1.6"/><path d="M7.5 12.5l3 3 6-7"/></svg>A fee that falls as you grow</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke-width="1.6"/><path d="M7.5 12.5l3 3 6-7"/></svg>REST وMCP</li></ul>
       </div>
       <div class="mock" aria-hidden="true">
         <div class="mock-window">
           <div class="mock-bar"><i></i><i></i><i></i><span>wavepay.t3ratech.co.zw/checkout</span></div>
           <div class="mock-body">
-            <div class="mock-total"><span class="muted">ملخص الطلب<br>ترخيص Pro، شهريًا</span><strong>$9.00</strong></div>
+            <div class="mock-total"><span class="muted">ملخص الطلب<br>Growth · $49</span><strong>$49.00</strong></div>
             <div class="mock-rails">
               <div class="mock-rail" aria-current="true"><b>EC</b>EcoCash<span>طلب على المحفظة</span></div>
+              <div class="mock-rail"><b>IB</b>InnBucks · O'mari · Telecash<span>طلب على المحفظة</span></div>
               <div class="mock-rail"><b>VM</b>Visa / Mastercard<span>بطاقة</span></div>
               <div class="mock-rail"><b>PP</b>PayPal<span>PayPal</span></div>
+              <div class="mock-rail"><b>₿</b>Bitcoin · Ethereum · USDT · +8<span>Crypto</span></div>
             </div>
-            <span class="btn btn-primary mock-pay">ادفع $9.00</span>
+            <span class="btn btn-primary mock-pay">ادفع $49.00</span>
           </div>
         </div>
         <div class="mock-toast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke-width="1.6"/><path d="M7.5 12.5l3 3 6-7"/></svg><div><strong>تمت تسوية الدفعة</strong><small>أُرسل مفتاح الترخيص بالبريد</small></div></div>
@@ -266,9 +284,9 @@ try {
 
   <section class="block wrap" aria-label="WavePay in numbers">
     <div class="stats">
-      <div class="stat"><strong>9</strong><span>وسائل دفع</span></div>
+      <div class="stat"><strong>20</strong><span>payment methods</span></div>
       <div class="stat"><strong>25</strong><span>دفعات مجانية شهريًا</span></div>
-      <div class="stat"><strong>0%</strong><span>رسوم على مبيعاتك</span></div>
+      <div class="stat"><strong>2%→0.4%</strong><span>usage fee, falling with volume</span></div>
       <div class="stat"><strong>15</strong><span>لغة</span></div>
     </div>
   </section>
@@ -277,9 +295,9 @@ try {
     <div class="section-head">
       <p class="kicker">وسائل الدفع</p>
       <h2>كل وسيلة قد يملكها المشتري</h2>
-      <p>محافظ محلية لزيمبابوي، وبطاقات وPayPal لبقية العالم. تعرض نقطة مزودي الخدمة دائمًا ما هو مفعّل اليوم.</p>
+      <p>Zimbabwean wallets, cards, PayPal and eleven crypto rails. The providers endpoint always says what is live today.</p>
     </div>
-    <div class="rails"><span class="rail">EcoCash</span><span class="rail">OneMoney</span><span class="rail">InnBucks</span><span class="rail">Telecash</span><span class="rail">O'mari</span><span class="rail">ZimSwitch</span><span class="rail">Visa</span><span class="rail">Mastercard</span><span class="rail">PayPal</span><span class="rail soon">2Checkout · قريبًا</span></div>
+    <div class="rails"><span class="rail">EcoCash</span><span class="rail">OneMoney</span><span class="rail">InnBucks</span><span class="rail">Telecash</span><span class="rail">O'mari</span><span class="rail">ZimSwitch</span><span class="rail">Visa</span><span class="rail">Mastercard</span><span class="rail">PayPal</span><span class="rail">Bitcoin</span><span class="rail">Ethereum</span><span class="rail">Solana</span><span class="rail">BNB</span><span class="rail">Litecoin</span><span class="rail">Dogecoin</span><span class="rail">Tron</span><span class="rail">USDT</span><span class="rail">USDC</span><span class="rail soon">2Checkout · قريبًا</span></div>
   </section>
 
   <section class="tint" id="features">
@@ -354,30 +372,45 @@ const { checkoutUrl, reference } = await res.json();</code></pre></div>
       <div class="section-head center">
         <p class="kicker">الأسعار</p>
         <h2>التسعير حسب المدفوعات لا حسب العمولة</h2>
-        <p>خطط شهرية ثابتة. يفرض مزودو الدفع رسومهم الخاصة إضافةً إلى ذلك.</p>
+        <p>A plan for the software, plus a small percentage that falls as your volume grows. Provider fees are paid to the provider at cost.</p>
       </div>
-      <div class="plans"><article class="card plan">
+      <div class="plans plans-5"><article class="card plan">
           
           <h3>مجاني</h3>
           <p class="price">$0 <small>للأبد</small></p>
           <p class="muted">25 دفعة كل 30 يومًا</p>
           <ul><li>موقع واحد</li><li>كل وسيلة دفع مفعّلة</li><li>Webhooks موقّعة</li><li>سجل المدفوعات</li></ul>
           <a class="btn btn-ghost" href="/pricing.html#register">سجّل مجانًا</a>
-        </article><article class="card plan featured">
-          <span class="tag">الأكثر طلبًا</span>
+        </article><article class="card plan">
+          
           <h3>Starter</h3>
           <p class="price">$15 <small>شهريًا</small></p>
           <p class="muted">100 دفعة كل 30 يومًا</p>
           <ul><li>3 مواقع</li><li>قسائم وعروض</li><li>Webhooks وسجل</li></ul>
-          <a class="btn btn-primary" href="/pricing.html#register">اختر Starter</a>
-        </article><article class="card plan">
-          
+          <a class="btn btn-ghost" href="/pricing.html#register">اختر Starter</a>
+        </article><article class="card plan featured">
+          <span class="tag">Recommended</span>
           <h3>Growth</h3>
           <p class="price">$49 <small>شهريًا</small></p>
           <p class="muted">500 دفعة كل 30 يومًا</p>
           <ul><li>10 مواقع</li><li>كل ما في Starter</li><li>طابور دعم ذو أولوية</li></ul>
-          <a class="btn btn-ghost" href="/pricing.html#register">اختر Growth</a>
+          <a class="btn btn-primary" href="/pricing.html#register">اختر Growth</a>
+        </article><article class="card plan">
+          
+          <h3>Scale</h3>
+          <p class="price">$149 <small>شهريًا</small></p>
+          <p class="muted">2,500 payments per 30 days</p>
+          <ul><li>30 sites</li><li>Everything in Growth</li><li>Priority support</li></ul>
+          <a class="btn btn-ghost" href="/pricing.html#register">Get Scale</a>
+        </article><article class="card plan">
+          
+          <h3>Enterprise</h3>
+          <p class="price">From $499 <small>شهريًا</small></p>
+          <p class="muted">Custom volume and an SLA</p>
+          <ul><li>Unlimited sites</li><li>Everything in Scale</li><li>Onboarding and an SLA</li></ul>
+          <a class="btn btn-ghost" href="mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise">Talk to us</a>
         </article></div>
+      <p class="center muted"><a href="/pricing.html">After the included payments a small percentage applies and falls as your volume grows. See the full price list.</a></p>
     </div>
   </section>
 
@@ -386,7 +419,7 @@ const { checkoutUrl, reference } = await res.json();</code></pre></div>
       <p class="kicker">أسئلة</p>
       <h2>إجابات قبل أن تسأل</h2>
     </div>
-    <div class="faq"><details><summary>ما وسائل الدفع التي يمكنني قبولها؟</summary><p>EcoCash وOneMoney وInnBucks وTelecash وO'mari وZimSwitch عبر Paynow؛ وVisa وMastercard وPayPal للمشترين الدوليين. 2Checkout جاهز ويُفعَّل عندما يوافق المزود على حسابنا.</p></details><details><summary>هل تأخذون نسبة من مبيعاتي؟</summary><p>لا. الخطط أسعار شهرية ثابتة بحسب المدفوعات المعالجة. ويفرض مزودو الدفع رسومهم الخاصة.</p></details><details><summary>هل يمكنني الاختبار دون مال حقيقي؟</summary><p>نعم. يمنحك التسجيل مفتاح اختبار يستخدم محاكيًا. لا يصل إلى أي مزود ولا يُحتسب ضمن خطتك.</p></details><details><summary>كيف يحصل المشترون على ترخيصهم؟</summary><p>عند تسوية الدفعة ترسل WavePay مفتاح ترخيص بالبريد، ويمكن لتطبيقك التحقق من الاستحقاق الموقّع دون اتصال.</p></details><details><summary>هل يمكن لوكيل ذكاء اصطناعي استخدام WavePay؟</summary><p>نعم. وجّهه إلى skill.md أو مستند OpenAPI أو خادم MCP. يستطيع الوكيل التسجيل وتحديد الأسعار والتحصيل والمطابقة دون متصفح.</p></details></div>
+    <div class="faq"><details><summary>ما وسائل الدفع التي يمكنني قبولها؟</summary><p>EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow; Visa, Mastercard and PayPal; and crypto on eleven rails (Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT, USDC). 2Checkout is built and switches on when the provider approves our account.</p></details><details><summary>هل تأخذون نسبة من مبيعاتي؟</summary><p>Only after your plan's included payments, and the percentage falls as your volume grows (from 2% down to 0.4%, with a small minimum per payment). Provider fees are paid to the provider at cost with no WavePay markup.</p></details><details><summary>هل يمكنني الاختبار دون مال حقيقي؟</summary><p>نعم. يمنحك التسجيل مفتاح اختبار يستخدم محاكيًا. لا يصل إلى أي مزود ولا يُحتسب ضمن خطتك.</p></details><details><summary>كيف يحصل المشترون على ترخيصهم؟</summary><p>عند تسوية الدفعة ترسل WavePay مفتاح ترخيص بالبريد، ويمكن لتطبيقك التحقق من الاستحقاق الموقّع دون اتصال.</p></details><details><summary>هل يمكن لوكيل ذكاء اصطناعي استخدام WavePay؟</summary><p>نعم. وجّهه إلى skill.md أو مستند OpenAPI أو خادم MCP. يستطيع الوكيل التسجيل وتحديد الأسعار والتحصيل والمطابقة دون متصفح.</p></details></div>
   </section>
 
   <section class="block wrap" data-seo="guides">
@@ -410,20 +443,25 @@ const { checkoutUrl, reference } = await res.json();</code></pre></div>
 </main>
 
 <footer class="site-foot">
+  <span class="flag-stripe" aria-hidden="true"></span>
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-about">
         <a class="brand" href="/"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M2 12c2.5-4 5-6 7.5-6S14 8.5 16.5 12s5 6 7.5 6"/></svg></span><span>WavePay</span></a>
         <p>مدفوعات وتراخيص وتسوية للبرمجيات. صُنع في زيمبابوي بواسطة T3raTech ومتاح حول العالم.</p>
       </div>
-      <div><h2>المنتج</h2><ul><li><a href="/accept-card-and-paypal-payments.html">وسائل الدفع</a></li><li><a href="/guide-recurring-payments.html">الاشتراكات</a></li><li><a href="/guide-buy-now-pay-later.html">اشترِ الآن وادفع لاحقًا</a></li><li><a href="/guide-offline-licence-verification.html">التراخيص</a></li><li><a href="/pricing.html">الأسعار</a></li></ul></div><div><h2>المطورون</h2><ul><li><a href="/docs.html">الوثائق</a></li><li><a href="/openapi.json">مرجع الواجهة البرمجية</a></li><li><a href="/skill.md">MCP والوكلاء</a></li><li><a href="/guide-test-mode.html">وضع الاختبار</a></li><li><a href="/status.html">حالة الخدمة</a></li></ul></div><div><h2>الحلول</h2><ul><li><a href="/payments-for-browser-extensions.html">إضافات المتصفح</a></li><li><a href="/payments-for-games.html">الألعاب</a></li><li><a href="/payments-for-apps.html">التطبيقات</a></li><li><a href="/payments-for-apis.html">الواجهات البرمجية</a></li><li><a href="/payments-for-bots.html">الروبوتات</a></li></ul></div><div><h2>الشركة</h2><ul><li><a href="/faq.html">الأسئلة الشائعة</a></li><li><a href="/learn.html">الأدلة</a></li><li><a href="mailto:support@t3ratech.co.zw">تواصل مع الدعم</a></li><li><a href="/.well-known/security.txt">الأمان</a></li></ul></div>
+      <div><h2>المنتج</h2><ul><li><a href="/accept-card-and-paypal-payments.html">وسائل الدفع</a></li><li><a href="/zimbabwe-payment-gateway-api.html">Zimbabwe payments</a></li><li><a href="/crypto-payment-api.html">Crypto payments</a></li><li><a href="/guide-recurring-payments.html">الاشتراكات</a></li><li><a href="/guide-buy-now-pay-later.html">اشترِ الآن وادفع لاحقًا</a></li><li><a href="/guide-offline-licence-verification.html">التراخيص</a></li><li><a href="/pricing.html">الأسعار</a></li></ul></div><div><h2>المطورون</h2><ul><li><a href="/docs.html">الوثائق</a></li><li><a href="/docs/index.html">API reference</a></li><li><a href="/wavepay-docs.md">One-page docs (Markdown)</a></li><li><a href="/openapi.json">مرجع الواجهة البرمجية</a></li><li><a href="/skill.md">MCP والوكلاء</a></li><li><a href="/integrations-claude-code-openclaw-openfang.html">Integrations: Claude Code, OpenClaw, OpenFang</a></li><li><a href="/guide-test-mode.html">وضع الاختبار</a></li><li><a href="/status.html">حالة الخدمة</a></li></ul></div><div><h2>Compare</h2><ul><li><a href="/compare.html">All comparisons</a></li><li><a href="/compare-wavepay-vs-paypal-direct.html">vs PayPal directly</a></li><li><a href="/compare-wavepay-vs-paynow-direct.html">vs Paynow directly</a></li><li><a href="/compare-wavepay-vs-2checkout-verifone.html">vs 2Checkout (Verifone)</a></li><li><a href="/compare-wavepay-vs-flutterwave.html">vs Flutterwave</a></li><li><a href="/compare-wavepay-vs-integrating-each-rail.html">vs integrating each rail</a></li><li><a href="/compare-wavepay-vs-card-only-processor.html">vs a card-only processor</a></li></ul></div><div><h2>الشركة</h2><ul><li><a href="/faq.html">الأسئلة الشائعة</a></li><li><a href="/learn.html">الأدلة</a></li><li><a href="/security.html">Security and trust</a></li><li><a href="mailto:support@t3ratech.co.zw">تواصل مع الدعم</a></li></ul></div>
     </div>
-    <nav class="foot-langs" aria-label="اللغة"><a href="/" hreflang="en" lang="en">English</a><a href="/sn/" hreflang="sn" lang="sn">chiShona</a><a href="/nd/" hreflang="nd" lang="nd">isiNdebele</a><a href="/sw/" hreflang="sw" lang="sw">Kiswahili</a><a href="/fr/" hreflang="fr" lang="fr">Français</a><a href="/pt/" hreflang="pt" lang="pt">Português</a><a href="/es/" hreflang="es" lang="es">Español</a><a href="/de/" hreflang="de" lang="de">Deutsch</a><a href="/it/" hreflang="it" lang="it">Italiano</a><a href="/ar/" hreflang="ar" lang="ar">العربية</a><a href="/hi/" hreflang="hi" lang="hi">हिन्दी</a><a href="/zh/" hreflang="zh" lang="zh">中文</a><a href="/ja/" hreflang="ja" lang="ja">日本語</a><a href="/ru/" hreflang="ru" lang="ru">Русский</a><a href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a></nav>
+    <nav class="foot-langs" aria-label="اللغة"><a href="/" hreflang="en" lang="en"><span class="flag" aria-hidden="true">🇬🇧</span>English</a><a href="/sn/" hreflang="sn" lang="sn"><span class="flag" aria-hidden="true">🇿🇼</span>chiShona</a><a href="/nd/" hreflang="nd" lang="nd"><span class="flag" aria-hidden="true">🇿🇼</span>isiNdebele</a><a href="/sw/" hreflang="sw" lang="sw"><span class="flag" aria-hidden="true">🇰🇪</span>Kiswahili</a><a href="/fr/" hreflang="fr" lang="fr"><span class="flag" aria-hidden="true">🇫🇷</span>Français</a><a href="/pt/" hreflang="pt" lang="pt"><span class="flag" aria-hidden="true">🇵🇹</span>Português</a><a href="/es/" hreflang="es" lang="es"><span class="flag" aria-hidden="true">🇪🇸</span>Español</a><a href="/de/" hreflang="de" lang="de"><span class="flag" aria-hidden="true">🇩🇪</span>Deutsch</a><a href="/it/" hreflang="it" lang="it"><span class="flag" aria-hidden="true">🇮🇹</span>Italiano</a><a href="/ar/" hreflang="ar" lang="ar"><span class="flag" aria-hidden="true">🇸🇦</span>العربية</a><a href="/hi/" hreflang="hi" lang="hi"><span class="flag" aria-hidden="true">🇮🇳</span>हिन्दी</a><a href="/zh/" hreflang="zh" lang="zh"><span class="flag" aria-hidden="true">🇨🇳</span>中文</a><a href="/ja/" hreflang="ja" lang="ja"><span class="flag" aria-hidden="true">🇯🇵</span>日本語</a><a href="/ru/" hreflang="ru" lang="ru"><span class="flag" aria-hidden="true">🇷🇺</span>Русский</a><a href="/id/" hreflang="id" lang="id"><span class="flag" aria-hidden="true">🇮🇩</span>Bahasa Indonesia</a></nav>
     <div class="foot-bottom">
-      <p class="fine">© Teratech Solutions (Private) Limited. جميع الحقوق محفوظة.</p>
-      <nav class="share-nav" aria-label="Share"><a href="https://x.com/intent/post?url=https%3A%2F%2Fwavepay.t3ratech.co.zw%2Far%2F&amp;text=WavePay" rel="noopener">X</a><a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwavepay.t3ratech.co.zw%2Far%2F" rel="noopener">LinkedIn</a><a href="https://github.com/t3ratech" rel="noopener">GitHub</a></nav>
+      <p class="fine">© 2026 TeraTech Solutions (Private) Limited · t3ratech.co.zw</p>
+      <nav class="legal-links" aria-label="Legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/cookies.html">Cookies</a><a href="/accessibility.html">Accessibility</a><a href="/ai-act.html">EU AI Act</a><a href="/security.html">Security and trust</a></nav>
+      <div class="sharethis-inline-share-buttons" data-url="https://wavepay.t3ratech.co.zw/ar/"></div>
+      <nav class="share-nav" aria-label="Share"><a href="https://x.com/intent/post?url=https%3A%2F%2Fwavepay.t3ratech.co.zw%2Far%2F&amp;text=WavePay" rel="noopener">X</a><a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwavepay.t3ratech.co.zw%2Far%2F" rel="noopener">LinkedIn</a><a href="https://wa.me/?text=https%3A%2F%2Fwavepay.t3ratech.co.zw%2Far%2F" rel="noopener">WhatsApp</a></nav>
     </div>
   </div>
+  <script defer src="https://platform-api.sharethis.com/js/sharethis.js#property=STP6RU3BK22CW4RJMTF&amp;product=inline-share-buttons"></script>
+  <dialog class="search-dialog" data-search-dialog aria-label="Search"><form method="dialog"><input type="search" data-search-input placeholder="Search guides, docs and the API" aria-label="Search" autocomplete="off"></form><ul class="search-results" data-search-results></ul></dialog>
 </footer>
 <script src="/assets/config.js"></script>
 <script src="/assets/app.js" defer></script>

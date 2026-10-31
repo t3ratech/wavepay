@@ -2,7 +2,7 @@
 
 > 用一个 API 接收 EcoCash、银行卡和 PayPal。一次请求完成注册，用模拟资金测试，再上线并使用许可证、订阅和退款功能。
 
-现已支持订阅、分期付款和 2Checkout
+Now with crypto, subscriptions and your own PayPal account
 
 # 让你的软件收款覆盖 *买家手里的每一种支付方式*
 
@@ -11,14 +11,14 @@
 [免费开始](https://wavepay.t3ratech.co.zw/pricing.html#register) [阅读文档](https://wavepay.t3ratech.co.zw/docs.html) [面向智能体](https://wavepay.t3ratech.co.zw/skill.md)
 
 - 免费方案，无需银行卡
-- 不抽取销售额的百分比
+- A fee that falls as you grow
 - REST 与 MCP
 
-**9**种支付渠道
+**20**payment methods
 
 **25**每月免费付款笔数
 
-**0%**销售手续费
+**2%→0.4%**usage fee, falling with volume
 
 **15**种语言
 
@@ -26,9 +26,9 @@
 
 ## 买家可能持有的每一种渠道
 
-面向津巴布韦的本地钱包，以及面向其他地区的银行卡和 PayPal。提供商接口始终显示当前已启用的渠道。
+Zimbabwean wallets, cards, PayPal and eleven crypto rails. The providers endpoint always says what is live today.
 
-EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · 即将推出
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal Bitcoin Ethereum Solana BNB Litecoin Dogecoin Tron USDT USDC 2Checkout · 即将推出
 
 你将获得
 
@@ -133,7 +133,7 @@ const { checkoutUrl, reference } = await res.json();
 
 ## 按付款笔数计价，而非抽成
 
-固定月费方案。支付提供商另外收取其自身费用。
+A plan for the software, plus a small percentage that falls as your volume grows. Provider fees are paid to the provider at cost.
 
 ### 免费版
 
@@ -148,8 +148,6 @@ $0 永久
 
 [免费注册](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-最受欢迎
-
 ### Starter
 
 $15 每月
@@ -161,6 +159,8 @@ $15 每月
 - Webhook 与账本
 
 [选择 Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Recommended
 
 ### Growth
 
@@ -174,17 +174,43 @@ $49 每月
 
 [选择 Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
+### Scale
+
+$149 每月
+
+2,500 payments per 30 days
+
+- 30 sites
+- Everything in Growth
+- Priority support
+
+[Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Enterprise
+
+From $499 每月
+
+Custom volume and an SLA
+
+- Unlimited sites
+- Everything in Scale
+- Onboarding and an SLA
+
+[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
+
+[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+
 问答
 
 ## 在你提问之前先给出答案
 
 我可以接受哪些支付方式？
 
-通过 Paynow 接入 EcoCash、OneMoney、InnBucks、Telecash、O'mari 和 ZimSwitch；面向国际买家提供 Visa、Mastercard 和 PayPal。2Checkout 已开发完成，待提供商批准我们的账户后启用。
+EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow; Visa, Mastercard and PayPal; and crypto on eleven rails (Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT, USDC). 2Checkout is built and switches on when the provider approves our account.
 
 你们会抽取我销售额的百分比吗？
 
-不会。方案是按处理付款笔数计的固定月费。支付提供商会收取其自身费用。
+Only after your plan's included payments, and the percentage falls as your volume grows (from 2% down to 0.4%, with a small minimum per payment). Provider fees are paid to the provider at cost with no WavePay markup.
 
 可以不用真钱进行测试吗？
 

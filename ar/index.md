@@ -2,7 +2,7 @@
 
 > اقبل EcoCash والبطاقات وPayPal عبر واجهة برمجية واحدة. سجّل بطلب واحد، وجرّب بأموال وهمية، ثم انطلق مع التراخيص والاشتراكات والمبالغ المستردة.
 
-الآن مع الاشتراكات والدفع بالتقسيط و2Checkout
+Now with crypto, subscriptions and your own PayPal account
 
 # احصل على أجر برنامجك عبر *كل وسيلة دفع يملكها عملاؤك*
 
@@ -11,14 +11,14 @@
 [ابدأ مجانًا](https://wavepay.t3ratech.co.zw/pricing.html#register) [اقرأ الوثائق](https://wavepay.t3ratech.co.zw/docs.html) [للوكلاء](https://wavepay.t3ratech.co.zw/skill.md)
 
 - خطة مجانية دون بطاقة
-- لا عمولة نسبية على مبيعاتك
+- A fee that falls as you grow
 - REST وMCP
 
-**9**وسائل دفع
+**20**payment methods
 
 **25**دفعات مجانية شهريًا
 
-**0%**رسوم على مبيعاتك
+**2%→0.4%**usage fee, falling with volume
 
 **15**لغة
 
@@ -26,9 +26,9 @@
 
 ## كل وسيلة قد يملكها المشتري
 
-محافظ محلية لزيمبابوي، وبطاقات وPayPal لبقية العالم. تعرض نقطة مزودي الخدمة دائمًا ما هو مفعّل اليوم.
+Zimbabwean wallets, cards, PayPal and eleven crypto rails. The providers endpoint always says what is live today.
 
-EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · قريبًا
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal Bitcoin Ethereum Solana BNB Litecoin Dogecoin Tron USDT USDC 2Checkout · قريبًا
 
 ما تحصل عليه
 
@@ -133,7 +133,7 @@ const { checkoutUrl, reference } = await res.json();
 
 ## التسعير حسب المدفوعات لا حسب العمولة
 
-خطط شهرية ثابتة. يفرض مزودو الدفع رسومهم الخاصة إضافةً إلى ذلك.
+A plan for the software, plus a small percentage that falls as your volume grows. Provider fees are paid to the provider at cost.
 
 ### مجاني
 
@@ -148,8 +148,6 @@ $0 للأبد
 
 [سجّل مجانًا](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-الأكثر طلبًا
-
 ### Starter
 
 $15 شهريًا
@@ -161,6 +159,8 @@ $15 شهريًا
 - Webhooks وسجل
 
 [اختر Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Recommended
 
 ### Growth
 
@@ -174,17 +174,43 @@ $49 شهريًا
 
 [اختر Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
+### Scale
+
+$149 شهريًا
+
+2,500 payments per 30 days
+
+- 30 sites
+- Everything in Growth
+- Priority support
+
+[Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Enterprise
+
+From $499 شهريًا
+
+Custom volume and an SLA
+
+- Unlimited sites
+- Everything in Scale
+- Onboarding and an SLA
+
+[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
+
+[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+
 أسئلة
 
 ## إجابات قبل أن تسأل
 
 ما وسائل الدفع التي يمكنني قبولها؟
 
-EcoCash وOneMoney وInnBucks وTelecash وO'mari وZimSwitch عبر Paynow؛ وVisa وMastercard وPayPal للمشترين الدوليين. 2Checkout جاهز ويُفعَّل عندما يوافق المزود على حسابنا.
+EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow; Visa, Mastercard and PayPal; and crypto on eleven rails (Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT, USDC). 2Checkout is built and switches on when the provider approves our account.
 
 هل تأخذون نسبة من مبيعاتي؟
 
-لا. الخطط أسعار شهرية ثابتة بحسب المدفوعات المعالجة. ويفرض مزودو الدفع رسومهم الخاصة.
+Only after your plan's included payments, and the percentage falls as your volume grows (from 2% down to 0.4%, with a small minimum per payment). Provider fees are paid to the provider at cost with no WavePay markup.
 
 هل يمكنني الاختبار دون مال حقيقي؟
 

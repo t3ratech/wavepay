@@ -2,7 +2,7 @@
 
 > 1つのAPIでEcoCash、カード、PayPalに対応。1回のリクエストで登録し、擬似資金でテストして、ライセンス・定期課金・返金とともに本番へ。
 
-定期課金、分割払い、2Checkoutに対応しました
+Now with crypto, subscriptions and your own PayPal account
 
 # あなたのソフトウェアの代金を *購入者が持つあらゆる決済手段で受け取る*
 
@@ -11,14 +11,14 @@ EcoCash、OneMoney、InnBucks、ZimSwitch、カード、PayPalを1つのAPIで�
 [無料で始める](https://wavepay.t3ratech.co.zw/pricing.html#register) [ドキュメントを読む](https://wavepay.t3ratech.co.zw/docs.html) [エージェント向け](https://wavepay.t3ratech.co.zw/skill.md)
 
 - 無料プラン、カード不要
-- 売上に対する手数料なし
+- A fee that falls as you grow
 - RESTとMCP
 
-**9**種類の決済手段
+**20**payment methods
 
 **25**毎月の無料決済数
 
-**0%**売上にかかる手数料
+**2%→0.4%**usage fee, falling with volume
 
 **15**言語
 
@@ -26,9 +26,9 @@ EcoCash、OneMoney、InnBucks、ZimSwitch、カード、PayPalを1つのAPIで�
 
 ## 購入者が持ちうるあらゆる手段に対応
 
-ジンバブエ向けの現地ウォレットと、それ以外の地域向けのカードおよびPayPal。プロバイダーのエンドポイントで、現在有効な手段をいつでも確認できます。
+Zimbabwean wallets, cards, PayPal and eleven crypto rails. The providers endpoint always says what is live today.
 
-EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · 近日対応
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal Bitcoin Ethereum Solana BNB Litecoin Dogecoin Tron USDT USDC 2Checkout · 近日対応
 
 できること
 
@@ -133,7 +133,7 @@ const { checkoutUrl, reference } = await res.json();
 
 ## 手数料ではなく、決済件数で決まる料金
 
-月額固定のプラン。決済プロバイダーの手数料は別途かかります。
+A plan for the software, plus a small percentage that falls as your volume grows. Provider fees are paid to the provider at cost.
 
 ### 無料
 
@@ -148,8 +148,6 @@ $0 ずっと
 
 [無料で登録](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-一番人気
-
 ### Starter
 
 $15 月額
@@ -161,6 +159,8 @@ $15 月額
 - Webhookと台帳
 
 [Starterを選ぶ](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Recommended
 
 ### Growth
 
@@ -174,17 +174,43 @@ $49 月額
 
 [Growthを選ぶ](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
+### Scale
+
+$149 月額
+
+2,500 payments per 30 days
+
+- 30 sites
+- Everything in Growth
+- Priority support
+
+[Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Enterprise
+
+From $499 月額
+
+Custom volume and an SLA
+
+- Unlimited sites
+- Everything in Scale
+- Onboarding and an SLA
+
+[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
+
+[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+
 よくある質問
 
 ## 聞かれる前にお答えします
 
 どの決済手段を受け付けられますか？
 
-Paynow経由でEcoCash、OneMoney、InnBucks、Telecash、O'mari、ZimSwitch。海外の購入者向けにVisa、Mastercard、PayPal。2Checkoutは開発済みで、プロバイダーによるアカウント承認後に有効化されます。
+EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow; Visa, Mastercard and PayPal; and crypto on eleven rails (Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT, USDC). 2Checkout is built and switches on when the provider approves our account.
 
 売上の何パーセントかを受け取りますか？
 
-いいえ。処理した決済件数に基づく月額固定のプランです。決済プロバイダーは独自の手数料を請求します。
+Only after your plan's included payments, and the percentage falls as your volume grows (from 2% down to 0.4%, with a small minimum per payment). Provider fees are paid to the provider at cost with no WavePay markup.
 
 本物のお金なしでテストできますか？
 

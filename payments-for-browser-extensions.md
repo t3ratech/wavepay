@@ -6,7 +6,7 @@ USE CASE
 
 Sell a browser extension with WavePay by creating a checkout for your Pro plan, emailing a licence key on payment, and letting the extension verify an Ed25519-signed entitlement offline — T3rnel Browser sells Pro this way in production.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
 
 ## The flow
 

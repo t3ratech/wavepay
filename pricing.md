@@ -15,7 +15,7 @@ $0 forever
 25 payments a month, test mode, one site. Stops at the cap; never charges.
 
 - 25 payments / month included
-- 1 sites
+- 1 site
 - Signed webhooks + payments ledger
 
 Register free — one POST
@@ -33,7 +33,7 @@ $15 USD / month
 
 Get Starter — $15/mo
 
-Popular
+Recommended
 
 ### Growth
 

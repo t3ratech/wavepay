@@ -91,6 +91,7 @@ T3rnel Browser sells Pro on this exact flow in production.
 | `GET /v2/internal/merchant/catalog` | Everything your key can sell: sites, plans, live prices |
 | `GET/PUT/DELETE /v2/internal/merchant/settlement[/{provider}]` | Connect your own PayPal account so payments land with you; credentials are checked, sealed and never returned |
 | `GET /v2/price-list` | WavePay's own price list: plans, usage schedule, modes (also [/pricing.json](https://wavepay.t3ratech.co.zw/pricing.json)) |
+| `GET /v2/internal/merchant/invoices` | Your usage invoices: month, amount, status |
 | `GET /v2/crypto/rails` | The crypto rails and which can be quoted right now; pay with `provider: "crypto"` and `method` set to a rail id |
 | `GET /v2/internal/merchant/usage` | Your usage meter for the month and the total due |
 | `POST /v2/internal/sites/webhook` | Set the settlement webhook for a site (secret returned once) |

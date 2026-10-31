@@ -2,7 +2,7 @@
 
 > Принимайте EcoCash, карты и PayPal через один API. Зарегистрируйтесь одним запросом, проверьте на тестовых деньгах и запускайтесь с лицензиями, подписками и возвратами.
 
-Теперь с подписками, рассрочкой и 2Checkout
+Now with crypto, subscriptions and your own PayPal account
 
 # Получайте деньги за свою программу через *любой способ оплаты ваших покупателей*
 
@@ -11,14 +11,14 @@
 [Начать бесплатно](https://wavepay.t3ratech.co.zw/pricing.html#register) [Читать документацию](https://wavepay.t3ratech.co.zw/docs.html) [Для агентов](https://wavepay.t3ratech.co.zw/skill.md)
 
 - Бесплатный тариф, без карты
-- Без процента с ваших продаж
+- A fee that falls as you grow
 - REST и MCP
 
-**9**способов оплаты
+**20**payment methods
 
 **25**бесплатных платежей в месяц
 
-**0%**комиссии с ваших продаж
+**2%→0.4%**usage fee, falling with volume
 
 **15**языков
 
@@ -26,9 +26,9 @@
 
 ## Все способы, которые могут быть у покупателя
 
-Местные кошельки для Зимбабве, карты и PayPal для остальных. Эндпоинт провайдеров всегда показывает, что работает сегодня.
+Zimbabwean wallets, cards, PayPal and eleven crypto rails. The providers endpoint always says what is live today.
 
-EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · скоро
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal Bitcoin Ethereum Solana BNB Litecoin Dogecoin Tron USDT USDC 2Checkout · скоро
 
 Что вы получаете
 
@@ -133,7 +133,7 @@ const { checkoutUrl, reference } = await res.json();
 
 ## Цена за обработанные платежи, а не процент
 
-Фиксированные месячные тарифы. Платёжные провайдеры берут свои комиссии отдельно.
+A plan for the software, plus a small percentage that falls as your volume grows. Provider fees are paid to the provider at cost.
 
 ### Бесплатный
 
@@ -148,8 +148,6 @@ $0 навсегда
 
 [Зарегистрироваться бесплатно](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-Самый популярный
-
 ### Starter
 
 $15 в месяц
@@ -161,6 +159,8 @@ $15 в месяц
 - Вебхуки и журнал
 
 [Выбрать Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Recommended
 
 ### Growth
 
@@ -174,17 +174,43 @@ $49 в месяц
 
 [Выбрать Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
+### Scale
+
+$149 в месяц
+
+2,500 payments per 30 days
+
+- 30 sites
+- Everything in Growth
+- Priority support
+
+[Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Enterprise
+
+From $499 в месяц
+
+Custom volume and an SLA
+
+- Unlimited sites
+- Everything in Scale
+- Onboarding and an SLA
+
+[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
+
+[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+
 Вопросы
 
 ## Ответы, пока вы не спросили
 
 Какие способы оплаты я могу принимать?
 
-EcoCash, OneMoney, InnBucks, Telecash, O'mari и ZimSwitch через Paynow; Visa, Mastercard и PayPal для иностранных покупателей. 2Checkout готов и включится, когда провайдер одобрит наш аккаунт.
+EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow; Visa, Mastercard and PayPal; and crypto on eleven rails (Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT, USDC). 2Checkout is built and switches on when the provider approves our account.
 
 Вы берёте процент с моих продаж?
 
-Нет. Тарифы — фиксированная месячная цена в зависимости от числа обработанных платежей. Платёжные провайдеры берут собственные комиссии.
+Only after your plan's included payments, and the percentage falls as your volume grows (from 2% down to 0.4%, with a small minimum per payment). Provider fees are paid to the provider at cost with no WavePay markup.
 
 Можно ли тестировать без реальных денег?
 

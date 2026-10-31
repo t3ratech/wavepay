@@ -8,7 +8,7 @@ USE CASE
 
 Any MCP client can use WavePay by adding the endpoint https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp; Claude Code adds it with one command, and a plain API client needs only POST /v2/register and POST /v2/checkouts.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
 
 ## The flow
 

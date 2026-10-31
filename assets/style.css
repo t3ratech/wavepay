@@ -17,6 +17,11 @@
   --wp-warn: #b45309;
   --wp-bad: #b91c1c;
   --wp-good: #15803d;
+  --wp-zw-green: #0a7d3c;
+  --wp-zw-yellow: #f2b705;
+  --wp-zw-red: #c8102e;
+  --wp-zw-black: #14201d;
+  --wp-zw-yellow-ink: #3a2a00;
   --wp-radius: 14px;
   --wp-radius-lg: 22px;
   --wp-shadow: 0 1px 2px rgba(13, 60, 55, .06), 0 8px 24px rgba(13, 60, 55, .06);
@@ -45,6 +50,11 @@
   --wp-warn: #fbbf24;
   --wp-bad: #f87171;
   --wp-good: #34d399;
+  --wp-zw-green: #35c46b;
+  --wp-zw-yellow: #ffd23f;
+  --wp-zw-red: #ff5b6e;
+  --wp-zw-black: #e7f2ef;
+  --wp-zw-yellow-ink: #2b2000;
   --wp-shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px rgba(0, 0, 0, .3);
   --wp-shadow-lg: 0 2px 4px rgba(0, 0, 0, .5), 0 24px 60px rgba(0, 0, 0, .45);
   --wp-code-bg: #070b0a;
@@ -68,6 +78,11 @@
     --wp-warn: #fbbf24;
     --wp-bad: #f87171;
     --wp-good: #34d399;
+    --wp-zw-green: #35c46b;
+    --wp-zw-yellow: #ffd23f;
+    --wp-zw-red: #ff5b6e;
+    --wp-zw-black: #e7f2ef;
+    --wp-zw-yellow-ink: #2b2000;
     --wp-shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px rgba(0, 0, 0, .3);
     --wp-shadow-lg: 0 2px 4px rgba(0, 0, 0, .5), 0 24px 60px rgba(0, 0, 0, .45);
     --wp-code-bg: #070b0a;
@@ -371,4 +386,107 @@ ul.plain li { margin: .35rem 0; }
 @media print {
   .site-head, .site-foot, .burger, .band, .mock-toast { display: none; }
   body { background: none; color: CanvasText; }
+}
+
+
+/* ---- Zimbabwe flag palette: green, yellow, red and black from the national flag, used as accents beside the teal brand ---- */
+.flag-stripe { display: block; block-size: 5px; background: linear-gradient(90deg, var(--wp-zw-green) 0 28.5%, var(--wp-zw-yellow) 28.5% 43%, var(--wp-zw-red) 43% 57%, var(--wp-zw-black) 57% 71.5%, var(--wp-zw-red) 71.5% 86%, var(--wp-zw-yellow) 86% 100%); }
+.site-head { border-block-start: 0; }
+.tag.zw, .plan .tag { background: var(--wp-zw-yellow); color: var(--wp-zw-yellow-ink); border: 0; font-weight: 800; }
+.plan.featured { border-color: var(--wp-zw-yellow); box-shadow: 0 0 0 2px var(--wp-zw-yellow), var(--wp-shadow-lg); }
+.plan .price small { color: var(--wp-muted); }
+.chip-zw { display: inline-flex; gap: 6px; align-items: center; font-size: .8rem; font-weight: 700; padding: 4px 10px; border-radius: 999px; background: color-mix(in srgb, var(--wp-zw-green) 14%, transparent); color: var(--wp-zw-green); border: 1px solid color-mix(in srgb, var(--wp-zw-green) 35%, transparent); }
+.kicker { color: var(--wp-zw-green); }
+.card { transition: transform .18s ease, box-shadow .18s ease; }
+.card:hover { transform: translateY(-2px); box-shadow: var(--wp-shadow-lg); }
+.card.accent-green { border-block-start: 4px solid var(--wp-zw-green); }
+.card.accent-yellow { border-block-start: 4px solid var(--wp-zw-yellow); }
+.card.accent-red { border-block-start: 4px solid var(--wp-zw-red); }
+.card.accent-black { border-block-start: 4px solid var(--wp-zw-black); }
+.prose a, .site-foot a:hover { text-decoration-color: var(--wp-zw-yellow); text-underline-offset: 3px; }
+blockquote.answer, [data-answer] { border-inline-start: 4px solid var(--wp-zw-yellow); }
+
+/* ---- Content pages: a single column hero, not the home page's two-column grid ---- */
+.hero.hero-page { display: block; padding-block: clamp(36px, 5vw, 64px) clamp(8px, 2vw, 24px); max-inline-size: 60rem; }
+.hero.hero-page h1 { font-size: clamp(1.9rem, 4vw, 3rem); line-height: 1.15; margin-block: 8px 0; }
+.hero.hero-page .lede { max-inline-size: 48rem; }
+.block.prose { padding-block: clamp(20px, 3vw, 40px) var(--wp-space); }
+.block.prose > * + h2 { margin-block-start: clamp(28px, 4vw, 44px); }
+.prose h2 { padding-block-start: 12px; border-block-start: 1px solid var(--wp-line); }
+.prose { max-inline-size: 60rem; }
+
+/* ---- Language dropdown with flags ---- */
+.lang-dd { position: relative; }
+.lang-dd > summary { list-style: none; cursor: pointer; display: inline-flex; gap: 8px; align-items: center; min-block-size: 40px; padding: 0 12px; border: 1px solid var(--wp-line); border-radius: 999px; background: var(--wp-surface); color: var(--wp-ink); font-size: .9rem; }
+.lang-dd > summary::-webkit-details-marker { display: none; }
+.lang-dd .flag { font-size: 1.15rem; line-height: 1; }
+.lang-list { position: absolute; inset-inline-end: 0; inset-block-start: calc(100% + 6px); z-index: 60; min-inline-size: 220px; max-block-size: 70vh; overflow: auto; padding: 6px; border: 1px solid var(--wp-line); border-radius: var(--wp-radius); background: var(--wp-raised); box-shadow: var(--wp-shadow-lg); display: grid; }
+.lang-list a { display: flex; gap: 10px; align-items: center; min-block-size: 40px; padding: 0 10px; border-radius: 10px; color: var(--wp-ink); text-decoration: none; }
+.lang-list a:hover, .lang-list a[aria-current="true"] { background: var(--wp-soft); }
+.foot-langs a .flag { margin-inline-end: 6px; }
+
+/* ---- Search ---- */
+.search-btn { display: inline-flex; gap: 8px; align-items: center; min-block-size: 40px; padding: 0 12px; border: 1px solid var(--wp-line); border-radius: 999px; background: var(--wp-surface); color: var(--wp-muted); font: inherit; font-size: .9rem; cursor: pointer; }
+.search-btn kbd { font-family: var(--wp-mono); font-size: .75rem; border: 1px solid var(--wp-line); border-radius: 6px; padding: 0 6px; }
+.search-dialog { inline-size: min(640px, calc(100vw - 24px)); margin-block-start: 10vh; padding: 0; border: 1px solid var(--wp-line); border-radius: var(--wp-radius-lg); background: var(--wp-raised); color: var(--wp-ink); box-shadow: var(--wp-shadow-lg); }
+.search-dialog::backdrop { background: color-mix(in srgb, var(--wp-ink) 55%, transparent); }
+.search-dialog input { inline-size: 100%; box-sizing: border-box; padding: 18px 20px; font-size: 1.05rem; border: 0; border-block-end: 1px solid var(--wp-line); background: transparent; color: inherit; border-radius: var(--wp-radius-lg) var(--wp-radius-lg) 0 0; }
+.search-results { list-style: none; margin: 0; padding: 8px; max-block-size: 50vh; overflow: auto; }
+.search-results a { display: block; padding: 10px 12px; border-radius: 10px; color: var(--wp-ink); text-decoration: none; }
+.search-results a:hover, .search-results a:focus-visible, .search-results [aria-selected="true"] a { background: var(--wp-soft); }
+.search-results small { display: block; color: var(--wp-muted); }
+.search-empty { padding: 16px 20px; color: var(--wp-muted); }
+
+/* ---- Code blocks: a labelled header with a copy button ---- */
+.code-block { border: 1px solid var(--wp-line); border-radius: var(--wp-radius); overflow: hidden; background: var(--wp-code-bg); margin-block: 16px; }
+.code-block > header { display: flex; justify-content: space-between; align-items: center; padding: 6px 8px 6px 14px; background: color-mix(in srgb, var(--wp-code-bg) 80%, var(--wp-zw-green)); color: var(--wp-code-dim); font: .78rem var(--wp-mono); }
+.code-block > header button { min-block-size: 32px; padding: 0 12px; border: 1px solid var(--wp-code-dim); border-radius: 8px; background: transparent; color: var(--wp-code-ink); font: inherit; cursor: pointer; }
+.code-block pre { margin: 0; border: 0; border-radius: 0; }
+
+/* ---- Documentation: a sidebar of resources beside one resource at a time ---- */
+.docs-shell { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: clamp(24px, 4vw, 56px); padding-block: 32px var(--wp-space); }
+.docs-nav { position: sticky; inset-block-start: 84px; align-self: start; max-block-size: calc(100vh - 100px); overflow: auto; padding-inline-end: 8px; }
+.docs-nav h2 { font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; color: var(--wp-muted); margin: 18px 0 6px; }
+.docs-nav a { display: block; padding: 7px 10px; border-radius: 8px; color: var(--wp-ink); text-decoration: none; font-size: .95rem; }
+.docs-nav a:hover { background: var(--wp-soft); }
+.docs-nav a[aria-current="page"] { background: color-mix(in srgb, var(--wp-zw-green) 14%, transparent); color: var(--wp-zw-green); font-weight: 700; }
+.op { border: 1px solid var(--wp-line); border-radius: var(--wp-radius); margin-block: 20px; background: var(--wp-surface); overflow: hidden; }
+.op > header { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; padding: 14px 18px; border-block-end: 1px solid var(--wp-line); background: var(--wp-soft); }
+.op .verb { font: 800 .78rem var(--wp-mono); padding: 4px 9px; border-radius: 6px; color: var(--wp-bg); background: var(--wp-zw-green); }
+.op .verb.post { background: var(--wp-zw-black); color: var(--wp-bg); }
+.op .verb.put { background: var(--wp-zw-yellow); color: var(--wp-zw-yellow-ink); }
+.op .verb.delete { background: var(--wp-zw-red); }
+.op code.path { font-size: .95rem; word-break: break-all; }
+.op .op-body { padding: 14px 18px 18px; }
+.op table { inline-size: 100%; border-collapse: collapse; font-size: .92rem; }
+.op th, .op td { text-align: start; padding: 8px 10px; border-block-end: 1px solid var(--wp-line); vertical-align: top; }
+.download-md { display: inline-flex; gap: 8px; align-items: center; }
+
+/* ---- Compare, trust and legal ---- */
+.compare-table { inline-size: 100%; border-collapse: collapse; margin-block: 20px; }
+.compare-table th, .compare-table td { text-align: start; padding: 12px 14px; border-block-end: 1px solid var(--wp-line); vertical-align: top; }
+.compare-table thead th { background: var(--wp-soft); }
+.compare-table td:last-child, .compare-table th:last-child { background: color-mix(in srgb, var(--wp-zw-green) 7%, transparent); }
+.trust-grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-block: 24px; }
+.legal-links { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.foot-bottom .legal-links a { color: var(--wp-muted); font-size: .9rem; }
+
+@media (max-width: 880px) { .docs-shell { grid-template-columns: 1fr; } .docs-nav { position: static; max-block-size: none; } .search-btn span.label { display: none; } }
+@media (prefers-reduced-motion: reduce) { .card { transition: none; } .card:hover { transform: none; } }
+
+/* ---- Five plans in a row on wide screens, two on tablets, one on phones ---- */
+.plans.plans-5 { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); align-items: stretch; }
+.plans-5 .plan { display: flex; flex-direction: column; }
+.plans-5 .plan ul { flex: 1; }
+
+/* ---- Plan prices: the unit sits under the figure, so five plans fit one row ---- */
+.plans-5 .price { font-size: clamp(1.7rem, 2.3vw, 2.3rem); line-height: 1.1; }
+.plans-5 .price small { display: block; font-size: .8rem; font-weight: 600; margin-block-start: 4px; }
+
+/* ---- Narrow screens: keep the header on one line ---- */
+@media (max-width: 640px) {
+  .head-actions { gap: 6px; }
+  .head-actions .btn-ghost, .lang-dd > summary > span:last-child, .theme-switch { display: none; }
+  .head-actions .btn-sm { padding-inline: 12px; }
+  .lang-dd > summary { padding: 0 10px; }
 }

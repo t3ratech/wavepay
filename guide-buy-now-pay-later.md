@@ -8,7 +8,7 @@ HOW IT WORKS
 
 WavePay BNPL takes a deposit at checkout and collects the rest from the customer's card on a schedule, retrying with a back-off until the full price is paid; it is limited to non-prepaid cards, and WavePay collects but does not lend.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
 
 ## How a plan runs
 

@@ -6,7 +6,7 @@ COMPARE
 
 Integrating PayPal directly gives you one rail and its own reconciliation; WavePay puts PayPal, Zimbabwean wallets, cards and crypto behind one checkout and one ledger, and lets a merchant connect their own PayPal account so PayPal still pays them directly.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
 
 |  | PayPal directly | WavePay |
 | --- | --- | --- |

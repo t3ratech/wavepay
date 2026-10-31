@@ -6,7 +6,7 @@ HOW IT WORKS
 
 Send a stable Idempotency-Key with every POST /v2/checkouts — derived from your order id, not generated per attempt — and a retry after a timeout returns the original checkout instead of creating a second charge.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
 
 ## The failure it prevents
 

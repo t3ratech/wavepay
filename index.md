@@ -2,7 +2,7 @@
 
 > Take EcoCash, cards and PayPal with one API. Register in one request, test with fake money, then go live with licence keys, subscriptions and refunds.
 
-Now with subscriptions, instalments and 2Checkout
+Now with crypto, subscriptions and your own PayPal account
 
 # Get paid for your software on *every rail your buyers hold*
 
@@ -11,14 +11,14 @@ One API for EcoCash, OneMoney, InnBucks, ZimSwitch, cards and PayPal. Register i
 [Start free](https://wavepay.t3ratech.co.zw/pricing.html#register) [Read the docs](https://wavepay.t3ratech.co.zw/docs.html) [For agents](https://wavepay.t3ratech.co.zw/skill.md)
 
 - Free plan, no card needed
-- No percentage fee on your sales
+- A fee that falls as you grow
 - REST and MCP
 
-**9**payment rails
+**20**payment methods
 
 **25**free payments a month
 
-**0%**fee on your sales
+**2%→0.4%**usage fee, falling with volume
 
 **15**languages
 
@@ -26,9 +26,9 @@ Payment rails
 
 ## Every rail a buyer might hold
 
-Local wallets for Zimbabwe, cards and PayPal for everyone else. The providers endpoint always says what is live today.
+Zimbabwean wallets, cards, PayPal and eleven crypto rails. The providers endpoint always says what is live today.
 
-EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal 2Checkout · coming soon
+EcoCash OneMoney InnBucks Telecash O'mari ZimSwitch Visa Mastercard PayPal Bitcoin Ethereum Solana BNB Litecoin Dogecoin Tron USDT USDC 2Checkout · coming soon
 
 What you get
 
@@ -133,7 +133,7 @@ Pricing
 
 ## Priced by payments, not by rake
 
-Flat monthly plans. The payment providers charge their own fees on top.
+A plan for the software, plus a small percentage that falls as your volume grows. Provider fees are paid to the provider at cost.
 
 ### Free
 
@@ -148,8 +148,6 @@ $0 forever
 
 [Register free](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-Most popular
-
 ### Starter
 
 $15 per month
@@ -161,6 +159,8 @@ $15 per month
 - Webhooks and ledger
 
 [Get Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+Recommended
 
 ### Growth
 
@@ -174,17 +174,43 @@ $49 per month
 
 [Get Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
+### Scale
+
+$149 per month
+
+2,500 payments per 30 days
+
+- 30 sites
+- Everything in Growth
+- Priority support
+
+[Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
+
+### Enterprise
+
+From $499 per month
+
+Custom volume and an SLA
+
+- Unlimited sites
+- Everything in Scale
+- Onboarding and an SLA
+
+[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
+
+[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+
 Questions
 
 ## Answers before you ask
 
 Which payment methods can I accept?
 
-EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow; Visa, Mastercard and PayPal for international buyers. 2Checkout is built and switches on when the provider approves our account.
+EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow; Visa, Mastercard and PayPal; and crypto on eleven rails (Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT, USDC). 2Checkout is built and switches on when the provider approves our account.
 
 Do you take a percentage of my sales?
 
-No. Plans are flat monthly prices based on payments processed. The payment providers charge their own fees.
+Only after your plan's included payments, and the percentage falls as your volume grows (from 2% down to 0.4%, with a small minimum per payment). Provider fees are paid to the provider at cost with no WavePay markup.
 
 Can I test without real money?
 

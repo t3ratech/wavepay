@@ -8,7 +8,7 @@ USE CASE
 
 WavePay is a Zimbabwe payment gateway API: one POST /v2/checkouts reaches EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow, plus Visa, Mastercard and PayPal for international buyers, with signed settlement webhooks and one payments ledger.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth: 500 payments per 30 days for $49/month
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
 
 ## The flow
 

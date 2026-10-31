@@ -41,17 +41,32 @@
     {
       "name": "Free",
       "price": 0,
+      "from": null,
       "perMonth": 25
     },
     {
       "name": "Starter",
       "price": 15,
+      "from": null,
       "perMonth": 100
     },
     {
       "name": "Growth",
       "price": 49,
+      "from": null,
       "perMonth": 500
+    },
+    {
+      "name": "Scale",
+      "price": 149,
+      "from": null,
+      "perMonth": 2500
+    },
+    {
+      "name": "Enterprise",
+      "price": null,
+      "from": 499,
+      "perMonth": null
     }
   ]
 }

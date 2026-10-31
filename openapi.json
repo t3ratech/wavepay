@@ -1245,6 +1245,92 @@
           }
         }
       }
+    },
+    "/v2/internal/merchant/invoices": {
+      "get": {
+        "summary": "Your usage invoices (month, amount, status)",
+        "operationId": "merchantInvoices",
+        "responses": {
+          "200": {
+            "description": "{ invoices: [{ id, month, planId, payments, chargedPayments, amountMinor, status, createdAt, dueAt, paidAt }] }"
+          },
+          "403": {
+            "description": "a global key, which has no merchant"
+          }
+        }
+      }
+    },
+    "/v2/internal/invoices/run": {
+      "post": {
+        "summary": "Global key: invoice a month's usage now (default last month); dryRun lists who would be invoiced. Idempotent",
+        "operationId": "runInvoices",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "month": {
+                    "type": "string"
+                  },
+                  "dryRun": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "{ month, created: [{ merchantId, invoiceId, amountMinor, emailed }], skipped }"
+          }
+        }
+      }
+    },
+    "/v2/invoices/{id}/pay/{provider}": {
+      "get": {
+        "summary": "The emailed pay link for a usage invoice: needs its token (?t=), opens a checkout for the invoice amount and redirects to it",
+        "operationId": "payInvoice",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "provider",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "paynow",
+                "paypal"
+              ]
+            }
+          },
+          {
+            "name": "t",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "302": {
+            "description": "redirect to the provider's checkout"
+          },
+          "401": {
+            "description": "wrong token"
+          }
+        }
+      }
     }
   },
   "components": {
