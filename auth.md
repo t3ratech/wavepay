@@ -1,4 +1,4 @@
-# Authentication and agent registration
+# Auth.md — authentication and agent registration
 
 T3rnel WavePay authenticates API calls with API keys. An agent registers itself and gets keys immediately: there is no OAuth authorization server, no email round-trip and no human approval.
 
