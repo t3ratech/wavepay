@@ -14,11 +14,11 @@ Payments across many African countries
 
 ✓ Zimbabwe first, plus international rails
 
-? Check Flutterwave's current Zimbabwe coverage
+– Check Flutterwave's current Zimbabwe coverage
 
 ✓ EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow
 
-? Check Flutterwave
+– Check Flutterwave
 
 ✓ Eleven rails quoted in US dollars
 
@@ -26,7 +26,7 @@ Payments across many African countries
 
 ✓ Built in: signed entitlements verified offline
 
-? Check Flutterwave
+– Check Flutterwave
 
 ✓ MCP tools, skill.md, a one-call registration with no browser
 

@@ -501,7 +501,7 @@ blockquote.answer, [data-answer] { border-inline-start: 4px solid var(--wp-zw-ye
 /* ---- Narrow screens: keep the header on one line ---- */
 @media (max-width: 640px) {
   .head-actions { gap: 6px; }
-  .head-actions .btn-ghost, .lang-dd > summary > span:last-child, .theme-switch { display: none; }
+  .head-actions .btn-ghost, .theme-switch { display: none; }
   .head-actions .btn-sm { padding-inline: 12px; }
   .lang-dd > summary { padding: 0 10px; }
 }
@@ -584,7 +584,7 @@ blockquote.answer, [data-answer] { padding-inline-start: 18px; }
 .art .m.stroke { stroke: var(--wp-band-muted); }
 
 /* Compare: ticks and crosses */
-.tick, .cross { display: inline-flex; align-items: center; justify-content: center; inline-size: 22px; block-size: 22px; border-radius: 50%; font-size: .8rem; font-weight: 600; margin-inline-end: 8px; flex: none; }
+.tick, .cross, .maybe { display: inline-flex; align-items: center; justify-content: center; inline-size: 22px; block-size: 22px; border-radius: 50%; font-size: .8rem; font-weight: 600; margin-inline-end: 8px; flex: none; }
 .tick { background: var(--wp-zw-green); color: var(--wp-band-on); } .cross { background: var(--wp-zw-red); color: var(--wp-band-on); } .maybe { background: var(--wp-zw-yellow); color: var(--wp-zw-yellow-ink); }
 .compare-table td, .compare-table th { vertical-align: top; }
 .compare-table td .cell { display: flex; align-items: flex-start; }
@@ -615,7 +615,6 @@ blockquote.answer, [data-answer] { padding-inline-start: 18px; }
 .chart .axis { stroke: var(--wp-line); } .chart text { fill: var(--wp-muted); font-family: var(--wp-font); font-size: 12px; }
 .chart .l-wp { stroke: var(--wp-zw-green); stroke-width: 4; fill: none; } .chart .l-pp { stroke: var(--wp-zw-red); stroke-width: 3; fill: none; } .chart .l-2c { stroke: var(--wp-zw-yellow); stroke-width: 3; fill: none; } .chart .l-pn { stroke: var(--wp-zw-black); stroke-width: 3; fill: none; stroke-dasharray: 6 5; }
 .legend { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-block-start: 12px; }
-.legend span::before { content: ""; display: inline-block; inline-size: 22px; block-size: 4px; margin-inline-end: 8px; vertical-align: middle; border-radius: 2px; background: currentColor; }
 .legend .wp { color: var(--wp-zw-green); } .legend .pp { color: var(--wp-zw-red); } .legend .tc { color: var(--wp-zw-yellow); } .legend .pn { color: var(--wp-zw-black); }
 
 @media (max-width: 960px) {
@@ -648,11 +647,9 @@ blockquote.answer, [data-answer] { padding-inline-start: 18px; }
 .mock .btn-primary, .mock .mock-pay { color: var(--wp-on-accent); }
 .mock-toast, .mock-toast * { color: var(--wp-ink); }
 /* Header fits at 1360px: icon-only search, flag-only language until there is room */
-@media (max-width: 1500px) { .search-btn .label, .search-btn kbd { display: none; } .lang-dd > summary > span:last-child { display: none; } .site-nav { gap: 2px; } }
+@media (max-width: 1500px) { .search-btn .label, .search-btn kbd { display: none; } .site-nav { gap: 2px; } }
 
 .billing-switch button[aria-pressed="false"] .save { color: var(--wp-zw-green); }
-.chart .l-pp { stroke-width: 7; opacity: .55; }
-.chart .l-2c { stroke-width: 3; }
 
 .search-btn svg { inline-size: 18px; block-size: 18px; flex: none; }
 
@@ -677,3 +674,92 @@ blockquote.answer, [data-answer] { padding-inline-start: 18px; }
   .docs-shell, .page-grid { grid-template-columns: minmax(0, 1fr); }
 }
 .code-block pre, .prose pre { max-inline-size: 100%; overflow-x: auto; }
+
+
+/* =====================================================================================================
+   Design layer 3: a light hero that suits the teal buttons, no stripes, footer legible in both themes,
+   joined code tabs, calmer side-rail call to action, compare marks, flag + code language chips.
+   ===================================================================================================== */
+:root {
+  --wp-foot-on: #f1f7f4;
+  --wp-foot-muted: #c3d9cc;
+  --wp-c-gr: #dc2626; --wp-c-ls: #ca8a04; --wp-c-pd: #ea580c; --wp-c-fw: #9333ea; --wp-c-pp: #2563eb; --wp-c-tc: #475569; --wp-c-st: #7c3aed; --wp-c-sq: #0891b2; --wp-c-bt: #db2777;
+  --wp-hero-bg: linear-gradient(180deg, #eef7f1 0%, #f8f5e6 100%);
+  --wp-hero-on: #13201d;
+  --wp-hero-muted: #3f574c;
+  --wp-hero-accent: #0a7d3c;
+  --wp-hero-glow: color-mix(in srgb, #f2b705 26%, transparent);
+}
+:root[data-theme="dark"] {
+  --wp-hero-bg: linear-gradient(180deg, #0c3b21 0%, #0a2c19 100%);
+  --wp-hero-on: #f1f7f4;
+  --wp-hero-muted: #a9c7b5;
+  --wp-hero-accent: #ffd23f;
+  --wp-hero-glow: color-mix(in srgb, #ffd23f 16%, transparent);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --wp-hero-bg: linear-gradient(180deg, #0c3b21 0%, #0a2c19 100%);
+    --wp-hero-on: #f1f7f4;
+    --wp-hero-muted: #a9c7b5;
+    --wp-hero-accent: #ffd23f;
+    --wp-hero-glow: color-mix(in srgb, #ffd23f 16%, transparent);
+  }
+}
+/* Inside a hero or green band the "on-band" colours follow the hero tokens (dark ink on the light band, white on the dark one) */
+.page-hero, .home-hero, .band-green {
+  --wp-band-on: var(--wp-hero-on);
+  --wp-band-muted: var(--wp-hero-muted);
+  background: var(--wp-hero-bg);
+  color: var(--wp-hero-on);
+}
+.page-hero::before, .home-hero::before { background: radial-gradient(900px 420px at 88% -10%, var(--wp-hero-glow), transparent 70%); }
+.band-green .kicker, .home-hero .trust svg { color: var(--wp-hero-accent); }
+.home-hero h1 em { color: var(--wp-hero-accent); }
+.home-hero .trust li, .home-hero .trust span { color: var(--wp-hero-on); }
+.page-hero .eyebrow::before { background: var(--wp-hero-accent); }
+.page-hero .eyebrow, .home-hero .eyebrow { background: color-mix(in srgb, var(--wp-hero-on) 7%, transparent); border-color: color-mix(in srgb, var(--wp-hero-on) 22%, transparent); }
+.btn-ghost-on, .home-hero .btn-ghost { color: var(--wp-hero-on); border-color: color-mix(in srgb, var(--wp-hero-on) 40%, transparent); background: color-mix(in srgb, var(--wp-surface) 70%, transparent); }
+.btn-ghost-on:hover, .home-hero .btn-ghost:hover { background: var(--wp-surface); }
+.band-green .card { box-shadow: var(--wp-shadow); }
+
+/* Footer stays legible in both themes: it is always a dark band */
+.site-foot { color: var(--wp-foot-muted); }
+.site-foot a, .site-foot h2 { color: var(--wp-foot-on); }
+.site-foot .foot-langs { gap: 8px; }
+.site-foot .foot-langs a { color: var(--wp-foot-on); display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border: 1px solid color-mix(in srgb, var(--wp-foot-on) 22%, transparent); border-radius: 999px; font-size: .8rem; font-weight: 600; letter-spacing: .04em; text-decoration: none; }
+.site-foot .foot-langs a:hover { color: var(--wp-zw-yellow); }
+.site-foot .foot-langs a .flag { margin: 0; font-size: 1rem; line-height: 1; }
+.site-foot .follow a { border-color: color-mix(in srgb, var(--wp-foot-on) 35%, transparent); }
+.site-foot .follow a:hover { background: color-mix(in srgb, var(--wp-foot-on) 12%, transparent); }
+.site-foot .foot-bottom { border-block-start-color: color-mix(in srgb, var(--wp-foot-on) 20%, transparent); }
+.lang-list a[aria-current="true"] { font-weight: 700; }
+
+/* Code tabs and the shell box under them are one object */
+.tab-panel .code-block { margin: 0; border-radius: 0 0 var(--wp-radius) var(--wp-radius); border-block-start: 0; }
+.tab-list { border-block-end: 0; }
+
+/* The side-rail call to action blends into the page instead of shouting in solid yellow */
+.side-rail .cta-card { background: linear-gradient(180deg, color-mix(in srgb, var(--wp-zw-yellow) 14%, var(--wp-surface)), var(--wp-surface)); color: var(--wp-ink); border: 1px solid color-mix(in srgb, var(--wp-zw-yellow) 55%, var(--wp-line)); border-block-start: 4px solid var(--wp-zw-yellow); }
+.side-rail .cta-card h2 { color: var(--wp-ink); }
+.side-rail .cta-card p { color: var(--wp-muted); }
+.side-rail .cta-card .btn { background: var(--wp-accent); color: var(--wp-on-accent); }
+
+/* "Depends" mark: a neutral dash, not a question mark */
+.maybe { background: color-mix(in srgb, var(--wp-zw-yellow) 85%, transparent); color: var(--wp-zw-yellow-ink); }
+
+/* Pricing chart: many providers, one WavePay line on top */
+.chart .l-other { fill: none; stroke-width: 2.5; opacity: .9; }
+.chart .l-wp { stroke-width: 5; }
+.legend { list-style: none; padding: 0; margin-block: 14px 8px; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: .88rem; color: var(--wp-ink); }
+.legend li { display: inline-flex; align-items: center; gap: 8px; }
+.legend .sw { inline-size: 22px; block-size: 5px; border-radius: 3px; flex: none; }
+.legend .wp { font-weight: 700; }
+.side-rail .cta-card .btn { margin-block-start: 6px; }
+.chart .l-other.c-gr { stroke: var(--wp-c-gr); } .chart .l-other.c-ls { stroke: var(--wp-c-ls); } .chart .l-other.c-pd { stroke: var(--wp-c-pd); stroke-dasharray: 8 6; } .chart .l-other.c-fw { stroke: var(--wp-c-fw); }
+.chart .l-other.c-pp { stroke: var(--wp-c-pp); } .chart .l-other.c-tc { stroke: var(--wp-c-tc); } .chart .l-other.c-st { stroke: var(--wp-c-st); } .chart .l-other.c-sq { stroke: var(--wp-c-sq); } .chart .l-other.c-bt { stroke: var(--wp-c-bt); }
+.legend .sw.c-gr { background: var(--wp-c-gr); } .legend .sw.c-ls { background: var(--wp-c-ls); } .legend .sw.c-pd { background: var(--wp-c-pd); } .legend .sw.c-fw { background: var(--wp-c-fw); }
+.legend .sw.c-pp { background: var(--wp-c-pp); } .legend .sw.c-tc { background: var(--wp-c-tc); } .legend .sw.c-st { background: var(--wp-c-st); } .legend .sw.c-sq { background: var(--wp-c-sq); } .legend .sw.c-bt { background: var(--wp-c-bt); }
+.legend .sw.c-wp { background: var(--wp-zw-green); }
+.site-foot .fine, .site-foot .fine a, .site-foot .legal-links a { color: var(--wp-foot-muted); }
+.site-foot .legal-links a:hover, .site-foot .fine a:hover { color: var(--wp-foot-on); }

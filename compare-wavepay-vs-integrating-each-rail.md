@@ -14,11 +14,11 @@ One per wallet, card scheme and PayPal
 
 ✓ One: POST /v2/checkouts
 
-? One report per rail
+– One report per rail
 
 ✓ One payments ledger with since/limit cursors
 
-? Each integration's own idempotency rules
+– Each integration's own idempotency rules
 
 ✓ Idempotency-Key on every checkout
 

@@ -18,15 +18,15 @@ Yes, it is the gateway
 
 ✓ PayPal, crypto on eleven rails, 2Checkout where enabled
 
-? Paynow's own fees, published on its fees page
+– Paynow's own fees, published on its fees page
 
 ✓ The same provider fees, paid at cost with no WavePay markup, plus a WavePay plan and a small falling percentage after the included payments
 
-? You build the schedule and the retries
+– You build the schedule and the retries
 
 ✓ Built in where the rail allows recurring charges
 
-? You build them
+– You build them
 
 ✓ Built in: signed entitlements verified offline
 

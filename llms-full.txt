@@ -652,11 +652,11 @@ Handled by 2Checkout as seller
 
 ✓ EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow
 
-? Check Verifone
+– Check Verifone
 
 ✓ Eleven rails quoted in US dollars
 
-? Depends on Verifone's seller and payout coverage for your country
+– Depends on Verifone's seller and payout coverage for your country
 
 ✓ WavePay itself has no country gate; each rail has its own
 
@@ -803,11 +803,11 @@ Payments across many African countries
 
 ✓ Zimbabwe first, plus international rails
 
-? Check Flutterwave's current Zimbabwe coverage
+– Check Flutterwave's current Zimbabwe coverage
 
 ✓ EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow
 
-? Check Flutterwave
+– Check Flutterwave
 
 ✓ Eleven rails quoted in US dollars
 
@@ -815,7 +815,7 @@ Payments across many African countries
 
 ✓ Built in: signed entitlements verified offline
 
-? Check Flutterwave
+– Check Flutterwave
 
 ✓ MCP tools, skill.md, a one-call registration with no browser
 
@@ -885,11 +885,11 @@ One per wallet, card scheme and PayPal
 
 ✓ One: POST /v2/checkouts
 
-? One report per rail
+– One report per rail
 
 ✓ One payments ledger with since/limit cursors
 
-? Each integration's own idempotency rules
+– Each integration's own idempotency rules
 
 ✓ Idempotency-Key on every checkout
 
@@ -971,15 +971,15 @@ Yes, it is the gateway
 
 ✓ PayPal, crypto on eleven rails, 2Checkout where enabled
 
-? Paynow's own fees, published on its fees page
+– Paynow's own fees, published on its fees page
 
 ✓ The same provider fees, paid at cost with no WavePay markup, plus a WavePay plan and a small falling percentage after the included payments
 
-? You build the schedule and the retries
+– You build the schedule and the retries
 
 ✓ Built in where the rail allows recurring charges
 
-? You build them
+– You build them
 
 ✓ Built in: signed entitlements verified offline
 
@@ -1054,15 +1054,15 @@ PayPal (cards and PayPal balance)
 
 ✓ PayPal, Paynow wallets and cards, crypto, and 2Checkout where enabled
 
-? You, if PayPal supports a merchant account in your country
+– You, if PayPal supports a merchant account in your country
 
-? You, through your own PayPal account (own keys), or T3raTech for T3raTech's own sales
+– You, through your own PayPal account (own keys), or T3raTech for T3raTech's own sales
 
 PayPal's reports
 
 ✓ One payments ledger across every rail
 
-? Build your own
+– Build your own
 
 ✓ Built in: Ed25519 entitlements, offline verification
 
@@ -6232,18 +6232,35 @@ Annual billing is ten months for twelve. Prices exclude VAT where it applies. No
 
 ## What it costs to take $10 payments, all fees included
 
-WavePay is shown with EcoCash, the cheapest local rail: the 2.5% EcoCash fee goes to Paynow at cost, and WavePay's plan and usage fee is added on top. The alternatives are each provider's own rates.
+WavePay is shown with EcoCash: the 2.5% EcoCash fee goes to the provider at cost and WavePay's plan and usage fee is added on top. Take card or PayPal payments through WavePay and the provider's own fee for that rail applies in the same way. The other lines are each provider's published list rate for a $10 payment.
 
-WavePay with EcoCash PayPal, direct (4% + $0.30) 2Checkout, direct (3.5% + $0.35): the same $0.70 as PayPal at $10 Paynow EcoCash, direct (2.5%)
+- WavePay with EcoCash
+- Gumroad (10% + $0.50)
+- Lemon Squeezy (5% + $0.50)
+- Paddle (5% + $0.50)
+- PayPal (3.49% + $0.49)
+- 2Checkout (Verifone) 2Sell (3.5% + $0.35)
+- Stripe (2.9% + $0.30)
+- Square (online) (2.9% + $0.30)
+- Braintree (2.89% + $0.29)
+- Flutterwave (international cards) (4.8%)
+
+Paddle and Lemon Squeezy publish the same rate, so their lines run on top of each other (Paddle dashed). The first 25 payments a month are free on WavePay. Below about 145 payments a month a bare card processor costs less than Growth's $49, because the plan fee is fixed; above that WavePay is cheaper on this chart, and it also brings Zimbabwean wallets, licence keys, subscriptions and agent onboarding in one API.
 
 | Provider | 100 | 250 | 500 | 1,000 | 2,500 | 5,000 | 10,000 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | WavePay with EcoCash | $74 | $112 | $174 | $412 | $1,124 | $1,999 | $3,749 |
-| PayPal (direct) | $70 | $175 | $350 | $700 | $1,750 | $3,500 | $7,000 |
-| 2Checkout / Verifone (direct) | $70 | $175 | $350 | $700 | $1,750 | $3,500 | $7,000 |
-| Paynow, EcoCash (direct, no WavePay) | $25 | $63 | $125 | $250 | $625 | $1,250 | $2,500 |
+| Gumroad | $150 | $375 | $750 | $1,500 | $3,750 | $7,500 | $15,000 |
+| Lemon Squeezy | $100 | $250 | $500 | $1,000 | $2,500 | $5,000 | $10,000 |
+| Paddle | $100 | $250 | $500 | $1,000 | $2,500 | $5,000 | $10,000 |
+| PayPal | $84 | $210 | $420 | $839 | $2,098 | $4,195 | $8,390 |
+| 2Checkout (Verifone) 2Sell | $70 | $175 | $350 | $700 | $1,750 | $3,500 | $7,000 |
+| Stripe | $59 | $148 | $295 | $590 | $1,475 | $2,950 | $5,900 |
+| Square (online) | $59 | $148 | $295 | $590 | $1,475 | $2,950 | $5,900 |
+| Braintree | $58 | $145 | $290 | $579 | $1,448 | $2,895 | $5,790 |
+| Flutterwave (international cards) | $48 | $120 | $240 | $480 | $1,200 | $2,400 | $4,800 |
 
-Sources: Paynow's rates are from [Paynow's fees page](https://www.paynow.co.zw/Home/Fees) (read 2026-10-31). PayPal and 2Checkout rates are indicative figures from our own research, not read from their pages: confirm them on [PayPal](https://www.paypal.com/uk/webapps/mpp/merchant-fees) and [2Checkout](https://www.2checkout.com/pricing/). Paynow direct is the cheapest line because it is one rail with nothing around it: no licence keys, subscriptions, ledger, other rails or agent onboarding. Cards through Paynow cost 3.5% + $0.50 per payment, which is 8.5% of a $10 sale.
+Sources, read on 2026-10-31: [Gumroad](https://gumroad.com/pricing), [Lemon Squeezy](https://www.lemonsqueezy.com/pricing), [Paddle](https://www.paddle.com/pricing), [PayPal](https://www.paypal.com/us/business/paypal-business-fees), [Stripe](https://stripe.com/pricing), [Braintree](https://www.paypal.com/us/enterprise/paypal-braintree-fees) are read from the provider's own page. Flutterwave (international cards) (secondary sources report 4.8% for international cards since late 2024; rates vary by country; [provider page](https://flutterwave.com/us/pricing)); 2Checkout (Verifone) 2Sell (secondary sources (Merchant Maverick, NerdWallet): 3.5% + $0.35; [provider page](https://www.2checkout.com/pricing/)); Square (online) (Online Store and eCommerce API: 2.9% + 30¢ (read through search snippets of Square's fees page); [provider page](https://squareup.com/us/en/fees)) come from secondary sources and are indicative. List rates change and vary by country, plan and card: confirm on the provider's page. Merchant-of-record services such as Paddle and Lemon Squeezy also handle sales tax, which WavePay does not.
 
 ## After the included payments
 

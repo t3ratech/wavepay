@@ -22,11 +22,11 @@ Handled by 2Checkout as seller
 
 ✓ EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow
 
-? Check Verifone
+– Check Verifone
 
 ✓ Eleven rails quoted in US dollars
 
-? Depends on Verifone's seller and payout coverage for your country
+– Depends on Verifone's seller and payout coverage for your country
 
 ✓ WavePay itself has no country gate; each rail has its own
 

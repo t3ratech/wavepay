@@ -14,15 +14,15 @@ PayPal (cards and PayPal balance)
 
 ✓ PayPal, Paynow wallets and cards, crypto, and 2Checkout where enabled
 
-? You, if PayPal supports a merchant account in your country
+– You, if PayPal supports a merchant account in your country
 
-? You, through your own PayPal account (own keys), or T3raTech for T3raTech's own sales
+– You, through your own PayPal account (own keys), or T3raTech for T3raTech's own sales
 
 PayPal's reports
 
 ✓ One payments ledger across every rail
 
-? Build your own
+– Build your own
 
 ✓ Built in: Ed25519 entitlements, offline verification
 
