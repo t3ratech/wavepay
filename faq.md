@@ -8,7 +8,9 @@ QUESTIONS
 
 WavePay is the checkout, licensing and settlement API for software — apps, browser extensions, games, APIs and bots. One integration reaches Zimbabwean wallets (EcoCash, OneMoney, InnBucks, Telecash, O'mari, ZimSwitch) and international rails (Visa, Mastercard, PayPal).
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
 
 ## What is WavePay?
 
@@ -20,7 +22,7 @@ Two calls. POST /v2/register with a name and an email returns a live merchant ke
 
 ## Does WavePay take a percentage of my sales?
 
-Only after your plan's included payments, and the percentage falls as your volume grows (2% down to 0.4%, with a small minimum per payment). The plan fee covers the software: Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month. Provider fees are paid to the provider at cost with no WavePay markup. Full schedule: /pricing.html and /pricing.json.
+Only after your plan's included payments, and the percentage falls as your volume grows (2% down to 0.4%, with a small minimum per payment). The plan fee covers the software: Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month. Provider fees are paid to the provider at cost with no WavePay markup. Full schedule: /pricing.html and /pricing.json.
 
 ## Which payment methods can my customers use?
 
@@ -73,6 +75,23 @@ New checkouts are refused with MERCHANT_LIMIT_REACHED. A buyer who is already mi
 ## Who runs WavePay?
 
 WavePay is built by T3raTech (TeraTech Solutions (Private) Limited). T3rnel Browser sells its Pro tier on this rail in production.
+
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
 
 ## Keep going
 

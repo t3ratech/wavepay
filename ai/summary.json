@@ -19,12 +19,6 @@
       "perMonth": 25
     },
     {
-      "name": "Starter",
-      "price": 15,
-      "from": null,
-      "perMonth": 100
-    },
-    {
       "name": "Growth",
       "price": 49,
       "from": null,
@@ -32,15 +26,9 @@
     },
     {
       "name": "Scale",
-      "price": 149,
+      "price": 499,
       "from": null,
       "perMonth": 2500
-    },
-    {
-      "name": "Enterprise",
-      "price": null,
-      "from": 499,
-      "perMonth": null
     }
   ],
   "rails": {

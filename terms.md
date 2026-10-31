@@ -6,6 +6,8 @@ LEGAL
 
 The terms for using WavePay: the service, accounts and keys, fees and taxes, acceptable use, refunds and chargebacks, availability, liability and governing law.
 
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
 Updated 2026-10-31 · TeraTech Solutions (Private) Limited
 
 ## 1. The service
@@ -47,3 +49,20 @@ You may stop at any time and disconnect your accounts. We may suspend a merchant
 ## 10. Law and changes
 
 These terms are governed by the laws of Zimbabwe and disputes go to its courts, without limiting rights you have as a consumer elsewhere. We will post changes with a new date.
+
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page

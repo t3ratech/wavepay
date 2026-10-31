@@ -6,7 +6,9 @@ HOW IT WORKS
 
 WavePay signs each licence entitlement with an Ed25519 private key it never shares, so your app verifies the signature offline against the public key at GET /v2/licensing/public-key and never needs to call a server to know a licence is genuine.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
 
 ## The flow
 
@@ -23,6 +25,23 @@ An app that works offline, no per-launch licence call to fail, and a trust root 
 ## What it does not do
 
 An offline check cannot know a licence was revoked after the entitlement was issued; design entitlement lifetimes to match how quickly you need revocation to bite.
+
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
 
 ## Keep going
 

@@ -1,6 +1,6 @@
 {
   "currency": "USD",
-  "updated": "2026-10-31",
+  "updated": "2026-11-01",
   "vat": "Prices exclude VAT where VAT applies.",
   "billing": "Monthly, in arrears, as one invoice. Annual prepay is 10 months for 12.",
   "plans": [
@@ -14,19 +14,7 @@
       "coupons": false,
       "prioritySupport": false,
       "overage": false,
-      "summary": "25 payments a month, test mode, one site. Stops at the cap; never charges."
-    },
-    {
-      "id": "starter",
-      "name": "Starter",
-      "monthlyMinor": 1500,
-      "annualMinor": 15000,
-      "includedPayments": 100,
-      "sites": 3,
-      "coupons": true,
-      "prioritySupport": false,
-      "overage": true,
-      "summary": "100 payments included, three sites, coupons, webhooks."
+      "summary": "For trying it out: 25 payments a month, test mode, one site. It stops at the cap and never charges."
     },
     {
       "id": "growth",
@@ -38,48 +26,29 @@
       "coupons": true,
       "prioritySupport": false,
       "overage": true,
-      "summary": "500 payments included, ten sites, subscriptions and instalments."
+      "summary": "500 payments included, ten sites, subscriptions, instalments and coupons. After 500, a small percentage."
     },
     {
       "id": "scale",
       "name": "Scale",
-      "monthlyMinor": 14900,
-      "annualMinor": 149000,
+      "monthlyMinor": 49900,
+      "annualMinor": 499000,
       "includedPayments": 2500,
-      "sites": 30,
-      "coupons": true,
-      "prioritySupport": true,
-      "overage": true,
-      "summary": "2,500 payments included, thirty sites, priority support."
-    },
-    {
-      "id": "enterprise",
-      "name": "Enterprise",
-      "monthlyMinor": null,
-      "annualMinor": null,
-      "fromMonthlyMinor": 49900,
-      "includedPayments": null,
       "sites": null,
       "coupons": true,
       "prioritySupport": true,
       "overage": true,
-      "summary": "From $499 a month: custom volume, SLA, onboarding. By quote."
+      "summary": "2,500 payments included, unlimited sites, priority support and a response-time promise. After 2,500, a lower percentage."
     }
   ],
   "usage": {
-    "rule": "Payments beyond the plan's included allowance pay a percentage of their value, at a rate that falls with the payment's number in the month, with a minimum per payment.",
+    "rule": "Payments beyond the plan's included allowance pay a percentage of their value, at a rate that falls with the payment's number in the month, with a minimum per payment. Growth reaches $499 at 2,500 payments of $10, which is exactly Scale's price, so moving to Scale never causes a jump. You always pay the cheaper of Growth and Scale for the month.",
     "tiers": [
       {
         "fromPayment": 1,
-        "toPayment": 1000,
-        "rateBps": 200,
-        "minimumMinor": 10
-      },
-      {
-        "fromPayment": 1001,
         "toPayment": 2500,
-        "rateBps": 150,
-        "minimumMinor": 8
+        "rateBps": 225,
+        "minimumMinor": 10
       },
       {
         "fromPayment": 2501,

@@ -6,6 +6,8 @@ LEGAL
 
 What personal data WavePay processes, why, which processors we use, how long we keep it and how to exercise your rights under Zimbabwe's data protection law and the GDPR.
 
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
 Updated 2026-10-31 · TeraTech Solutions (Private) Limited
 
 ## Who we are
@@ -53,3 +55,20 @@ Under the Cyber and Data Protection Act 2021 of Zimbabwe, and under the GDPR whe
 ## Children and changes
 
 WavePay is for businesses and is not directed at children. We will post changes here with a new date; material changes are also emailed to merchants.
+
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page

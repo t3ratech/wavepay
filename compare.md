@@ -8,7 +8,9 @@ COMPARE
 
 How WavePay compares with integrating PayPal, Paynow, 2Checkout (Verifone) or Flutterwave directly, with a card-only processor, or with building each payment rail yourself.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
 
 ### [WavePay vs integrating each payment rail yourself](https://wavepay.t3ratech.co.zw/compare-wavepay-vs-integrating-each-rail.html)
 
@@ -39,6 +41,21 @@ Flutterwave is a pan-African payment gateway with its own country coverage; Wave
 WavePay is a checkout, licensing and ledger layer. It does not replace the provider that takes the money: it puts the providers behind one call. Choose a provider directly when you need exactly that provider, you want no layer between you and it, and you are happy to build reconciliation, retries and licensing yourself. Choose WavePay when you need several rails (Zimbabwean wallets, cards, PayPal, crypto), subscriptions or licence keys, or an integration an AI agent can run on its own.
 
 Statements about other providers describe their public positioning; provider terms, fees and country coverage change, so confirm them on the provider's own pages before you decide.
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
 
 ## Keep going
 

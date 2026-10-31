@@ -148,57 +148,33 @@ Zvibhadharo 25 mumazuva 30
 
 [Nyoresa mahara](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Starter
-
-$15 pamwedzi
-
-Zvibhadharo 100 mumazuva 30
-
-- Saiti 3
-- Makuponi nemipiro
-- Webhooks nebhuku
-
-[Tora Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
-
 Recommended
 
 ### Growth
 
 $49 pamwedzi
 
-Zvibhadharo 500 mumazuva 30
+500 payments per 30 days included
 
-- Saiti 10
-- Zvese zviri muStarter
-- Mutsetse werutsigiro rwekutanga
+- Ten sites, coupons and promotions
+- Subscriptions and instalments (buy now, pay later, BNPL)
+- Then 2.25% a payment, falling with volume
 
-[Tora Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[Get Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
 ### Scale
 
-$149 pamwedzi
+$499 pamwedzi
 
-2,500 payments per 30 days
+2,500 payments per 30 days included
 
-- 30 sites
-- Everything in Growth
-- Priority support
+- Unlimited sites
+- Priority support and a response-time promise
+- Then 1.0% a payment, falling to 0.4%
 
 [Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Enterprise
-
-From $499 pamwedzi
-
-Custom volume and an SLA
-
-- Unlimited sites
-- Everything in Scale
-- Onboarding and an SLA
-
-[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
-
-[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+[A plan for the software, plus a small percentage after the included payments that falls as you grow. No quote needed at any volume. See the full price list and the cost chart.](https://wavepay.t3ratech.co.zw/pricing.html)
 
 Mibvunzo
 

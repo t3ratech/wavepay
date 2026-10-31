@@ -4,11 +4,13 @@
 
 USE CASE
 
-# Subscription payment API for SaaS: renewals, instalments, refunds and licences
+# Subscription payment API for software as a service (SaaS ): renewals, instalments, refunds and licences
 
 WavePay is a subscription payment API for SaaS: recurring billing on PayPal and stored instruments where the provider allows it, buy-now-pay-later instalments, refunds, and signed licence keys that verify offline, behind the same checkout call.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
 
 ## The flow
 
@@ -26,6 +28,23 @@ Subscriptions run on the rails that support recurring charges. Paynow tokenisati
 ## Do paid plans refuse buyers at a cap?
 
 No. Paid WavePay plans never refuse a buyer: payments beyond the plan's allowance are charged by the usage schedule.
+
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
 
 ## Keep going
 

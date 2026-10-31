@@ -6,6 +6,8 @@ LEGAL
 
 WavePay aims for WCAG 2.2 level AA on every page: keyboard operation, visible focus, contrast in light and dark themes, reduced motion, right-to-left languages, and how to report a barrier.
 
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
 Updated 2026-10-31 · TeraTech Solutions (Private) Limited
 
 ## Our commitment
@@ -30,3 +32,20 @@ We build this site to WCAG 2.2 level AA and check every page with an automated c
 ## Tell us about a barrier
 
 Write to [support@t3ratech.co.zw](mailto:support@t3ratech.co.zw) with the page and what went wrong. We aim to reply within five working days and to fix real barriers quickly.
+
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page

@@ -148,57 +148,33 @@ $0 навсегда
 
 [Зарегистрироваться бесплатно](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Starter
-
-$15 в месяц
-
-100 платежей за 30 дней
-
-- 3 сайта
-- Купоны и акции
-- Вебхуки и журнал
-
-[Выбрать Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
-
 Recommended
 
 ### Growth
 
 $49 в месяц
 
-500 платежей за 30 дней
+500 payments per 30 days included
 
-- 10 сайтов
-- Всё из Starter
-- Приоритетная очередь поддержки
+- Ten sites, coupons and promotions
+- Subscriptions and instalments (buy now, pay later, BNPL)
+- Then 2.25% a payment, falling with volume
 
-[Выбрать Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[Get Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
 ### Scale
 
-$149 в месяц
+$499 в месяц
 
-2,500 payments per 30 days
+2,500 payments per 30 days included
 
-- 30 sites
-- Everything in Growth
-- Priority support
+- Unlimited sites
+- Priority support and a response-time promise
+- Then 1.0% a payment, falling to 0.4%
 
 [Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Enterprise
-
-From $499 в месяц
-
-Custom volume and an SLA
-
-- Unlimited sites
-- Everything in Scale
-- Onboarding and an SLA
-
-[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
-
-[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+[A plan for the software, plus a small percentage after the included payments that falls as you grow. No quote needed at any volume. See the full price list and the cost chart.](https://wavepay.t3ratech.co.zw/pricing.html)
 
 Вопросы
 

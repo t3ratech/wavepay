@@ -6,6 +6,8 @@ GUIDES
 
 Everything WavePay does, by the question you are trying to answer: which rails it reaches, how to charge for each kind of software, how it compares, and how the licensing and idempotency mechanics work.
 
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
 ## Payment rails
 
 - [Accept EcoCash payments in your software](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html)
@@ -25,7 +27,6 @@ Everything WavePay does, by the question you are trying to answer: which rails i
 - [Subscription payment API for SaaS: renewals, instalments, refunds and licences](https://wavepay.t3ratech.co.zw/saas-subscription-payment-api.html)
 - [Payment infrastructure for AI agents: MCP payment tools and a one-file onboarding](https://wavepay.t3ratech.co.zw/ai-agent-payment-infrastructure.html)
 - [Crypto payment API: Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT and USDC](https://wavepay.t3ratech.co.zw/crypto-payment-api.html)
-- [Integrate WavePay from Claude Code, OpenClaw, OpenFang or a plain API client](https://wavepay.t3ratech.co.zw/integrations-claude-code-openclaw-openfang.html)
 
 ## Comparisons
 
@@ -48,3 +49,20 @@ Everything WavePay does, by the question you are trying to answer: which rails i
 ## Questions
 
 - [Frequently asked questions](https://wavepay.t3ratech.co.zw/faq.html)
+
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page

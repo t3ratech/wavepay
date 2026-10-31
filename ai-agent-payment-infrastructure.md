@@ -8,7 +8,9 @@ USE CASE
 
 WavePay is payment infrastructure for AI agents: skill.md is the whole onboarding, POST /mcp exposes registration, providers, pricing, checkout and status as MCP tools, and an agent can register, check out and reconcile with no browser, OAuth flow or email round-trip.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
 
 ## The flow
 
@@ -26,6 +28,23 @@ Yes. POST /v2/register with a name and an email returns the keys in one response
 ## Where is the machine-readable price list?
 
 /pricing.json, also served live at GET /v2/price-list.
+
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
 
 ## Keep going
 

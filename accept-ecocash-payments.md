@@ -6,7 +6,9 @@ PAYMENT RAIL
 
 To accept EcoCash, register a WavePay merchant, then create a checkout with provider paynow for a hosted page or paynow-mobile with the buyer's phone number to push the EcoCash prompt straight to their handset.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
 
 ## How it works
 
@@ -39,6 +41,23 @@ Yes. Provider paynow-mobile with the buyer's phone number pushes the wallet prom
 ## Can an agent set EcoCash payments up?
 
 Yes. skill.md and the MCP tool wavepay_checkout cover the full flow with no browser.
+
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
 
 ## Keep going
 

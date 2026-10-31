@@ -17,7 +17,9 @@ PAYMENT RAIL
 
 For buyers outside Zimbabwe, WavePay offers Visa and Mastercard through the hosted paynow checkout and PayPal through provider paypal, on the same checkout call — so one integration serves local and international customers.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
 
 ## How it works
 
@@ -46,6 +48,23 @@ Yes — Visa and Mastercard are taken through the hosted paynow checkout and thr
 
 No. It is the same POST /v2/checkouts call with provider "paypal".
 
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
+
 ## Keep going
 
 - [Accept EcoCash payments in your software](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html)
@@ -66,7 +85,9 @@ PAYMENT RAIL
 
 To accept EcoCash, register a WavePay merchant, then create a checkout with provider paynow for a hosted page or paynow-mobile with the buyer's phone number to push the EcoCash prompt straight to their handset.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
 
 ## How it works
 
@@ -100,6 +121,23 @@ Yes. Provider paynow-mobile with the buyer's phone number pushes the wallet prom
 
 Yes. skill.md and the MCP tool wavepay_checkout cover the full flow with no browser.
 
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
+
 ## Keep going
 
 - [Accept OneMoney, InnBucks, Telecash, O'mari and ZimSwitch payments](https://wavepay.t3ratech.co.zw/accept-zimbabwe-wallet-payments.html)
@@ -122,7 +160,9 @@ PAYMENT RAIL
 
 WavePay reaches OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through the same checkout call as EcoCash — one integration, with GET /v2/providers reporting which are live on your deployment. OneMoney, InnBucks and O'mari also support wallet push.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
 
 ## How it works
 
@@ -160,6 +200,23 @@ EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch.
 
 GET /v2/providers lists the live rails for the deployment you are calling.
 
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
+
 ## Keep going
 
 - [Accept EcoCash payments in your software](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html)
@@ -179,6 +236,8 @@ LEGAL
 # Accessibility statement
 
 WavePay aims for WCAG 2.2 level AA on every page: keyboard operation, visible focus, contrast in light and dark themes, reduced motion, right-to-left languages, and how to report a barrier.
+
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
 
 Updated 2026-10-31 · TeraTech Solutions (Private) Limited
 
@@ -205,6 +264,23 @@ We build this site to WCAG 2.2 level AA and check every page with an automated c
 
 Write to [support@t3ratech.co.zw](mailto:support@t3ratech.co.zw) with the page and what went wrong. We aim to reply within five working days and to fix real barriers quickly.
 
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
+
 
 ---
 
@@ -217,6 +293,8 @@ LEGAL
 # EU AI Act and automated decisions
 
 How WavePay uses AI and automation: no automated decisions about people's payments, where AI drafts text or images, human review, and how to ask about or dispute an automated output.
+
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
 
 Updated 2026-10-31 · TeraTech Solutions (Private) Limited
 
@@ -239,6 +317,23 @@ On our reading WavePay is not a high-risk AI system under the EU AI Act: it make
 
 If you think an automated output affected you, write to [support@t3ratech.co.zw](mailto:support@t3ratech.co.zw). A person will look at it, explain what happened and correct it where it was wrong.
 
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
+
 
 ---
 
@@ -254,7 +349,9 @@ USE CASE
 
 WavePay is payment infrastructure for AI agents: skill.md is the whole onboarding, POST /mcp exposes registration, providers, pricing, checkout and status as MCP tools, and an agent can register, check out and reconcile with no browser, OAuth flow or email round-trip.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
 
 ## The flow
 
@@ -272,6 +369,23 @@ Yes. POST /v2/register with a name and an email returns the keys in one response
 ## Where is the machine-readable price list?
 
 /pricing.json, also served live at GET /v2/price-list.
+
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
 
 ## Keep going
 
@@ -435,57 +549,33 @@ $0 للأبد
 
 [سجّل مجانًا](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Starter
-
-$15 شهريًا
-
-100 دفعة كل 30 يومًا
-
-- 3 مواقع
-- قسائم وعروض
-- Webhooks وسجل
-
-[اختر Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
-
 Recommended
 
 ### Growth
 
 $49 شهريًا
 
-500 دفعة كل 30 يومًا
+500 payments per 30 days included
 
-- 10 مواقع
-- كل ما في Starter
-- طابور دعم ذو أولوية
+- Ten sites, coupons and promotions
+- Subscriptions and instalments (buy now, pay later, BNPL)
+- Then 2.25% a payment, falling with volume
 
-[اختر Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[Get Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
 ### Scale
 
-$149 شهريًا
+$499 شهريًا
 
-2,500 payments per 30 days
+2,500 payments per 30 days included
 
-- 30 sites
-- Everything in Growth
-- Priority support
+- Unlimited sites
+- Priority support and a response-time promise
+- Then 1.0% a payment, falling to 0.4%
 
 [Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Enterprise
-
-From $499 شهريًا
-
-Custom volume and an SLA
-
-- Unlimited sites
-- Everything in Scale
-- Onboarding and an SLA
-
-[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
-
-[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+[A plan for the software, plus a small percentage after the included payments that falls as you grow. No quote needed at any volume. See the full price list and the cost chart.](https://wavepay.t3ratech.co.zw/pricing.html)
 
 أسئلة
 
@@ -546,16 +636,41 @@ COMPARE
 
 2Checkout, now Verifone, is a merchant of record that sells on your behalf and handles tax; WavePay is not a merchant of record: it routes buyers to payment rails, can use 2Checkout as one of them where it is enabled, and adds Zimbabwean wallets, crypto, licensing and one ledger.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
 
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
+
+Merchant of record: it is the seller to your buyer
+
+✓ A checkout, licensing and ledger layer: your provider account stays the seller
+
+Handled by 2Checkout as seller
+
+✓ Your responsibility, with the provider you connect
+
+✕ Not its focus
+
+✓ EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow
+
+? Check Verifone
+
+✓ Eleven rails quoted in US dollars
+
+? Depends on Verifone's seller and payout coverage for your country
+
+✓ WavePay itself has no country gate; each rail has its own
+
+Native
+
+✓ Built and tested on staging; switched on in production after Verifone approves the account
 |  | 2Checkout (Verifone) | WavePay |
 | --- | --- | --- |
-| Role | Merchant of record: it is the seller to your buyer | A checkout, licensing and ledger layer: your provider account stays the seller |
-| Sales tax and invoicing | Handled by 2Checkout as seller | Your responsibility, with the provider you connect |
-| Zimbabwean wallets | Not its focus | EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow |
-| Crypto | Check Verifone | Eleven rails quoted in US dollars |
-| Availability for your business | Depends on Verifone's seller and payout coverage for your country | WavePay itself has no country gate; each rail has its own |
-| 2Checkout as a rail | Native | Built and tested on staging; switched on in production after Verifone approves the account |
+| Role |  |  |
+| Sales tax and invoicing |  |  |
+| Zimbabwean wallets |  |  |
+| Crypto |  |  |
+| Availability for your business |  |  |
+| 2Checkout as a rail |  |  |
 
 ## Questions
 
@@ -566,6 +681,23 @@ Yes, once 2Checkout is enabled on your deployment: it is one of the rails behind
 ## Who is the seller in a WavePay payment?
 
 You are, through the provider account the money lands in. WavePay does not act as merchant of record.
+
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
 
 ## Keep going
 
@@ -586,15 +718,36 @@ COMPARE
 
 A card-only processor cannot take a mobile-wallet payment, so buyers who hold EcoCash or OneMoney but not a card cannot pay; WavePay adds those local rails to Visa, Mastercard and PayPal behind the same checkout call.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
 
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
+
+✕ Not offered
+
+✓ Offered; wallet push for EcoCash, OneMoney, InnBucks and O'mari
+
+✕ Not offered
+
+✓ Offered
+
+Offered
+
+✓ Offered
+
+Typically a percentage of sales
+
+✓ Payments processed: Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
+
+Varies
+
+✓ POST /v2/register, skill.md, MCP tools
 |  | Card-only processor | WavePay |
 | --- | --- | --- |
-| Mobile wallets (EcoCash, OneMoney, InnBucks, Telecash, O'mari) | Not offered | Offered; wallet push for EcoCash, OneMoney, InnBucks and O'mari |
-| ZimSwitch | Not offered | Offered |
-| Visa / Mastercard / PayPal | Offered | Offered |
-| Pricing basis | Typically a percentage of sales | Payments processed: Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month |
-| Self-serve for agents | Varies | POST /v2/register, skill.md, MCP tools |
+| Mobile wallets (EcoCash, OneMoney, InnBucks, Telecash, O'mari) |  |  |
+| ZimSwitch |  |  |
+| Visa / Mastercard / PayPal |  |  |
+| Pricing basis |  |  |
+| Self-serve for agents |  |  |
 
 ## Questions
 
@@ -605,6 +758,23 @@ Because a buyer without a card cannot pay at all; each extra rail is a set of cu
 ## Is a card-only processor ever the better choice?
 
 Yes, when every buyer you serve holds a card and you need nothing else.
+
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
 
 ## Keep going
 
@@ -625,16 +795,41 @@ COMPARE
 
 Flutterwave is a pan-African payment gateway with its own country coverage; WavePay concentrates on Zimbabwean rails, PayPal and crypto behind one agent-ready API with licensing built in, so choose by where your buyers and your business are.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
 
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
+
+Payments across many African countries
+
+✓ Zimbabwe first, plus international rails
+
+? Check Flutterwave's current Zimbabwe coverage
+
+✓ EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow
+
+? Check Flutterwave
+
+✓ Eleven rails quoted in US dollars
+
+✕ Not part of the product
+
+✓ Built in: signed entitlements verified offline
+
+? Check Flutterwave
+
+✓ MCP tools, skill.md, a one-call registration with no browser
+
+Flutterwave settles to you per its terms
+
+✓ The provider you connect pays you directly (own keys), or T3raTech for T3raTech's own products
 |  | Flutterwave | WavePay |
 | --- | --- | --- |
-| Focus | Payments across many African countries | Zimbabwe first, plus international rails |
-| Zimbabwean wallets | Check Flutterwave's current Zimbabwe coverage | EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow |
-| Crypto | Check Flutterwave | Eleven rails quoted in US dollars |
-| Licence keys | Not part of the product | Built in: signed entitlements verified offline |
-| AI agents | Check Flutterwave | MCP tools, skill.md, a one-call registration with no browser |
-| Who pays you | Flutterwave settles to you per its terms | The provider you connect pays you directly (own keys), or T3raTech for T3raTech's own products |
+| Focus |  |  |
+| Zimbabwean wallets |  |  |
+| Crypto |  |  |
+| Licence keys |  |  |
+| AI agents |  |  |
+| Who pays you |  |  |
 
 ## Questions
 
@@ -645,6 +840,23 @@ For Zimbabwean wallets plus PayPal and crypto behind one API, yes. If your buyer
 ## Can I combine them?
 
 Not today: Flutterwave is not a WavePay rail.
+
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
 
 ## Keep going
 
@@ -665,16 +877,41 @@ COMPARE
 
 Integrating each rail yourself means one integration, one reconciliation feed and one failure mode per wallet and card scheme; WavePay replaces them with one checkout call and one ledger, at the cost of depending on WavePay for the rails it enables.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
 
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
+
+One per wallet, card scheme and PayPal
+
+✓ One: POST /v2/checkouts
+
+? One report per rail
+
+✓ One payments ledger with since/limit cursors
+
+? Each integration's own idempotency rules
+
+✓ Idempotency-Key on every checkout
+
+Build and run key issuing yourself
+
+✓ Built in: Ed25519 entitlements, offline verification
+
+Per-provider portals and forms
+
+✓ POST /v2/register or skill.md — no browser
+
+Direct relationship with every provider
+
+✓ WavePay sits between you and the provider
 |  | Each rail yourself | WavePay |
 | --- | --- | --- |
-| Integrations to build | One per wallet, card scheme and PayPal | One: POST /v2/checkouts |
-| Reconciliation | One report per rail | One payments ledger with since/limit cursors |
-| Retries | Each integration's own idempotency rules | Idempotency-Key on every checkout |
-| Licence keys | Build and run key issuing yourself | Built in: Ed25519 entitlements, offline verification |
-| Agent onboarding | Per-provider portals and forms | POST /v2/register or skill.md — no browser |
-| Control | Direct relationship with every provider | WavePay sits between you and the provider |
+| Integrations to build |  |  |
+| Reconciliation |  |  |
+| Retries |  |  |
+| Licence keys |  |  |
+| Agent onboarding |  |  |
+| Control |  |  |
 
 ## Questions
 
@@ -685,6 +922,23 @@ When you need one rail only, want the direct provider relationship, and are happ
 ## When does WavePay make more sense?
 
 When your buyers hold different rails, or when an agent has to set payments up without a browser.
+
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
 
 ## Keep going
 
@@ -705,17 +959,46 @@ COMPARE
 
 Paynow is the Zimbabwean gateway WavePay itself uses for EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch; integrate Paynow directly if you need only Paynow, and use WavePay when you also want PayPal, crypto, subscriptions, licensing and one ledger across rails.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
 
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
+
+Yes, it is the gateway
+
+✓ Yes, through Paynow: the same wallets, one checkout call
+
+✕ Not its job
+
+✓ PayPal, crypto on eleven rails, 2Checkout where enabled
+
+? Paynow's own fees, published on its fees page
+
+✓ The same provider fees, paid at cost with no WavePay markup, plus a WavePay plan and a small falling percentage after the included payments
+
+? You build the schedule and the retries
+
+✓ Built in where the rail allows recurring charges
+
+? You build them
+
+✓ Built in: signed entitlements verified offline
+
+Paynow's reports
+
+✓ One payments ledger across every rail
+
+Merchant sign-up with Paynow
+
+✓ POST /v2/register or skill.md (you still connect a Paynow account for Paynow payments)
 |  | Paynow directly | WavePay |
 | --- | --- | --- |
-| Zimbabwean wallets and ZimSwitch | Yes, it is the gateway | Yes, through Paynow: the same wallets, one checkout call |
-| Other rails | Not its job | PayPal, crypto on eleven rails, 2Checkout where enabled |
-| Fees on a payment | Paynow's own fees, published on its fees page | The same provider fees, paid at cost with no WavePay markup, plus a WavePay plan and a small falling percentage after the included payments |
-| Subscriptions and instalments | You build the schedule and the retries | Built in where the rail allows recurring charges |
-| Licence keys | You build them | Built in: signed entitlements verified offline |
-| Reconciliation | Paynow's reports | One payments ledger across every rail |
-| Agent onboarding | Merchant sign-up with Paynow | POST /v2/register or skill.md (you still connect a Paynow account for Paynow payments) |
+| Zimbabwean wallets and ZimSwitch |  |  |
+| Other rails |  |  |
+| Fees on a payment |  |  |
+| Subscriptions and instalments |  |  |
+| Licence keys |  |  |
+| Reconciliation |  |  |
+| Agent onboarding |  |  |
 
 ## Questions
 
@@ -726,6 +1009,23 @@ No. WavePay sits in front of Paynow for Zimbabwean wallets and cards; Paynow sti
 ## When should I use Paynow directly?
 
 When Paynow is your only rail, you are happy to build reconciliation and licensing yourself, and you want no layer between you and the provider.
+
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
 
 ## Keep going
 
@@ -746,15 +1046,36 @@ COMPARE
 
 Integrating PayPal directly gives you one rail and its own reconciliation; WavePay puts PayPal, Zimbabwean wallets, cards and crypto behind one checkout and one ledger, and lets a merchant connect their own PayPal account so PayPal still pays them directly.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
 
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
+
+PayPal (cards and PayPal balance)
+
+✓ PayPal, Paynow wallets and cards, crypto, and 2Checkout where enabled
+
+? You, if PayPal supports a merchant account in your country
+
+? You, through your own PayPal account (own keys), or T3raTech for T3raTech's own sales
+
+PayPal's reports
+
+✓ One payments ledger across every rail
+
+? Build your own
+
+✓ Built in: Ed25519 entitlements, offline verification
+
+Developer portal and app review
+
+✓ POST /v2/register or skill.md
 |  | PayPal directly | WavePay |
 | --- | --- | --- |
-| Rails | PayPal (cards and PayPal balance) | PayPal, Paynow wallets and cards, crypto, and 2Checkout where enabled |
-| Who is paid | You, if PayPal supports a merchant account in your country | You, through your own PayPal account (own keys), or T3raTech for T3raTech's own sales |
-| Reconciliation | PayPal's reports | One payments ledger across every rail |
-| Licence keys | Build your own | Built in: Ed25519 entitlements, offline verification |
-| Agent onboarding | Developer portal and app review | POST /v2/register or skill.md |
+| Rails |  |  |
+| Who is paid |  |  |
+| Reconciliation |  |  |
+| Licence keys |  |  |
+| Agent onboarding |  |  |
 
 ## Questions
 
@@ -765,6 +1086,23 @@ To receive PayPal payments yourself, yes: with own keys you connect your own Pay
 ## Why use WavePay if PayPal pays me directly anyway?
 
 For the rails PayPal does not cover for your buyers, the single ledger and webhook format, the licensing, and the agent-ready onboarding.
+
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
 
 ## Keep going
 
@@ -787,7 +1125,9 @@ COMPARE
 
 How WavePay compares with integrating PayPal, Paynow, 2Checkout (Verifone) or Flutterwave directly, with a card-only processor, or with building each payment rail yourself.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
 
 ### [WavePay vs integrating each payment rail yourself](https://wavepay.t3ratech.co.zw/compare-wavepay-vs-integrating-each-rail.html)
 
@@ -819,6 +1159,21 @@ WavePay is a checkout, licensing and ledger layer. It does not replace the provi
 
 Statements about other providers describe their public positioning; provider terms, fees and country coverage change, so confirm them on the provider's own pages before you decide.
 
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
+
 ## Keep going
 
 - [Pricing](https://wavepay.t3ratech.co.zw/pricing.html)
@@ -837,6 +1192,8 @@ LEGAL
 # Cookies and similar technologies
 
 The cookies and storage this website uses: a theme preference, Google Analytics 4 and ShareThis, what each is for and how to refuse analytics.
+
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
 
 Updated 2026-10-31 · TeraTech Solutions (Private) Limited
 
@@ -861,6 +1218,23 @@ The share buttons in the footer are provided by ShareThis, which may set its own
 
 The hosted checkout and your provider's pages set whatever cookies the provider needs; those are governed by the provider's policy.
 
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
+
 
 ---
 
@@ -876,7 +1250,9 @@ USE CASE
 
 WavePay takes crypto on eleven rails — Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT on three networks and USDC — by quoting the US-dollar price at a fresh rate, showing the exact amount and address, and settling the payment when the exchange credits the deposit.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
 
 ## The flow
 
@@ -894,6 +1270,23 @@ XRP needs a destination tag, and a transfer without one can be lost, so it is le
 ## Who holds the crypto?
 
 For T3raTech's own sales, T3raTech's exchange account. WavePay does not hold crypto for other merchants.
+
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
 
 ## Keep going
 
@@ -1057,57 +1450,33 @@ $0 für immer
 
 [Kostenlos registrieren](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Starter
-
-$15 pro Monat
-
-100 Zahlungen pro 30 Tage
-
-- 3 Websites
-- Gutscheine und Aktionen
-- Webhooks und Journal
-
-[Starter wählen](https://wavepay.t3ratech.co.zw/pricing.html#register)
-
 Recommended
 
 ### Growth
 
 $49 pro Monat
 
-500 Zahlungen pro 30 Tage
+500 payments per 30 days included
 
-- 10 Websites
-- Alles aus Starter
-- Priorisierte Support-Warteschlange
+- Ten sites, coupons and promotions
+- Subscriptions and instalments (buy now, pay later, BNPL)
+- Then 2.25% a payment, falling with volume
 
-[Growth wählen](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[Get Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
 ### Scale
 
-$149 pro Monat
+$499 pro Monat
 
-2,500 payments per 30 days
+2,500 payments per 30 days included
 
-- 30 sites
-- Everything in Growth
-- Priority support
+- Unlimited sites
+- Priority support and a response-time promise
+- Then 1.0% a payment, falling to 0.4%
 
 [Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Enterprise
-
-From $499 pro Monat
-
-Custom volume and an SLA
-
-- Unlimited sites
-- Everything in Scale
-- Onboarding and an SLA
-
-[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
-
-[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+[A plan for the software, plus a small percentage after the included payments that falls as you grow. No quote needed at any volume. See the full price list and the cost chart.](https://wavepay.t3ratech.co.zw/pricing.html)
 
 Fragen
 
@@ -1170,7 +1539,9 @@ USE CASE
 
 WavePay is a developer-first payment API: register with one POST, get a live key and a test key, create idempotent checkouts, receive HMAC-signed settlement webhooks, and read every payment from a cursor-paged ledger — all described in a public OpenAPI file.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
 
 ## The flow
 
@@ -1188,6 +1559,23 @@ Yes. The test key uses the same routes with fake money and never reaches a provi
 ## Where is the API reference?
 
 openapi.json, docs.html and skill.md, all generated from the same source as the Worker.
+
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
 
 ## Keep going
 
@@ -2845,57 +3233,33 @@ $0 para siempre
 
 [Regístrate gratis](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Starter
-
-$15 al mes
-
-100 pagos cada 30 días
-
-- 3 sitios
-- Cupones y promociones
-- Webhooks y registro
-
-[Elegir Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
-
 Recommended
 
 ### Growth
 
 $49 al mes
 
-500 pagos cada 30 días
+500 payments per 30 days included
 
-- 10 sitios
-- Todo lo de Starter
-- Cola de soporte prioritaria
+- Ten sites, coupons and promotions
+- Subscriptions and instalments (buy now, pay later, BNPL)
+- Then 2.25% a payment, falling with volume
 
-[Elegir Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[Get Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
 ### Scale
 
-$149 al mes
+$499 al mes
 
-2,500 payments per 30 days
+2,500 payments per 30 days included
 
-- 30 sites
-- Everything in Growth
-- Priority support
+- Unlimited sites
+- Priority support and a response-time promise
+- Then 1.0% a payment, falling to 0.4%
 
 [Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Enterprise
-
-From $499 al mes
-
-Custom volume and an SLA
-
-- Unlimited sites
-- Everything in Scale
-- Onboarding and an SLA
-
-[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
-
-[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+[A plan for the software, plus a small percentage after the included payments that falls as you grow. No quote needed at any volume. See the full price list and the cost chart.](https://wavepay.t3ratech.co.zw/pricing.html)
 
 Preguntas
 
@@ -2958,7 +3322,9 @@ QUESTIONS
 
 WavePay is the checkout, licensing and settlement API for software — apps, browser extensions, games, APIs and bots. One integration reaches Zimbabwean wallets (EcoCash, OneMoney, InnBucks, Telecash, O'mari, ZimSwitch) and international rails (Visa, Mastercard, PayPal).
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
 
 ## What is WavePay?
 
@@ -2970,7 +3336,7 @@ Two calls. POST /v2/register with a name and an email returns a live merchant ke
 
 ## Does WavePay take a percentage of my sales?
 
-Only after your plan's included payments, and the percentage falls as your volume grows (2% down to 0.4%, with a small minimum per payment). The plan fee covers the software: Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month. Provider fees are paid to the provider at cost with no WavePay markup. Full schedule: /pricing.html and /pricing.json.
+Only after your plan's included payments, and the percentage falls as your volume grows (2% down to 0.4%, with a small minimum per payment). The plan fee covers the software: Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month. Provider fees are paid to the provider at cost with no WavePay markup. Full schedule: /pricing.html and /pricing.json.
 
 ## Which payment methods can my customers use?
 
@@ -3023,6 +3389,23 @@ New checkouts are refused with MERCHANT_LIMIT_REACHED. A buyer who is already mi
 ## Who runs WavePay?
 
 WavePay is built by T3raTech (TeraTech Solutions (Private) Limited). T3rnel Browser sells its Pro tier on this rail in production.
+
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
 
 ## Keep going
 
@@ -3186,57 +3569,33 @@ $0 pour toujours
 
 [S'inscrire gratuitement](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Starter
-
-$15 par mois
-
-100 paiements par période de 30 jours
-
-- 3 sites
-- Coupons et promotions
-- Webhooks et journal
-
-[Choisir Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
-
 Recommended
 
 ### Growth
 
 $49 par mois
 
-500 paiements par période de 30 jours
+500 payments per 30 days included
 
-- 10 sites
-- Tout ce qui est dans Starter
-- File d'assistance prioritaire
+- Ten sites, coupons and promotions
+- Subscriptions and instalments (buy now, pay later, BNPL)
+- Then 2.25% a payment, falling with volume
 
-[Choisir Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[Get Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
 ### Scale
 
-$149 par mois
+$499 par mois
 
-2,500 payments per 30 days
+2,500 payments per 30 days included
 
-- 30 sites
-- Everything in Growth
-- Priority support
+- Unlimited sites
+- Priority support and a response-time promise
+- Then 1.0% a payment, falling to 0.4%
 
 [Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Enterprise
-
-From $499 par mois
-
-Custom volume and an SLA
-
-- Unlimited sites
-- Everything in Scale
-- Onboarding and an SLA
-
-[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
-
-[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+[A plan for the software, plus a small percentage after the included payments that falls as you grow. No quote needed at any volume. See the full price list and the cost chart.](https://wavepay.t3ratech.co.zw/pricing.html)
 
 Questions
 
@@ -3299,7 +3658,9 @@ HOW IT WORKS
 
 WavePay sells through 2Checkout as provider twocheckout: a signed buy-link for one-time purchases, 2Checkout-billed subscriptions with every renewal recorded from a signed notification, refunds through its REST API, and HMAC-signed IPN and LCN webhooks, with 2Checkout acting as merchant of record for tax and invoicing.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
 
 ## One-time checkout
 
@@ -3329,6 +3690,23 @@ Staging places 2Checkout links as test orders: use card 4111111111111111 with an
 
 The 2Checkout rail is a configuration switch, not a code change: a deployment lists twocheckout in its enabled providers once the account is approved, and GET /v2/providers then offers it to buyers.
 
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
+
 ## Keep going
 
 - [Testing WavePay with fake money: test keys, simulated outcomes and time travel](https://wavepay.t3ratech.co.zw/guide-test-mode.html)
@@ -3350,7 +3728,9 @@ HOW IT WORKS
 
 WavePay BNPL takes a deposit at checkout and collects the rest from the customer's card on a schedule, retrying with a back-off until the full price is paid; it is limited to non-prepaid cards, and WavePay collects but does not lend.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
 
 ## How a plan runs
 
@@ -3376,6 +3756,23 @@ Access is suspended after the grace period of missed payments (14 days by defaul
 
 The merchant. WavePay is a collection schedule, not a lender: it does not advance the merchant the balance. A card that stops working leaves the instalments unpaid, which is why access follows payment. Confirm that selling on instalments is permitted for your business and customers before you offer it.
 
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
+
 ## Keep going
 
 - [2Checkout (Verifone) with WavePay: checkout, subscriptions, refunds and notifications](https://wavepay.t3ratech.co.zw/guide-2checkout.html)
@@ -3395,7 +3792,9 @@ HOW IT WORKS
 
 Send a stable Idempotency-Key with every POST /v2/checkouts — derived from your order id, not generated per attempt — and a retry after a timeout returns the original checkout instead of creating a second charge.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
 
 ## The failure it prevents
 
@@ -3412,6 +3811,23 @@ Every checkout, hosted or wallet push. Settlement polling and webhooks are reads
 ## Reconciling
 
 Match on the checkout reference (pay_…) that comes back; the ledger holds one row per settlement.
+
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
 
 ## Keep going
 
@@ -3432,7 +3848,9 @@ HOW IT WORKS
 
 WavePay signs each licence entitlement with an Ed25519 private key it never shares, so your app verifies the signature offline against the public key at GET /v2/licensing/public-key and never needs to call a server to know a licence is genuine.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
 
 ## The flow
 
@@ -3449,6 +3867,23 @@ An app that works offline, no per-launch licence call to fail, and a trust root 
 ## What it does not do
 
 An offline check cannot know a licence was revoked after the entitlement was issued; design entitlement lifetimes to match how quickly you need revocation to bite.
+
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
 
 ## Keep going
 
@@ -3471,7 +3906,9 @@ HOW IT WORKS
 
 A card token or a PayPal subscription can be charged every period with nobody present, but mobile wallets such as EcoCash, OneMoney, InnBucks and O'mari cannot be debited unattended, so a WavePay subscription on a wallet sends the customer a fresh payment prompt each period and access follows what they pay.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
 
 ## Two collection modes
 
@@ -3497,6 +3934,23 @@ POST /v2/internal/subscriptions/cancel ends it now, or with atPeriodEnd true kee
 
 Creating a subscription needs an Idempotency-Key, and every renewal is keyed by its period and attempt, so a repeated billing run can never charge a period twice.
 
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
+
 ## Keep going
 
 - [2Checkout (Verifone) with WavePay: checkout, subscriptions, refunds and notifications](https://wavepay.t3ratech.co.zw/guide-2checkout.html)
@@ -3518,7 +3972,9 @@ HOW IT WORKS
 
 POST /v2/register returns a live key and a test key (mk_test_…); the test key calls the same routes but settles through a simulator that never contacts a payment provider, so you can drive every outcome of your integration, including renewals and instalments, without moving money.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
 
 ## Getting a test key
 
@@ -3543,6 +3999,23 @@ Subscriptions, BNPL, refunds and card tokens are switched on per deployment. A t
 ## What a test key does not prove
 
 A simulator proves your integration handles every outcome; it does not prove a provider's behaviour. Run one live payment of the smallest amount before launch.
+
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
 
 ## Keep going
 
@@ -3705,57 +4178,33 @@ $0 हमेशा
 
 [मुफ़्त पंजीकरण](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Starter
-
-$15 प्रति माह
-
-30 दिनों में 100 भुगतान
-
-- 3 साइट
-- कूपन और प्रमोशन
-- वेबहुक और बही
-
-[Starter लें](https://wavepay.t3ratech.co.zw/pricing.html#register)
-
 Recommended
 
 ### Growth
 
 $49 प्रति माह
 
-30 दिनों में 500 भुगतान
+500 payments per 30 days included
 
-- 10 साइट
-- Starter की हर सुविधा
-- प्राथमिकता सहायता कतार
+- Ten sites, coupons and promotions
+- Subscriptions and instalments (buy now, pay later, BNPL)
+- Then 2.25% a payment, falling with volume
 
-[Growth लें](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[Get Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
 ### Scale
 
-$149 प्रति माह
+$499 प्रति माह
 
-2,500 payments per 30 days
+2,500 payments per 30 days included
 
-- 30 sites
-- Everything in Growth
-- Priority support
+- Unlimited sites
+- Priority support and a response-time promise
+- Then 1.0% a payment, falling to 0.4%
 
 [Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Enterprise
-
-From $499 प्रति माह
-
-Custom volume and an SLA
-
-- Unlimited sites
-- Everything in Scale
-- Onboarding and an SLA
-
-[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
-
-[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+[A plan for the software, plus a small percentage after the included payments that falls as you grow. No quote needed at any volume. See the full price list and the cost chart.](https://wavepay.t3ratech.co.zw/pricing.html)
 
 प्रश्न
 
@@ -3958,57 +4407,33 @@ $0 selamanya
 
 [Daftar gratis](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Starter
-
-$15 per bulan
-
-100 pembayaran per 30 hari
-
-- 3 situs
-- Kupon dan promosi
-- Webhook dan buku pembayaran
-
-[Pilih Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
-
 Recommended
 
 ### Growth
 
 $49 per bulan
 
-500 pembayaran per 30 hari
+500 payments per 30 days included
 
-- 10 situs
-- Semua yang ada di Starter
-- Antrean dukungan prioritas
+- Ten sites, coupons and promotions
+- Subscriptions and instalments (buy now, pay later, BNPL)
+- Then 2.25% a payment, falling with volume
 
-[Pilih Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[Get Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
 ### Scale
 
-$149 per bulan
+$499 per bulan
 
-2,500 payments per 30 days
+2,500 payments per 30 days included
 
-- 30 sites
-- Everything in Growth
-- Priority support
+- Unlimited sites
+- Priority support and a response-time promise
+- Then 1.0% a payment, falling to 0.4%
 
 [Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Enterprise
-
-From $499 per bulan
-
-Custom volume and an SLA
-
-- Unlimited sites
-- Everything in Scale
-- Onboarding and an SLA
-
-[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
-
-[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+[A plan for the software, plus a small percentage after the included payments that falls as you grow. No quote needed at any volume. See the full price list and the cost chart.](https://wavepay.t3ratech.co.zw/pricing.html)
 
 Pertanyaan
 
@@ -4211,57 +4636,33 @@ $0 forever
 
 [Register free](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Starter
-
-$15 per month
-
-100 payments per 30 days
-
-- 3 sites
-- Coupons and promotions
-- Webhooks and ledger
-
-[Get Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
-
 Recommended
 
 ### Growth
 
 $49 per month
 
-500 payments per 30 days
+500 payments per 30 days included
 
-- 10 sites
-- Everything in Starter
-- Priority support queue
+- Ten sites, coupons and promotions
+- Subscriptions and instalments (buy now, pay later, BNPL)
+- Then 2.25% a payment, falling with volume
 
 [Get Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
 ### Scale
 
-$149 per month
+$499 per month
 
-2,500 payments per 30 days
+2,500 payments per 30 days included
 
-- 30 sites
-- Everything in Growth
-- Priority support
+- Unlimited sites
+- Priority support and a response-time promise
+- Then 1.0% a payment, falling to 0.4%
 
 [Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Enterprise
-
-From $499 per month
-
-Custom volume and an SLA
-
-- Unlimited sites
-- Everything in Scale
-- Onboarding and an SLA
-
-[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
-
-[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+[A plan for the software, plus a small percentage after the included payments that falls as you grow. No quote needed at any volume. See the full price list and the cost chart.](https://wavepay.t3ratech.co.zw/pricing.html)
 
 Questions
 
@@ -4312,43 +4713,345 @@ Register in one request. No card, no call.
 
 ---
 
-Source: https://wavepay.t3ratech.co.zw/integrations-claude-code-openclaw-openfang.html
+Source: https://wavepay.t3ratech.co.zw/integrations.html
 
-# Integrate WavePay from Claude Code, OpenClaw, OpenFang or a…
+# Connect WavePay to Claude Code, Codex CLI, Gemini CLI…
 
-> Any MCP client can use WavePay by adding the endpoint https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp; Claude Code adds it with one command, and a plain API…
+> Add WavePay's Model Context Protocol (MCP) server to Claude Code, OpenAI Codex CLI, Gemini CLI, Qwen Code, Grok Build, Devin CLI, OpenClaw, DeepSeek, OpenCode, Goose…
 
-USE CASE
+INTEGRATIONS
 
-# Integrate WavePay from Claude Code, OpenClaw, OpenFang or a plain API client
+# Connect WavePay to Claude Code, Codex CLI, Gemini CLI, OpenClaw, Cursor, Windsurf and more
 
-Any MCP client can use WavePay by adding the endpoint https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp; Claude Code adds it with one command, and a plain API client needs only POST /v2/register and POST /v2/checkouts.
+Add WavePay's Model Context Protocol (MCP) server to Claude Code, OpenAI Codex CLI, Gemini CLI, Qwen Code, Grok Build, Devin CLI, OpenClaw, DeepSeek, OpenCode, Goose, OpenHands, jcode, Cursor, Windsurf, Zed, Cline, Kilo Code and any other MCP client with one command or config block.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
 
-## The flow
+Updated 2026-10-31 · every command below comes from that client's own documentation or a published guide; the badge says which. Client behaviour changes between versions, so run the client's `--help` if a flag is rejected.
 
-1. Claude Code: claude mcp add --transport http wavepay https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp
-2. OpenClaw, OpenFang and other MCP clients: register the same streamable-HTTP endpoint, https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp, in the client's MCP server settings.
-3. Plain HTTP: curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/register -H 'content-type: application/json' -d '{"name":"My app","ownerEmail":"you@example.com"}'
-4. Then test: use the mk_test_ key from the response to create a checkout with fake money, and read the result from GET /v2/checkouts/<reference>/status.
+## The endpoint
+
+One streamable-HTTP MCP server for registration, providers, pricing, checkout, status and the catalogue: `https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp`. It speaks JSON-RPC 2.0 (`tools/list`, `tools/call`) and needs no OAuth: an agent registers itself with `wavepay_register` and receives a live key and a test key.
+
+```
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp -H 'content-type: application/json' -d '{"jsonrpc":"2.0","id":1,"method":"tools/list"}'
+```
+
+## Coding agents (CLI)
+
+### Claude Code Vendor docs
+
+```
+claude mcp add --transport http wavepay https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp
+```
+
+[Source](https://docs.claude.com/en/docs/claude-code/mcp)
+
+### OpenAI Codex CLI Vendor docs
+
+```
+codex mcp add wavepay --url https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp
+```
+
+```
+# or in ~/.codex/config.toml
+[mcp_servers.wavepay]
+url = "https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp"
+```
+
+[Source](https://developers.openai.com/codex/mcp)
+
+### Gemini CLI Vendor or community guide
+
+```
+gemini mcp add --transport http wavepay https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp
+```
+
+[Source](https://docs.trunk.io/use-mcp-server/configuration/gemini-cli)
+
+### Qwen Code Vendor docs
+
+```
+qwen mcp add --transport http wavepay https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp
+```
+
+[Source](https://qwenlm.github.io/qwen-code-docs/en/developers/tools/mcp-server/)
+
+### Grok Build (xAI grok CLI, grok bot) Vendor docs
+
+```
+grok mcp add --transport http wavepay https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp
+```
+
+```
+grok mcp doctor wavepay
+```
+
+[Source](https://docs.x.ai/build/features/mcp-servers)
+
+### Devin CLI Vendor docs
+
+```
+devin mcp add wavepay https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp
+```
+
+[Source](https://docs.devin.ai/cli/extensibility/mcp/configuration)
+
+### OpenClaw Vendor docs
+
+```
+openclaw mcp add wavepay --url https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp --transport streamable-http
+```
+
+```
+openclaw mcp doctor wavepay --probe
+```
+
+[Source](https://docs.openclaw.ai/tools/mcp)
+
+### DeepSeek TUI / DeepSeek harness Vendor or community guide
+
+```
+deepseek-tui mcp add --url https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp
+```
+
+```
+# config file: ~/.deepseek/mcp.json (override with DEEPSEEK_MCP_CONFIG); run deepseek-tui mcp --help for the name argument
+```
+
+[Source](https://raw.githubusercontent.com/Hmbown/DeepSeek-TUI/main/docs/MCP.md)
+
+### OpenCode Vendor docs
+
+```
+// opencode.json
+{ "mcp": { "wavepay": { "type": "remote", "url": "https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp" } } }
+```
+
+[Source](https://opencode.ai/docs/mcp-servers)
+
+### Goose Vendor or community guide
+
+```
+goose configure   # Add Extension → Remote Extension (Streaming HTTP) → paste https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp
+# or ~/.config/goose/config.yaml
+extensions:
+  wavepay:
+    type: streamable_http
+    uri: https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp
+    enabled: true
+```
+
+[Source](https://block.github.io/goose/docs/getting-started/using-extensions)
+
+### OpenHands Vendor docs
+
+```
+# config.toml (local OpenHands)
+[mcp]
+shttp_servers = ["https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp"]
+```
+
+[Source](https://docs.openhands.dev/openhands/usage/settings/mcp-settings)
+
+### jcode Vendor or community guide
+
+```
+# jcode reads stdio servers from .claude/mcp.json or ~/.claude/mcp.json; bridge the remote endpoint:
+{ "servers": { "wavepay": { "command": "npx", "args": ["-y", "mcp-remote", "https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp"] } } }
+```
+
+[Source](https://github.com/kelison/jcode)
+
+### Aider No confirmed MCP client
+
+Aider has no confirmed native MCP client. Use WavePay's REST API directly (POST /v2/register, POST /v2/checkouts) from your repo, or call it through another MCP client.
+
+[Source](https://aider.chat/)
+
+## IDEs and editor agents
+
+### Cursor Vendor or community guide
+
+```
+// ~/.cursor/mcp.json (or .cursor/mcp.json in a project)
+{ "mcpServers": { "wavepay": { "url": "https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp" } } }
+```
+
+[Source](https://cursor.com/docs/context/mcp)
+
+### Windsurf Vendor or community guide
+
+```
+// ~/.codeium/windsurf/mcp_config.json  (the key is serverUrl, not url)
+{ "mcpServers": { "wavepay": { "serverUrl": "https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp" } } }
+```
+
+[Source](https://docs.windsurf.com/windsurf/cascade/mcp)
+
+### Zed Vendor docs
+
+```
+// settings.json
+{ "context_servers": { "wavepay": { "url": "https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp" } } }
+```
+
+```
+# older Zed: use the bridge command npx -y mcp-remote https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp
+```
+
+[Source](https://zed.dev/docs/ai/mcp)
+
+### Cline Vendor or community guide
+
+```
+// cline_mcp_settings.json (CLI: ~/.cline/mcp.json)  — type is case-sensitive
+{ "mcpServers": { "wavepay": { "type": "streamableHttp", "url": "https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp" } } }
+```
+
+[Source](https://docs.cline.bot/mcp/configuring-mcp-servers)
+
+### Kilo Code Vendor docs
+
+```
+// kilo.jsonc
+{ "mcp": { "wavepay": { "type": "remote", "url": "https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp" } } }
+```
+
+```
+# or Settings → MCP → Add Server → Remote (HTTP)
+```
+
+[Source](https://kilo.ai/docs/features/mcp/using-mcp-in-kilo-code)
+
+## Always-on agents and assistants
+
+### Meta Muse No confirmed MCP client
+
+Add the remote MCP endpoint https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp in the assistant's tools or connectors settings if it offers one; otherwise call the REST API.
+
+[Source](https://market-pulse.t3ratech.co.zw/directory)
+
+### Claude Duet and other Claude clients Vendor or community guide
+
+Settings → Connectors → Add custom connector → https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp
+
+[Source](https://support.claude.com/)
+
+### ChatGPT (developer mode connectors) Vendor or community guide
+
+Settings → Connectors → create a connector with the MCP server URL https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp
+
+[Source](https://platform.openai.com/docs/mcp)
+
+## Every other MCP client
+
+Any MCP client — including Cline, Kilo Code, Roo Code, Continue, Amp, Crush, Warp, JetBrains AI Assistant, Visual Studio Code Copilot Chat, Claude Desktop, LM Studio, Open WebUI, LibreChat, AutoGPT, OpenManus and agent frameworks (LangChain, LlamaIndex, CrewAI, Mastra, Vercel AI SDK, OpenAI Agents SDK) — needs only the streamable-HTTP endpoint https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp (JSON-RPC 2.0, tools/list and tools/call). Where a client only speaks stdio, bridge it with: npx -y mcp-remote https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp.
 
 ## Questions
 
-## Do I need an account first?
+How do I connect WavePay to Claude Code?
 
-No. POST /v2/register creates the merchant and returns both keys.
+Use the WavePay MCP endpoint https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp. claude mcp add --transport http wavepay https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp
 
-## Is there a test mode?
+How do I connect WavePay to OpenAI Codex CLI?
 
-Yes: the mk_test_ key uses the same routes and settles through a simulator.
+Use the WavePay MCP endpoint https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp. codex mcp add wavepay --url https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp
 
-## Keep going
+How do I connect WavePay to Gemini CLI?
 
-- [How to charge for a browser extension](https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html)
-- [How to take payments in a game](https://wavepay.t3ratech.co.zw/payments-for-games.html)
-- [Accept EcoCash payments in your software](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html)
-- [FAQ](https://wavepay.t3ratech.co.zw/faq.html)
+Use the WavePay MCP endpoint https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp. gemini mcp add --transport http wavepay https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp
+
+How do I connect WavePay to Qwen Code?
+
+Use the WavePay MCP endpoint https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp. qwen mcp add --transport http wavepay https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp
+
+How do I connect WavePay to Grok Build (xAI grok CLI, grok bot)?
+
+Use the WavePay MCP endpoint https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp. grok mcp add --transport http wavepay https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp
+
+How do I connect WavePay to Devin CLI?
+
+Use the WavePay MCP endpoint https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp. devin mcp add wavepay https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp
+
+How do I connect WavePay to OpenClaw?
+
+Use the WavePay MCP endpoint https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp. openclaw mcp add wavepay --url https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp --transport streamable-http
+
+How do I connect WavePay to DeepSeek TUI / DeepSeek harness?
+
+Use the WavePay MCP endpoint https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp. deepseek-tui mcp add --url https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp
+
+How do I connect WavePay to OpenCode?
+
+Use the WavePay MCP endpoint https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp. // opencode.json { "mcp": { "wavepay": { "type": "remote", "url": "https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp" } } }
+
+How do I connect WavePay to Goose?
+
+Use the WavePay MCP endpoint https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp. goose configure # Add Extension → Remote Extension (Streaming HTTP) → paste https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp # or ~/.config/goose/config.yaml extensions: wavepay: type: streamable_http uri: https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp enabled: true
+
+How do I connect WavePay to OpenHands?
+
+Use the WavePay MCP endpoint https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp. # config.toml (local OpenHands) [mcp] shttp_servers = ["https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp"]
+
+How do I connect WavePay to jcode?
+
+Use the WavePay MCP endpoint https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp. # jcode reads stdio servers from .claude/mcp.json or ~/.claude/mcp.json; bridge the remote endpoint: { "servers": { "wavepay": { "command": "npx", "args": ["-y", "mcp-remote", "https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp"] } } }
+
+How do I connect WavePay to Aider?
+
+Aider has no confirmed native MCP client. Use WavePay's REST API directly (POST /v2/register, POST /v2/checkouts) from your repo, or call it through another MCP client.
+
+How do I connect WavePay to Cursor?
+
+Use the WavePay MCP endpoint https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp. // ~/.cursor/mcp.json (or .cursor/mcp.json in a project) { "mcpServers": { "wavepay": { "url": "https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp" } } }
+
+How do I connect WavePay to Windsurf?
+
+Use the WavePay MCP endpoint https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp. // ~/.codeium/windsurf/mcp_config.json (the key is serverUrl, not url) { "mcpServers": { "wavepay": { "serverUrl": "https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp" } } }
+
+How do I connect WavePay to Zed?
+
+Use the WavePay MCP endpoint https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp. // settings.json { "context_servers": { "wavepay": { "url": "https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp" } } }
+
+How do I connect WavePay to Cline?
+
+Use the WavePay MCP endpoint https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp. // cline_mcp_settings.json (CLI: ~/.cline/mcp.json) — type is case-sensitive { "mcpServers": { "wavepay": { "type": "streamableHttp", "url": "https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp" } } }
+
+How do I connect WavePay to Kilo Code?
+
+Use the WavePay MCP endpoint https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp. // kilo.jsonc { "mcp": { "wavepay": { "type": "remote", "url": "https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp" } } }
+
+How do I connect WavePay to Meta Muse?
+
+Use the WavePay MCP endpoint https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp. Add the remote MCP endpoint https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp in the assistant's tools or connectors settings if it offers one; otherwise call the REST API.
+
+How do I connect WavePay to Claude Duet and other Claude clients?
+
+Use the WavePay MCP endpoint https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp. Settings → Connectors → Add custom connector → https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp
+
+How do I connect WavePay to ChatGPT (developer mode connectors)?
+
+Use the WavePay MCP endpoint https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp. Settings → Connectors → create a connector with the MCP server URL https://t3rnel-wavepay-production.t3ratech.workers.dev/mcp
+
+[API reference](https://wavepay.t3ratech.co.zw/docs/index.html) · [skill.md](https://wavepay.t3ratech.co.zw/skill.md) · [llms.txt](https://wavepay.t3ratech.co.zw/llms.txt) · [Directory of AI agents and harnesses on Market Pulse](https://market-pulse.t3ratech.co.zw/directory)
+
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
 
 
 ---
@@ -4505,57 +5208,33 @@ $0 per sempre
 
 [Registrati gratis](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Starter
-
-$15 al mese
-
-100 pagamenti ogni 30 giorni
-
-- 3 siti
-- Coupon e promozioni
-- Webhook e registro
-
-[Scegli Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
-
 Recommended
 
 ### Growth
 
 $49 al mese
 
-500 pagamenti ogni 30 giorni
+500 payments per 30 days included
 
-- 10 siti
-- Tutto ciò che c'è in Starter
-- Coda di supporto prioritaria
+- Ten sites, coupons and promotions
+- Subscriptions and instalments (buy now, pay later, BNPL)
+- Then 2.25% a payment, falling with volume
 
-[Scegli Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[Get Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
 ### Scale
 
-$149 al mese
+$499 al mese
 
-2,500 payments per 30 days
+2,500 payments per 30 days included
 
-- 30 sites
-- Everything in Growth
-- Priority support
+- Unlimited sites
+- Priority support and a response-time promise
+- Then 1.0% a payment, falling to 0.4%
 
 [Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Enterprise
-
-From $499 al mese
-
-Custom volume and an SLA
-
-- Unlimited sites
-- Everything in Scale
-- Onboarding and an SLA
-
-[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
-
-[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+[A plan for the software, plus a small percentage after the included payments that falls as you grow. No quote needed at any volume. See the full price list and the cost chart.](https://wavepay.t3ratech.co.zw/pricing.html)
 
 Domande
 
@@ -4758,57 +5437,33 @@ $0 ずっと
 
 [無料で登録](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Starter
-
-$15 月額
-
-30日あたり100件の決済
-
-- 3サイト
-- クーポンとプロモーション
-- Webhookと台帳
-
-[Starterを選ぶ](https://wavepay.t3ratech.co.zw/pricing.html#register)
-
 Recommended
 
 ### Growth
 
 $49 月額
 
-30日あたり500件の決済
+500 payments per 30 days included
 
-- 10サイト
-- Starterのすべて
-- 優先サポート窓口
+- Ten sites, coupons and promotions
+- Subscriptions and instalments (buy now, pay later, BNPL)
+- Then 2.25% a payment, falling with volume
 
-[Growthを選ぶ](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[Get Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
 ### Scale
 
-$149 月額
+$499 月額
 
-2,500 payments per 30 days
+2,500 payments per 30 days included
 
-- 30 sites
-- Everything in Growth
-- Priority support
+- Unlimited sites
+- Priority support and a response-time promise
+- Then 1.0% a payment, falling to 0.4%
 
 [Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Enterprise
-
-From $499 月額
-
-Custom volume and an SLA
-
-- Unlimited sites
-- Everything in Scale
-- Onboarding and an SLA
-
-[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
-
-[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+[A plan for the software, plus a small percentage after the included payments that falls as you grow. No quote needed at any volume. See the full price list and the cost chart.](https://wavepay.t3ratech.co.zw/pricing.html)
 
 よくある質問
 
@@ -4869,6 +5524,8 @@ GUIDES
 
 Everything WavePay does, by the question you are trying to answer: which rails it reaches, how to charge for each kind of software, how it compares, and how the licensing and idempotency mechanics work.
 
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
 ## Payment rails
 
 - [Accept EcoCash payments in your software](https://wavepay.t3ratech.co.zw/accept-ecocash-payments.html)
@@ -4888,7 +5545,6 @@ Everything WavePay does, by the question you are trying to answer: which rails i
 - [Subscription payment API for SaaS: renewals, instalments, refunds and licences](https://wavepay.t3ratech.co.zw/saas-subscription-payment-api.html)
 - [Payment infrastructure for AI agents: MCP payment tools and a one-file onboarding](https://wavepay.t3ratech.co.zw/ai-agent-payment-infrastructure.html)
 - [Crypto payment API: Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT and USDC](https://wavepay.t3ratech.co.zw/crypto-payment-api.html)
-- [Integrate WavePay from Claude Code, OpenClaw, OpenFang or a plain API client](https://wavepay.t3ratech.co.zw/integrations-claude-code-openclaw-openfang.html)
 
 ## Comparisons
 
@@ -4912,6 +5568,23 @@ Everything WavePay does, by the question you are trying to answer: which rails i
 
 - [Frequently asked questions](https://wavepay.t3ratech.co.zw/faq.html)
 
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
+
 
 ---
 
@@ -4927,7 +5600,9 @@ USE CASE
 
 WavePay is a multi-currency payment gateway API: Visa and Mastercard and PayPal for international buyers, Paynow for Zimbabwean wallets in US dollars, and eleven crypto rails quoted in US dollars, all through one checkout call and one ledger.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
 
 ## The flow
 
@@ -4945,6 +5620,23 @@ With own keys you connect your own PayPal account and PayPal pays you directly; 
 ## Which currencies are supported?
 
 PayPal takes the currencies your PayPal account supports; Paynow and crypto are quoted in US dollars. GET /v2/providers lists what is live.
+
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
 
 ## Keep going
 
@@ -5108,57 +5800,33 @@ Izinkokhelo ezingu-25 ezinsukwini ezingu-30
 
 [Bhalisa mahala](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Starter
-
-$15 ngenyanga
-
-Izinkokhelo ezingu-100 ezinsukwini ezingu-30
-
-- Amasayithi angu-3
-- Amakhuphoni lezethulo
-- Ama-webhook lebhuku
-
-[Thatha i-Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
-
 Recommended
 
 ### Growth
 
 $49 ngenyanga
 
-Izinkokhelo ezingu-500 ezinsukwini ezingu-30
+500 payments per 30 days included
 
-- Amasayithi ali-10
-- Konke okukuStarter
-- Ulayini wosekelo olubalulekileyo
+- Ten sites, coupons and promotions
+- Subscriptions and instalments (buy now, pay later, BNPL)
+- Then 2.25% a payment, falling with volume
 
-[Thatha i-Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[Get Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
 ### Scale
 
-$149 ngenyanga
+$499 ngenyanga
 
-2,500 payments per 30 days
+2,500 payments per 30 days included
 
-- 30 sites
-- Everything in Growth
-- Priority support
+- Unlimited sites
+- Priority support and a response-time promise
+- Then 1.0% a payment, falling to 0.4%
 
 [Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Enterprise
-
-From $499 ngenyanga
-
-Custom volume and an SLA
-
-- Unlimited sites
-- Everything in Scale
-- Onboarding and an SLA
-
-[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
-
-[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+[A plan for the software, plus a small percentage after the included payments that falls as you grow. No quote needed at any volume. See the full price list and the cost chart.](https://wavepay.t3ratech.co.zw/pricing.html)
 
 Imibuzo
 
@@ -5219,7 +5887,9 @@ USE CASE
 
 Charge for an API with WavePay by selling plans through checkout, issuing a licence key on payment, and gating requests on the key — settlement arrives by signed webhook so access can be granted automatically.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
 
 ## The flow
 
@@ -5238,6 +5908,23 @@ Through a signed webhook, or by polling checkout status.
 
 Settlements are signed with the HMAC secret returned when you registered the webhook.
 
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
+
 ## Keep going
 
 - [How to charge for a browser extension](https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html)
@@ -5250,15 +5937,19 @@ Settlements are signed with the HMAC secret returned when you registered the web
 
 Source: https://wavepay.t3ratech.co.zw/payments-for-apps.html
 
+# How to charge for an app or SaaS · WavePay
+
 > Charge for an app or SaaS with WavePay by pricing plans as data, sending buyers to a hosted checkout, and unlocking seats from licence activations or your signed…
 
 USE CASE
 
-# How to charge for an app or SaaS
+# How to charge for an app or software as a service (SaaS )
 
 Charge for an app or SaaS with WavePay by pricing plans as data, sending buyers to a hosted checkout, and unlocking seats from licence activations or your signed settlement webhook.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
 
 ## The flow
 
@@ -5276,6 +5967,23 @@ Yes. Pricing is data, so a promotion is a row, not a release.
 ## Where do I see every payment?
 
 In the payments ledger — one feed for every rail, drained with since/limit cursors.
+
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
 
 ## Keep going
 
@@ -5297,7 +6005,9 @@ USE CASE
 
 Charge for a bot with WavePay by pushing a wallet prompt to the user's phone with paynow-mobile, so the payment happens inside the chat flow without a browser, then unlock features when status reads collected.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
 
 ## The flow
 
@@ -5315,6 +6025,23 @@ Yes, with paynow-mobile and the buyer's phone number.
 ## Can the bot's own agent run the integration?
 
 Yes. The MCP tools expose registration, pricing, checkout and status.
+
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
 
 ## Keep going
 
@@ -5336,7 +6063,9 @@ USE CASE
 
 Sell a browser extension with WavePay by creating a checkout for your Pro plan, emailing a licence key on payment, and letting the extension verify an Ed25519-signed entitlement offline — T3rnel Browser sells Pro this way in production.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
 
 ## The flow
 
@@ -5355,6 +6084,23 @@ No. Entitlements are Ed25519-signed, so the extension verifies them offline agai
 ## Who already does this?
 
 T3rnel Browser sells its Pro tier on this exact flow.
+
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
 
 ## Keep going
 
@@ -5376,7 +6122,9 @@ USE CASE
 
 In a game, charge a player without leaving the session by using provider paynow-mobile with their phone number — the EcoCash, OneMoney, InnBucks or O'mari prompt is pushed to their handset and your game polls checkout status until it reads collected.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
 
 ## The flow
 
@@ -5395,6 +6143,23 @@ No. With paynow-mobile the prompt arrives on their handset, for EcoCash, OneMone
 
 Send the same Idempotency-Key; the same checkout is returned.
 
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
+
 ## Keep going
 
 - [How to charge for a browser extension](https://wavepay.t3ratech.co.zw/payments-for-browser-extensions.html)
@@ -5407,124 +6172,113 @@ Send the same Idempotency-Key; the same checkout is returned.
 
 Source: https://wavepay.t3ratech.co.zw/pricing.html
 
-# Pricing — WavePay
+# WavePay pricing: Free, Growth $49 and Scale $499, plus a small…
 
-> WavePay pricing by payments processed: Free $0 for 25 payments a month, Basic $9 for 250, Pro $29 for 2,500. Every rail included, no percentage rake.
+> WavePay has three plans: Free for 25 payments, Growth at $49 for 500 payments (recommended) and Scale at $499 for 2,500.
 
-Merchant pricing
+PRICING
 
-# A plan for the software, a small percentage for the volume
+# One plan for the software. A small percentage that falls as you grow.
 
-WavePay is the checkout, licensing and billing layer. You pay a plan for the software, and a percentage that **falls as your volume grows** once you pass your plan's included payments. Provider fees, bank charges and the transfer tax are paid to the provider at cost: WavePay adds no markup to them.
+WavePay has three plans: Free for 25 payments, Growth at $49 for 500 payments (recommended) and Scale at $499 for 2,500. Beyond the included payments a small percentage applies, from 2.25% falling to 0.4%. Provider fees are paid at cost.
 
-### Free
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
+## Free
 
 $0 forever
 
-25 payments a month, test mode, one site. Stops at the cap; never charges.
+For trying it out: 25 payments a month, test mode, one site. It stops at the cap and never charges.
 
-- 25 payments / month included
-- 1 site
-- Signed webhooks + payments ledger
+- 25 payments a month
+- Test mode with fake money
+- One site
+- Signed webhooks and a payments ledger
+- Stops at the cap and never charges
 
-Register free — one POST
-
-### Starter
-
-$15 USD / month
-
-100 payments included, three sites, coupons, webhooks.
-
-- 100 payments / month included
-- 3 sites
-- Coupons & promotions
-- Signed webhooks + payments ledger
-
-Get Starter — $15/mo
+Register free
 
 Recommended
 
-### Growth
+## Growth
 
 $49 USD / month
 
-500 payments included, ten sites, subscriptions and instalments.
+500 payments included, ten sites, subscriptions, instalments and coupons. After 500, a small percentage.
 
-- 500 payments / month included
-- 10 sites
-- Coupons & promotions
-- Signed webhooks + payments ledger
+- 500 payments included
+- Then 2.25% of each payment (minimum 10 cents), falling with volume
+- Ten sites, coupons, subscriptions, instalments (BNPL)
+- Own PayPal account, Paynow, EcoCash, crypto
+- Reaches $499 at 2,500 payments of $10, exactly Scale's price
 
-Get Growth — $49/mo
+Start with Growth
 
-### Scale
+## Scale
 
-$149 USD / month
+$499 USD / month
 
-2,500 payments included, thirty sites, priority support.
+2,500 payments included, unlimited sites, priority support and a response-time promise. After 2,500, a lower percentage.
 
-- 2,500 payments / month included
-- 30 sites
-- Coupons & promotions
-- Signed webhooks + payments ledger
-- Priority support
+- 2,500 payments included
+- Then 1.0% falling to 0.4% on larger volumes
+- Unlimited sites and priority support
+- Response-time promise for production incidents
+- You always pay the cheaper of Growth and Scale
 
-Get Scale — $149/mo
+Choose Scale
 
-### Enterprise
+Annual billing is ten months for twelve. Prices exclude VAT where it applies. No quote needed at any volume: the schedule below simply continues.
 
-From $499 USD / month
+## What it costs to take $10 payments, all fees included
 
-From $499 a month: custom volume, SLA, onboarding. By quote.
+WavePay is shown with EcoCash, the cheapest local rail: the 2.5% EcoCash fee goes to Paynow at cost, and WavePay's plan and usage fee is added on top. The alternatives are each provider's own rates.
 
-- Custom volume
-- Unlimited sites
-- Coupons & promotions
-- Signed webhooks + payments ledger
-- Priority support and an SLA
+WavePay with EcoCash PayPal, direct (4% + $0.30) 2Checkout, direct (3.5% + $0.35): the same $0.70 as PayPal at $10 Paynow EcoCash, direct (2.5%)
 
-[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
+| Provider | 100 | 250 | 500 | 1,000 | 2,500 | 5,000 | 10,000 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| WavePay with EcoCash | $74 | $112 | $174 | $412 | $1,124 | $1,999 | $3,749 |
+| PayPal (direct) | $70 | $175 | $350 | $700 | $1,750 | $3,500 | $7,000 |
+| 2Checkout / Verifone (direct) | $70 | $175 | $350 | $700 | $1,750 | $3,500 | $7,000 |
+| Paynow, EcoCash (direct, no WavePay) | $25 | $63 | $125 | $250 | $625 | $1,250 | $2,500 |
 
-### After your included payments
+Sources: Paynow's rates are from [Paynow's fees page](https://www.paynow.co.zw/Home/Fees) (read 2026-10-31). PayPal and 2Checkout rates are indicative figures from our own research, not read from their pages: confirm them on [PayPal](https://www.paypal.com/uk/webapps/mpp/merchant-fees) and [2Checkout](https://www.2checkout.com/pricing/). Paynow direct is the cheapest line because it is one rail with nothing around it: no licence keys, subscriptions, ledger, other rails or agent onboarding. Cards through Paynow cost 3.5% + $0.50 per payment, which is 8.5% of a $10 sale.
 
-Each extra payment pays a percentage of its value, by its number in the month, with a minimum per payment. The rate only ever falls.
+## After the included payments
+
+Each extra payment pays a percentage of its value, by its number in the month, with a minimum per payment. The rate only ever falls. Payment #501 on Growth costs 2.25% of its value: 22.5 cents on a $10 sale, $2.25 on a $100 sale.
 
 | Payment number in the month | Rate | Minimum per payment |
 | --- | --- | --- |
-| 1–1,000 | 2% | $0.10 |
-| 1,001–2,500 | 1.5% | $0.08 |
+| 1–2,500 | 2.25% | $0.10 |
 | 2,501–10,000 | 1% | $0.06 |
 | 10,001–50,000 | 0.6% | $0.05 |
 | 50,001+ | 0.4% | $0.04 |
 
-Example: Growth, 1,000 payments of $10 in a month = $49 plan + $100 usage = $149 ($0.149 per payment, 1.49% of sales). Billed monthly in arrears as one invoice; annual prepay is ten months for twelve. Prices exclude VAT where it applies. The same numbers, machine-readable: [pricing.json](https://wavepay.t3ratech.co.zw/pricing.json).
+### What a month costs
 
-### Your money goes to you
+| Payments × ticket | Plan | WavePay bill | % of sales | Per payment |
+| --- | --- | --- | --- | --- |
+| 1,000 × $3 | Growth | $99 | 3.30% | $0.10 |
+| 1,000 × $10 | Growth | $162 | 1.62% | $0.16 |
+| 2,500 × $10 | Growth | $499 | 2.00% | $0.20 |
+| 5,000 × $10 | Growth | $749 | 1.50% | $0.15 |
+| 2,500 × $25 | Scale | $499 | 0.80% | $0.20 |
+| 1,000 × $100 | Scale | $499 | 0.50% | $0.50 |
+| 5,000 × $100 | Scale | $2,999 | 0.60% | $0.60 |
 
-With **own keys** (the default) you connect your own PayPal account and the provider pays you directly: WavePay never holds your money. Zimbabwean merchants use Paynow, EcoCash and crypto. A mode where WavePay collects and pays out needs a Reserve Bank payment-service-provider licence and is not offered yet.
+Provider fees, bank charges and the transfer tax are paid by you to the provider at cost: WavePay adds no markup to them. Billed monthly in arrears as one invoice with Paynow and PayPal pay links.
 
-### Start in one POST — no form, no call
+## Start in one request
 
 ```
-# Register — returns your live merchant key once. Free tier, working now:
-curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/register \
-  -H 'Content-Type: application/json' \
-  -d '{"name":"My Product","ownerEmail":"you@example.com"}'
-# → 201 { "merchantId": "mer_…", "key": "mk_live_…", "planId": "free", "paymentsPerMonth": 25 }
-
-# Upgrade — a normal checkout on the wavepay product, your own rails:
-curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/checkouts \
-  -H 'Content-Type: application/json' -H 'Idempotency-Key: upgrade-' \
-  -d '{"productId":"wavepay","planId":"growth","provider":"paynow","email":"you@example.com"}'
-# → 201 { "checkoutUrl": "https://www.paynow.co.zw/…", … } — settle it and
-#   your merchant's plan_id moves to growth. provider "paypal" works too.
+# Register: returns your live key and a test key (shown once)
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/register -H 'content-type: application/json' \
+  -d '{"name":"My product","ownerEmail":"you@example.com"}'
 ```
 
-Agents: [skill.md](https://wavepay.t3ratech.co.zw/skill.md) is the same story in one markdown file, and `POST /mcp` exposes it all as tools. Registration returns a live key and a test key (`mk_test_…`) — the test key uses the same routes with fake money, never reaches a provider and never counts against the cap. Subscriptions, buy now pay later and refunds are usable in test mode today and switched on for live money per deployment (`GET /v2/features`). Questions: [support@t3ratech.co.zw](mailto:support@t3ratech.co.zw).
-
-### Fair fine print
-
-Free stops at its 25 payments and never charges. Paid plans never refuse a buyer at the allowance: later payments are charged by the schedule above. A cap or a charge never blocks or double-charges a buyer mid-payment. Check [status](https://wavepay.t3ratech.co.zw/status.html) for the live rails.
+Agents: [skill.md](https://wavepay.t3ratech.co.zw/skill.md) is the same story in one file, and the Model Context Protocol (MCP) server at `/mcp` exposes it as tools. [Connect Claude Code, Codex CLI, Gemini CLI, OpenClaw and more](https://wavepay.t3ratech.co.zw/integrations.html). Also machine-readable: [pricing.json](https://wavepay.t3ratech.co.zw/pricing.json).
 
 
 ---
@@ -5538,6 +6292,8 @@ LEGAL
 # Privacy policy
 
 What personal data WavePay processes, why, which processors we use, how long we keep it and how to exercise your rights under Zimbabwe's data protection law and the GDPR.
+
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
 
 Updated 2026-10-31 · TeraTech Solutions (Private) Limited
 
@@ -5586,6 +6342,23 @@ Under the Cyber and Data Protection Act 2021 of Zimbabwe, and under the GDPR whe
 ## Children and changes
 
 WavePay is for businesses and is not directed at children. We will post changes here with a new date; material changes are also emailed to merchants.
+
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
 
 
 ---
@@ -5742,57 +6515,33 @@ $0 para sempre
 
 [Registar grátis](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Starter
-
-$15 por mês
-
-100 pagamentos por 30 dias
-
-- 3 sites
-- Cupões e promoções
-- Webhooks e registo
-
-[Escolher Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
-
 Recommended
 
 ### Growth
 
 $49 por mês
 
-500 pagamentos por 30 dias
+500 payments per 30 days included
 
-- 10 sites
-- Tudo o que está no Starter
-- Fila de suporte prioritária
+- Ten sites, coupons and promotions
+- Subscriptions and instalments (buy now, pay later, BNPL)
+- Then 2.25% a payment, falling with volume
 
-[Escolher Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[Get Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
 ### Scale
 
-$149 por mês
+$499 por mês
 
-2,500 payments per 30 days
+2,500 payments per 30 days included
 
-- 30 sites
-- Everything in Growth
-- Priority support
+- Unlimited sites
+- Priority support and a response-time promise
+- Then 1.0% a payment, falling to 0.4%
 
 [Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Enterprise
-
-From $499 por mês
-
-Custom volume and an SLA
-
-- Unlimited sites
-- Everything in Scale
-- Onboarding and an SLA
-
-[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
-
-[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+[A plan for the software, plus a small percentage after the included payments that falls as you grow. No quote needed at any volume. See the full price list and the cost chart.](https://wavepay.t3ratech.co.zw/pricing.html)
 
 Perguntas
 
@@ -5995,57 +6744,33 @@ $0 навсегда
 
 [Зарегистрироваться бесплатно](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Starter
-
-$15 в месяц
-
-100 платежей за 30 дней
-
-- 3 сайта
-- Купоны и акции
-- Вебхуки и журнал
-
-[Выбрать Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
-
 Recommended
 
 ### Growth
 
 $49 в месяц
 
-500 платежей за 30 дней
+500 payments per 30 days included
 
-- 10 сайтов
-- Всё из Starter
-- Приоритетная очередь поддержки
+- Ten sites, coupons and promotions
+- Subscriptions and instalments (buy now, pay later, BNPL)
+- Then 2.25% a payment, falling with volume
 
-[Выбрать Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[Get Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
 ### Scale
 
-$149 в месяц
+$499 в месяц
 
-2,500 payments per 30 days
+2,500 payments per 30 days included
 
-- 30 sites
-- Everything in Growth
-- Priority support
+- Unlimited sites
+- Priority support and a response-time promise
+- Then 1.0% a payment, falling to 0.4%
 
 [Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Enterprise
-
-From $499 в месяц
-
-Custom volume and an SLA
-
-- Unlimited sites
-- Everything in Scale
-- Onboarding and an SLA
-
-[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
-
-[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+[A plan for the software, plus a small percentage after the included payments that falls as you grow. No quote needed at any volume. See the full price list and the cost chart.](https://wavepay.t3ratech.co.zw/pricing.html)
 
 Вопросы
 
@@ -6104,11 +6829,13 @@ Source: https://wavepay.t3ratech.co.zw/saas-subscription-payment-api.html
 
 USE CASE
 
-# Subscription payment API for SaaS: renewals, instalments, refunds and licences
+# Subscription payment API for software as a service (SaaS ): renewals, instalments, refunds and licences
 
 WavePay is a subscription payment API for SaaS: recurring billing on PayPal and stored instruments where the provider allows it, buy-now-pay-later instalments, refunds, and signed licence keys that verify offline, behind the same checkout call.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
 
 ## The flow
 
@@ -6126,6 +6853,23 @@ Subscriptions run on the rails that support recurring charges. Paynow tokenisati
 ## Do paid plans refuse buyers at a cap?
 
 No. Paid WavePay plans never refuse a buyer: payments beyond the plan's allowance are charged by the usage schedule.
+
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
 
 ## Keep going
 
@@ -6146,6 +6890,8 @@ TRUST
 # How WavePay protects your keys, your buyers and your money
 
 How WavePay keeps API keys, provider credentials and buyer data safe: hashed and sealed secrets, no card numbers, signed webhooks, scoped keys, and how to report a vulnerability.
+
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
 
 Updated 2026-10-31 · TeraTech Solutions (Private) Limited
 
@@ -6203,6 +6949,23 @@ We do not publish internal architecture, limits or hostnames: that detail helps 
 ## If something goes wrong
 
 If we find that merchant or buyer data was exposed, we tell affected merchants without undue delay, say what happened and what to do, and fix the cause. Subscribers to [status](https://wavepay.t3ratech.co.zw/status.html) see service incidents as they happen.
+
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
 
 
 ---
@@ -6359,57 +7122,33 @@ Zvibhadharo 25 mumazuva 30
 
 [Nyoresa mahara](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Starter
-
-$15 pamwedzi
-
-Zvibhadharo 100 mumazuva 30
-
-- Saiti 3
-- Makuponi nemipiro
-- Webhooks nebhuku
-
-[Tora Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
-
 Recommended
 
 ### Growth
 
 $49 pamwedzi
 
-Zvibhadharo 500 mumazuva 30
+500 payments per 30 days included
 
-- Saiti 10
-- Zvese zviri muStarter
-- Mutsetse werutsigiro rwekutanga
+- Ten sites, coupons and promotions
+- Subscriptions and instalments (buy now, pay later, BNPL)
+- Then 2.25% a payment, falling with volume
 
-[Tora Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[Get Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
 ### Scale
 
-$149 pamwedzi
+$499 pamwedzi
 
-2,500 payments per 30 days
+2,500 payments per 30 days included
 
-- 30 sites
-- Everything in Growth
-- Priority support
+- Unlimited sites
+- Priority support and a response-time promise
+- Then 1.0% a payment, falling to 0.4%
 
 [Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Enterprise
-
-From $499 pamwedzi
-
-Custom volume and an SLA
-
-- Unlimited sites
-- Everything in Scale
-- Onboarding and an SLA
-
-[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
-
-[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+[A plan for the software, plus a small percentage after the included payments that falls as you grow. No quote needed at any volume. See the full price list and the cost chart.](https://wavepay.t3ratech.co.zw/pricing.html)
 
 Mibvunzo
 
@@ -6612,57 +7351,33 @@ Malipo 25 kwa siku 30
 
 [Jisajili bure](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Starter
-
-$15 kwa mwezi
-
-Malipo 100 kwa siku 30
-
-- Tovuti 3
-- Kuponi na ofa
-- Webhooks na daftari
-
-[Chagua Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
-
 Recommended
 
 ### Growth
 
 $49 kwa mwezi
 
-Malipo 500 kwa siku 30
+500 payments per 30 days included
 
-- Tovuti 10
-- Kila kitu cha Starter
-- Foleni ya msaada wa kipaumbele
+- Ten sites, coupons and promotions
+- Subscriptions and instalments (buy now, pay later, BNPL)
+- Then 2.25% a payment, falling with volume
 
-[Chagua Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[Get Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
 ### Scale
 
-$149 kwa mwezi
+$499 kwa mwezi
 
-2,500 payments per 30 days
+2,500 payments per 30 days included
 
-- 30 sites
-- Everything in Growth
-- Priority support
+- Unlimited sites
+- Priority support and a response-time promise
+- Then 1.0% a payment, falling to 0.4%
 
 [Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Enterprise
-
-From $499 kwa mwezi
-
-Custom volume and an SLA
-
-- Unlimited sites
-- Everything in Scale
-- Onboarding and an SLA
-
-[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
-
-[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+[A plan for the software, plus a small percentage after the included payments that falls as you grow. No quote needed at any volume. See the full price list and the cost chart.](https://wavepay.t3ratech.co.zw/pricing.html)
 
 Maswali
 
@@ -6723,6 +7438,8 @@ LEGAL
 
 The terms for using WavePay: the service, accounts and keys, fees and taxes, acceptable use, refunds and chargebacks, availability, liability and governing law.
 
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
 Updated 2026-10-31 · TeraTech Solutions (Private) Limited
 
 ## 1. The service
@@ -6764,6 +7481,23 @@ You may stop at any time and disconnect your accounts. We may suspend a merchant
 ## 10. Law and changes
 
 These terms are governed by the laws of Zimbabwe and disputes go to its courts, without limiting rights you have as a consumer elsewhere. We will post changes with a new date.
+
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
 
 
 ---
@@ -6920,57 +7654,33 @@ $0 永久
 
 [免费注册](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Starter
-
-$15 每月
-
-每 30 天 100 笔付款
-
-- 3 个站点
-- 优惠券与促销
-- Webhook 与账本
-
-[选择 Starter](https://wavepay.t3ratech.co.zw/pricing.html#register)
-
 Recommended
 
 ### Growth
 
 $49 每月
 
-每 30 天 500 笔付款
+500 payments per 30 days included
 
-- 10 个站点
-- 包含 Starter 的全部功能
-- 优先支持队列
+- Ten sites, coupons and promotions
+- Subscriptions and instalments (buy now, pay later, BNPL)
+- Then 2.25% a payment, falling with volume
 
-[选择 Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[Get Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
 ### Scale
 
-$149 每月
+$499 每月
 
-2,500 payments per 30 days
+2,500 payments per 30 days included
 
-- 30 sites
-- Everything in Growth
-- Priority support
+- Unlimited sites
+- Priority support and a response-time promise
+- Then 1.0% a payment, falling to 0.4%
 
 [Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Enterprise
-
-From $499 每月
-
-Custom volume and an SLA
-
-- Unlimited sites
-- Everything in Scale
-- Onboarding and an SLA
-
-[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
-
-[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+[A plan for the software, plus a small percentage after the included payments that falls as you grow. No quote needed at any volume. See the full price list and the cost chart.](https://wavepay.t3ratech.co.zw/pricing.html)
 
 问答
 
@@ -7033,7 +7743,9 @@ USE CASE
 
 WavePay is a Zimbabwe payment gateway API: one POST /v2/checkouts reaches EcoCash, OneMoney, InnBucks, Telecash, O'mari and ZimSwitch through Paynow, plus Visa, Mastercard and PayPal for international buyers, with signed settlement webhooks and one payments ledger.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
 
 ## The flow
 
@@ -7051,6 +7763,23 @@ Yes. Through Paynow, provider paynow-mobile sends the EcoCash prompt to the buye
 ## Which currency does it settle in?
 
 Paynow checkouts are priced in US dollars. Which rails a deployment offers is reported live by GET /v2/providers.
+
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
 
 ## Keep going
 

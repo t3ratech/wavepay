@@ -184,3 +184,15 @@ document.querySelectorAll(".lang-dd, .menu").forEach((d) => {
   document.addEventListener("click", (e) => { if (!d.contains(e.target)) d.removeAttribute("open"); });
   d.addEventListener("keydown", (e) => { if (e.key === "Escape") { d.removeAttribute("open"); d.querySelector("summary")?.focus(); } });
 });
+
+/* ---- Pricing: monthly / annual switch (annual is ten months for twelve; the struck figure is twelve months) ---- */
+document.querySelectorAll(".billing-switch").forEach((sw) => {
+  const root = document.querySelector("[data-billing-root]");
+  if (!root) return;
+  sw.querySelectorAll("button[data-billing]").forEach((b) => b.addEventListener("click", () => {
+    const annual = b.dataset.billing === "annual";
+    sw.querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+    root.querySelectorAll(".price .m").forEach((e) => { e.hidden = annual; });
+    root.querySelectorAll(".price .a").forEach((e) => { e.hidden = !annual; });
+  }));
+});

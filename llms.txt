@@ -64,7 +64,6 @@
 - [Subscription payment API for SaaS: renewals, instalments, refunds and licences](https://wavepay.t3ratech.co.zw/saas-subscription-payment-api.html)
 - [Payment infrastructure for AI agents: MCP payment tools and a one-file onboarding](https://wavepay.t3ratech.co.zw/ai-agent-payment-infrastructure.html)
 - [Crypto payment API: Bitcoin, Ethereum, Solana, BNB, Litecoin, Dogecoin, Tron, USDT and USDC](https://wavepay.t3ratech.co.zw/crypto-payment-api.html)
-- [Integrate WavePay from Claude Code, OpenClaw, OpenFang or a plain API client](https://wavepay.t3ratech.co.zw/integrations-claude-code-openclaw-openfang.html)
 
 ### Comparisons
 

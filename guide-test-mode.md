@@ -8,7 +8,9 @@ HOW IT WORKS
 
 POST /v2/register returns a live key and a test key (mk_test_…); the test key calls the same routes but settles through a simulator that never contacts a payment provider, so you can drive every outcome of your integration, including renewals and instalments, without moving money.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
 
 ## Getting a test key
 
@@ -33,6 +35,23 @@ Subscriptions, BNPL, refunds and card tokens are switched on per deployment. A t
 ## What a test key does not prove
 
 A simulator proves your integration handles every outcome; it does not prove a provider's behaviour. Run one live payment of the smallest amount before launch.
+
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
 
 ## Keep going
 

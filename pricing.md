@@ -1,118 +1,107 @@
-# Pricing — WavePay
+# WavePay pricing: Free, Growth $49 and Scale $499, plus a small…
 
-> WavePay pricing by payments processed: Free $0 for 25 payments a month, Basic $9 for 250, Pro $29 for 2,500. Every rail included, no percentage rake.
+> WavePay has three plans: Free for 25 payments, Growth at $49 for 500 payments (recommended) and Scale at $499 for 2,500.
 
-Merchant pricing
+PRICING
 
-# A plan for the software, a small percentage for the volume
+# One plan for the software. A small percentage that falls as you grow.
 
-WavePay is the checkout, licensing and billing layer. You pay a plan for the software, and a percentage that **falls as your volume grows** once you pass your plan's included payments. Provider fees, bank charges and the transfer tax are paid to the provider at cost: WavePay adds no markup to them.
+WavePay has three plans: Free for 25 payments, Growth at $49 for 500 payments (recommended) and Scale at $499 for 2,500. Beyond the included payments a small percentage applies, from 2.25% falling to 0.4%. Provider fees are paid at cost.
 
-### Free
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
+## Free
 
 $0 forever
 
-25 payments a month, test mode, one site. Stops at the cap; never charges.
+For trying it out: 25 payments a month, test mode, one site. It stops at the cap and never charges.
 
-- 25 payments / month included
-- 1 site
-- Signed webhooks + payments ledger
+- 25 payments a month
+- Test mode with fake money
+- One site
+- Signed webhooks and a payments ledger
+- Stops at the cap and never charges
 
-Register free — one POST
-
-### Starter
-
-$15 USD / month
-
-100 payments included, three sites, coupons, webhooks.
-
-- 100 payments / month included
-- 3 sites
-- Coupons & promotions
-- Signed webhooks + payments ledger
-
-Get Starter — $15/mo
+Register free
 
 Recommended
 
-### Growth
+## Growth
 
 $49 USD / month
 
-500 payments included, ten sites, subscriptions and instalments.
+500 payments included, ten sites, subscriptions, instalments and coupons. After 500, a small percentage.
 
-- 500 payments / month included
-- 10 sites
-- Coupons & promotions
-- Signed webhooks + payments ledger
+- 500 payments included
+- Then 2.25% of each payment (minimum 10 cents), falling with volume
+- Ten sites, coupons, subscriptions, instalments (BNPL)
+- Own PayPal account, Paynow, EcoCash, crypto
+- Reaches $499 at 2,500 payments of $10, exactly Scale's price
 
-Get Growth — $49/mo
+Start with Growth
 
-### Scale
+## Scale
 
-$149 USD / month
+$499 USD / month
 
-2,500 payments included, thirty sites, priority support.
+2,500 payments included, unlimited sites, priority support and a response-time promise. After 2,500, a lower percentage.
 
-- 2,500 payments / month included
-- 30 sites
-- Coupons & promotions
-- Signed webhooks + payments ledger
-- Priority support
+- 2,500 payments included
+- Then 1.0% falling to 0.4% on larger volumes
+- Unlimited sites and priority support
+- Response-time promise for production incidents
+- You always pay the cheaper of Growth and Scale
 
-Get Scale — $149/mo
+Choose Scale
 
-### Enterprise
+Annual billing is ten months for twelve. Prices exclude VAT where it applies. No quote needed at any volume: the schedule below simply continues.
 
-From $499 USD / month
+## What it costs to take $10 payments, all fees included
 
-From $499 a month: custom volume, SLA, onboarding. By quote.
+WavePay is shown with EcoCash, the cheapest local rail: the 2.5% EcoCash fee goes to Paynow at cost, and WavePay's plan and usage fee is added on top. The alternatives are each provider's own rates.
 
-- Custom volume
-- Unlimited sites
-- Coupons & promotions
-- Signed webhooks + payments ledger
-- Priority support and an SLA
+WavePay with EcoCash PayPal, direct (4% + $0.30) 2Checkout, direct (3.5% + $0.35): the same $0.70 as PayPal at $10 Paynow EcoCash, direct (2.5%)
 
-[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
+| Provider | 100 | 250 | 500 | 1,000 | 2,500 | 5,000 | 10,000 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| WavePay with EcoCash | $74 | $112 | $174 | $412 | $1,124 | $1,999 | $3,749 |
+| PayPal (direct) | $70 | $175 | $350 | $700 | $1,750 | $3,500 | $7,000 |
+| 2Checkout / Verifone (direct) | $70 | $175 | $350 | $700 | $1,750 | $3,500 | $7,000 |
+| Paynow, EcoCash (direct, no WavePay) | $25 | $63 | $125 | $250 | $625 | $1,250 | $2,500 |
 
-### After your included payments
+Sources: Paynow's rates are from [Paynow's fees page](https://www.paynow.co.zw/Home/Fees) (read 2026-10-31). PayPal and 2Checkout rates are indicative figures from our own research, not read from their pages: confirm them on [PayPal](https://www.paypal.com/uk/webapps/mpp/merchant-fees) and [2Checkout](https://www.2checkout.com/pricing/). Paynow direct is the cheapest line because it is one rail with nothing around it: no licence keys, subscriptions, ledger, other rails or agent onboarding. Cards through Paynow cost 3.5% + $0.50 per payment, which is 8.5% of a $10 sale.
 
-Each extra payment pays a percentage of its value, by its number in the month, with a minimum per payment. The rate only ever falls.
+## After the included payments
+
+Each extra payment pays a percentage of its value, by its number in the month, with a minimum per payment. The rate only ever falls. Payment #501 on Growth costs 2.25% of its value: 22.5 cents on a $10 sale, $2.25 on a $100 sale.
 
 | Payment number in the month | Rate | Minimum per payment |
 | --- | --- | --- |
-| 1–1,000 | 2% | $0.10 |
-| 1,001–2,500 | 1.5% | $0.08 |
+| 1–2,500 | 2.25% | $0.10 |
 | 2,501–10,000 | 1% | $0.06 |
 | 10,001–50,000 | 0.6% | $0.05 |
 | 50,001+ | 0.4% | $0.04 |
 
-Example: Growth, 1,000 payments of $10 in a month = $49 plan + $100 usage = $149 ($0.149 per payment, 1.49% of sales). Billed monthly in arrears as one invoice; annual prepay is ten months for twelve. Prices exclude VAT where it applies. The same numbers, machine-readable: [pricing.json](https://wavepay.t3ratech.co.zw/pricing.json).
+### What a month costs
 
-### Your money goes to you
+| Payments × ticket | Plan | WavePay bill | % of sales | Per payment |
+| --- | --- | --- | --- | --- |
+| 1,000 × $3 | Growth | $99 | 3.30% | $0.10 |
+| 1,000 × $10 | Growth | $162 | 1.62% | $0.16 |
+| 2,500 × $10 | Growth | $499 | 2.00% | $0.20 |
+| 5,000 × $10 | Growth | $749 | 1.50% | $0.15 |
+| 2,500 × $25 | Scale | $499 | 0.80% | $0.20 |
+| 1,000 × $100 | Scale | $499 | 0.50% | $0.50 |
+| 5,000 × $100 | Scale | $2,999 | 0.60% | $0.60 |
 
-With **own keys** (the default) you connect your own PayPal account and the provider pays you directly: WavePay never holds your money. Zimbabwean merchants use Paynow, EcoCash and crypto. A mode where WavePay collects and pays out needs a Reserve Bank payment-service-provider licence and is not offered yet.
+Provider fees, bank charges and the transfer tax are paid by you to the provider at cost: WavePay adds no markup to them. Billed monthly in arrears as one invoice with Paynow and PayPal pay links.
 
-### Start in one POST — no form, no call
+## Start in one request
 
 ```
-# Register — returns your live merchant key once. Free tier, working now:
-curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/register \
-  -H 'Content-Type: application/json' \
-  -d '{"name":"My Product","ownerEmail":"you@example.com"}'
-# → 201 { "merchantId": "mer_…", "key": "mk_live_…", "planId": "free", "paymentsPerMonth": 25 }
-
-# Upgrade — a normal checkout on the wavepay product, your own rails:
-curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/checkouts \
-  -H 'Content-Type: application/json' -H 'Idempotency-Key: upgrade-' \
-  -d '{"productId":"wavepay","planId":"growth","provider":"paynow","email":"you@example.com"}'
-# → 201 { "checkoutUrl": "https://www.paynow.co.zw/…", … } — settle it and
-#   your merchant's plan_id moves to growth. provider "paypal" works too.
+# Register: returns your live key and a test key (shown once)
+curl -sX POST https://t3rnel-wavepay-production.t3ratech.workers.dev/v2/register -H 'content-type: application/json' \
+  -d '{"name":"My product","ownerEmail":"you@example.com"}'
 ```
 
-Agents: [skill.md](https://wavepay.t3ratech.co.zw/skill.md) is the same story in one markdown file, and `POST /mcp` exposes it all as tools. Registration returns a live key and a test key (`mk_test_…`) — the test key uses the same routes with fake money, never reaches a provider and never counts against the cap. Subscriptions, buy now pay later and refunds are usable in test mode today and switched on for live money per deployment (`GET /v2/features`). Questions: [support@t3ratech.co.zw](mailto:support@t3ratech.co.zw).
-
-### Fair fine print
-
-Free stops at its 25 payments and never charges. Paid plans never refuse a buyer at the allowance: later payments are charged by the schedule above. A cap or a charge never blocks or double-charges a buyer mid-payment. Check [status](https://wavepay.t3ratech.co.zw/status.html) for the live rails.
+Agents: [skill.md](https://wavepay.t3ratech.co.zw/skill.md) is the same story in one file, and the Model Context Protocol (MCP) server at `/mcp` exposes it as tools. [Connect Claude Code, Codex CLI, Gemini CLI, OpenClaw and more](https://wavepay.t3ratech.co.zw/integrations.html). Also machine-readable: [pricing.json](https://wavepay.t3ratech.co.zw/pricing.json).

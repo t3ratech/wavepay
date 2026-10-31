@@ -8,7 +8,9 @@ PAYMENT RAIL
 
 For buyers outside Zimbabwe, WavePay offers Visa and Mastercard through the hosted paynow checkout and PayPal through provider paypal, on the same checkout call — so one integration serves local and international customers.
 
-Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Starter: 100 payments per 30 days for $15/month; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $149/month; Enterprise: custom volume from $499/month
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
+Updated 2026-10-30 · by T3raTech · Free: 25 payments per 30 days, $0; Growth (recommended): 500 payments per 30 days for $49/month; Scale: 2,500 payments per 30 days for $499/month
 
 ## How it works
 
@@ -36,6 +38,23 @@ Yes — Visa and Mastercard are taken through the hosted paynow checkout and thr
 ## Do I need a second integration for PayPal?
 
 No. It is the same POST /v2/checkouts call with provider "paypal".
+
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page
 
 ## Keep going
 

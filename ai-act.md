@@ -6,6 +6,8 @@ LEGAL
 
 How WavePay uses AI and automation: no automated decisions about people's payments, where AI drafts text or images, human review, and how to ask about or dispute an automated output.
 
+[Start free](https://wavepay.t3ratech.co.zw/pricing.html)[API reference](https://wavepay.t3ratech.co.zw/docs/index.html)
+
 Updated 2026-10-31 · TeraTech Solutions (Private) Limited
 
 ## The short version
@@ -26,3 +28,20 @@ On our reading WavePay is not a high-risk AI system under the EU AI Act: it make
 ## Your rights
 
 If you think an automated output affected you, write to [support@t3ratech.co.zw](mailto:support@t3ratech.co.zw). A person will look at it, explain what happened and correct it where it was wrong.
+
+## On this page
+
+## At a glance
+
+- Free to start: 25 payments a month
+- A test key with fake money
+- Provider fees paid at cost, no markup
+- Your own account: the money lands with you
+
+## Start in one request
+
+Register, get a live key and a test key, and take a test payment in minutes.
+
+[See plans](https://wavepay.t3ratech.co.zw/pricing.html)
+
+## Share this page

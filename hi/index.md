@@ -148,57 +148,33 @@ $0 हमेशा
 
 [मुफ़्त पंजीकरण](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Starter
-
-$15 प्रति माह
-
-30 दिनों में 100 भुगतान
-
-- 3 साइट
-- कूपन और प्रमोशन
-- वेबहुक और बही
-
-[Starter लें](https://wavepay.t3ratech.co.zw/pricing.html#register)
-
 Recommended
 
 ### Growth
 
 $49 प्रति माह
 
-30 दिनों में 500 भुगतान
+500 payments per 30 days included
 
-- 10 साइट
-- Starter की हर सुविधा
-- प्राथमिकता सहायता कतार
+- Ten sites, coupons and promotions
+- Subscriptions and instalments (buy now, pay later, BNPL)
+- Then 2.25% a payment, falling with volume
 
-[Growth लें](https://wavepay.t3ratech.co.zw/pricing.html#register)
+[Get Growth](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
 ### Scale
 
-$149 प्रति माह
+$499 प्रति माह
 
-2,500 payments per 30 days
+2,500 payments per 30 days included
 
-- 30 sites
-- Everything in Growth
-- Priority support
+- Unlimited sites
+- Priority support and a response-time promise
+- Then 1.0% a payment, falling to 0.4%
 
 [Get Scale](https://wavepay.t3ratech.co.zw/pricing.html#register)
 
-### Enterprise
-
-From $499 प्रति माह
-
-Custom volume and an SLA
-
-- Unlimited sites
-- Everything in Scale
-- Onboarding and an SLA
-
-[Talk to us](mailto:support@t3ratech.co.zw?subject=WavePay%20Enterprise)
-
-[After the included payments a small percentage applies and falls as your volume grows. See the full price list.](https://wavepay.t3ratech.co.zw/pricing.html)
+[A plan for the software, plus a small percentage after the included payments that falls as you grow. No quote needed at any volume. See the full price list and the cost chart.](https://wavepay.t3ratech.co.zw/pricing.html)
 
 प्रश्न
 
